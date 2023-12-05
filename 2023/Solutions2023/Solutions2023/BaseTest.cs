@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public abstract class BaseTest
 {
-    public static string InputPath = @"D:\GitHub\xexuxjy\AdventOfCode\2023\Solutions2023\Data\";
+    public static string InputPath = @"..\..\..\..\Data\";
 
     protected List<string> m_dataFileContents = new List<string>();
     protected List<string> m_debugInfo = new List<string>();
