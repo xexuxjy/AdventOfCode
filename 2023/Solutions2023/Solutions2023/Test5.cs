@@ -5,7 +5,7 @@ public class Test5 : BaseTest
     public override void RunTest()
     {
         TestID = 5;
-        IsTestInput = true;
+        IsTestInput = false;
         IsPart2 = true;
 
         ReadDataFile();
@@ -73,15 +73,17 @@ public class Test5 : BaseTest
 
 
             long location = 0;
-            while (true)
+            bool keepRunning = true;
+            while (keepRunning)
             {
                 Tuple<long, long> seedResult = TranslateLocation(location++, rangeGroups);
                 foreach (LongVector2 seedRange in seedRanges)
                 {
-                    if (seedResult.Item2 >= seedRange.X && seedResult.Item2 < seedRange.X + seedRange.X)
+                    if (seedResult.Item2 >= seedRange.X && seedResult.Item2 < (seedRange.X + seedRange.Y))
                     {
                         DebugOutput("Found seed : " + seedResult.Item2);
-                        int ibreak = 0;
+                        keepRunning = false;
+                        break;
                     }
                 }
             }
