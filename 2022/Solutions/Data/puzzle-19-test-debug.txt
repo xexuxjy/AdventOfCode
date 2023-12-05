@@ -1,0 +1,9 @@
+Blueprint 1 clay 2 obsidian 28 geode 196
+Best result blueprint 1 : 9
+Blueprint 2 clay 3 obsidian 24 geode 288
+Best result blueprint 2 : 12
+Elapsed = 9.4667 ms
+Elapsed = 9.7878 ms
+
+Elapsed = 42.4887 ms
+Total score : 33
