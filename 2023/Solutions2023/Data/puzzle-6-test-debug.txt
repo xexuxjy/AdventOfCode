@@ -1,0 +1,3 @@
+Race number [0] duration [71530], new record [1279135225]  old record [940200]  improvement of [1278195025]  numWinners[71503]
+Total possibilities : 71503
+Elapsed = 23.6564 ms

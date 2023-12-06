@@ -6,6 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+public static class Helper
+{
+    public static void ReadInts(string input, List<int> store)
+    {
+        string[] tokens = input.Split(new char[] { ' ', ',' },StringSplitOptions.TrimEntries|StringSplitOptions.RemoveEmptyEntries);
+        foreach (string token in tokens)
+        {
+            store.Add(int.Parse(token));
+        }
+    }
+    
+    public static void ReadLongs(string input, List<long> store)
+    {
+        string[] tokens = input.Split(new char[] { ' ', ',' },StringSplitOptions.TrimEntries|StringSplitOptions.RemoveEmptyEntries);
+        foreach (string token in tokens)
+        {
+            store.Add(long.Parse(token));
+        }
+    }
+    
+}
 
 
 
