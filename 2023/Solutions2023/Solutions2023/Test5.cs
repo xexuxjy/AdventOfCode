@@ -2,13 +2,15 @@
 
 public class Test5 : BaseTest
 {
-    public override void RunTest()
+    public override void Initialise()
     {
         TestID = 5;
         IsTestInput = false;
         IsPart2 = true;
+    }
 
-        ReadDataFile();
+    public override void Execute()
+    {
 
         List<long> seeds = new List<long>();
         List<RangeGroup> rangeGroups = new List<RangeGroup>();
@@ -144,8 +146,6 @@ public class Test5 : BaseTest
 
     public class RangeGroup
     {
-        public Classification Source;
-        public Classification Target;
         public List<Range> Ranges = new List<Range>();
 
         public long Translate(long sourceId)
@@ -235,18 +235,5 @@ public class Test5 : BaseTest
         public long TargetStart;
         public long SourceStart;
         public long Length;
-    }
-
-
-    public enum Classification
-    {
-        Seed,
-        Soil,
-        Fertilizer,
-        Water,
-        Light,
-        Temperature,
-        Humidity,
-        Location
     }
 }

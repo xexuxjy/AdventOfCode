@@ -2,14 +2,15 @@
 
 public class Test2 : BaseTest
 {
-    public override void RunTest()
+    public override void Initialise()
     {
         TestID = 2;
-        IsTestInput =false;
+        IsTestInput = false;
         IsPart2 = true;
+    }
 
-        ReadDataFile();
-
+    public override void Execute()
+    {
         int redLimit = 12;
         int greenLimit = 13;
         int blueLimit = 14;

@@ -67,6 +67,21 @@ public abstract class BaseTest
         }
     }
 
-    public abstract void RunTest();
+
+
+    public abstract void Initialise();
+    public abstract void Execute();
+
+    public void RunTest()
+    {
+        Initialise();
+        ReadDataFile();
+        DateTime startTime = DateTime.Now;
+        Execute();
+        DateTime endTime = DateTime.Now;
+        double bpElapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
+        DebugOutput("Elapsed = " + bpElapsed + " ms");
+        WriteDebugInfo();
+    }
 
 }

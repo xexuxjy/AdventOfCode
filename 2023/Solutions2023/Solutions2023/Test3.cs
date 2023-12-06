@@ -2,15 +2,15 @@
 
 public class Test3 : BaseTest
 {
-    public override void RunTest()
+    public override void Initialise()
     {
         TestID = 3;
         IsTestInput = false;
         IsPart2 = true;
+    }
 
-        ReadDataFile();
-
-
+    public override void Execute()
+    {
         List<IntVector2> symbolPositions = new List<IntVector2>();
         List<IntVector2> gearPositions = new List<IntVector2>();
         List<IntVector3> numberPositions = new List<IntVector3>();
@@ -41,7 +41,7 @@ public class Test3 : BaseTest
                         symbolPositions.Add((new IntVector2(x, y)));
                         if (c == '*')
                         {
-                            gearPositions.Add(new IntVector2(x,y));
+                            gearPositions.Add(new IntVector2(x, y));
                         }
                     }
                 }
@@ -78,7 +78,6 @@ public class Test3 : BaseTest
         }
 
 
-        
         int gearTotal = 0;
         if (IsPart2)
         {
@@ -103,11 +102,10 @@ public class Test3 : BaseTest
                     gearTotal += (l[0].Z * l[1].Z);
                 }
             }
-
         }
 
         DebugOutput("Total is : " + total);
-        DebugOutput("Gear Total is "+gearTotal);
+        DebugOutput("Gear Total is " + gearTotal);
     }
 
     private bool InRange(IntVector2 symbolPosition, IntVector3 numberPosition)

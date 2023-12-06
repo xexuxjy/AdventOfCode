@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 public class Test1 : BaseTest
 {
-    public override void RunTest()
+    public override void Initialise()
     {
         TestID = 1;
         IsTestInput = true;
         IsPart2 = false;
+    }
 
-        ReadDataFile();
-
+    public override void Execute() 
+    {
         List<string> numbers = new List<string>();
         numbers.Add("one");
         numbers.Add("two");
@@ -101,7 +102,5 @@ public class Test1 : BaseTest
         }
 
         DebugOutput($"Result is {total}");
-
-        WriteDebugInfo();
     }
 }
