@@ -1,0 +1,7 @@
+Scoring : 33  OnePair  AllCards :32T3K  765 * 1 = 765
+Scoring : KK77  TwoPair  AllCards :KK677  28 * 2 = 56
+Scoring : T  FourOfAKind  AllCards :T55J5  684 * 3 = 2052
+Scoring : J  FourOfAKind  AllCards :QQQJA  483 * 4 = 1932
+Scoring : K  FourOfAKind  AllCards :KTJJT  220 * 5 = 1100
+Total score is 5905
+Elapsed = 42.4892 ms
