@@ -32,6 +32,8 @@ public class Test6 : BaseTest
             long numOptions = 0;
             long bestDistance = CalculateOptimal(raceTimes[i], ref numOptions);
             long numWinners = CalculateNumWinners(raceTimes[i], raceRecords[i]);
+            long numWinnersQuad = CalculateNumWinnersQuadratic(raceTimes[i], raceRecords[i]);
+            
             totalWays *= numWinners;
             if (bestDistance > raceRecords[i])
             {
@@ -58,6 +60,39 @@ public class Test6 : BaseTest
         }
         return numOptions;
     }
+
+    public long CalculateNumWinnersQuadratic(long limit,long record)
+    {
+        //https://www.reddit.com/r/adventofcode/comments/18bwuzt/2023_day_06_im_just_glad_this_worked_after_the/
+        /*
+        x(T - x) = L
+        Tx - x^2 = L
+        0 = x^2 - Tx + L
+        */
+        
+        // quad formulaa
+        // (-b±√(b²-4ac))/(2a) .
+        
+        long part = (long)Math.Sqrt((limit*limit) - 4 * record);
+        
+        long highBound = (-limit + part) / 2;
+        long lowBound = (-limit - part) / 2;
+        
+        int numOptions = 0;
+        for (int hold = 0; hold < limit; ++hold)
+        {
+            long distance = (limit - hold) * hold;
+            if (distance > record)
+            {
+                numOptions++;
+            }
+        }
+
+        Debug.Assert((highBound - lowBound) == numOptions);
+        long diff = highBound - lowBound;
+        return numOptions;
+    }
+    
     
     public long CalculateOptimal(long limit, ref long numOptions)
     {
