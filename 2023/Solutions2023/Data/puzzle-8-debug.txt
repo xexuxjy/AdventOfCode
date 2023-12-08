@@ -1,2 +1,3 @@
-Reached destination in : 18113
-Elapsed = 28.5256 ms
+ExecutePart2
+Reached destination in : 13201
+Elapsed = 43.5278 ms

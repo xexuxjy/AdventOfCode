@@ -1,2 +1,3 @@
+ExecutePart2
 Reached destination in : 6
-Elapsed = 26.1529 ms
+Elapsed = 6059.437 ms
