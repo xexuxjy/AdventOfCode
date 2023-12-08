@@ -8,7 +8,7 @@ public class Test7 : BaseTest
     {
         TestID = 7;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
     public override void Execute()
