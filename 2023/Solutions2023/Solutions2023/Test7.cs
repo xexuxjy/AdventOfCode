@@ -3,12 +3,12 @@ using System.Runtime.InteropServices.JavaScript;
 
 public class Test7 : BaseTest
 {
-    public static  string CardOrder = "23456789TJQKA";
+    public static string CardOrder = "23456789TJQKA";
     public override void Initialise()
     {
         TestID = 7;
         IsTestInput = false;
-        IsPart2 = true;
+        IsPart2 = false;
     }
 
     public override void Execute()
@@ -37,16 +37,33 @@ public class Test7 : BaseTest
         }
 
         hands.Sort();
+       
         int totalScore = 0;
         for(int i=0;i<hands.Count;++i)
         {
             int bidScore =(i + 1) * bids[hands[i].Id];
             totalScore += bidScore;
-            DebugOutput("Scoring : "+new String(hands[i].ScoringCards.ToArray())+"  " +hands[i].Ranking+"  AllCards :" +new String(hands[i].Cards.ToArray())+"  "+ bids[hands[i].Id] + " * " + (i + 1) + " = " + bidScore);
+
+            //if ((hands[i].OriginalRanking != hands[i].FinalRanking))
+            {
+                String output = " " + hands[i].FinalRanking;
+                output += "  " + hands[i].OriginalRanking;
+                output += (hands[i].OriginalRanking != hands[i].FinalRanking) ? "  **DIFF**" : "";
+                output += " AllCards :" + new String(hands[i].Cards.ToArray());
+                output += " JokerCount :" + hands[i].JokerCount;
+                output += "  Id : " + hands[i].Id + "  " + bids[hands[i].Id] + " * " + (i + 1) + " = " + bidScore;
+
+                DebugOutput(output);
+            }
+
         }
 
+        //  251121738
         DebugOutput("Total score is " + totalScore);
-        int ibreak = 0;
+        if (totalScore != 251121738)
+        {
+            int ibreak = 0;
+        }
     }
 
 
@@ -58,7 +75,8 @@ public class Test7 : BaseTest
         ThreeOfAKind,
         TwoPair,
         OnePair,
-        Highest
+        Highest,
+        None
     }
 
     
@@ -69,15 +87,101 @@ public class Test7 : BaseTest
         public int Id;
         public List<char> Cards = new List<char>();
         public List<char> ScoringCards = new List<char>();
-        public ScoreRanking Ranking;
+
+        public ScoreRanking OriginalRanking;
+        public ScoreRanking FinalRanking;
+
+        public int JokerCount = 0;
+        
         public void ScoreHand(bool isPart2)
         {
-            // Cards.Sort((x,y) => CardOrder.IndexOf(x).CompareTo(CardOrder.IndexOf(y)));
-            // Cards.Reverse();
+
+            List<char> cardsCopy = new List<char>();
+            cardsCopy.AddRange(Cards);
+
             
+            if (isPart2)
+            {
+                JokerCount = Cards.Count(x => x == 'J');
+                cardsCopy.RemoveAll(x=>x=='J');
+            }
+           
+            ScoreRanking ranking = RankCards(cardsCopy);
+            OriginalRanking = ranking;
+            FinalRanking = ranking;
+            
+            if (isPart2)
+            {
+                if(JokerCount >= 4)
+                {
+                    ranking = ScoreRanking.FiveOfAKind;
+                }
+                else if (JokerCount == 3)
+                {
+                    if (ranking == ScoreRanking.OnePair)
+                    {
+                        ranking = ScoreRanking.FiveOfAKind;
+                    }
+                    else
+                    {
+                        ranking = ScoreRanking.FourOfAKind;
+                    }
+                }
+                else if (JokerCount == 2)
+                {
+                    if (ranking == ScoreRanking.ThreeOfAKind)
+                    {
+                        ranking = ScoreRanking.FiveOfAKind;
+                    }
+                    else if (ranking == ScoreRanking.OnePair)
+                    {
+                        ranking = ScoreRanking.FourOfAKind;
+                    }
+                    else
+                    {
+                        ranking = ScoreRanking.ThreeOfAKind;
+                    }
+                }
+                else if (JokerCount == 1)
+                {
+                    if (ranking == ScoreRanking.FourOfAKind)
+                    {
+                        ranking = ScoreRanking.FiveOfAKind;
+                    }
+                    else if (ranking == ScoreRanking.ThreeOfAKind)
+                    {
+                        ranking = ScoreRanking.FourOfAKind;
+                    }
+                    else if (ranking == ScoreRanking.TwoPair)
+                    {
+                        ranking = ScoreRanking.FullHouse;
+                    }
+                    else if (ranking == ScoreRanking.OnePair)
+                    {
+                        ranking = ScoreRanking.ThreeOfAKind;
+                    }
+                    else
+                    {
+                        ranking = ScoreRanking.OnePair;
+                    }
+                }
+
+                FinalRanking = ranking;
+            }
+
+
+        }
+
+        public ScoreRanking RankCards(List<char> cards)
+        {
+            HashSet<char> uniques = new HashSet<char>();
+            foreach (char c in cards)
+            {
+                uniques.Add(c);
+            }
+
             int highest = 0;
-            
-            foreach (char card in Cards)
+            foreach (char card in uniques)
             {
                 int count = Cards.Count(x => x == card);
                 if (count > highest)
@@ -86,92 +190,62 @@ public class Test7 : BaseTest
                 }
             }
 
-            int jokerCount = 0;
-            if (isPart2)
-            {
-                jokerCount = Cards.Count(x => x == 'J');
-                highest += jokerCount;
-            }
-            
-            
-            
-            var groups = Cards.GroupBy(c => c);
 
+            var groups = cards.GroupBy(c => c);
+
+            ScoreRanking ranking = ScoreRanking.None;
             switch (highest)
             {
                 case 5:
-                    Ranking = ScoreRanking.FiveOfAKind;
-                    ScoringCards.AddRange(Cards);
+                    ranking = ScoreRanking.FiveOfAKind;
                     break;
                 case 4:
-                    Ranking = ScoreRanking.FourOfAKind;
-                    var bigGroup =groups.Where(x => x.Count() == 4).FirstOrDefault();
-                    var smallGroup =groups.Where(x => x.Count() == 1).FirstOrDefault();
-                    for (int i = 0; i < bigGroup?.Count(); ++i)
-                    {
-                        ScoringCards.Add(bigGroup.Key);
-                    }
-                    for (int i = 0; i < smallGroup?.Count(); ++i)
-                    {
-                        ScoringCards.Add(smallGroup.Key);
-                    }
-                    
+                    ranking = ScoreRanking.FourOfAKind;
                     break;
                 case 3:
+                    ranking = ScoreRanking.ThreeOfAKind;
+                    
                     var bigGroup2 = groups.Where(x => x.Count() == 3).FirstOrDefault();
                     var smallGroup2 = groups.Where(x => x.Count() == 2).FirstOrDefault();
 
-                    if (bigGroup2?.Count() == 3)
+                    if (smallGroup2 != null)
                     {
-                        for (int i = 0; i < bigGroup2?.Count(); ++i)
-                        {
-                            ScoringCards.Add(bigGroup2.Key);
-                        }
-
-                        Ranking = ScoreRanking.ThreeOfAKind;
-                        if (smallGroup2?.Count() == 2)
-                        {
-                            for (int i = 0; i < smallGroup2?.Count(); ++i)
-                            {
-                                ScoringCards.Add(smallGroup2.Key);
-                            }
-                            Ranking = ScoreRanking.FullHouse;
-                        }
+                        ranking = ScoreRanking.FullHouse;
                     }
                     break;
                 case 2:
+
                     var pairGroups = groups.Where(x => x.Count() == 2);
                     int count = 0;
                     foreach (var pairGroup in pairGroups)
                     {
                         count++;
-                        ScoringCards.Add(pairGroup.Key);
-                        ScoringCards.Add(pairGroup.Key);
                     }
                     if (count == 2)
                     {
-                        Ranking = ScoreRanking.TwoPair;
+                        ranking = ScoreRanking.TwoPair;
                     }
                     else
                     {
-                        Ranking = ScoreRanking.OnePair;
+                        ranking = ScoreRanking.OnePair;
                     }
                     break;
                 case 1:
-                    Ranking = ScoreRanking.Highest;
-                    ScoringCards.Add(Cards[0]);
+                    ranking = ScoreRanking.Highest;
                     break;
             }
 
+            return ranking;
         }
-
+        
+        
         public int CompareTo(Hand other)
         {
-            if (Ranking < other.Ranking)
+            if (FinalRanking < other.FinalRanking)
             {
                 return 1;
             }
-            else if (Ranking > other.Ranking)
+            else if (FinalRanking > other.FinalRanking)
             {
                 return -1;
             }
@@ -184,14 +258,6 @@ public class Test7 : BaseTest
                         return CardOrder.IndexOf(Cards[i]) > CardOrder.IndexOf(other.Cards[i]) ? 1 : -1;
                     }
                 }
-
-            //     for (int i = 0; i < ScoringCards.Count; ++i)
-            //     {
-            //         if (CardOrder.IndexOf(ScoringCards[i]) != CardOrder.IndexOf(other.ScoringCards[i]))
-            //         {
-            //             return CardOrder.IndexOf(ScoringCards[i]) > CardOrder.IndexOf(other.ScoringCards[i]) ? 1 : -1;
-            //         }
-            //     }
             }
             return 0;
         }
