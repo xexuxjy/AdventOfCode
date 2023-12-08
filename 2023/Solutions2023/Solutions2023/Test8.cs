@@ -43,9 +43,27 @@ public class Test8 : BaseTest
         string GOAL = "ZZZ";
         Node currentNode = nodeDictionary[START];
 
-        int instructionCount = 0;
-        int totalCount = 0;
-        while (currentNode != nodeDictionary[GOAL])
+        int instructionCount;
+        int totalCount;
+
+        FollowPaths(instructions, nodeDictionary, currentNode, IsPart2, out totalCount, out instructionCount);
+
+        DebugOutput("Reached destination in : " + totalCount + "  instruction count was : "+instructionCount);
+    }
+
+    public Node FollowPaths(string instructions, Dictionary<string, Node> nodeDictionary,Node startNode, bool part2,out int totalCount,
+        out int instructionCount)
+    {
+        Node currentNode = startNode;
+
+        //DebugOutput("Start node is "+startNode.DebugInfo());
+        
+        instructionCount = 0;
+        totalCount = 0;
+
+        int instructionLoops = 0;
+        
+        while (part2?(!currentNode.EndsZ) : (currentNode != nodeDictionary["ZZZ"]))
         {
             totalCount++;
             if (instructions[instructionCount] == 'L')
@@ -61,18 +79,23 @@ public class Test8 : BaseTest
             if (instructionCount == instructions.Length)
             {
                 instructionCount = 0;
+                instructionLoops++;
             }
 
             // stop loop forever...
-            if (totalCount > 10000000)
+            if (totalCount > 1000000000)
             {
                 DebugOutput(("Probably in a loop. breaking"));
                 break;
             }
         }
 
-        DebugOutput("Reached destination in : " + totalCount);
+        //DebugOutput("End node is " + currentNode.DebugInfo());
+
+        
+        return currentNode;
     }
+
 
     public void ExecutePart2(string instructions, Dictionary<string, Node> nodeDictionary)
     {
@@ -80,53 +103,41 @@ public class Test8 : BaseTest
         List<Node> currentStates = new List<Node>();
         foreach (Node n in nodeDictionary.Values)
         {
-            if (n.TotalCyclic)
-            {
-                DebugOutput($"Node {n.Id} is totally cyclic");
-            }
             if (n.EndsA)
             {
                 currentStates.Add(n);
-                
             }
         }
 
-        int instructionCount = 0;
-        long totalCount = 0;
-
-        int endCount = 0;
-        
-        while (endCount != currentStates.Count())
+        List<long> stepCount = new List<long>();
+        foreach (Node n in currentStates)
         {
-            totalCount++;
-            for (int i = 0; i < currentStates.Count; ++i)
-            {
-                if (instructions[instructionCount] == 'L')
-                {
-                    currentStates[i] = nodeDictionary[currentStates[i].LeftId];
-                }
-                else
-                {
-                    currentStates[i] = nodeDictionary[currentStates[i].RightId];
-                }
-            }
-
-            instructionCount++;
-            if (instructionCount == instructions.Length)
-            {
-                instructionCount = 0;
-            }
-
-            endCount = currentStates.FindAll(x => x.EndsZ).Count();
-            
-            // stop loop forever...
-            if (totalCount > 10000000000)
-            {
-                DebugOutput(("Probably in a loop. breaking"));
-                break;
-            }
+            int totalCount;
+            int instructionCount;
+            //DebugOutput("Testing : "+n.Id);
+            FollowPaths(instructions, nodeDictionary, n, IsPart2, out totalCount, out instructionCount);
+            //DebugOutput("Reached destination in : " + totalCount + " instruction count was : "+instructionCount);
+            stepCount.Add(totalCount);
         }
-        DebugOutput("Reached destination in : " + totalCount);
+
+       
+        long multiple = stepCount.Aggregate((S, val) => S * val / gcd(S, val));
+        
+        DebugOutput("All paths are aligned with instruction count so we can just find each one individually and then find the GCD ");
+        DebugOutput("Which in this case is : "+multiple);
+        
+        int ibreak = 0;
+    }
+    static long gcd(long n1, long n2)
+    {
+        if (n2 == 0)
+        {
+            return n1;
+        }
+        else
+        {
+            return gcd(n2, n1 % n2);
+        }
     }
 
 
@@ -136,6 +147,7 @@ public class Test8 : BaseTest
         public string LeftId;
         public string RightId;
 
+            
         public bool EndsA => Id[2] == 'A';
         public bool EndsZ => Id[2] == 'Z';
 
@@ -154,5 +166,12 @@ public class Test8 : BaseTest
             LeftId = directionTokens[0];
             RightId = directionTokens[1];
         }
+
+        public string DebugInfo()
+        {
+            return ($"Id : {Id}  Left = {LeftId}  Right = {RightId}");
+        }
+
+        
     }
 }

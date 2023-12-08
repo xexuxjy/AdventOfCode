@@ -1,3 +1,4 @@
 ExecutePart2
-Reached destination in : 13201
-Elapsed = 43.5278 ms
+All paths are aligned with instruction count so we can just find each one individually and then find the GCD 
+Which in this case is : 12315788159977
+Elapsed = 47.4392 ms
