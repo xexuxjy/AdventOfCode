@@ -120,24 +120,13 @@ public class Test8 : BaseTest
             stepCount.Add(totalCount);
         }
 
-       
-        long multiple = stepCount.Aggregate((S, val) => S * val / gcd(S, val));
+
+        long multiple = Helper.LCM(stepCount);
         
         DebugOutput("All paths are aligned with instruction count so we can just find each one individually and then find the GCD ");
         DebugOutput("Which in this case is : "+multiple);
         
         int ibreak = 0;
-    }
-    static long gcd(long n1, long n2)
-    {
-        if (n2 == 0)
-        {
-            return n1;
-        }
-        else
-        {
-            return gcd(n2, n1 % n2);
-        }
     }
 
 

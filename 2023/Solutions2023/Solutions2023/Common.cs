@@ -25,7 +25,25 @@ public static class Helper
             store.Add(long.Parse(token));
         }
     }
-    
+ 
+    public static long GCD(long n1, long n2)
+    {
+        if (n2 == 0)
+        {
+            return n1;
+        }
+        else
+        {
+            return GCD(n2, n1 % n2);
+        }
+    }
+
+    public static long LCM(List<long> list)
+    {
+        return list.Aggregate((S, val) => S * val / Helper.GCD(S, val));
+    }
+
+
 }
 
 
