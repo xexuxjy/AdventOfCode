@@ -999,4 +999,4 @@
  FiveOfAKind  ThreeOfAKind  **DIFF** AllCards :AJAAJ JokerCount :2  Id : 829  553 * 999 = 552447
  FiveOfAKind  FourOfAKind  **DIFF** AllCards :AAAJA JokerCount :1  Id : 458  338 * 1000 = 338000
 Total score is 251421071
-Elapsed = 227.0754 ms
+Elapsed = 216.8586 ms
