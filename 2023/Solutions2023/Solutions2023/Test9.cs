@@ -12,7 +12,7 @@ public class Test9 : BaseTest
     {
         TestID = 9;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
     public override void Execute()
@@ -24,7 +24,7 @@ public class Test9 : BaseTest
             List<long> ll = new List<long>();
             Helper.ReadLongs(line, ll);
             NumberPyramid numberPyramid = new NumberPyramid(ll);
-            numberPyramid.Solve();
+            numberPyramid.Solve(IsPart2);
             pyramidList.Add(numberPyramid);
             //DebugOutput(numberPyramid.DebugInfo());
             total += numberPyramid.Score;
@@ -44,7 +44,7 @@ public class Test9 : BaseTest
 
         public long Score;
 
-        public void Solve()
+        public void Solve(bool part2)
         {
             bool keepGoing = true;
             while (keepGoing)
@@ -63,14 +63,26 @@ public class Test9 : BaseTest
                 }
             }
 
-            NumberDiffs.Last().Add(0);
-
-            for (int i = (NumberDiffs.Count - 1); i > 0; --i)
+            if (part2)
             {
-                NumberDiffs[i - 1].Add(NumberDiffs[i - 1].Last() + NumberDiffs[i].Last());
+                NumberDiffs.Last().Insert(0,0);
+                for (int i = (NumberDiffs.Count - 1); i > 0; --i)
+                {
+                    NumberDiffs[i - 1].Insert(0,NumberDiffs[i - 1].First() - NumberDiffs[i].First());
+                }
+                Score = NumberDiffs[0].First();
             }
+            else
+            {
+                NumberDiffs.Last().Add(0);
 
-            Score = NumberDiffs[0].Last();
+                for (int i = (NumberDiffs.Count - 1); i > 0; --i)
+                {
+                    NumberDiffs[i - 1].Add(NumberDiffs[i - 1].Last() + NumberDiffs[i].Last());
+                }
+
+                Score = NumberDiffs[0].Last();
+            }
         }
 
         public string DebugInfo()
