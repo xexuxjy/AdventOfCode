@@ -1,0 +1,3 @@
+StartPosition is : 24,76
+Longest route : 6842
+Elapsed = 26.7123 ms
