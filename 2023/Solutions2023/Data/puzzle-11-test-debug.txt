@@ -1,0 +1,12 @@
+Star original 3,0   inflated to 4,0
+Star original 7,1   inflated to 9,1
+Star original 0,2   inflated to 0,2
+Star original 6,4   inflated to 8,5
+Star original 1,5   inflated to 1,6
+Star original 9,6   inflated to 12,7
+Star original 7,8   inflated to 9,10
+Star original 0,9   inflated to 0,11
+Star original 4,9   inflated to 5,11
+Distance between Star 1 4,0 and Star 8 0,11 is 15
+Total distance between all inflated stars is : 374
+Elapsed = 54.0418 ms

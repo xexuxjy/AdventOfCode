@@ -1,0 +1,2 @@
+Total distance between all inflated stars is : 9609130
+Elapsed = 50.4293 ms

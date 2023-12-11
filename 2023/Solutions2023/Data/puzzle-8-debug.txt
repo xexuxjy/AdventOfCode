@@ -1,4 +1,4 @@
 ExecutePart2
 All paths are aligned with instruction count so we can just find each one individually and then find the GCD 
 Which in this case is : 12315788159977
-Elapsed = 47.4392 ms
+Elapsed = 47.9629 ms
