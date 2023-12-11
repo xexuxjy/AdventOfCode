@@ -12,7 +12,7 @@ public class Test10 : BaseTest
     {
         TestID = 10;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
     public override void Execute()
@@ -61,12 +61,61 @@ public class Test10 : BaseTest
         
         //DebugOutput("Longest route : "+((longestRoute.Count)/2)+" : " + string.Join(" ",longestRoute)); 
         DebugOutput("Longest route : "+((longestRoute.Count)/2));
+
+
+        IntVector2 min = new IntVector2(int.MaxValue, int.MaxValue);
+        IntVector2 max = new IntVector2(int.MinValue, int.MinValue);
+
+        foreach (IntVector2 p in longestRoute)
+        {
+            min.X = Math.Min(min.X, p.X);
+            min.Y = Math.Min(min.Y, p.Y);
+            max.X = Math.Max(max.X, p.X);
+            max.Y = Math.Max(max.Y, p.Y);
+        }
+        
+        
+        int count = 0;
+        if (IsPart2)
+        {
+            for (int y = min.Y; y <= max.Y; ++y)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int x = min.X; x < max.X; ++x)
+                {
+                    IntVector2 pos = new IntVector2(x, y);
+                    if (longestRoute.Contains(pos))
+                    {
+                        sb.Append(m_dataFileContents[y][x]);
+                    }
+                    else
+                    {
+                        if (Helper.IsPointInPolygon(longestRoute, new IntVector2(x, y)))
+                        {
+                            count++;
+                            sb.Append("I");
+                        }
+                        else
+                        {
+                            sb.Append("O");
+                        }
+                    }
+                }
+
+                //DebugOutput(sb.ToString());
+            }
+
+            DebugOutput("Points inside  : " + count);
+        }
+        
         
     }
 
     // follow paths, seems a bit A* / Path findery
 
 
+    
+    
     public bool FollowPipe(IntVector2 current, IntVector2 goal, List<IntVector2> route)
     {
         

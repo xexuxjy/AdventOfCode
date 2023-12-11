@@ -10,22 +10,24 @@ public static class Helper
 {
     public static void ReadInts(string input, List<int> store)
     {
-        string[] tokens = input.Split(new char[] { ' ', ',' },StringSplitOptions.TrimEntries|StringSplitOptions.RemoveEmptyEntries);
+        string[] tokens = input.Split(new char[] { ' ', ',' },
+            StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
         foreach (string token in tokens)
         {
             store.Add(int.Parse(token));
         }
     }
-    
+
     public static void ReadLongs(string input, List<long> store)
     {
-        string[] tokens = input.Split(new char[] { ' ', ',' },StringSplitOptions.TrimEntries|StringSplitOptions.RemoveEmptyEntries);
+        string[] tokens = input.Split(new char[] { ' ', ',' },
+            StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
         foreach (string token in tokens)
         {
             store.Add(long.Parse(token));
         }
     }
- 
+
     public static long GCD(long n1, long n2)
     {
         if (n2 == 0)
@@ -43,9 +45,31 @@ public static class Helper
         return list.Aggregate((S, val) => S * val / Helper.GCD(S, val));
     }
 
+    // Helpful function as lazy :)
+    //https://stackoverflow.com/questions/4243042/c-sharp-point-in-polygon
+    public static bool IsPointInPolygon(List<IntVector2> polygon, IntVector2 testPoint)
+    {
+        bool result = false;
+        int j = polygon.Count - 1;
+        for (int i = 0; i < polygon.Count; i++)
+        {
+            if (polygon[i].Y < testPoint.Y && polygon[j].Y >= testPoint.Y ||
+                polygon[j].Y < testPoint.Y && polygon[i].Y >= testPoint.Y)
+            {
+                if (polygon[i].X + (testPoint.Y - polygon[i].Y) /
+                    (polygon[j].Y - polygon[i].Y) *
+                    (polygon[j].X - polygon[i].X) < testPoint.X)
+                {
+                    result = !result;
+                }
+            }
 
+            j = i;
+        }
+
+        return result;
+    }
 }
-
 
 
 public class FixedSizedQueue<T> : Queue<T>
@@ -79,6 +103,7 @@ public class LongBounds
     private LongVector2 m_max;
     private LongVector2 m_center;
     private long m_distance;
+
     public LongBounds(LongVector2 center, long distance)
     {
         m_center = center;
@@ -98,15 +123,15 @@ public class LongBounds
     public bool Encapsulates(LongBounds bounds)
     {
         return m_min.X <= bounds.m_min.X &&
-             m_min.Y <= bounds.m_min.Y &&
-             m_max.X >= bounds.m_max.X &&
-             m_max.Y >= bounds.m_max.Y;
+               m_min.Y <= bounds.m_min.Y &&
+               m_max.X >= bounds.m_max.X &&
+               m_max.Y >= bounds.m_max.Y;
     }
 
     public bool Intersects(LongBounds bounds)
     {
         return (m_min.X <= bounds.m_max.X) && (m_max.X >= bounds.m_min.X) &&
-                (m_min.Y <= bounds.m_max.Y) && (m_max.Y >= bounds.m_min.Y);
+               (m_min.Y <= bounds.m_max.Y) && (m_max.Y >= bounds.m_min.Y);
     }
 
     public bool Contains(long x, long y)
@@ -115,6 +140,7 @@ public class LongBounds
         {
             return m_center.ManhattanDistance(new LongVector2(x, y)) <= m_distance;
         }
+
         return false;
     }
 
@@ -125,14 +151,16 @@ public class LongBounds
 
         return new LongBounds(minclip, maxclip);
     }
-
 }
 
 // thanks to : https://www.koderdojo.com/blog/breadth-first-search-and-shortest-path-in-csharp-and-net-core
 
 public class Graph<T>
 {
-    public Graph() { }
+    public Graph()
+    {
+    }
+
     public Graph(IEnumerable<T> vertices, IEnumerable<Tuple<T, T>> edges)
     {
         foreach (var vertex in vertices)
@@ -234,15 +262,15 @@ namespace DijkstraAlgorithm
         /// </remarks>
         public int Cost { get; set; }
     }
+
     public static class ExtensionMethods
     {
         /// <summary>
         /// Adds or Updates the dictionary to include the destination and its associated cost 
         /// and complete path (and param arrays make paths easier to work with)
         /// </summary>
-
         public static void Set<T>(this Dictionary<T, KeyValuePair<int, LinkedList<Path<T>>>> Dictionary,
-                                T destination, int Cost, params Path<T>[] paths)
+            T destination, int Cost, params Path<T>[] paths)
         {
             var CompletePath = paths == null ? new LinkedList<Path<T>>() : new LinkedList<Path<T>>(paths);
             Dictionary[destination] = new KeyValuePair<int, LinkedList<Path<T>>>(Cost, CompletePath);
@@ -251,9 +279,10 @@ namespace DijkstraAlgorithm
 
     public static class Engine
     {
-        public static LinkedList<Path<T>> CalculateShortestPathBetween<T>(T source, T destination, IEnumerable<Path<T>> Paths)
+        public static LinkedList<Path<T>> CalculateShortestPathBetween<T>(T source, T destination,
+            IEnumerable<Path<T>> Paths)
         {
-            if(source.Equals(destination))
+            if (source.Equals(destination))
             {
                 return null;
             }
@@ -273,16 +302,17 @@ namespace DijkstraAlgorithm
                 throw new ArgumentException("No path can have the same source and destination");
 
             // keep track of the shortest paths identified thus far
-            Dictionary<T, KeyValuePair<int, LinkedList<Path<T>>>> ShortestPaths = new Dictionary<T, KeyValuePair<int, LinkedList<Path<T>>>>();
+            Dictionary<T, KeyValuePair<int, LinkedList<Path<T>>>> ShortestPaths =
+                new Dictionary<T, KeyValuePair<int, LinkedList<Path<T>>>>();
 
             // keep track of the locations which have been completely processed
             List<T> LocationsProcessed = new List<T>();
 
             // include all possible steps, with Int.MaxValue cost
-            Paths.SelectMany(p => new T[] { p.Source, p.Destination })           // union source and destinations
-                    .Distinct()                                                  // remove duplicates
-                    .ToList()                                                    // ToList exposes ForEach
-                    .ForEach(s => ShortestPaths.Set(s, Int32.MaxValue, null));   // add to ShortestPaths with MaxValue cost
+            Paths.SelectMany(p => new T[] { p.Source, p.Destination }) // union source and destinations
+                .Distinct() // remove duplicates
+                .ToList() // ToList exposes ForEach
+                .ForEach(s => ShortestPaths.Set(s, Int32.MaxValue, null)); // add to ShortestPaths with MaxValue cost
 
             // update cost for self-to-self as 0; no path
             ShortestPaths.Set(source, 0, null);
@@ -300,7 +330,8 @@ namespace DijkstraAlgorithm
                     if (!LocationsProcessed.Contains(_location))
                     {
                         if (ShortestPaths[_location].Key == Int32.MaxValue)
-                            return ShortestPaths.ToDictionary(k => k.Key, v => v.Value.Value); //ShortestPaths[destination].Value;
+                            return ShortestPaths.ToDictionary(k => k.Key,
+                                v => v.Value.Value); //ShortestPaths[destination].Value;
 
                         _locationToProcess = _location;
                         break;
@@ -369,40 +400,40 @@ public static class Combinations
             {
                 result[i] = array[j[i]];
             }
+
             yield return result;
         }
     }
 
     public static IEnumerable<IEnumerable<T>> Permute<T>(this IEnumerable<T> sequence)
-{
-    if (sequence == null)
     {
-        yield break;
-    }
-
-    var list = sequence.ToList();
-
-    if (!list.Any())
-    {
-        yield return Enumerable.Empty<T>();
-    }
-    else
-    {
-        var startingElementIndex = 0;
-
-        foreach (var startingElement in list)
+        if (sequence == null)
         {
-            var index = startingElementIndex;
-            var remainingItems = list.Where((e, i) => i != index);
+            yield break;
+        }
 
-            foreach (var permutationOfRemainder in remainingItems.Permute())
+        var list = sequence.ToList();
+
+        if (!list.Any())
+        {
+            yield return Enumerable.Empty<T>();
+        }
+        else
+        {
+            var startingElementIndex = 0;
+
+            foreach (var startingElement in list)
             {
-                yield return permutationOfRemainder.Prepend(startingElement);
-            }
+                var index = startingElementIndex;
+                var remainingItems = list.Where((e, i) => i != index);
 
-            startingElementIndex++;
+                foreach (var permutationOfRemainder in remainingItems.Permute())
+                {
+                    yield return permutationOfRemainder.Prepend(startingElement);
+                }
+
+                startingElementIndex++;
+            }
         }
     }
-}
-
 }

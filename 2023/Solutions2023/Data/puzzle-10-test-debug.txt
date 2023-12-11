@@ -1,5 +1,14 @@
-StartPosition is : 0,2
-Found loop : 0,2 1,2 1,1 2,1 2,0 3,0 3,1 3,2 4,2 4,3 3,3 2,3 1,3 1,4 0,4 0,3 0,2
-Found loop : 0,2 0,3 0,4 1,4 1,3 2,3 3,3 4,3 4,2 3,2 3,1 3,0 2,0 2,1 1,1 1,2 0,2
-Longest route : 8 : 0,2 1,2 1,1 2,1 2,0 3,0 3,1 3,2 4,2 4,3 3,3 2,3 1,3 1,4 0,4 0,3 0,2
-Elapsed = 25.2502 ms
+StartPosition is : 4,0
+Longest route : 80
+OF7FSF7F7F7F7F7F---7
+O|LJ||||||||||||F--J
+OL-7LJLJ||||||LJL-7O
+F--JF--7||LJLJIF7FJO
+L---JF-JLJIIIIFJLJOO
+OOOF-JF---7IIIL7OOOO
+OOFJF7L7F-JF7IIL---7
+OOL-JL7||F7|L7F-7F7|
+OOOOOFJ|||||FJL7||LJ
+OOOOOL-JLJLJL--JLJOO
+Points inside  : 10
+Elapsed = 33.0215 ms
