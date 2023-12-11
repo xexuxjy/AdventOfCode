@@ -12,23 +12,17 @@ public class Test11 : BaseTest
     {
         TestID = 11;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
     public override void Execute()
     {
-        Galaxy galaxy = new Galaxy(m_dataFileContents);
+        Galaxy galaxy = new Galaxy(m_dataFileContents,IsPart2?1000000:2);
 
-        // for (int i = 0; i < galaxy.OriginalStarList.Count;++i)
-        // {
-        //     DebugOutput($"Star original {galaxy.OriginalStarList[i]}   inflated to {galaxy.InflatedStarList[i]}");
-        // }
-
-        // int start = 0;
-        // int end = 7;
-        //DebugOutput($"Distance between Star {start+1} {galaxy.InflatedStarList[start]} and Star {end+1} {galaxy.InflatedStarList[end]} is {cd.Count}
-        // int distance = galaxy.InflatedStarList[start].ManhattanDistance(galaxy.InflatedStarList[end]);
-        // DebugOutput($"Distance between Star {start+1} {galaxy.InflatedStarList[start]} and Star {end+1} {galaxy.InflatedStarList[end]} is {distance}");
+         int start = 2;
+         int end = 7;
+        long distance = galaxy.InflatedStarList[start].ManhattanDistance(galaxy.InflatedStarList[end]);
+        DebugOutput($"Distance between Star {start+1} {galaxy.InflatedStarList[start]} and Star {end+1} {galaxy.InflatedStarList[end]} is {distance}");
 
         List<int> indices = new List<int>();
         for (int i = 0; i < galaxy.InflatedStarList.Count; ++i)
@@ -36,11 +30,11 @@ public class Test11 : BaseTest
             indices.Add(i);
         }
 
-        int total = 0;
+        long total = 0;
         var pairList = indices.SelectMany((fst, i) => indices.Skip(i + 1).Select(snd => (fst, snd)));
         foreach (var pair in pairList)
         {
-            int d = galaxy.InflatedStarList[pair.fst].ManhattanDistance(galaxy.InflatedStarList[pair.snd]);
+            long d = galaxy.InflatedStarList[pair.fst].ManhattanDistance(galaxy.InflatedStarList[pair.snd]);
             total += d;
         }
 
@@ -48,28 +42,17 @@ public class Test11 : BaseTest
         
     }
 
-    public class CounterDelegate
-    {
-        public int Count;
-
-        public bool PlotPoint(int x, int y)
-        {
-            Count++;
-            return true;
-        }
-    }
 
     public class Galaxy
     {
         public List<string> OriginalPositions = new List<string>();
-        public List<string> InflatedPositions = new List<string>();
         public List<int> EmptyColumns = new List<int>();
         public List<int> EmptyRows = new List<int>();
 
-        public List<IntVector2> OriginalStarList = new List<IntVector2>();
-        public List<IntVector2> InflatedStarList = new List<IntVector2>();
+        public List<LongVector2> OriginalStarList = new List<LongVector2>();
+        public List<LongVector2> InflatedStarList = new List<LongVector2>();
         
-        public Galaxy(List<string> data)
+        public Galaxy(List<string> data,int multiplier)
         {
             OriginalPositions.AddRange(data);
 
@@ -106,28 +89,32 @@ public class Test11 : BaseTest
                 {
                     if(OriginalPositions[i][j] == '#')
                     {
-                        OriginalStarList.Add(new IntVector2(j,i));
+                        OriginalStarList.Add(new LongVector2(j,i));
                     }
                 }
             }
 
             
-            foreach (IntVector2 star in OriginalStarList)
+            foreach (LongVector2 star in OriginalStarList)
             {
-                InflatedStarList.Add(GetInflatedPosition(star));
-            }
+                InflatedStarList.Add(GetInflatedPosition(star,multiplier));
+            }   
             
             
             
         }
 
 
-        public IntVector2 GetInflatedPosition(IntVector2 original)
+        public LongVector2 GetInflatedPosition(LongVector2 original,int multiplier)
         {
-            int downShift = EmptyRows.FindAll(x => x < original.Y).Count;
-            int rightShift = EmptyColumns.FindAll(x => x < original.X).Count;
+            
+            long rightShift = EmptyColumns.FindAll(x => x < original.X).Count;
+            long downShift = EmptyRows.FindAll(x => x < original.Y).Count;
 
-            return original + new IntVector2(rightShift, downShift);
+            rightShift *= (multiplier-1);
+            downShift *= (multiplier-1);
+            
+            return original + new LongVector2(rightShift, downShift);
 
         }
         

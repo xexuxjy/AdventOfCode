@@ -1,2 +1,3 @@
-Total distance between all inflated stars is : 9609130
-Elapsed = 50.4293 ms
+Distance between Star 3 LongVector2 and Star 8 LongVector2 is 20
+Total distance between all inflated stars is : 702152204842
+Elapsed = 50.374 ms
