@@ -5,7 +5,7 @@ public class Program
 
     static void Main()
     {
-        new Test11().RunTest();
+        new Test12().RunTest();
     }
 
 
