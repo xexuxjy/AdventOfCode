@@ -1,2 +1,2 @@
-Total is : 7490
-Elapsed = 27472.126 ms
+Total is : 65607131946466
+Elapsed = 451.3988 ms
