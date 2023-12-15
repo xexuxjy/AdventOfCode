@@ -126,18 +126,6 @@ public class Test13 : BaseTest
 
     public int CheckVerticalReflections(List<string> originalPattern,int id)
     {
-        if (id == 21)
-        {
-            int ibreak = 0;
-            DebugOutput("21");
-            foreach (string line in originalPattern)
-            {
-                DebugOutput(line);
-            }
-            DebugOutput("");
-            
-            
-        }
         int minPoints = 3;
         int endPoint = originalPattern[0].Length - minPoints;
         int midPoint = (originalPattern[0].Length) / 2;
@@ -147,10 +135,11 @@ public class Test13 : BaseTest
 
         for (int reflectionPoint = 0; reflectionPoint < endPoint; ++reflectionPoint)
         {
+            bool matches = true;
+
             int numPoints = 8;
             while (numPoints >= minPoints)
             {
-                bool matches = true;
                 for (int y = 0; y < originalPattern.Count; ++y)
                 {
                     for (int x = 0; x < numPoints; x++)
@@ -175,7 +164,11 @@ public class Test13 : BaseTest
 
                 numPoints--;
             }
-
+            if (matches)
+            {
+                foundPoint = reflectionPoint+1;
+                break;
+            }
         }
 
         //DebugOutput("Final vertical result was : " + foundPoint);
@@ -204,11 +197,7 @@ public class Test13 : BaseTest
                 {
                     int ibreak = 0;
                     DebugOutput($"Id {Id} Theirs {i}  Mine {vscore}  100 mult");
-                    foreach (string line in asRows)
-                    {
-                        DebugOutput(line);
-                    }
-                    DebugOutput("");
+                    PrintGrid(asRows);
                 }
                 
                 int result = i * 100;
@@ -230,12 +219,7 @@ public class Test13 : BaseTest
                  {
                      int ibreak = 0;
                      DebugOutput($"Id {Id} Theirs {i}  Mine {hscore}");
-                     foreach (string line in asColumns)
-                     {
-                         DebugOutput(line);
-                     }
-
-                     DebugOutput("");
+                     PrintGrid(asColumns);
                  }
                  return i;
              }
