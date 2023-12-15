@@ -1,0 +1,6 @@
+Final vertical result was : 5
+Final horizontal result was : 0
+Final vertical result was : 0
+Final horizontal result was : 4
+Total Score is : 405
+Elapsed = 22.4966 ms

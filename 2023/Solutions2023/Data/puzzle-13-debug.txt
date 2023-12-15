@@ -1,0 +1,2 @@
+Total Score is : 11333
+Elapsed = 22.3293 ms
