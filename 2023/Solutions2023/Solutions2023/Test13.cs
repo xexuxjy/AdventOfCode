@@ -11,7 +11,7 @@ public class Test13 : BaseTest
     public override void Initialise()
     {
         TestID = 13;
-        IsTestInput = false;
+        IsTestInput = true;
         IsPart2 = false;
     }
 
@@ -37,8 +37,8 @@ public class Test13 : BaseTest
         int totalScore = 0;
         foreach (List<string> pattern in patterns)
         {
-            int verticalScore = CheckVerticalReflections(pattern);
-            int horizontalScore = CheckHorizontalReflection(pattern);
+            int verticalScore = CheckReflection(pattern,true);
+            int horizontalScore = CheckReflection(pattern,false);
             totalScore += verticalScore;
             totalScore += (100 * horizontalScore);
         }
@@ -46,56 +46,18 @@ public class Test13 : BaseTest
         DebugOutput("Total Score is : " + totalScore);
     }
 
-    public int CheckVerticalReflections(List<string> originalPattern)
-    {
-        int midPoint = (originalPattern[0].Length) / 2;
-        int points = midPoint;
-
-        int foundPoint = 0;
-
-        for (int reflectionPoint = 1; reflectionPoint <= midPoint; ++reflectionPoint)
-        {
-            bool matches = true;
-            for (int y = 0; y < originalPattern.Count; ++y)
-            {
-                for (int x = 0; x < points; x++)
-                {
-                    int pos1 = reflectionPoint - x;
-                    int pos2 = reflectionPoint + x + 1;
-                    //DebugOutput($"Pos1 : {pos1+1}  Pos2 : {pos2+1}");
-                    if (pos1 >= 0 && pos2 < originalPattern[y].Length)
-                    {
-                        if (originalPattern[y][pos1] != originalPattern[y][pos2])
-                        {
-                            matches = false;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (matches)
-            {
-                foundPoint = reflectionPoint+1;
-                break;
-            }
-        }
-
-        //DebugOutput("Final vertical result was : " + foundPoint);
-
-        return foundPoint;
-    }
 
     public int CheckReflection(List<string> originalPattern,bool vertical)
     {
         int midPoint = originalPattern.Count / 2;
-        int points = midPoint;
-
+        midPoint++;
+        
         int foundPoint = 0;
 
-        for (int reflectionPoint = 1; reflectionPoint <= midPoint; ++reflectionPoint)
+        for (int reflectionPoint = 2; reflectionPoint <= midPoint; ++reflectionPoint)
         {
             bool matches = true;
+            int points = reflectionPoint;
 
             for (int y = 0; y < originalPattern.Count; ++y)
             {
@@ -122,6 +84,11 @@ public class Test13 : BaseTest
                             break;
                         }
                     }
+                }
+
+                if (!matches)
+                {
+                    break;
                 }
             }
 
