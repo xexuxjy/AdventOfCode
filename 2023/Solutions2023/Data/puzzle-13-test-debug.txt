@@ -1,2 +1,2 @@
-Total Score is : 405
-Elapsed = 36.6001 ms
+Total Score for part 2 is : 400
+Elapsed = 47.147 ms
