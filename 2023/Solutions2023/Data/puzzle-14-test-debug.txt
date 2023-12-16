@@ -1,0 +1,43 @@
+After 11681 load was 65
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 65
+After 11689 load was 64
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 64
+After 11699 load was 68
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 68
+After 11701 load was 69
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 69
+After 11717 load was 64
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 64
+After 11719 load was 63
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 63
+After 11731 load was 64
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 64
+After 11743 load was 69
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 69
+After 11777 load was 69
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 69
+After 11779 load was 65
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 65
+After 11783 load was 68
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 68
+After 11789 load was 63
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 63
+After 11801 load was 64
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 64
+After 11807 load was 65
+PeriodCycle is : 7 period offset is 2
+Part 2 Platform load is : 65
+Elapsed = 8145.3622 ms
