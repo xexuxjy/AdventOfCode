@@ -1,5 +1,3 @@
-After 1000000000 load was 90567
 PeriodCycle is : 34 period offset is 107
 Part 2 Platform load is : 90551
-Raw 90567 and cheat 90551 differ 
-Elapsed = 7284.2533 ms
+Elapsed = 6399.7283 ms

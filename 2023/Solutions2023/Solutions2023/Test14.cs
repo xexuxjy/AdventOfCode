@@ -76,17 +76,11 @@ public class Test14 : BaseTest
 
         platform.Reset();
         DebugOutput("PeriodCycle is : " + periodCycle + " period offset is " + periodOffset);
-        long iterDiff = periodOffset;
-        while (iterDiff < numIterations)
-        {
-            iterDiff += periodCycle;
-        }
 
-        iterDiff -= periodCycle;
-        iterDiff = numIterations - iterDiff;
+        long iterDiff = (numIterations - periodOffset) % periodCycle;
 
-        long remainingIterations = periodOffset + periodCycle + iterDiff;
-
+        long remainingIterations = periodOffset + iterDiff;
+        
         for (long l = 0; l < remainingIterations; ++l)
         {
             while (platform.MoveUp()) ;
