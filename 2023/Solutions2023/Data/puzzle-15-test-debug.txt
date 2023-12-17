@@ -1,0 +1,3 @@
+Hash is : 52
+Final total is 1320
+Elapsed = 5.4728 ms
