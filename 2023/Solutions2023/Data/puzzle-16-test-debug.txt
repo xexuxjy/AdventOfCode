@@ -10,4 +10,4 @@ Number of cells energized is : 46
 .#######..
 .#...#.#..
 
-Elapsed = 141.8863 ms
+Elapsed = 35.8551 ms
