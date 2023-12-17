@@ -1,2 +1,2 @@
-Final total is 522547
-Elapsed = 22.5757 ms
+Full focusing power is : 229271
+Elapsed = 38.6484 ms

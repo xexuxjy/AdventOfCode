@@ -1,3 +1,2 @@
-Hash is : 52
-Final total is 1320
-Elapsed = 5.4728 ms
+Full focusing power is : 145
+Elapsed = 36.3669 ms
