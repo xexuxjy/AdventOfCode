@@ -7,41 +7,75 @@ public class Test16 : BaseTest
     {
         TestID = 16;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
+    public int m_width;
+    public int m_height;
+
     public override void Execute()
+    {
+        int highestScore = 0;
+        int width = m_dataFileContents[0].Length;
+        int height = m_dataFileContents.Count;
+        m_width = width;
+        m_height = height;
+
+        List<Tuple<IntVector2, IntVector2>> startPositions = new List<Tuple<IntVector2, IntVector2>>();
+        if (IsPart2)
+        {
+            for (int i = 0; i < width; ++i)
+            {
+                startPositions.Add(new Tuple<IntVector2, IntVector2>(new IntVector2(i, 0), IntVector2.Up));
+                startPositions.Add(
+                    new Tuple<IntVector2, IntVector2>(new IntVector2(i, height - 1), IntVector2.Down));
+            }
+
+            for (int i = 0; i < height; ++i)
+            {
+                startPositions.Add(new Tuple<IntVector2, IntVector2>(new IntVector2(0, i), IntVector2.Right));
+                startPositions.Add(
+                    new Tuple<IntVector2, IntVector2>(new IntVector2(width - 1, i), IntVector2.Left));
+            }
+        }
+        else
+        {
+            startPositions.Add(new Tuple<IntVector2, IntVector2>(new IntVector2(0, 0), IntVector2.Right));
+        }
+
+        foreach (var pair in startPositions)
+        {
+            int score = GetScore(pair.Item1, pair.Item2);
+            if (score > highestScore)
+            {
+                highestScore = score;
+            }
+        }
+
+
+        DebugOutput("Number of cells energized is : " + highestScore);
+    }
+
+    public int GetScore(IntVector2 initialPosition, IntVector2 initialDirection)
     {
         List<Beam> beams = new List<Beam>();
         List<Beam> newBeams = new List<Beam>();
 
-        Beam startBeam = new Beam(new IntVector2(), IntVector2.Right);
+        Beam startBeam = new Beam(initialPosition, initialDirection);
         beams.Add(startBeam);
-
-        Debug.Assert(Rotate(IntVector2.Right, '/') == IntVector2.Down);
-        Debug.Assert(Rotate(IntVector2.Right, '\\') == IntVector2.Up);
-        Debug.Assert(Rotate(IntVector2.Left, '\\') == IntVector2.Down);
-        Debug.Assert(Rotate(IntVector2.Left, '/') == IntVector2.Up);
-        Debug.Assert(Rotate(IntVector2.Up, '/') == IntVector2.Left);
-        Debug.Assert(Rotate(IntVector2.Up, '\\') == IntVector2.Right);
-        Debug.Assert(Rotate(IntVector2.Down, '/') == IntVector2.Right);
-        Debug.Assert(Rotate(IntVector2.Down, '\\') == IntVector2.Left);
-
-
-        int escape = 100;
-        int count = 0;
-        int sameSetCount = 0;
 
         int width = m_dataFileContents[0].Length;
         int height = m_dataFileContents.Count;
-        
-        //HashSet<IntVector2> boardEnergisedSet = new HashSet<IntVector2>();
-        bool[] energised = new bool[width*height];
-    
-        int lastCount = energised.Count(x=>x==true);
-       
+
+        Dictionary<Tuple<IntVector2, IntVector2>, bool> visited = new Dictionary<Tuple<IntVector2, IntVector2>, bool>();
+        bool[] energised = new bool[width * height];
+
+        int lastCount = 0;
+
+
         while (true)
         {
+            bool noBeamsActive = true;
             foreach (Beam b in beams)
             {
                 if (!b.StillActive)
@@ -49,98 +83,83 @@ public class Test16 : BaseTest
                     continue;
                 }
 
+                noBeamsActive = false;
+
                 energised[(b.CurrentPosition.Y * width) + b.CurrentPosition.X] = true;
-                
-                char currentChar = GetContents(b.CurrentPosition);
-                if (currentChar == '/' || currentChar == '\\')
-                {
-                    b.CurrentDirection = Rotate(b.CurrentDirection, currentChar);
-                }
-                else if (currentChar == '|')
-                {
-                    if (b.CurrentDirection == IntVector2.Left || b.CurrentDirection == IntVector2.Right)
-                    {
-                        b.CurrentDirection = IntVector2.Up;
-                        // need to split.
-                        
-                        // add beams below but only if it makes sense
-                        if (InBounds(b.CurrentPosition + IntVector2.Down))
-                        {
-                            newBeams.Add(new Beam(b.CurrentPosition, IntVector2.Down));
-                        }
-                    }
-                }
-                else if (currentChar == '-')
-                {
-                    if (b.CurrentDirection == IntVector2.Up || b.CurrentDirection == IntVector2.Down)
-                    {
-                        b.CurrentDirection = IntVector2.Right;
-                        // need to split.
-                        // add beams left but only if it makes sense
-                        if (InBounds(b.CurrentPosition + IntVector2.Left))
-                        {
-                            newBeams.Add(new Beam(b.CurrentPosition, IntVector2.Left));
-                        }
+                Tuple<IntVector2, IntVector2> t =
+                    new Tuple<IntVector2, IntVector2>(b.CurrentPosition, b.CurrentDirection);
 
-
-
-                    }
-                }
-
-                IntVector2 nextPos = b.CurrentPosition + b.CurrentDirection;
-                if (InBounds(nextPos))
-                {
-                    b.Move();
-                }
-                else
+                if (visited.TryGetValue(t, out bool a))
                 {
                     b.Stop();
                 }
+                else
+                {
+                    visited[t] = true;
 
-                energised[(b.CurrentPosition.Y * width) + b.CurrentPosition.X] = true;
+                    char currentChar = GetContents(b.CurrentPosition);
+                    if (currentChar == '/' || currentChar == '\\')
+                    {
+                        b.CurrentDirection = Rotate(b.CurrentDirection, currentChar);
+                    }
+                    else if (currentChar == '|')
+                    {
+                        if (b.CurrentDirection == IntVector2.Left || b.CurrentDirection == IntVector2.Right)
+                        {
+                            b.CurrentDirection = IntVector2.Up;
+                            // need to split.
 
+                            // add beams below but only if it makes sense
+                            if (InBounds(b.CurrentPosition + IntVector2.Down))
+                            {
+                                newBeams.Add(new Beam(b.CurrentPosition, IntVector2.Down));
+                            }
+                        }
+                    }
+                    else if (currentChar == '-')
+                    {
+                        if (b.CurrentDirection == IntVector2.Up || b.CurrentDirection == IntVector2.Down)
+                        {
+                            b.CurrentDirection = IntVector2.Right;
+                            // need to split.
+                            // add beams left but only if it makes sense
+                            if (InBounds(b.CurrentPosition + IntVector2.Left))
+                            {
+                                newBeams.Add(new Beam(b.CurrentPosition, IntVector2.Left));
+                            }
+                        }
+                    }
+
+                    IntVector2 nextPos = b.CurrentPosition + b.CurrentDirection;
+                    if (InBounds(nextPos))
+                    {
+                        b.Move();
+                    }
+                    else
+                    {
+                        b.Stop();
+                    }
+
+                    energised[(b.CurrentPosition.Y * width) + b.CurrentPosition.X] = true;
+                }
             }
+
 
             beams.AddRange(newBeams);
             newBeams.Clear();
 
-
-            int curentCount = energised.Count(x=>x==true);
-            
-            if(curentCount == lastCount)
+            if (noBeamsActive)
             {
-                sameSetCount++;
-                if (sameSetCount > 3)
-                {
-                    break;
-                }
-            }
-            else
-            {
-                lastCount = curentCount;
-                sameSetCount = 0;
+                break;
             }
         }
 
-    
+        //DebugOutput(DebugGrid(energised, m_width, m_height));
+        lastCount = energised.Count(x => x == true);
 
-        DebugOutput("Number of cells energized is : " + lastCount);
-        DebugOutput(DebugGrid(energised,width,height));
+        return lastCount;
     }
 
-    // public HashSet<IntVector2> GetEnergisedSet(List<Beam> beams)
-    // {
-    //     HashSet<IntVector2> finalResults = new HashSet<IntVector2>();
-    //     foreach (Beam b in beams)
-    //     {
-    //         foreach (IntVector2 pos in b.PreviousPositions)
-    //         {
-    //             finalResults.Add(pos);
-    //         }
-    //     }
-    //
-    //     return finalResults;
-    // }
 
     public string DebugGrid(HashSet<IntVector2> positions)
     {
@@ -158,22 +177,23 @@ public class Test16 : BaseTest
         return sb.ToString();
     }
 
-    public string DebugGrid(bool[] grid,int width,int height)
+    public string DebugGrid(bool[] grid, int width, int height)
     {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; ++y)
         {
             for (int x = 0; x < width; ++x)
             {
-                sb.Append(grid[(y*width)+x] ? '#' : '.');
+                sb.Append(grid[(y * width) + x] ? '#' : '.');
             }
+
             sb.AppendLine();
         }
 
         return sb.ToString();
     }
 
-    
+
     public IntVector2 Rotate(IntVector2 direction, char symbol)
     {
         if (direction == IntVector2.Right && symbol == '/') return IntVector2.Down;
@@ -214,7 +234,7 @@ public class Test16 : BaseTest
         public static int count = 0;
         public IntVector2 CurrentDirection = new IntVector2();
         public IntVector2 CurrentPosition = new IntVector2();
- 
+
         private bool m_stopped = false;
 
         private int id = count++;
