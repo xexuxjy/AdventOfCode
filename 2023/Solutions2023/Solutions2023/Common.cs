@@ -28,6 +28,22 @@ public static class Helper
         }
     }
 
+    public static String DrawGrid(char[] data, int width, int height)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                sb.Append(data[(y * width) + x]);
+            }
+
+            sb.AppendLine();
+        }
+
+        return sb.ToString();
+    }
+    
     public static int[] GetNumGrid(List<string> data, ref int width, ref int height)
     {
         width = data[0].Length;

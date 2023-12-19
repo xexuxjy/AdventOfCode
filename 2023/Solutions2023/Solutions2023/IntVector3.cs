@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 public struct IntVector3
 {
@@ -106,6 +107,28 @@ public struct IntVector3
         return "("+X+","+Y+","+Z+")";
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public override bool Equals(object other)
+    {
+        if (!(other is IntVector3)) return false;
+
+        return Equals((IntVector3)other);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool Equals(IntVector3 other)
+    {
+        return X == other.X && Y == other.Y && Z == other.Z;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public override int GetHashCode()
+    {
+        var yHash = Y.GetHashCode();
+        var zHash = Z.GetHashCode();
+        return X.GetHashCode() ^ (yHash << 4) ^ (yHash >> 28) ^ (zHash >> 4) ^ (zHash << 28);
+    }
+    
     public int X;
     public int Y;
     public int Z;

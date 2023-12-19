@@ -77,7 +77,33 @@ public struct IntVector2
     }
 
 
+    public void Min(IntVector2 v)
+    {
+        if (v.X < X)
+        {
+            X = v.X;
+        }
 
+        if (v.Y < Y)
+        {
+            Y = v.Y;
+        }
+    }
+
+    public void Max(IntVector2 v)
+    {
+        if (v.X > X)
+        {
+            X = v.X;
+        }
+
+        if (v.Y > Y)
+        {
+            Y = v.Y;
+        }
+    }
+
+    
     public int ManhattanDistance(IntVector2 v)
     {
         int distanceX = Math.Abs(X - v.X);
