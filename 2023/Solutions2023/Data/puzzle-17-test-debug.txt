@@ -1,3 +1,515 @@
+Position : 1,0 Direction 0,1 Choice 1,0  depth 0 heatloss 4 available options 6 all choice 1,0
+Position : 1,1 Direction -1,0 Choice 1,0  depth 1 heatloss 6 available options 6 all choice 1,0  1,0
+Position : 0,1 Direction 0,-1 Choice 1,0  depth 2 heatloss 9 available options 2 all choice 1,0  1,0  1,0
+Position : 0,0 Direction 1,0 Choice 1,0  depth 3 heatloss 11 available options 2 all choice 1,0  1,0  1,0  1,0
+Position : 1,0 Direction 0,1 Choice 1,0  depth 4 heatloss 15 available options 6 all choice 1,0  1,0  1,0  1,0  1,0
+Position : 1,1 Direction -1,0 Choice 1,0  depth 5 heatloss 17 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,1 Direction 0,-1 Choice 1,0  depth 6 heatloss 20 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,0 Direction 1,0 Choice 1,0  depth 7 heatloss 22 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,0 Direction 0,1 Choice 1,0  depth 8 heatloss 26 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,1 Direction -1,0 Choice 1,0  depth 9 heatloss 28 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,1 Direction 0,-1 Choice 1,0  depth 10 heatloss 31 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,0 Direction 1,0 Choice 1,0  depth 11 heatloss 33 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,0 Direction 0,1 Choice 1,0  depth 12 heatloss 37 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,1 Direction -1,0 Choice 1,0  depth 13 heatloss 39 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,1 Direction 0,-1 Choice 1,0  depth 14 heatloss 42 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,0 Direction 1,0 Choice 1,0  depth 15 heatloss 44 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,0 Direction 0,1 Choice 1,0  depth 16 heatloss 48 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,1 Direction -1,0 Choice 1,0  depth 17 heatloss 50 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,1 Direction 0,-1 Choice 1,0  depth 18 heatloss 53 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 0,0 Direction 1,0 Choice 1,0  depth 19 heatloss 55 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 1,0 Direction 0,1 Choice 1,0  depth 20 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0
+Position : 2,0 Direction 0,1 Choice 2,0  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 3,0 Direction 0,1 Choice 3,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 20 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 0,0 Direction -1,0 Choice 1,1  depth 19 heatloss 55 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 0,1 Direction 0,1 Choice 1,1  depth 18 heatloss 53 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 0,2 Direction -1,0 Choice 1,0  depth 19 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0
+Position : 0,3 Direction -1,0 Choice 2,0  depth 19 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0
+Position : 0,4 Direction -1,0 Choice 3,0  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0
+Position : 0,2 Direction 1,0 Choice 1,1  depth 19 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1
+Position : 1,2 Direction 0,1 Choice 1,0  depth 20 heatloss 58 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0
+Position : 2,2 Direction 0,1 Choice 2,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  2,0
+Position : 3,2 Direction 0,1 Choice 3,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  3,0
+Position : 1,2 Direction 0,-1 Choice 1,1  depth 20 heatloss 58 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1
+Position : 2,2 Direction 0,-1 Choice 2,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  2,1
+Position : 3,2 Direction 0,-1 Choice 3,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  3,1
+Position : 0,3 Direction 1,0 Choice 2,1  depth 19 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1
+Position : 1,3 Direction 0,1 Choice 1,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0
+Position : 2,3 Direction 0,1 Choice 2,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  2,0
+Position : 3,3 Direction 0,1 Choice 3,0  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  3,0
+Position : 1,3 Direction 0,-1 Choice 1,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1
+Position : 2,3 Direction 0,-1 Choice 2,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  2,1
+Position : 3,3 Direction 0,-1 Choice 3,1  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  3,1
+Position : 0,4 Direction 1,0 Choice 3,1  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1
+Position : 1,4 Direction 0,1 Choice 1,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0
+Position : 2,4 Direction 0,1 Choice 2,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  2,0
+Position : 3,4 Direction 0,1 Choice 3,0  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  3,0
+Position : 1,4 Direction 0,-1 Choice 1,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1
+Position : 2,4 Direction 0,-1 Choice 2,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  2,1
+Position : 3,4 Direction 0,-1 Choice 3,1  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  3,1
+Position : 1,2 Direction -1,0 Choice 2,0  depth 17 heatloss 52 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 0,2 Direction 0,-1 Choice 1,0  depth 18 heatloss 55 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0
+Position : 0,1 Direction 1,0 Choice 1,0  depth 19 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0
+Position : 1,1 Direction 0,1 Choice 1,0  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  1,0
+Position : 2,1 Direction 0,1 Choice 2,0  depth 20 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  2,0
+Position : 3,1 Direction 0,1 Choice 3,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  3,0
+Position : 1,1 Direction 0,-1 Choice 1,1  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  1,1
+Position : 2,1 Direction 0,-1 Choice 2,1  depth 20 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  2,1
+Position : 3,1 Direction 0,-1 Choice 3,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,0  3,1
+Position : 0,0 Direction 1,0 Choice 2,0  depth 19 heatloss 60 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  2,0
+Position : 0,1 Direction -1,0 Choice 1,1  depth 19 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  1,1
+Position : 0,0 Direction -1,0 Choice 2,1  depth 19 heatloss 60 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0  2,1
+Position : 0,2 Direction 0,1 Choice 1,1  depth 18 heatloss 55 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1
+Position : 0,3 Direction -1,0 Choice 1,0  depth 19 heatloss 58 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  1,0
+Position : 0,4 Direction -1,0 Choice 2,0  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  2,0
+Position : 0,5 Direction -1,0 Choice 3,0  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,0
+Position : 0,3 Direction 1,0 Choice 1,1  depth 19 heatloss 58 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  1,1
+Position : 0,4 Direction 1,0 Choice 2,1  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  2,1
+Position : 0,5 Direction 1,0 Choice 3,1  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1
+Position : 1,5 Direction 0,1 Choice 1,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  1,0
+Position : 2,5 Direction 0,1 Choice 2,0  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  2,0
+Position : 3,5 Direction 0,1 Choice 3,0  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  3,0
+Position : 1,5 Direction 0,-1 Choice 1,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  1,1
+Position : 2,5 Direction 0,-1 Choice 2,1  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  2,1
+Position : 3,5 Direction 0,-1 Choice 3,1  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1  3,1  3,1
+Position : 1,3 Direction -1,0 Choice 3,0  depth 17 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 0,3 Direction 0,-1 Choice 1,0  depth 18 heatloss 59 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0
+Position : 0,2 Direction 1,0 Choice 1,0  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  1,0
+Position : 0,1 Direction 1,0 Choice 2,0  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  2,0
+Position : 0,0 Direction 1,0 Choice 3,0  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  3,0
+Position : 0,2 Direction -1,0 Choice 1,1  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  1,1
+Position : 0,1 Direction -1,0 Choice 2,1  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  2,1
+Position : 0,0 Direction -1,0 Choice 3,1  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0  3,1
+Position : 0,3 Direction 0,1 Choice 1,1  depth 18 heatloss 59 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1
+Position : 0,4 Direction -1,0 Choice 1,0  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  1,0
+Position : 0,5 Direction -1,0 Choice 2,0  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  2,0
+Position : 0,6 Direction -1,0 Choice 3,0  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,0
+Position : 0,4 Direction 1,0 Choice 1,1  depth 19 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  1,1
+Position : 0,5 Direction 1,0 Choice 2,1  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  2,1
+Position : 0,6 Direction 1,0 Choice 3,1  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1
+Position : 1,6 Direction 0,1 Choice 1,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  1,0
+Position : 2,6 Direction 0,1 Choice 2,0  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  2,0
+Position : 3,6 Direction 0,1 Choice 3,0  depth 20 heatloss 84 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  3,0
+Position : 1,6 Direction 0,-1 Choice 1,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  1,1
+Position : 2,6 Direction 0,-1 Choice 2,1  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  2,1
+Position : 3,6 Direction 0,-1 Choice 3,1  depth 20 heatloss 84 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1  3,1  3,1
+Position : 1,1 Direction 1,0 Choice 1,1  depth 17 heatloss 50 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 2,1 Direction 0,1 Choice 1,0  depth 18 heatloss 51 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0
+Position : 2,2 Direction -1,0 Choice 1,0  depth 19 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,0
+Position : 1,2 Direction 0,-1 Choice 1,0  depth 20 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,0  1,0
+Position : 0,2 Direction 0,-1 Choice 2,0  depth 20 heatloss 61 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,0  2,0
+Position : 1,2 Direction 0,1 Choice 1,1  depth 20 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,0  1,1
+Position : 0,2 Direction 0,1 Choice 2,1  depth 20 heatloss 61 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,0  2,1
+Position : 2,3 Direction -1,0 Choice 2,0  depth 19 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,0
+Position : 1,3 Direction 0,-1 Choice 1,0  depth 20 heatloss 64 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,0  1,0
+Position : 0,3 Direction 0,-1 Choice 2,0  depth 20 heatloss 67 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,0  2,0
+Position : 1,3 Direction 0,1 Choice 1,1  depth 20 heatloss 64 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,0  1,1
+Position : 0,3 Direction 0,1 Choice 2,1  depth 20 heatloss 67 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,0  2,1
+Position : 2,4 Direction -1,0 Choice 3,0  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,0
+Position : 1,4 Direction 0,-1 Choice 1,0  depth 20 heatloss 69 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,0  1,0
+Position : 0,4 Direction 0,-1 Choice 2,0  depth 20 heatloss 73 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,0  2,0
+Position : 1,4 Direction 0,1 Choice 1,1  depth 20 heatloss 69 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,0  1,1
+Position : 0,4 Direction 0,1 Choice 2,1  depth 20 heatloss 73 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,0  2,1
+Position : 2,2 Direction 1,0 Choice 1,1  depth 19 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1
+Position : 3,2 Direction 0,1 Choice 1,0  depth 20 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  1,0
+Position : 4,2 Direction 0,1 Choice 2,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  2,0
+Position : 5,2 Direction 0,1 Choice 3,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  3,0
+Position : 3,2 Direction 0,-1 Choice 1,1  depth 20 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  1,1
+Position : 4,2 Direction 0,-1 Choice 2,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  2,1
+Position : 5,2 Direction 0,-1 Choice 3,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  1,1  3,1
+Position : 2,3 Direction 1,0 Choice 2,1  depth 19 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1
+Position : 3,3 Direction 0,1 Choice 1,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  1,0
+Position : 4,3 Direction 0,1 Choice 2,0  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  2,0
+Position : 5,3 Direction 0,1 Choice 3,0  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  3,0
+Position : 3,3 Direction 0,-1 Choice 1,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  1,1
+Position : 4,3 Direction 0,-1 Choice 2,1  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  2,1
+Position : 5,3 Direction 0,-1 Choice 3,1  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  2,1  3,1
+Position : 2,4 Direction 1,0 Choice 3,1  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1
+Position : 3,4 Direction 0,1 Choice 1,0  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  1,0
+Position : 4,4 Direction 0,1 Choice 2,0  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  2,0
+Position : 5,4 Direction 0,1 Choice 3,0  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  3,0
+Position : 3,4 Direction 0,-1 Choice 1,1  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  1,1
+Position : 4,4 Direction 0,-1 Choice 2,1  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  2,1
+Position : 5,4 Direction 0,-1 Choice 3,1  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,0  3,1  3,1
+Position : 3,1 Direction 0,1 Choice 2,0  depth 18 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0
+Position : 3,2 Direction -1,0 Choice 1,0  depth 19 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0
+Position : 2,2 Direction 0,-1 Choice 1,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  1,0
+Position : 1,2 Direction 0,-1 Choice 2,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  2,0
+Position : 0,2 Direction 0,-1 Choice 3,0  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  3,0
+Position : 2,2 Direction 0,1 Choice 1,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  1,1
+Position : 1,2 Direction 0,1 Choice 2,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  2,1
+Position : 0,2 Direction 0,1 Choice 3,1  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,0  3,1
+Position : 3,3 Direction -1,0 Choice 2,0  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0
+Position : 2,3 Direction 0,-1 Choice 1,0  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  1,0
+Position : 1,3 Direction 0,-1 Choice 2,0  depth 20 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  2,0
+Position : 0,3 Direction 0,-1 Choice 3,0  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  3,0
+Position : 2,3 Direction 0,1 Choice 1,1  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  1,1
+Position : 1,3 Direction 0,1 Choice 2,1  depth 20 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  2,1
+Position : 0,3 Direction 0,1 Choice 3,1  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,0  3,1
+Position : 3,4 Direction -1,0 Choice 3,0  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0
+Position : 2,4 Direction 0,-1 Choice 1,0  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  1,0
+Position : 1,4 Direction 0,-1 Choice 2,0  depth 20 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  2,0
+Position : 0,4 Direction 0,-1 Choice 3,0  depth 20 heatloss 86 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  3,0
+Position : 2,4 Direction 0,1 Choice 1,1  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  1,1
+Position : 1,4 Direction 0,1 Choice 2,1  depth 20 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  2,1
+Position : 0,4 Direction 0,1 Choice 3,1  depth 20 heatloss 86 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,0  3,1
+Position : 3,2 Direction 1,0 Choice 1,1  depth 19 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1
+Position : 4,2 Direction 0,1 Choice 1,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  1,0
+Position : 5,2 Direction 0,1 Choice 2,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  2,0
+Position : 6,2 Direction 0,1 Choice 3,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  3,0
+Position : 4,2 Direction 0,-1 Choice 1,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  1,1
+Position : 5,2 Direction 0,-1 Choice 2,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  2,1
+Position : 6,2 Direction 0,-1 Choice 3,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  1,1  3,1
+Position : 3,3 Direction 1,0 Choice 2,1  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1
+Position : 4,3 Direction 0,1 Choice 1,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  1,0
+Position : 5,3 Direction 0,1 Choice 2,0  depth 20 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  2,0
+Position : 6,3 Direction 0,1 Choice 3,0  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  3,0
+Position : 4,3 Direction 0,-1 Choice 1,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  1,1
+Position : 5,3 Direction 0,-1 Choice 2,1  depth 20 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  2,1
+Position : 6,3 Direction 0,-1 Choice 3,1  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  2,1  3,1
+Position : 3,4 Direction 1,0 Choice 3,1  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1
+Position : 4,4 Direction 0,1 Choice 1,0  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  1,0
+Position : 5,4 Direction 0,1 Choice 2,0  depth 20 heatloss 84 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  2,0
+Position : 6,4 Direction 0,1 Choice 3,0  depth 20 heatloss 91 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  3,0
+Position : 4,4 Direction 0,-1 Choice 1,1  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  1,1
+Position : 5,4 Direction 0,-1 Choice 2,1  depth 20 heatloss 84 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  2,1
+Position : 6,4 Direction 0,-1 Choice 3,1  depth 20 heatloss 91 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,0  3,1  3,1
+Position : 4,1 Direction 0,1 Choice 3,0  depth 18 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0
+Position : 4,2 Direction -1,0 Choice 1,0  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0
+Position : 3,2 Direction 0,-1 Choice 1,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  1,0
+Position : 2,2 Direction 0,-1 Choice 2,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  2,0
+Position : 1,2 Direction 0,-1 Choice 3,0  depth 20 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  3,0
+Position : 3,2 Direction 0,1 Choice 1,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  1,1
+Position : 2,2 Direction 0,1 Choice 2,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  2,1
+Position : 1,2 Direction 0,1 Choice 3,1  depth 20 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,0  3,1
+Position : 4,3 Direction -1,0 Choice 2,0  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0
+Position : 3,3 Direction 0,-1 Choice 1,0  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  1,0
+Position : 2,3 Direction 0,-1 Choice 2,0  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  2,0
+Position : 1,3 Direction 0,-1 Choice 3,0  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  3,0
+Position : 3,3 Direction 0,1 Choice 1,1  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  1,1
+Position : 2,3 Direction 0,1 Choice 2,1  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  2,1
+Position : 1,3 Direction 0,1 Choice 3,1  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,0  3,1
+Position : 4,4 Direction -1,0 Choice 3,0  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0
+Position : 3,4 Direction 0,-1 Choice 1,0  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  1,0
+Position : 2,4 Direction 0,-1 Choice 2,0  depth 20 heatloss 83 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  2,0
+Position : 1,4 Direction 0,-1 Choice 3,0  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  3,0
+Position : 3,4 Direction 0,1 Choice 1,1  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  1,1
+Position : 2,4 Direction 0,1 Choice 2,1  depth 20 heatloss 83 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  2,1
+Position : 1,4 Direction 0,1 Choice 3,1  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,0  3,1
+Position : 4,2 Direction 1,0 Choice 1,1  depth 19 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1
+Position : 5,2 Direction 0,1 Choice 1,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  1,0
+Position : 6,2 Direction 0,1 Choice 2,0  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  2,0
+Position : 7,2 Direction 0,1 Choice 3,0  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  3,0
+Position : 5,2 Direction 0,-1 Choice 1,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  1,1
+Position : 6,2 Direction 0,-1 Choice 2,1  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  2,1
+Position : 7,2 Direction 0,-1 Choice 3,1  depth 20 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  1,1  3,1
+Position : 4,3 Direction 1,0 Choice 2,1  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1
+Position : 5,3 Direction 0,1 Choice 1,0  depth 20 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  1,0
+Position : 6,3 Direction 0,1 Choice 2,0  depth 20 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  2,0
+Position : 7,3 Direction 0,1 Choice 3,0  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  3,0
+Position : 5,3 Direction 0,-1 Choice 1,1  depth 20 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  1,1
+Position : 6,3 Direction 0,-1 Choice 2,1  depth 20 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  2,1
+Position : 7,3 Direction 0,-1 Choice 3,1  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  2,1  3,1
+Position : 4,4 Direction 1,0 Choice 3,1  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1
+Position : 5,4 Direction 0,1 Choice 1,0  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  1,0
+Position : 6,4 Direction 0,1 Choice 2,0  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  2,0
+Position : 7,4 Direction 0,1 Choice 3,0  depth 20 heatloss 93 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  3,0
+Position : 5,4 Direction 0,-1 Choice 1,1  depth 20 heatloss 78 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  1,1
+Position : 6,4 Direction 0,-1 Choice 2,1  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  2,1
+Position : 7,4 Direction 0,-1 Choice 3,1  depth 20 heatloss 93 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,0  3,1  3,1
+Position : 2,1 Direction 0,-1 Choice 1,1  depth 18 heatloss 51 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1
+Position : 2,0 Direction 1,0 Choice 1,0  depth 19 heatloss 52 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0
+Position : 3,0 Direction 0,1 Choice 1,0  depth 20 heatloss 55 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  1,0
+Position : 4,0 Direction 0,1 Choice 2,0  depth 20 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  2,0
+Position : 5,0 Direction 0,1 Choice 3,0  depth 20 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  3,0
+Position : 3,0 Direction 0,-1 Choice 1,1  depth 20 heatloss 55 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  1,1
+Position : 4,0 Direction 0,-1 Choice 2,1  depth 20 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  2,1
+Position : 5,0 Direction 0,-1 Choice 3,1  depth 20 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,0  3,1
+Position : 2,0 Direction -1,0 Choice 1,1  depth 19 heatloss 52 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1
+Position : 1,0 Direction 0,-1 Choice 1,0  depth 20 heatloss 56 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1  1,0
+Position : 0,0 Direction 0,-1 Choice 2,0  depth 20 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1  2,0
+Position : 1,0 Direction 0,1 Choice 1,1  depth 20 heatloss 56 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1  1,1
+Position : 0,0 Direction 0,1 Choice 2,1  depth 20 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  1,1  1,1  2,1
+Position : 3,1 Direction 0,-1 Choice 2,1  depth 18 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1
+Position : 3,0 Direction 1,0 Choice 1,0  depth 19 heatloss 59 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0
+Position : 4,0 Direction 0,1 Choice 1,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  1,0
+Position : 5,0 Direction 0,1 Choice 2,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  2,0
+Position : 6,0 Direction 0,1 Choice 3,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  3,0
+Position : 4,0 Direction 0,-1 Choice 1,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  1,1
+Position : 5,0 Direction 0,-1 Choice 2,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  2,1
+Position : 6,0 Direction 0,-1 Choice 3,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,0  3,1
+Position : 3,0 Direction -1,0 Choice 1,1  depth 19 heatloss 59 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1
+Position : 2,0 Direction 0,-1 Choice 1,0  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  1,0
+Position : 1,0 Direction 0,-1 Choice 2,0  depth 20 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  2,0
+Position : 0,0 Direction 0,-1 Choice 3,0  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  3,0
+Position : 2,0 Direction 0,1 Choice 1,1  depth 20 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  1,1
+Position : 1,0 Direction 0,1 Choice 2,1  depth 20 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  2,1
+Position : 0,0 Direction 0,1 Choice 3,1  depth 20 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  2,1  1,1  3,1
+Position : 4,1 Direction 0,-1 Choice 3,1  depth 18 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1
+Position : 4,0 Direction 1,0 Choice 1,0  depth 19 heatloss 64 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0
+Position : 5,0 Direction 0,1 Choice 1,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  1,0
+Position : 6,0 Direction 0,1 Choice 2,0  depth 20 heatloss 69 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  2,0
+Position : 7,0 Direction 0,1 Choice 3,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  3,0
+Position : 5,0 Direction 0,-1 Choice 1,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  1,1
+Position : 6,0 Direction 0,-1 Choice 2,1  depth 20 heatloss 69 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  2,1
+Position : 7,0 Direction 0,-1 Choice 3,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,0  3,1
+Position : 4,0 Direction -1,0 Choice 1,1  depth 19 heatloss 64 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1
+Position : 3,0 Direction 0,-1 Choice 1,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  1,0
+Position : 2,0 Direction 0,-1 Choice 2,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  2,0
+Position : 1,0 Direction 0,-1 Choice 3,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  3,0
+Position : 3,0 Direction 0,1 Choice 1,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  1,1
+Position : 2,0 Direction 0,1 Choice 2,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  2,1
+Position : 1,0 Direction 0,1 Choice 3,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1  3,1  1,1  3,1
+Position : 1,2 Direction 1,0 Choice 2,1  depth 17 heatloss 52 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 2,2 Direction 0,1 Choice 1,0  depth 18 heatloss 57 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0
+Position : 2,3 Direction -1,0 Choice 1,0  depth 19 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  1,0
+Position : 2,4 Direction -1,0 Choice 2,0  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  2,0
+Position : 2,5 Direction -1,0 Choice 3,0  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,0
+Position : 1,5 Direction 0,-1 Choice 1,0  depth 20 heatloss 72 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,0  1,0
+Position : 0,5 Direction 0,-1 Choice 2,0  depth 20 heatloss 73 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,0  2,0
+Position : 1,5 Direction 0,1 Choice 1,1  depth 20 heatloss 72 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,0  1,1
+Position : 0,5 Direction 0,1 Choice 2,1  depth 20 heatloss 73 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,0  2,1
+Position : 2,3 Direction 1,0 Choice 1,1  depth 19 heatloss 61 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  1,1
+Position : 2,4 Direction 1,0 Choice 2,1  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  2,1
+Position : 2,5 Direction 1,0 Choice 3,1  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1
+Position : 3,5 Direction 0,1 Choice 1,0  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  1,0
+Position : 4,5 Direction 0,1 Choice 2,0  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  2,0
+Position : 5,5 Direction 0,1 Choice 3,0  depth 20 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  3,0
+Position : 3,5 Direction 0,-1 Choice 1,1  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  1,1
+Position : 4,5 Direction 0,-1 Choice 2,1  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  2,1
+Position : 5,5 Direction 0,-1 Choice 3,1  depth 20 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,0  3,1  3,1
+Position : 3,2 Direction 0,1 Choice 2,0  depth 18 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0
+Position : 3,3 Direction -1,0 Choice 1,0  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  1,0
+Position : 3,4 Direction -1,0 Choice 2,0  depth 19 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  2,0
+Position : 3,5 Direction -1,0 Choice 3,0  depth 19 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0
+Position : 2,5 Direction 0,-1 Choice 1,0  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  1,0
+Position : 1,5 Direction 0,-1 Choice 2,0  depth 20 heatloss 89 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  2,0
+Position : 0,5 Direction 0,-1 Choice 3,0  depth 20 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  3,0
+Position : 2,5 Direction 0,1 Choice 1,1  depth 20 heatloss 85 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  1,1
+Position : 1,5 Direction 0,1 Choice 2,1  depth 20 heatloss 89 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  2,1
+Position : 0,5 Direction 0,1 Choice 3,1  depth 20 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,0  3,1
+Position : 3,3 Direction 1,0 Choice 1,1  depth 19 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  1,1
+Position : 3,4 Direction 1,0 Choice 2,1  depth 19 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  2,1
+Position : 3,5 Direction 1,0 Choice 3,1  depth 19 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1
+Position : 4,5 Direction 0,1 Choice 1,0  depth 20 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  1,0
+Position : 5,5 Direction 0,1 Choice 2,0  depth 20 heatloss 96 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  2,0
+Position : 6,5 Direction 0,1 Choice 3,0  depth 20 heatloss 104 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  3,0
+Position : 4,5 Direction 0,-1 Choice 1,1  depth 20 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  1,1
+Position : 5,5 Direction 0,-1 Choice 2,1  depth 20 heatloss 96 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  2,1
+Position : 6,5 Direction 0,-1 Choice 3,1  depth 20 heatloss 104 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,0  3,1  3,1
+Position : 4,2 Direction 0,1 Choice 3,0  depth 18 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0
+Position : 4,3 Direction -1,0 Choice 1,0  depth 19 heatloss 69 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  1,0
+Position : 4,4 Direction -1,0 Choice 2,0  depth 19 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  2,0
+Position : 4,5 Direction -1,0 Choice 3,0  depth 19 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0
+Position : 3,5 Direction 0,-1 Choice 1,0  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  1,0
+Position : 2,5 Direction 0,-1 Choice 2,0  depth 20 heatloss 91 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  2,0
+Position : 1,5 Direction 0,-1 Choice 3,0  depth 20 heatloss 95 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  3,0
+Position : 3,5 Direction 0,1 Choice 1,1  depth 20 heatloss 88 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  1,1
+Position : 2,5 Direction 0,1 Choice 2,1  depth 20 heatloss 91 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  2,1
+Position : 1,5 Direction 0,1 Choice 3,1  depth 20 heatloss 95 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,0  3,1
+Position : 4,3 Direction 1,0 Choice 1,1  depth 19 heatloss 69 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  1,1
+Position : 4,4 Direction 1,0 Choice 2,1  depth 19 heatloss 75 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  2,1
+Position : 4,5 Direction 1,0 Choice 3,1  depth 19 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1
+Position : 5,5 Direction 0,1 Choice 1,0  depth 20 heatloss 89 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  1,0
+Position : 6,5 Direction 0,1 Choice 2,0  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  2,0
+Position : 7,5 Direction 0,1 Choice 3,0  depth 20 heatloss 104 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  3,0
+Position : 5,5 Direction 0,-1 Choice 1,1  depth 20 heatloss 89 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  1,1
+Position : 6,5 Direction 0,-1 Choice 2,1  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  2,1
+Position : 7,5 Direction 0,-1 Choice 3,1  depth 20 heatloss 104 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,0  3,1  3,1
+Position : 2,2 Direction 0,-1 Choice 1,1  depth 18 heatloss 57 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1
+Position : 2,1 Direction 1,0 Choice 1,0  depth 19 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0
+Position : 3,1 Direction 0,1 Choice 1,0  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  1,0
+Position : 4,1 Direction 0,1 Choice 2,0  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  2,0
+Position : 5,1 Direction 0,1 Choice 3,0  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  3,0
+Position : 3,1 Direction 0,-1 Choice 1,1  depth 20 heatloss 63 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  1,1
+Position : 4,1 Direction 0,-1 Choice 2,1  depth 20 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  2,1
+Position : 5,1 Direction 0,-1 Choice 3,1  depth 20 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,0  3,1
+Position : 2,0 Direction 1,0 Choice 2,0  depth 19 heatloss 59 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  2,0
+Position : 2,1 Direction -1,0 Choice 1,1  depth 19 heatloss 58 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,1
+Position : 1,1 Direction 0,-1 Choice 1,0  depth 20 heatloss 60 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,1  1,0
+Position : 0,1 Direction 0,-1 Choice 2,0  depth 20 heatloss 63 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,1  2,0
+Position : 1,1 Direction 0,1 Choice 1,1  depth 20 heatloss 60 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,1  1,1
+Position : 0,1 Direction 0,1 Choice 2,1  depth 20 heatloss 63 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  1,1  2,1
+Position : 2,0 Direction -1,0 Choice 2,1  depth 19 heatloss 59 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  1,1  2,1
+Position : 3,2 Direction 0,-1 Choice 2,1  depth 18 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1
+Position : 3,1 Direction 1,0 Choice 1,0  depth 19 heatloss 67 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0
+Position : 4,1 Direction 0,1 Choice 1,0  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  1,0
+Position : 5,1 Direction 0,1 Choice 2,0  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  2,0
+Position : 6,1 Direction 0,1 Choice 3,0  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  3,0
+Position : 4,1 Direction 0,-1 Choice 1,1  depth 20 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  1,1
+Position : 5,1 Direction 0,-1 Choice 2,1  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  2,1
+Position : 6,1 Direction 0,-1 Choice 3,1  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,0  3,1
+Position : 3,0 Direction 1,0 Choice 2,0  depth 19 heatloss 70 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  2,0
+Position : 3,1 Direction -1,0 Choice 1,1  depth 19 heatloss 67 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1
+Position : 2,1 Direction 0,-1 Choice 1,0  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  1,0
+Position : 1,1 Direction 0,-1 Choice 2,0  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  2,0
+Position : 0,1 Direction 0,-1 Choice 3,0  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  3,0
+Position : 2,1 Direction 0,1 Choice 1,1  depth 20 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  1,1
+Position : 1,1 Direction 0,1 Choice 2,1  depth 20 heatloss 70 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  2,1
+Position : 0,1 Direction 0,1 Choice 3,1  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  1,1  3,1
+Position : 3,0 Direction -1,0 Choice 2,1  depth 19 heatloss 70 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  2,1  2,1
+Position : 4,2 Direction 0,-1 Choice 3,1  depth 18 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1
+Position : 4,1 Direction 1,0 Choice 1,0  depth 19 heatloss 68 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0
+Position : 5,1 Direction 0,1 Choice 1,0  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  1,0
+Position : 6,1 Direction 0,1 Choice 2,0  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  2,0
+Position : 7,1 Direction 0,1 Choice 3,0  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  3,0
+Position : 5,1 Direction 0,-1 Choice 1,1  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  1,1
+Position : 6,1 Direction 0,-1 Choice 2,1  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  2,1
+Position : 7,1 Direction 0,-1 Choice 3,1  depth 20 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,0  3,1
+Position : 4,0 Direction 1,0 Choice 2,0  depth 19 heatloss 72 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  2,0
+Position : 4,1 Direction -1,0 Choice 1,1  depth 19 heatloss 68 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1
+Position : 3,1 Direction 0,-1 Choice 1,0  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  1,0
+Position : 2,1 Direction 0,-1 Choice 2,0  depth 20 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  2,0
+Position : 1,1 Direction 0,-1 Choice 3,0  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  3,0
+Position : 3,1 Direction 0,1 Choice 1,1  depth 20 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  1,1
+Position : 2,1 Direction 0,1 Choice 2,1  depth 20 heatloss 74 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  2,1
+Position : 1,1 Direction 0,1 Choice 3,1  depth 20 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  1,1  3,1
+Position : 4,0 Direction -1,0 Choice 2,1  depth 19 heatloss 72 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1  3,1  2,1
+Position : 1,3 Direction 1,0 Choice 3,1  depth 17 heatloss 56 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 2,3 Direction 0,1 Choice 1,0  depth 18 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0
+Position : 2,4 Direction -1,0 Choice 1,0  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  1,0
+Position : 2,5 Direction -1,0 Choice 2,0  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  2,0
+Position : 2,6 Direction -1,0 Choice 3,0  depth 19 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,0
+Position : 1,6 Direction 0,-1 Choice 1,0  depth 20 heatloss 76 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,0  1,0
+Position : 0,6 Direction 0,-1 Choice 2,0  depth 20 heatloss 80 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,0  2,0
+Position : 1,6 Direction 0,1 Choice 1,1  depth 20 heatloss 76 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,0  1,1
+Position : 0,6 Direction 0,1 Choice 2,1  depth 20 heatloss 80 available options 4 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,0  2,1
+Position : 2,4 Direction 1,0 Choice 1,1  depth 19 heatloss 64 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  1,1
+Position : 2,5 Direction 1,0 Choice 2,1  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  2,1
+Position : 2,6 Direction 1,0 Choice 3,1  depth 19 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1
+Position : 3,6 Direction 0,1 Choice 1,0  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  1,0
+Position : 4,6 Direction 0,1 Choice 2,0  depth 20 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  2,0
+Position : 5,6 Direction 0,1 Choice 3,0  depth 20 heatloss 94 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  3,0
+Position : 3,6 Direction 0,-1 Choice 1,1  depth 20 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  1,1
+Position : 4,6 Direction 0,-1 Choice 2,1  depth 20 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  2,1
+Position : 5,6 Direction 0,-1 Choice 3,1  depth 20 heatloss 94 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,0  3,1  3,1
+Position : 3,3 Direction 0,1 Choice 2,0  depth 18 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0
+Position : 3,4 Direction -1,0 Choice 1,0  depth 19 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  1,0
+Position : 3,5 Direction -1,0 Choice 2,0  depth 19 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  2,0
+Position : 3,6 Direction -1,0 Choice 3,0  depth 19 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0
+Position : 2,6 Direction 0,-1 Choice 1,0  depth 20 heatloss 92 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  1,0
+Position : 1,6 Direction 0,-1 Choice 2,0  depth 20 heatloss 96 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  2,0
+Position : 0,6 Direction 0,-1 Choice 3,0  depth 20 heatloss 100 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  3,0
+Position : 2,6 Direction 0,1 Choice 1,1  depth 20 heatloss 92 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  1,1
+Position : 1,6 Direction 0,1 Choice 2,1  depth 20 heatloss 96 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  2,1
+Position : 0,6 Direction 0,1 Choice 3,1  depth 20 heatloss 100 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,0  3,1
+Position : 3,4 Direction 1,0 Choice 1,1  depth 19 heatloss 72 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  1,1
+Position : 3,5 Direction 1,0 Choice 2,1  depth 19 heatloss 80 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  2,1
+Position : 3,6 Direction 1,0 Choice 3,1  depth 19 heatloss 87 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1
+Position : 4,6 Direction 0,1 Choice 1,0  depth 20 heatloss 95 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  1,0
+Position : 5,6 Direction 0,1 Choice 2,0  depth 20 heatloss 102 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  2,0
+Position : 6,6 Direction 0,1 Choice 3,0  depth 20 heatloss 108 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  3,0
+Position : 4,6 Direction 0,-1 Choice 1,1  depth 20 heatloss 95 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  1,1
+Position : 5,6 Direction 0,-1 Choice 2,1  depth 20 heatloss 102 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  2,1
+Position : 6,6 Direction 0,-1 Choice 3,1  depth 20 heatloss 108 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,0  3,1  3,1
+Position : 4,3 Direction 0,1 Choice 3,0  depth 18 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0
+Position : 4,4 Direction -1,0 Choice 1,0  depth 19 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  1,0
+Position : 4,5 Direction -1,0 Choice 2,0  depth 19 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  2,0
+Position : 4,6 Direction -1,0 Choice 3,0  depth 19 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0
+Position : 3,6 Direction 0,-1 Choice 1,0  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  1,0
+Position : 2,6 Direction 0,-1 Choice 2,0  depth 20 heatloss 102 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  2,0
+Position : 1,6 Direction 0,-1 Choice 3,0  depth 20 heatloss 106 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  3,0
+Position : 3,6 Direction 0,1 Choice 1,1  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  1,1
+Position : 2,6 Direction 0,1 Choice 2,1  depth 20 heatloss 102 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  2,1
+Position : 1,6 Direction 0,1 Choice 3,1  depth 20 heatloss 106 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,0  3,1
+Position : 4,4 Direction 1,0 Choice 1,1  depth 19 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  1,1
+Position : 4,5 Direction 1,0 Choice 2,1  depth 19 heatloss 82 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  2,1
+Position : 4,6 Direction 1,0 Choice 3,1  depth 19 heatloss 90 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1
+Position : 5,6 Direction 0,1 Choice 1,0  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  1,0
+Position : 6,6 Direction 0,1 Choice 2,0  depth 20 heatloss 103 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  2,0
+Position : 7,6 Direction 0,1 Choice 3,0  depth 20 heatloss 112 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  3,0
+Position : 5,6 Direction 0,-1 Choice 1,1  depth 20 heatloss 97 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  1,1
+Position : 6,6 Direction 0,-1 Choice 2,1  depth 20 heatloss 103 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  2,1
+Position : 7,6 Direction 0,-1 Choice 3,1  depth 20 heatloss 112 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,0  3,1  3,1
+Position : 2,3 Direction 0,-1 Choice 1,1  depth 18 heatloss 60 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1
+Position : 2,2 Direction 1,0 Choice 1,0  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  1,0
+Position : 2,1 Direction 1,0 Choice 2,0  depth 19 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  2,0
+Position : 2,0 Direction 1,0 Choice 3,0  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  3,0
+Position : 2,2 Direction -1,0 Choice 1,1  depth 19 heatloss 65 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  1,1
+Position : 2,1 Direction -1,0 Choice 2,1  depth 19 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  2,1
+Position : 2,0 Direction -1,0 Choice 3,1  depth 19 heatloss 67 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  1,1  3,1
+Position : 3,3 Direction 0,-1 Choice 2,1  depth 18 heatloss 66 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1
+Position : 3,2 Direction 1,0 Choice 1,0  depth 19 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  1,0
+Position : 3,1 Direction 1,0 Choice 2,0  depth 19 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  2,0
+Position : 3,0 Direction 1,0 Choice 3,0  depth 19 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  3,0
+Position : 3,2 Direction -1,0 Choice 1,1  depth 19 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  1,1
+Position : 3,1 Direction -1,0 Choice 2,1  depth 19 heatloss 76 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  2,1
+Position : 3,0 Direction -1,0 Choice 3,1  depth 19 heatloss 79 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  2,1  3,1
+Position : 4,3 Direction 0,-1 Choice 3,1  depth 18 heatloss 71 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1
+Position : 4,2 Direction 1,0 Choice 1,0  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  1,0
+Position : 4,1 Direction 1,0 Choice 2,0  depth 19 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  2,0
+Position : 4,0 Direction 1,0 Choice 3,0  depth 19 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  3,0
+Position : 4,2 Direction -1,0 Choice 1,1  depth 19 heatloss 73 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  1,1
+Position : 4,1 Direction -1,0 Choice 2,1  depth 19 heatloss 77 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  2,1
+Position : 4,0 Direction -1,0 Choice 3,1  depth 19 heatloss 81 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1  3,1  3,1
+Position : 2,0 Direction 0,1 Choice 2,0  depth 16 heatloss 49 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 2,1 Direction -1,0 Choice 1,0  depth 17 heatloss 50 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,0
+Position : 2,2 Direction -1,0 Choice 2,0  depth 17 heatloss 55 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  2,0
+Position : 2,3 Direction -1,0 Choice 3,0  depth 17 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  3,0
+Position : 2,1 Direction 1,0 Choice 1,1  depth 17 heatloss 50 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  1,1
+Position : 2,2 Direction 1,0 Choice 2,1  depth 17 heatloss 55 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  2,1
+Position : 2,3 Direction 1,0 Choice 3,1  depth 17 heatloss 59 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0  3,1
+Position : 3,0 Direction 0,1 Choice 3,0  depth 16 heatloss 52 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 3,1 Direction -1,0 Choice 1,0  depth 17 heatloss 57 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,0
+Position : 3,2 Direction -1,0 Choice 2,0  depth 17 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  2,0
+Position : 3,3 Direction -1,0 Choice 3,0  depth 17 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  3,0
+Position : 3,1 Direction 1,0 Choice 1,1  depth 17 heatloss 57 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  1,1
+Position : 3,2 Direction 1,0 Choice 2,1  depth 17 heatloss 62 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  2,1
+Position : 3,3 Direction 1,0 Choice 3,1  depth 17 heatloss 68 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0  3,1
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 16 heatloss 48 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 16 heatloss 49 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 16 heatloss 52 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 0,0 Direction -1,0 Choice 1,1  depth 15 heatloss 44 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 0,1 Direction 0,1 Choice 1,1  depth 14 heatloss 42 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction -1,0 Choice 2,0  depth 13 heatloss 41 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 1,3 Direction -1,0 Choice 3,0  depth 13 heatloss 45 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,1 Direction 1,0 Choice 1,1  depth 13 heatloss 39 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction 1,0 Choice 2,1  depth 13 heatloss 41 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 1,3 Direction 1,0 Choice 3,1  depth 13 heatloss 45 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 2,0 Direction 0,1 Choice 2,0  depth 12 heatloss 38 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 3,0 Direction 0,1 Choice 3,0  depth 12 heatloss 41 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 12 heatloss 37 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 12 heatloss 38 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 12 heatloss 41 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 0,0 Direction -1,0 Choice 1,1  depth 11 heatloss 33 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 0,1 Direction 0,1 Choice 1,1  depth 10 heatloss 31 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction -1,0 Choice 2,0  depth 9 heatloss 30 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 1,3 Direction -1,0 Choice 3,0  depth 9 heatloss 34 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,1 Direction 1,0 Choice 1,1  depth 9 heatloss 28 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction 1,0 Choice 2,1  depth 9 heatloss 30 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 1,3 Direction 1,0 Choice 3,1  depth 9 heatloss 34 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 2,0 Direction 0,1 Choice 2,0  depth 8 heatloss 27 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,0
+Position : 3,0 Direction 0,1 Choice 3,0  depth 8 heatloss 30 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 8 heatloss 26 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 8 heatloss 27 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 8 heatloss 30 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,0  3,1
+Position : 0,0 Direction -1,0 Choice 1,1  depth 7 heatloss 22 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 0,1 Direction 0,1 Choice 1,1  depth 6 heatloss 20 available options 2 all choice 1,0  1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction -1,0 Choice 2,0  depth 5 heatloss 19 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  2,0
+Position : 1,3 Direction -1,0 Choice 3,0  depth 5 heatloss 23 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  3,0
+Position : 1,1 Direction 1,0 Choice 1,1  depth 5 heatloss 17 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  1,1
+Position : 1,2 Direction 1,0 Choice 2,1  depth 5 heatloss 19 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  2,1
+Position : 1,3 Direction 1,0 Choice 3,1  depth 5 heatloss 23 available options 6 all choice 1,0  1,0  1,0  1,0  1,0  3,1
+Position : 2,0 Direction 0,1 Choice 2,0  depth 4 heatloss 16 available options 6 all choice 1,0  1,0  1,0  1,0  2,0
+Position : 3,0 Direction 0,1 Choice 3,0  depth 4 heatloss 19 available options 6 all choice 1,0  1,0  1,0  1,0  3,0
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 4 heatloss 15 available options 6 all choice 1,0  1,0  1,0  1,0  1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 4 heatloss 16 available options 6 all choice 1,0  1,0  1,0  1,0  2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 4 heatloss 19 available options 6 all choice 1,0  1,0  1,0  1,0  3,1
+Position : 0,0 Direction -1,0 Choice 1,1  depth 3 heatloss 11 available options 2 all choice 1,0  1,0  1,0  1,1
+Position : 0,1 Direction 0,1 Choice 1,1  depth 2 heatloss 9 available options 2 all choice 1,0  1,0  1,1
+Position : 1,2 Direction -1,0 Choice 2,0  depth 1 heatloss 8 available options 6 all choice 1,0  2,0
+Position : 1,3 Direction -1,0 Choice 3,0  depth 1 heatloss 12 available options 6 all choice 1,0  3,0
+Position : 1,1 Direction 1,0 Choice 1,1  depth 1 heatloss 6 available options 6 all choice 1,0  1,1
+Position : 1,2 Direction 1,0 Choice 2,1  depth 1 heatloss 8 available options 6 all choice 1,0  2,1
+Position : 1,3 Direction 1,0 Choice 3,1  depth 1 heatloss 12 available options 6 all choice 1,0  3,1
+Position : 2,0 Direction 0,1 Choice 2,0  depth 0 heatloss 5 available options 6 all choice 2,0
+Position : 3,0 Direction 0,1 Choice 3,0  depth 0 heatloss 8 available options 6 all choice 3,0
+Position : 1,0 Direction 0,-1 Choice 1,1  depth 0 heatloss 4 available options 6 all choice 1,1
+Position : 2,0 Direction 0,-1 Choice 2,1  depth 0 heatloss 5 available options 6 all choice 2,1
+Position : 3,0 Direction 0,-1 Choice 3,1  depth 0 heatloss 8 available options 6 all choice 3,1
 Smallest Heatloss is :500
 OptionList : 
 .............
@@ -14,4 +526,4 @@ OptionList :
 .............
 .............
 
-Elapsed = 109333.5762 ms
+Elapsed = 77257.5197 ms

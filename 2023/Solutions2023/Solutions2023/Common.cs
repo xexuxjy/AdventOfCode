@@ -43,6 +43,23 @@ public static class Helper
 
         return sb.ToString();
     }
+
+    public static String DrawGrid(char[] data, long width, long height)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                sb.Append(data[(y * width) + x]);
+            }
+
+            sb.AppendLine();
+        }
+
+        return sb.ToString();
+    }
+
     
     public static int[] GetNumGrid(List<string> data, ref int width, ref int height)
     {
@@ -102,6 +119,35 @@ public static class Helper
 
         return result;
     }
+    
+    public static long Shoelace(this List<IntVector2> vertices)
+    {
+        var sum = 0L;
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var a = vertices[i];
+            var b = vertices[(i + 1) % vertices.Count];
+            sum += ((long)b.X + a.X) * ((long)b.Y - a.Y);
+        }
+        return sum / 2;
+    }
+
+    /// <summary>
+    /// Calculates the area of a polygon using the shoelace algorithm.
+    /// </summary>
+    public static double Shoelace(this List<Vector2> vertices)
+    {
+        var sum = 0.0;
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var a = vertices[i];
+            var b = vertices[(i + 1) % vertices.Count];
+            sum += (b.X + a.X) * (b.X - a.X);
+        }
+        return sum / 2;
+    }
+    
+    
 }
 
 
