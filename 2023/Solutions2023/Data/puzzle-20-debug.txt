@@ -1,0 +1,2 @@
+Total pushes was : 787056720
+Elapsed = 85.6267 ms
