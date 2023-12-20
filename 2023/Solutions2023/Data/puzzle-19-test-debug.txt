@@ -1,0 +1,2 @@
+Accept list sum is : 19114
+Elapsed = 38.3069 ms
