@@ -120,7 +120,9 @@ public static class Helper
         return result;
     }
     
-    public static long Shoelace(this List<IntVector2> vertices)
+    // with help from : https://github.com/Acc3ssViolation/advent-of-code-2023/blob/main/Advent/Advent/Shared/MathExtra.cs
+    
+    public static long Shoelace(List<IntVector2> vertices)
     {
         var sum = 0L;
         for (var i = 0; i < vertices.Count; i++)
@@ -132,10 +134,34 @@ public static class Helper
         return sum / 2;
     }
 
+    public static long Shoelace(List<LongVector2> vertices)
+    {
+        var sum = 0L;
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var a = vertices[i];
+            var b = vertices[(i + 1) % vertices.Count];
+            sum += ((long)b.X + a.X) * ((long)b.Y - a.Y);
+        }
+        return sum / 2;
+    }
+
+    public static double Shoelace(List<DoubleVector2> vertices)
+    {
+        double sum = 0;
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var a = vertices[i];
+            var b = vertices[(i + 1) % vertices.Count];
+            sum += (b.X + a.X) * (b.Y - a.Y);
+        }
+        return sum / 2;
+    }
+
     /// <summary>
     /// Calculates the area of a polygon using the shoelace algorithm.
     /// </summary>
-    public static double Shoelace(this List<Vector2> vertices)
+    public static double Shoelace( List<Vector2> vertices)
     {
         var sum = 0.0;
         for (var i = 0; i < vertices.Count; i++)
@@ -146,6 +172,42 @@ public static class Helper
         }
         return sum / 2;
     }
+
+    
+    public static List<DoubleVector2> Expand(List<DoubleVector2> vertices, double distance)
+    {
+        var edgeNormals = new List<DoubleVector2>(vertices.Count);
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var start = vertices[i];
+            var end = vertices[(i + 1) % vertices.Count];
+            var normal = end - start;
+            normal /= normal.Magnitude;
+            
+            // rotate
+            normal = new DoubleVector2(normal.Y, -normal.X);
+           
+            edgeNormals.Add(normal);
+        }
+    
+        var offsetVertices = new List<DoubleVector2>(vertices.Count);
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            var prevEdgeIndex = (i + edgeNormals.Count - 1) % edgeNormals.Count;
+            var nextEdgeIndex = (i) % edgeNormals.Count;
+    
+            var prevNormal = edgeNormals[prevEdgeIndex];
+            var nextNormal = edgeNormals[nextEdgeIndex];
+            var normal = (prevNormal + nextNormal);
+            var offset = new DoubleVector2(Math.Sign(normal.X) * distance, Math.Sign(normal.Y) * distance);
+
+            offsetVertices.Add(vertices[i]+offset);
+        }
+    
+        return offsetVertices;
+    }
+    
+    
     
     
 }

@@ -28,6 +28,15 @@ public struct LongVector2
         Y = v.Y;
     }
 
+    public static LongVector2 Normalize(LongVector2 value)
+    {
+            long ls = value.X * value.X + value.Y * value.Y;
+            float invNorm = 1.0f / (float)Math.Sqrt((double)ls);
+
+            return new LongVector2((long)(value.X * invNorm),(long)(value.Y * invNorm));
+        
+    }
+    
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static LongVector2 operator +(LongVector2 value1, LongVector2 value2)
     {
@@ -54,12 +63,30 @@ public struct LongVector2
         vector.Y = value1.Y / value;
         return vector;
     }
+    
+    public static LongVector2 operator /(LongVector2 value1, double value)
+    {
+        LongVector2 vector;
+        vector.X = (long)(value1.X / value);
+        vector.Y = (long)(value1.Y / value);
+        return vector;
+    }
+
+    
 
     public static LongVector2 operator *(LongVector2 value1, int value)
     {
         LongVector2 vector;
         vector.X = value1.X * value;
         vector.Y = value1.Y * value;
+        return vector;
+    }
+
+    public static LongVector2 operator *(LongVector2 value1, double value)
+    {
+        LongVector2 vector;
+        vector.X = (long)(value1.X * value);
+        vector.Y = (long)(value1.Y * value);
         return vector;
     }
 
@@ -124,6 +151,16 @@ public struct LongVector2
         return X.GetHashCode() ^ (Y.GetHashCode() << 2);
     }
 
+    public double Magnitude
+    {
+        get { return Math.Sqrt(this.X * this.X + this.Y * this.Y); }
+    }
+
+    public double SqrMagnitude
+    {
+        get { return this.X * this.X + this.Y * this.Y; }
+    }
+
 
     public long X;
     public long Y;
@@ -136,3 +173,4 @@ public struct LongVector2
 
     public static readonly LongVector2[] Directions = new LongVector2[] { Left, Right, Up, Down };
 }
+
