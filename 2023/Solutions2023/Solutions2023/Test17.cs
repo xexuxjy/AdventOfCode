@@ -15,8 +15,6 @@ public class Test17 : BaseTest
     // };
 
 
-    Dictionary<(IntVector2, IntVector2, IntVector2), bool> m_exploredRoutes =
-        new Dictionary<(IntVector2, IntVector2, IntVector2), bool>();
 
     public int[] NumGrid;
 
@@ -130,15 +128,19 @@ public class Test17 : BaseTest
 
     private int MAX_DEPTH = 20;//1000;
 
+    Dictionary<(IntVector2, IntVector2, int), bool> m_exploredRoutes =
+        new Dictionary<(IntVector2, IntVector2, int), bool>();
+
+    
     public bool TestRoute(IntVector2 position, IntVector2 direction, int heatLoss, IntVector2 start, IntVector2 end,
         int depth,
         List<IntVector2> moveList, List<IntVector2> optionList)
     {
         bool existingRoute;
-        var searchKey = (position, direction, new IntVector2());
+        var searchKey = (position, direction, heatLoss);
         if (m_exploredRoutes.TryGetValue(searchKey, out existingRoute))
         {
-            //return existingRoute;
+            return existingRoute;
         }
 
         if (position == end)
@@ -193,8 +195,10 @@ public class Test17 : BaseTest
 
         int count = 0;
         bool hasRoute = false;
-        //foreach (var option in moveChoices.OrderBy(x => x.Item2.ManhattanDistance(end)))
-        foreach (var option in moveChoices)
+        
+        
+        // try and move and turn in a direction that will get us closer.
+        foreach (var option in moveChoices.OrderBy(x => x.Item2.ManhattanDistance(end)).ThenBy(x=>(x.Item2+x.Item3).ManhattanDistance(end)))
         {
 
             optionList.Add(option.Item1);
@@ -227,7 +231,7 @@ public class Test17 : BaseTest
         }
 
 
-        m_exploredRoutes[searchKey] = hasRoute;
+         m_exploredRoutes[searchKey] = hasRoute;
 
 
         return hasRoute;
