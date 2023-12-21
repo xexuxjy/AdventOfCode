@@ -138,7 +138,7 @@ public class Test17 : BaseTest
         var searchKey = (position, direction, new IntVector2());
         if (m_exploredRoutes.TryGetValue(searchKey, out existingRoute))
         {
-            return existingRoute;
+            //return existingRoute;
         }
 
         if (position == end)
@@ -154,6 +154,11 @@ public class Test17 : BaseTest
             return true;
         }
 
+        if (heatLoss > 150)
+        {
+            return false;
+        }
+        
         // stop overflow of continually staying in one place
         if (depth > MAX_DEPTH)
         {
@@ -206,7 +211,7 @@ public class Test17 : BaseTest
                 int ibreak = 0;
             }
             
-            DebugOutput($"Position : {option.Item2} Direction {option.Item3} Choice {option.Item1}  depth {depth} heatloss {option.Item4} available options {moveChoices.Count} all choice {string.Join("  ",optionList)}");
+            //DebugOutput($"Position : {option.Item2} Direction {option.Item3} Choice {option.Item1}  depth {depth} heatloss {option.Item4} available options {moveChoices.Count} all choice {string.Join("  ",optionList)}");
             hasRoute |= TestRoute(option.Item2, option.Item3, option.Item4, start, end, depth + 1, moveList,
                 optionList);
 
