@@ -9,12 +9,6 @@ public class Test17 : BaseTest
         new IntVector2(2, 1), new IntVector2(3, 1)
     };
 
-    // static IntVector2[] PossibleMoves = new IntVector2[]
-    // {
-    //     new IntVector2(1, 0), new IntVector2(1, 1)
-    // };
-
-
 
     public int[] NumGrid;
 
@@ -24,7 +18,7 @@ public class Test17 : BaseTest
     public override void Initialise()
     {
         TestID = 17;
-        IsTestInput = true;
+        IsTestInput = false;
         IsPart2 = false;
     }
 
@@ -42,33 +36,13 @@ public class Test17 : BaseTest
         TestRoute(startPos, IntVector2.Right, 0, startPos, endPos, 0, moveList,optionList);
         //TestRoute(startPos, IntVector2.Up, 0, startPos, endPos, 0, moveList, optionList);
 
-        DebugOutput("Smallest Heatloss is :" + m_smallestHeatLoss);
+        
 
-        DebugOutput("OptionList : " + string.Join(" , ", m_shortestInstructions));
+        //DebugOutput("OptionList : " + string.Join(" , ", m_shortestInstructions));
 
-        List<IntVector2> testList = new List<IntVector2>();
-        testList.Add(new IntVector2(2, 0));
-        testList.Add(new IntVector2(1, 1));
-        testList.Add(new IntVector2(3, 1));
-        testList.Add(new IntVector2(1, 0));
-        testList.Add(new IntVector2(3, 0));
-        testList.Add(new IntVector2(2, 1));
-        testList.Add(new IntVector2(2, 0));
-        testList.Add(new IntVector2(2, 1));
-        testList.Add(new IntVector2(1, 0));
-        testList.Add(new IntVector2(3, 1));
-        testList.Add(new IntVector2(1, 0));
-        testList.Add(new IntVector2(3, 0));
-        testList.Add(new IntVector2(1, 1));
-        testList.Add(new IntVector2(2, 1));
-        testList.Add(new IntVector2(1, 0));
-
-
-        List<IntVector2> trace = new List<IntVector2>();
-        // DebugOutput("Calced route is : " + FollowRoute(startPos, IntVector2.Right, testList, trace));
-        // DebugOutput(DrawGrid(trace));
         DebugOutput(DrawGrid(m_shortestRoute));
-        // x part of vector is forward move, y part is turn 0 left,1 right
+        
+        DebugOutput("Smallest Heatloss is :" + m_smallestHeatLoss);
     }
 
     public int FollowRoute(IntVector2 start, IntVector2 direction, List<IntVector2> options, List<IntVector2> trace)
@@ -124,9 +98,9 @@ public class Test17 : BaseTest
 
     private List<IntVector2> m_shortestRoute = new List<IntVector2>();
     private List<IntVector2> m_shortestInstructions = new List<IntVector2>();
-    private int m_smallestHeatLoss = 500; //Int32.MaxValue;
+    private int m_smallestHeatLoss = Int32.MaxValue;
 
-    private int MAX_DEPTH = 20;//1000;
+    private int MAX_DEPTH = 500;
 
     Dictionary<(IntVector2, IntVector2, int), bool> m_exploredRoutes =
         new Dictionary<(IntVector2, IntVector2, int), bool>();
@@ -156,10 +130,6 @@ public class Test17 : BaseTest
             return true;
         }
 
-        if (heatLoss > 150)
-        {
-            return false;
-        }
         
         // stop overflow of continually staying in one place
         if (depth > MAX_DEPTH)
