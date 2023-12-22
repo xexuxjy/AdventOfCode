@@ -77,6 +77,24 @@ public static class Helper
 
         return numGrid;
     }
+
+    public static char[] GetCharGrid(List<string> data, ref int width, ref int height)
+    {
+        width = data[0].Length;
+        height = data.Count;
+        
+        char [] numGrid = new char[data.Count * data[0].Length];
+        for (int y = 0; y < data.Count; ++y)
+        {
+            for (int x = 0; x < data[0].Length; ++x)
+            {
+                numGrid[(y * width) + x] =data[y][x];
+            }
+        }
+
+        return numGrid;
+    }
+
     
     public static long GCD(long n1, long n2)
     {
