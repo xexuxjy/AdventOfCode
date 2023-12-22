@@ -1,0 +1,16 @@
+INIT  Simulate Forces brick 0 starts at  (1,0,1)
+INIT  Simulate Forces brick 1 starts at  (0,0,2)
+INIT  Simulate Forces brick 2 starts at  (0,2,3)
+INIT  Simulate Forces brick 3 starts at  (0,0,4)
+INIT  Simulate Forces brick 4 starts at  (2,0,5)
+INIT  Simulate Forces brick 5 starts at  (0,1,6)
+INIT  Simulate Forces brick 6 starts at  (1,1,8)
+INIT  Simulate Forces brick 0 ends at  (1,0,1)
+INIT  Simulate Forces brick 1 ends at  (0,0,2)
+INIT  Simulate Forces brick 2 ends at  (0,2,3)
+INIT  Simulate Forces brick 3 ends at  (0,0,4)
+INIT  Simulate Forces brick 4 ends at  (2,0,5)
+INIT  Simulate Forces brick 5 ends at  (0,1,6)
+INIT  Simulate Forces brick 6 ends at  (1,1,8)
+Can remove 0 bricks
+Elapsed = 159702.7742 ms
