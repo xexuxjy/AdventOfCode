@@ -6,7 +6,7 @@ public class Test22 : BaseTest
     {
         TestID = 22;
         IsTestInput = false;
-        IsPart2 = false;
+        IsPart2 = true;
     }
 
     public override void Execute()
@@ -26,66 +26,92 @@ public class Test22 : BaseTest
         }
         
 
-        SimulateForces(brickList,"INIT");
+        SimulateForces(brickList,0,"INIT");
 
-        int removeableBricks = 0;
-        
-        // reach rest state.
 
-        Dictionary<string, Brick> brickMap = new Dictionary<string, Brick>();
-        foreach (Brick b in brickList)
+        if (IsPart2)
         {
-            brickMap[b.Id] = b;
-        }
-
-
-        Dictionary<Brick, (List<Brick>,List<Brick>)> supportedByMap = new Dictionary<Brick, (List<Brick>,List<Brick>)>();
-        foreach (Brick b in brickList)
-        {
-            List<Brick> supportedBy = new List<Brick>();
-            SupportedBy(b, brickList, supportedBy);
-            
-            List<Brick> supports= new List<Brick>();
-            Supports(b, brickList, supports);
-
-
-            string supportsInfo = String.Join(", ",supports.Select(x=>x.Id));
-            string supportedByInfo = String.Join(", ",supportedBy.Select(x=>x.Id));
-
-            DebugOutput($"{b.Id} supports [{supportsInfo}]  supported by [{supportedByInfo}]");    
-            
-            supportedByMap[b] = (supportedBy,supports);
-        }
-
-        foreach (Brick b in brickList)
-        {
-            bool removeable = true;
-            foreach (Brick b2 in brickList)
+            int totalFall = 0;
+            foreach (Brick stableBrick in brickList)
             {
-                if (b != b2 && supportedByMap[b2].Item1.Count == 1 && supportedByMap[b2].Item1[0] == b)
+                int fall = 0;
+                List<Brick> listCopy = DeepCopyList(brickList);
+                listCopy.RemoveAll(x => x.Id == stableBrick.Id);
+                SimulateForces(listCopy,stableBrick.Position.Z);
+                foreach (Brick b in listCopy)
                 {
-                    removeable = false;
-                    break;
+                    if(brickList.Find(x=>x.Id == b.Id).Position != b.Position)
+                    {
+                        fall++;
+                    }
+                }
+
+                totalFall += fall;
+            }
+
+
+            DebugOutput("Total number of bricks to fall is : " + totalFall);
+
+        }
+        else
+        {
+
+
+            int removeableBricks = 0;
+
+            // reach rest state.
+
+            Dictionary<string, Brick> brickMap = new Dictionary<string, Brick>();
+            foreach (Brick b in brickList)
+            {
+                brickMap[b.Id] = b;
+            }
+
+
+            Dictionary<Brick, (List<Brick>, List<Brick>)> supportedByMap =
+                new Dictionary<Brick, (List<Brick>, List<Brick>)>();
+            foreach (Brick b in brickList)
+            {
+                List<Brick> supportedBy = new List<Brick>();
+                SupportedBy(b, brickList, supportedBy);
+
+                List<Brick> supports = new List<Brick>();
+                Supports(b, brickList, supports);
+
+
+                string supportsInfo = String.Join(", ", supports.Select(x => x.Id));
+                string supportedByInfo = String.Join(", ", supportedBy.Select(x => x.Id));
+
+                DebugOutput($"{b.Id} supports [{supportsInfo}]  supported by [{supportedByInfo}]");
+
+                supportedByMap[b] = (supportedBy, supports);
+            }
+
+            foreach (Brick b in brickList)
+            {
+                bool removeable = true;
+                foreach (Brick b2 in brickList)
+                {
+                    if (b != b2 && supportedByMap[b2].Item1.Count == 1 && supportedByMap[b2].Item1[0] == b)
+                    {
+                        removeable = false;
+                        break;
+                    }
+                }
+
+                if (removeable)
+                {
+                    removeableBricks++;
                 }
             }
 
-            if (removeable)
-            {
-                removeableBricks++;
-            }
+
+
+            DebugOutput($"Can remove {removeableBricks} bricks");
         }
-        
-        
-
-        DebugOutput($"Can remove {removeableBricks} bricks");
 
     }
-
-    public void Part2()
-    {
-        
-    }
-    
+   
 
     public void Supports(Brick b, List<Brick> bricks,List<Brick> supports)
     {
@@ -115,7 +141,7 @@ public class Test22 : BaseTest
         }
     }
     
-    public void SimulateForces(List<Brick> brickList,string debug="")
+    public void SimulateForces(List<Brick> brickList,int minHeight = 0,string debug="")
     {
         IntVector3 gravity = new IntVector3(0, 0, -1);
 
@@ -131,6 +157,11 @@ public class Test22 : BaseTest
             bool didMove = false;
             foreach (Brick b in brickList)
             {
+                if (b.Position.Z < minHeight)
+                {
+                    continue;
+                }
+                
                 if ((b.Position + gravity).Z > 0)
                 {
                     // create a ray / box going from ground up.
