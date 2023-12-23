@@ -5,7 +5,7 @@ public class Test22 : BaseTest
     public override void Initialise()
     {
         TestID = 22;
-        IsTestInput = true;
+        IsTestInput = false;
         IsPart2 = false;
     }
 
@@ -22,7 +22,7 @@ public class Test22 : BaseTest
             IntVector3 v1 = new IntVector3(int.Parse(brick1[0]),int.Parse(brick1[1]),int.Parse(brick1[2]));
             IntVector3 v2 = new IntVector3(int.Parse(brick2[0]),int.Parse(brick2[1]),int.Parse(brick2[2]));
 
-            brickList.Add(new Brick(""+(id++), v1, v2));
+            brickList.Add(new Brick((id++), v1, v2));
         }
         
 
@@ -47,14 +47,45 @@ public class Test22 : BaseTest
             
             List<Brick> supports= new List<Brick>();
             Supports(b, brickList, supports);
+
+
+            string supportsInfo = String.Join(", ",supports.Select(x=>x.Id));
+            string supportedByInfo = String.Join(", ",supportedBy.Select(x=>x.Id));
+
+            DebugOutput($"{b.Id} supports [{supportsInfo}]  supported by [{supportedByInfo}]");    
             
             supportedByMap[b] = (supportedBy,supports);
         }
 
+        foreach (Brick b in brickList)
+        {
+            bool removeable = true;
+            foreach (Brick b2 in brickList)
+            {
+                if (b != b2 && supportedByMap[b2].Item1.Count == 1 && supportedByMap[b2].Item1[0] == b)
+                {
+                    removeable = false;
+                    break;
+                }
+            }
+
+            if (removeable)
+            {
+                removeableBricks++;
+            }
+        }
+        
+        
 
         DebugOutput($"Can remove {removeableBricks} bricks");
 
     }
+
+    public void Part2()
+    {
+        
+    }
+    
 
     public void Supports(Brick b, List<Brick> bricks,List<Brick> supports)
     {
@@ -88,10 +119,10 @@ public class Test22 : BaseTest
     {
         IntVector3 gravity = new IntVector3(0, 0, -1);
 
-        foreach (Brick b in brickList)
-        {
-            DebugOutput($"{debug}  Simulate Forces brick {b.Id} starts at  {b.Position}");
-        }
+        // foreach (Brick b in brickList)
+        // {
+        //     DebugOutput($"{debug}  Simulate Forces brick {b.Id} starts at  {b.Position} ends {b.EndPoint}");
+        // }
 
         
         bool bricksStable = false;
@@ -106,6 +137,7 @@ public class Test22 : BaseTest
                     IntVector3 rayStart = b.Position;
                     rayStart.Z += gravity.Z;
                     IntVector3 rayEnd = rayStart + b.Dimensions;
+                    //rayEnd.Z = rayStart.Z; // only care about bottom slice
                     
                     bool canMove = true;
                     foreach (Brick b2 in brickList)
@@ -134,10 +166,10 @@ public class Test22 : BaseTest
                 bricksStable = true;
             }
         }
-        foreach (Brick b in brickList)
-        {
-            DebugOutput($"{debug}  Simulate Forces brick {b.Id} ends at  {b.Position}");
-        }
+        // foreach (Brick b in brickList)
+        // {
+        //     DebugOutput($"{debug}  Simulate Forces brick {b.Id} ends at  {b.Position}");
+        // }
 
     }
 
@@ -164,15 +196,20 @@ public class Test22 : BaseTest
         Vector3 posBv3 = new Vector3(positionB.X, positionB.Y, positionB.Z);
         Vector3 epBv3 = new Vector3(endPointB.X, endPointB.Y, endPointB.Z);
 
-        posAv3 *= 0.95f;
-        epAv3 *= 0.95f;
-        posBv3 *= 0.95f;
-        epBv3 *= 0.95f;
+        // posAv3 *= 0.95f;
+        // epAv3 *= 0.95f;
+        // posBv3 *= 0.95f;
+        // epBv3 *= 0.95f;
         
         
-        return (posAv3.X <= epBv3.X && epAv3.X >= posBv3.X) &&
-               (posAv3.Y <= epBv3.Y && epAv3.Y >= posBv3.Y) &&
-               (posAv3.Z <= epBv3.Z && epAv3.Z >= posBv3.Z);
+        // return (posAv3.X <= epBv3.X && epAv3.X >= posBv3.X) &&
+        //        (posAv3.Y <= epBv3.Y && epAv3.Y >= posBv3.Y) &&
+        //        (posAv3.Z <= epBv3.Z && epAv3.Z >= posBv3.Z);
+        
+        return (posAv3.X < epBv3.X && epAv3.X > posBv3.X) &&
+               (posAv3.Y < epBv3.Y && epAv3.Y > posBv3.Y) &&
+               (posAv3.Z < epBv3.Z && epAv3.Z > posBv3.Z);
+
     }
 
     
@@ -200,9 +237,10 @@ public class Test22 : BaseTest
         public IntVector3 Dimensions;
         
         private int m_numBricks = 0;
-        public Brick(string id, IntVector3 pos1, IntVector3 pos2)
+        public Brick(int id, IntVector3 pos1, IntVector3 pos2)
         {
-            Id = id;
+            char c = (char)((int)'A' + id);
+            Id = ""+c;
             Dimensions = pos2 - pos1;
             Dimensions += new IntVector3(1, 1, 1);
 

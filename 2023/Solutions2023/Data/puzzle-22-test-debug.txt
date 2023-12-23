@@ -1,16 +1,23 @@
-INIT  Simulate Forces brick 0 starts at  (1,0,1)
-INIT  Simulate Forces brick 1 starts at  (0,0,2)
-INIT  Simulate Forces brick 2 starts at  (0,2,3)
-INIT  Simulate Forces brick 3 starts at  (0,0,4)
-INIT  Simulate Forces brick 4 starts at  (2,0,5)
-INIT  Simulate Forces brick 5 starts at  (0,1,6)
-INIT  Simulate Forces brick 6 starts at  (1,1,8)
-INIT  Simulate Forces brick 0 ends at  (1,0,1)
-INIT  Simulate Forces brick 1 ends at  (0,0,2)
-INIT  Simulate Forces brick 2 ends at  (0,2,3)
-INIT  Simulate Forces brick 3 ends at  (0,0,4)
-INIT  Simulate Forces brick 4 ends at  (2,0,5)
-INIT  Simulate Forces brick 5 ends at  (0,1,6)
-INIT  Simulate Forces brick 6 ends at  (1,1,8)
-Can remove 0 bricks
-Elapsed = 159702.7742 ms
+INIT  Simulate Forces brick A starts at  (1,0,1) ends (2,3,2)
+INIT  Simulate Forces brick B starts at  (0,0,2) ends (3,1,3)
+INIT  Simulate Forces brick C starts at  (0,2,3) ends (3,3,4)
+INIT  Simulate Forces brick D starts at  (0,0,4) ends (1,3,5)
+INIT  Simulate Forces brick E starts at  (2,0,5) ends (3,3,6)
+INIT  Simulate Forces brick F starts at  (0,1,6) ends (3,2,7)
+INIT  Simulate Forces brick G starts at  (1,1,8) ends (2,2,10)
+INIT  Simulate Forces brick A ends at  (1,0,1)
+INIT  Simulate Forces brick B ends at  (0,0,2)
+INIT  Simulate Forces brick C ends at  (0,2,2)
+INIT  Simulate Forces brick D ends at  (0,0,3)
+INIT  Simulate Forces brick E ends at  (2,0,3)
+INIT  Simulate Forces brick F ends at  (0,1,4)
+INIT  Simulate Forces brick G ends at  (1,1,5)
+A supports [B, C]  supported by []
+B supports [D, E]  supported by [A]
+C supports [D, E]  supported by [A]
+D supports [F]  supported by [B, C]
+E supports [F]  supported by [B, C]
+F supports [G]  supported by [D, E]
+G supports []  supported by [F]
+Can remove 5 bricks
+Elapsed = 64.5653 ms
