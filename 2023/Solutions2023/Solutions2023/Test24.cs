@@ -7,7 +7,7 @@ public class Test24 : BaseTest
     public override void Initialise()
     {
         TestID = 24;
-        IsTestInput = true;
+        IsTestInput = false;
         IsPart2 = true;
     }
 
@@ -116,8 +116,19 @@ public class Test24 : BaseTest
         DebugOutput("Number of intersects is : " + numIntersects);
     }
 
-    public void Part2(List<Hailstone> hailstones, DoubleVector3 min, DoubleVector3 max)
+    public void Part2(List<Hailstone> hailstonesOriginal, DoubleVector3 min, DoubleVector3 max)
     {
+        List<Hailstone> hailstones = new List<Hailstone>();
+        // if it workss for the first 30, will it work for all? 
+        // for (int i = 0; i < 5; ++i)
+        // {
+        //     hailstones.Add(hailstonesOriginal[i]);
+        // }
+        hailstones.AddRange(hailstonesOriginal);
+        
+        
+        
+
         DoubleVector3 minVelocity = new DoubleVector3(int.MaxValue, int.MaxValue, int.MaxValue);
         DoubleVector3 maxVelocity = new DoubleVector3(int.MinValue, int.MinValue, int.MinValue);
 
@@ -127,73 +138,94 @@ public class Test24 : BaseTest
             maxVelocity.Max(h.Velocity);
         }
 
-        minVelocity -= new DoubleVector3(1, 1, 1);
-        maxVelocity += new DoubleVector3(1, 1, 1);
-        
-        HashSet<IntVector2> validXPV = PossiblePositions(hailstones, minVelocity, maxVelocity, 0);
-        DebugOutput("XOptions : "+string.Join("  ",validXPV));
-        HashSet<IntVector2> validYPV = PossiblePositions(hailstones, minVelocity, maxVelocity, 1);
-        DebugOutput("YOptions : "+string.Join("  ",validYPV));
-        HashSet<IntVector2> validZPV = PossiblePositions(hailstones, minVelocity, maxVelocity, 2);
-        DebugOutput("ZOptions : "+string.Join("  ",validZPV));
+        int adjust = 0;
+        minVelocity -= new DoubleVector3(adjust, adjust, adjust);
+        maxVelocity += new DoubleVector3(adjust, adjust, adjust);
 
-        // HashSet<IntVector2> validXPV = PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 0);
+
+        long result = PossiblePositionsXY(hailstones, minVelocity, maxVelocity, 0);
+        DebugOutput("final result is : " + result);
+
+
+        // Task<HashSet<IntVector2>>[] taskArray =
+        // {
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() =>
+        //         PossiblePositions(hailstones, minVelocity, maxVelocity, 0)),
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() =>
+        //         PossiblePositions(hailstones, minVelocity, maxVelocity, 1)),
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() => PossiblePositions(hailstones, minVelocity, maxVelocity, 2))
+        // };
+
+        // Task<HashSet<IntVector2>>[] taskArray =
+        // {
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() =>
+        //         PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 0)),
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() =>
+        //         PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 1)),
+        //     Task<HashSet<IntVector2>>.Factory.StartNew(() => PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 2))
+        // };
+
+
+        // HashSet<IntVector2> validXPV = taskArray[0].Result;
         // DebugOutput("XOptions : "+string.Join("  ",validXPV));
-        // HashSet<IntVector2> validYPV = PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 1);
+        // HashSet<IntVector2> validYPV = taskArray[1].Result;
         // DebugOutput("YOptions : "+string.Join("  ",validYPV));
-        // HashSet<IntVector2> validZPV = PossiblePositionsRay(hailstones, minVelocity, maxVelocity, 2);
+        // HashSet<IntVector2> validZPV = taskArray[2].Result;
         // DebugOutput("ZOptions : "+string.Join("  ",validZPV));
+        //
+        //
+        //
+        // int maxTime = 1000;
+        //
+        // Hailstone rock = new Hailstone();
+        // rock.Id = "Rock";
+        //
+        // DoubleVector3 foundPosition = new DoubleVector3();
+        // DoubleVector3 foundVelocity = new DoubleVector3();
+        //
+        // foreach(IntVector2 x in validXPV)
+        // {
+        //     foreach(IntVector2 y in validYPV)
+        //     {
+        //         foreach (IntVector2 z in validZPV)
+        //         {
+        //             Task<bool>.Factory.StartNew(() =>
+        //             {
+        //                 rock.Position = new DoubleVector3(x.X, y.X, z.X);
+        //                 rock.Velocity = new DoubleVector3(x.Y, y.Y, z.Y);
+        //
+        //                 HashSet<Hailstone> hitHailstones = new HashSet<Hailstone>();
+        //
+        //                 for (int time = 1; time <= maxTime; ++time)
+        //                 {
+        //                     foreach (Hailstone h2 in hailstones)
+        //                     {
+        //                         // DebugOutput(
+        //                         //     $"Time {time}  Testing {rock.Id} {rock.Position + (rock.Velocity * time)}  against   {h2.Id}  {h2.Position + (h2.Velocity * time)}   {rock.Position + (rock.Velocity * time) == h2.Position + (h2.Velocity * time)}");
+        //
+        //                         if (rock.Position + (rock.Velocity * time) == h2.Position + (h2.Velocity * time))
+        //                         {
+        //                             hitHailstones.Add(h2);
+        //                             if (hitHailstones.Count == hailstones.Count)
+        //                             {
+        //                                 foundPosition = rock.Position;
+        //                                 foundVelocity = rock.Velocity;
+        //                                 DebugOutput($"Found solution with {foundPosition} {foundVelocity}");
+        //                                 return true;
+        //                             }
+        //                         }
+        //
+        //                     }
+        //                 }
+        //
+        //                 return false;
+        //             });
+        //         }
+        //     }
+        // }
 
-        
-        
-        
-        int maxTime = 1000;
-        
-        Hailstone rock = new Hailstone();
-        rock.Id = "Rock";
-
-        DoubleVector3 foundPosition = new DoubleVector3();
-        DoubleVector3 foundVelocity = new DoubleVector3();
-        
-        foreach(IntVector2 x in validXPV)
-        {
-            foreach(IntVector2 y in validYPV)
-            {
-                foreach (IntVector2 z in validZPV)
-                {
-                    rock.Position = new DoubleVector3(x.X, y.X, z.X);
-                    rock.Velocity = new DoubleVector3(x.Y, y.Y, z.Y);
-
-                    HashSet<Hailstone> hitHailstones = new HashSet<Hailstone>();
-
-                    for (int time = 1; time <= maxTime; ++time)
-                    {
-                        foreach (Hailstone h2 in hailstones)
-                        {
-                        
-                            if (rock.Position + (rock.Velocity * time) == h2.Position + (h2.Velocity * time))
-                            {
-                                hitHailstones.Add(h2);
-                                // DebugOutput(
-                                //     $"Time {time}  Testing {rock.Id} {rock.Position.X + (rock.Velocity * time).X}  against   {h2.Id}  {h2.Position.X + (h2.Velocity * time).X}   {rock.Position.X + (rock.Velocity * time).X == h2.Position.X + (h2.Velocity * time).X}");
-                            }
-
-                            if (hitHailstones.Count == hailstones.Count)
-                            {
-                                foundPosition = rock.Position;
-                                foundVelocity = rock.Velocity;
-                                goto haveSolution;
-                            }
-                        }
-                    }
-                    
-                    
-                }
-            }
-        }
-        
-        haveSolution:
-        DebugOutput($"Found solution with {foundPosition} {foundVelocity}");
+        //haveSolution:
+        //DebugOutput($"Found solution with {foundPosition} {foundVelocity}");
     }
     
     
@@ -264,16 +296,22 @@ public class Test24 : BaseTest
     }
  
     
-    public List<IntVector2> PossiblePositionsRay(List<Hailstone> hailstones, DoubleVector3 minVelocity, DoubleVector3 maxVelocity, int axis)
+    public HashSet<IntVector2> PossiblePositionsRay(List<Hailstone> hailstones, DoubleVector3 minVelocity, DoubleVector3 maxVelocity, int axis)
     {
+        // DoubleVector3 minWindow = new DoubleVector3();
+        // minWindow[axis] = IsTestInput ? 7 : 200000000000000;
+        // DoubleVector3 maxWindow = new DoubleVector3();
+        // maxWindow[axis] = IsTestInput ? 27 : 400000000000000;
+
         DoubleVector3 minWindow = new DoubleVector3();
         minWindow[axis] = IsTestInput ? 7 : 200000000000000;
         DoubleVector3 maxWindow = new DoubleVector3();
-        maxWindow[axis] = IsTestInput ? 27 : 400000000000000;
+        maxWindow[axis] = IsTestInput ? 30 : 400000000000000;
+
         
         int maxTime = 1000;
 
-        List<IntVector2> validXPV = new List<IntVector2>();
+        HashSet<IntVector2> validXPV = new HashSet<IntVector2>();
 
         foreach (Hailstone h in hailstones)
         {
@@ -307,8 +345,9 @@ public class Test24 : BaseTest
                         new IntersectionHelper.Ray(rock.Position, rock.Direction),
                         new IntersectionHelper.Ray(h2Copy.Position, h2Copy.Direction));
 
-                    if (result.Direction.FuzzyEquals(DoubleVector3.Zero) && result.Position[axis] >= minWindow[axis] &&
-                        result.Position[axis] <= maxWindow[axis])
+                    // if (result.Direction.FuzzyEquals(DoubleVector3.Zero) && result.Position[axis] >= minWindow[axis] &&
+                    //     result.Position[axis] <= maxWindow[axis])
+                    if (result.Direction.FuzzyEquals(DoubleVector3.Zero))
                     {
                         hitHailstones.Add(h2);
                         if (hitHailstones.Count == hailstones.Count)
@@ -329,13 +368,101 @@ public class Test24 : BaseTest
 
         return validXPV;
     }
- 
-    
 
+
+
+    // finally with complete help from : https://pastebin.com/fkpZWn8X - thankyou.
+    // need to look and see  why my original plan of picking a random set from the list and finding a point on that didn't work.
     
+    public long PossiblePositionsXY(List<Hailstone> hailstones, DoubleVector3 minVelocity,
+        DoubleVector3 maxVelocity, int axis)
+    {
+
+        int range = 300;
+        for (int x = -range; x < range; x++)
+        {
+            for (int y = -range; y < range; y++)
+            {
+                var result1 = TryIntersectPos2(hailstones[1], hailstones[0], (x,y));
+                var result2 = TryIntersectPos2(hailstones[2], hailstones[0], (x,y));
+                var result3 = TryIntersectPos2(hailstones[3], hailstones[0], (x,y));
+
+                if (!result1.intersects || result1.pos != result2.pos || result1.pos != result3.pos) continue;
+
+                for(int z=-range;z<range;z++)
+                {
+                    // We know at what timestamp we would intersect the rock its initial position, so we can just check where the Z would end up at
+                    // Check them for the first four hailstones as well
+                    var intersectZ = hailstones[1].BIPosition.Z + result1.time * (hailstones[1].IntVel.Z + z);
+                    var intersectZ2 = hailstones[2].BIPosition.Z + result2.time * (hailstones[2].IntVel.Z + z);
+                    var intersectZ3 = hailstones[3].BIPosition.Z + result3.time * (hailstones[3].IntVel.Z + z);
+ 
+                    // If they don't align, keep searching
+                    if (intersectZ != intersectZ2 || intersectZ != intersectZ3) continue;
+
+                    //  final = new DoubleVector3(result1.pos.X, result2.pos.Y, intersectZ);
+                    // DebugOutput($"Found result {final}");
+                    
+                    // If four hailstones happen to align, just assume we found the answer and exit.
+                    return (long)(result1.pos.X + result2.pos.Y + intersectZ);
+                }
+                
+
+            }
+        }
+
+        return 0;
+    }
     
+    public (bool intersects, (long X, long Y) pos, long time) TryIntersectPos(Hailstone one, Hailstone two, DoubleVector3 offset)
+    {
+
+        Hailstone adjustedOne = new Hailstone() { Position = one.Position, Velocity = one.Velocity + offset };
+        Hailstone adjustedTwo = new Hailstone() { Position = two.Position, Velocity = two.Velocity + offset };
+        
+        // var a = (Pos: (one.Position.X, one.Position.Y), Vel: (X: one.Velocity.X + offset.x, Y: one.Vel.Y + offset.y));
+        // var c = (Pos: (two.Position.X, two.Position.Y), Vel: (X: two.Velocity.X + offset.x, Y: two.Vel.Y + offset.y));
+ 
+        //Determinant
+        long D = (long)((adjustedOne.Velocity.X * -1 * adjustedTwo.Velocity.Y) - (adjustedOne.Velocity.Y * -1 * adjustedTwo.Velocity.X));
+ 
+        if (D == 0) return (false, (-1, -1), -1);
+ 
+        var Qx = (-1 * adjustedTwo.Velocity.Y * (adjustedTwo.Position.X - adjustedOne.Position.X)) - (-1 * adjustedTwo.Velocity.X * (adjustedTwo.Position.Y - adjustedOne.Position.Y));
+        var Qy = (adjustedOne.Velocity.X * (adjustedTwo.Position.Y - adjustedOne.Position.Y)) - (adjustedOne.Velocity.Y * (adjustedTwo.Position.X - adjustedOne.Position.X));
+ 
+        var t = (long)(Qx / D);
+        var s = (long)(Qy / D);
+ 
+        var Px = (long)(adjustedOne.Position.X + t * adjustedOne.Velocity.X);
+        var Py = (long)(adjustedOne.Position.Y + t * adjustedOne.Velocity.Y);
+ 
+        // Returns the intersection point, as well as the timestamp at which "one" will reach it with the given velocity.
+        return (true, (Px, Py), t);
+    }
     
-    
+    public (bool intersects, (BigInteger X, BigInteger Y) pos, BigInteger time) TryIntersectPos2(Hailstone one, Hailstone two, (int x, int y) offset)
+    {
+        var a = (Pos: (one.BIPosition.X, one.BIPosition.Y), Vel: (X: one.IntVel.X + offset.x, Y: one.IntVel.Y + offset.y));
+        var c = (Pos: (two.BIPosition.X, two.BIPosition.Y), Vel: (X: two.IntVel.X + offset.x, Y: two.IntVel.Y + offset.y));
+ 
+        //Determinant
+        BigInteger D = (a.Vel.X * -1 * c.Vel.Y) - (a.Vel.Y * -1 * c.Vel.X);
+ 
+        if (D == 0) return (false, (-1, -1), -1);
+ 
+        var Qx = (-1 * c.Vel.Y * (c.Pos.X - a.Pos.X)) - (-1 * c.Vel.X * (c.Pos.Y - a.Pos.Y));
+        var Qy = (a.Vel.X * (c.Pos.Y - a.Pos.Y)) - (a.Vel.Y * (c.Pos.X - a.Pos.X));
+ 
+        var t = Qx / D;
+        var s = Qy / D;
+ 
+        var Px = (a.Pos.X + t * a.Vel.X);
+        var Py = (a.Pos.Y + t * a.Vel.Y);
+ 
+        // Returns the intersection point, as well as the timestamp at which "one" will reach it with the given velocity.
+        return (true, (Px, Py), t);
+    }
     
     
 
@@ -354,6 +481,17 @@ public class Test24 : BaseTest
     {
         public string Id;
         public DoubleVector3 Position;
+
+        public (BigInteger X, BigInteger Y, BigInteger Z) BIPosition
+        {
+            get { return ((BigInteger)Position.X, (BigInteger)Position.Y, (BigInteger)Position.Z); }
+        }
+
+        public (int X, int Y, int Z) IntVel
+        {
+            get { return ((int)Velocity.X, (int)Velocity.Y, (int)Velocity.Z); }
+        }
+        
         public DoubleVector3 Velocity;
         public DoubleVector3 Direction => new DoubleVector3(Velocity.X,Velocity.Y,Velocity.Z).Normalized;
     }
