@@ -60,18 +60,18 @@ public static class Helper
         return sb.ToString();
     }
 
-    
+
     public static int[] GetNumGrid(List<string> data, ref int width, ref int height)
     {
         width = data[0].Length;
         height = data.Count;
-        
-        int [] numGrid = new int[data.Count * data[0].Length];
+
+        int[] numGrid = new int[data.Count * data[0].Length];
         for (int y = 0; y < data.Count; ++y)
         {
             for (int x = 0; x < data[0].Length; ++x)
             {
-                numGrid[(y * width) + x] = int.Parse(""+data[y][x]);
+                numGrid[(y * width) + x] = int.Parse("" + data[y][x]);
             }
         }
 
@@ -82,20 +82,20 @@ public static class Helper
     {
         width = data[0].Length;
         height = data.Count;
-        
-        char [] numGrid = new char[data.Count * data[0].Length];
+
+        char[] numGrid = new char[data.Count * data[0].Length];
         for (int y = 0; y < data.Count; ++y)
         {
             for (int x = 0; x < data[0].Length; ++x)
             {
-                numGrid[(y * width) + x] =data[y][x];
+                numGrid[(y * width) + x] = data[y][x];
             }
         }
 
         return numGrid;
     }
 
-    
+
     public static long GCD(long n1, long n2)
     {
         if (n2 == 0)
@@ -137,9 +137,9 @@ public static class Helper
 
         return result;
     }
-    
+
     // with help from : https://github.com/Acc3ssViolation/advent-of-code-2023/blob/main/Advent/Advent/Shared/MathExtra.cs
-    
+
     public static long Shoelace(List<IntVector2> vertices)
     {
         var sum = 0L;
@@ -149,6 +149,7 @@ public static class Helper
             var b = vertices[(i + 1) % vertices.Count];
             sum += ((long)b.X + a.X) * ((long)b.Y - a.Y);
         }
+
         return sum / 2;
     }
 
@@ -161,6 +162,7 @@ public static class Helper
             var b = vertices[(i + 1) % vertices.Count];
             sum += ((long)b.X + a.X) * ((long)b.Y - a.Y);
         }
+
         return sum / 2;
     }
 
@@ -173,13 +175,14 @@ public static class Helper
             var b = vertices[(i + 1) % vertices.Count];
             sum += (b.X + a.X) * (b.Y - a.Y);
         }
+
         return sum / 2;
     }
 
     /// <summary>
     /// Calculates the area of a polygon using the shoelace algorithm.
     /// </summary>
-    public static double Shoelace( List<Vector2> vertices)
+    public static double Shoelace(List<Vector2> vertices)
     {
         var sum = 0.0;
         for (var i = 0; i < vertices.Count; i++)
@@ -188,10 +191,11 @@ public static class Helper
             var b = vertices[(i + 1) % vertices.Count];
             sum += (b.X + a.X) * (b.X - a.X);
         }
+
         return sum / 2;
     }
 
-    
+
     public static List<DoubleVector2> Expand(List<DoubleVector2> vertices, double distance)
     {
         var edgeNormals = new List<DoubleVector2>(vertices.Count);
@@ -201,33 +205,215 @@ public static class Helper
             var end = vertices[(i + 1) % vertices.Count];
             var normal = end - start;
             normal /= normal.Magnitude;
-            
+
             // rotate
             normal = new DoubleVector2(normal.Y, -normal.X);
-           
+
             edgeNormals.Add(normal);
         }
-    
+
         var offsetVertices = new List<DoubleVector2>(vertices.Count);
         for (var i = 0; i < vertices.Count; i++)
         {
             var prevEdgeIndex = (i + edgeNormals.Count - 1) % edgeNormals.Count;
             var nextEdgeIndex = (i) % edgeNormals.Count;
-    
+
             var prevNormal = edgeNormals[prevEdgeIndex];
             var nextNormal = edgeNormals[nextEdgeIndex];
             var normal = (prevNormal + nextNormal);
             var offset = new DoubleVector2(Math.Sign(normal.X) * distance, Math.Sign(normal.Y) * distance);
 
-            offsetVertices.Add(vertices[i]+offset);
+            offsetVertices.Add(vertices[i] + offset);
         }
-    
+
         return offsetVertices;
     }
-    
-    
-    
-    
+}
+
+//https://stackoverflow.com/questions/29188686/finding-the-intersect-location-of-two-rays
+public static class IntersectionHelper
+{
+    public struct Ray
+    {
+        public DoubleVector3 Position;
+        public DoubleVector3 Direction;
+
+        public Ray(DoubleVector3 p, DoubleVector3 d)
+        {
+            Position = p;
+            Direction = d;
+        }
+    }
+
+    public static Ray FindShortestDistance(Ray ray1, Ray ray2)
+    {
+        if (ray1.Position == ray2.Position) // same position - that is the point of intersection
+        {
+            return new Ray(ray1.Position, DoubleVector3.Zero);
+        }
+
+        var d3 = DoubleVector3.Cross(ray1.Direction, ray2.Direction);
+
+        if (d3 != DoubleVector3.Zero) // lines askew (non - parallel)
+        {
+            //d3 is a cross product of ray1.Direction (d1) and ray2.Direction(d2)
+            //    that means d3 is perpendicular to both d1 and d2 (since it's not zero - we checked that)    
+            //
+            //If we would look at our lines from the direction where they seem parallel 
+            //    (such projection must always exist for lines that are askew)
+            //    we would see something like this
+            //
+            //   p1   a*d1
+            //   +----------->x------
+            //                |
+            //                | c*d3
+            //       p2  b*d2 v 
+            //       +------->x----
+            //
+            //p1 and p2 are positions ray1.Position and ray2.Position - x marks the points of intersection.
+            //    a, b and c are factors we multiply the direction vectors with (d1, d2, d3)
+            //
+            //From the illustration we can the shortest distance equation
+            //    p1 + a*d1 + c*d3 = p2 + b*d2
+            //
+            //If we rearrange it so we have a b and c on the left:
+            //    a*d1 - b*d2 + c*d3 = p2 - p1
+            //
+            //And since all of the know variables (d1, d2, d3, p2 and p1) have 3 coordinates (x,y,z)
+            //    now we have a set of 3 linear equations with 3 variables.
+            //   
+            //    a * d1.X - b * d2.X + c * d3.X = p2.X - p1.X
+            //    a * d1.Y - b * d2.Y + c * d3.Y = p2.Y - p1.Y
+            //    a * d1.Z - b * d2.Z + c * d3.Z = p2.Z - p1.Z
+            //
+            //If we use matrices, it would be
+            //    [d1.X  -d2.X  d3.X ]   [ a ]   [p2.X - p1.X]
+            //    [d1.Y  -d2.Y  d3.Y ] * [ a ] = [p2.Y - p1.Y]
+            //    [d1.Z  -d2.Z  d3.Z ]   [ a ]   [p2.Z - p1.Z]
+            //
+            //Or in short notation
+            //
+            //   [d1.X  -d2.X  d3.X | p2.X - p1.X]
+            //   [d1.Y  -d2.Y  d3.Y | p2.Y - p1.Y]
+            //   [d1.Z  -d2.Z  d3.Z | p2.Z - p1.Z]
+            //
+            //After Gaussian elimination, the last column will contain values a b and c
+
+            double[] matrix = new double[12];
+
+            matrix[0] = ray1.Direction.X;
+            matrix[1] = -ray2.Direction.X;
+            matrix[2] = d3.X;
+            matrix[3] = ray2.Position.X - ray1.Position.X;
+
+            matrix[4] = ray1.Direction.Y;
+            matrix[5] = -ray2.Direction.Y;
+            matrix[6] = d3.Y;
+            matrix[7] = ray2.Position.Y - ray1.Position.Y;
+
+            matrix[8] = ray1.Direction.Z;
+            matrix[9] = -ray2.Direction.Z;
+            matrix[10] = d3.Z;
+            matrix[11] = ray2.Position.Z - ray1.Position.Z;
+
+            var result = Solve(matrix, 3, 4);
+
+            double a = result[3];
+            double b = result[7];
+            double c = result[11];
+
+            if (a >= 0 && b >= 0) // normal shortest distance (between positive parts of the ray)
+            {
+                DoubleVector3 position = ray1.Position + (ray1.Direction * a);
+                DoubleVector3 direction = d3 * c;
+
+                return new Ray(position, direction);
+            }
+            //else will fall through below:
+            //    the shortest distance was between a negative part of a ray (or both rays)
+            //    this means the shortest distance is between one of the ray positions and another ray 
+            //    (or between the two positions)
+        }
+
+        //We're looking for the distance between a point and a ray, so we use dot products now
+        //Projecting the difference between positions (dP) onto the direction vectors will
+        //   give us the position of the shortest distance ray.
+        //The magnitude of the shortest distance ray is the the difference between its 
+        //    position and the other rays position
+
+        ray1.Direction.Normalize(); //needed for dot product - it works with unit vectors
+        ray2.Direction.Normalize();
+
+        DoubleVector3 dP = ray2.Position - ray1.Position;
+
+        //shortest distance ray position would be ray1.Position + a2 * ray1.Direction
+        //                                     or ray2.Position + b2 * ray2.Direction (if b2 < a2)
+        //                                     or just distance between points if both (a and b) < 0
+        //if either a or b (but not both) are negative, then the shortest is with the other one
+        double a2 = DoubleVector3.Dot(ray1.Direction, dP);
+        double b2 = DoubleVector3.Dot(ray2.Direction, -dP);
+
+        if (a2 < 0 && b2 < 0)
+            return new Ray(ray1.Position, dP);
+
+
+        DoubleVector3 p3a = ray1.Position + (ray1.Direction * a2);
+        DoubleVector3 d3a = ray2.Position - p3a;
+
+        DoubleVector3 p3b = ray1.Position;
+        DoubleVector3 d3b = ray2.Position + (ray2.Direction * b2) - p3b;
+
+        if (b2 < 0)
+            return new Ray(p3a, d3a);
+
+        if (a2 < 0)
+            return new Ray(p3b, d3b);
+
+        if (d3a.Magnitude <= d3b.Magnitude)
+            return new Ray(p3a, d3a);
+
+        return new Ray(p3b, d3b);
+    }
+
+//Solves a set of linear equations using Gaussian elimination
+    public static double[] Solve(double[] matrix, int rows, int cols)
+    {
+        for (int i = 0; i < cols - 1; i++)
+        for (int j = i; j < rows; j++)
+            if (matrix[i + j * cols] != 0)
+            {
+                if (i != j)
+                    for (int k = i; k < cols; k++)
+                    {
+                        double temp = matrix[k + j * cols];
+                        matrix[k + j * cols] = matrix[k + i * cols];
+                        matrix[k + i * cols] = temp;
+                    }
+
+                j = i;
+
+                for (int v = 0; v < rows; v++)
+                    if (v == j)
+                        continue;
+                    else
+                    {
+                        double factor = matrix[i + v * cols] / matrix[i + j * cols];
+                        matrix[i + v * cols] = 0;
+
+                        for (int u = i + 1; u < cols; u++)
+                        {
+                            matrix[u + v * cols] -= factor * matrix[u + j * cols];
+                            matrix[u + j * cols] /= matrix[i + j * cols];
+                        }
+
+                        matrix[i + j * cols] = 1;
+                    }
+
+                break;
+            }
+
+        return matrix;
+    }
 }
 
 
@@ -402,13 +588,12 @@ public static class Algorithms
         return visited;
     }
 
-    public static void CalculateLineLength(IntVector2 from, IntVector2 to,PlotFunction plotFunction)
+    public static void CalculateLineLength(IntVector2 from, IntVector2 to, PlotFunction plotFunction)
     {
-        Line(from.X,from.Y,to.X,to.Y,plotFunction);
+        Line(from.X, from.Y, to.X, to.Y, plotFunction);
     }
-    
-    
-    
+
+
     private static void Swap<T>(ref T lhs, ref T rhs)
     {
         T temp;
@@ -418,7 +603,7 @@ public static class Algorithms
     }
 
     //https://www.roguebasin.com/index.php/Bresenham's_Line_Algorithm
-    
+
     /// <summary>
     /// The plot function delegate
     /// </summary>
@@ -655,6 +840,158 @@ public static class Combinations
 
                 startingElementIndex++;
             }
+        }
+    }
+}
+//https://github.com/iisfaq/CyrusBeck/blob/master/CyrusBeck.cs
+
+//https://bluetoque.ca/2012/01/cohen-sutherland-line-clipping/
+namespace CyrusBeckLineClipping
+{
+    public class CyrusBeck
+    {
+        public enum CyrusBeckResult
+        {
+            DoesNotIntersect,
+            NotTrimmed,
+            StartTrimmed,
+            EndTrimmed,
+            StartAndEndTrimmed
+        }
+
+        // Converted from c++ code at
+        // https://www.geeksforgeeks.org/line-clipping-set-2-cyrus-beck-algorithm/
+        public static bool LineClipping(List<DoubleVector3> vertices, DoubleVector3 startVector,
+            DoubleVector3 endVector, out DoubleVector3 trimmedStartVector, out DoubleVector3 trimmedEndVector,
+            out CyrusBeckResult results)
+        {
+            List<DoubleVector3> normals = new List<DoubleVector3>();
+
+            // Calculating the normals 
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                normals.Add(new DoubleVector3(
+                    vertices[i].Y - vertices[(i + 1) % vertices.Count].Y,
+                    vertices[(i + 1) % vertices.Count].X - vertices[i].X,
+                    0));
+            }
+
+            // Calculating P1 - P0 
+            DoubleVector3 P1_P0 = endVector - startVector;
+
+            // Initializing all values of P0 - PEi 
+            List<DoubleVector3> P0_PEi = new List<DoubleVector3>();
+
+
+            // Calculating the values of P0 - PEi for all edges 
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                // Calculating PEi - P0, so that the denominator won't have to multiply by -1 while calculating 't' 
+                P0_PEi.Add(new DoubleVector3(vertices[i].X - startVector.X, vertices[i].Y - startVector.Y, 0));
+            }
+
+            List<double> numerator = new List<double>();
+            List<double> denominator = new List<double>();
+
+            // Calculating the numerator and denominators 
+            // using the dot function 
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                numerator.Add(dotProduct(normals[i], P0_PEi[i]));
+                denominator.Add(dotProduct(normals[i], P1_P0));
+            }
+
+            // Initializing the 't' values dynamically 
+            List<double> t = new List<double>();
+
+            // Making two vectors called 't entering' 
+            // and 't leaving' to group the 't's 
+            // according to their denominators 
+            List<double> tEntering = new List<double>();
+            List<double> tLeaving = new List<double>();
+
+            // Calculating 't' and grouping them accordingly 
+            for (int i = 0; i < vertices.Count; i++)
+            {
+                if (denominator[i] == 0)
+                    t.Add(numerator[i]);
+                else
+                    t.Add(numerator[i] / denominator[i]);
+
+                if (denominator[i] >= 0)
+                    tEntering.Add(t[i]);
+                else
+                    tLeaving.Add(t[i]);
+            }
+
+            // Initializing the final two values of 't' 
+            double tEnteringMax;
+            double tLeavingMin;
+
+            // Taking the max of all 'tE' and 0, so pushing 0 
+            tEntering.Add(0);
+            tEnteringMax = tEntering.Max();
+
+            // Taking the min of all 'tL' and 1, so pushing 1 
+            tLeaving.Add(1);
+            tLeavingMin = tLeaving.Min();
+
+            // Entering 't' value cannot be greater than exiting 't' value, hence, this is the case when the line 
+            // is completely outside 
+            if (tEnteringMax > tLeavingMin)
+            {
+                trimmedStartVector = new DoubleVector3();
+                trimmedEndVector = new DoubleVector3();
+                results = CyrusBeckResult.DoesNotIntersect;
+                return false;
+            }
+
+            // Calculating the coordinates in terms of the trimmed x and y 
+            trimmedStartVector = new DoubleVector3((float)(startVector.X + P1_P0.X * tEnteringMax),
+                (float)(startVector.Y + P1_P0.Y * tEnteringMax), 0);
+            trimmedEndVector = new DoubleVector3((float)(startVector.X + P1_P0.X * tLeavingMin),
+                (float)(startVector.Y + P1_P0.Y * tLeavingMin), 0);
+
+            bool StartTrimmed = IsSame(startVector, trimmedStartVector) ? false : true;
+            bool EndTrimmed = IsSame(endVector, trimmedEndVector) ? false : true;
+
+            if (StartTrimmed && EndTrimmed)
+                results = CyrusBeckResult.StartAndEndTrimmed;
+            else if (StartTrimmed)
+                results = CyrusBeckResult.StartTrimmed;
+            else if (EndTrimmed)
+                results = CyrusBeckResult.EndTrimmed;
+            else
+                results = CyrusBeckResult.NotTrimmed;
+            return true;
+        }
+
+        private static bool IsSame(DoubleVector3 p1, DoubleVector3 p2)
+        {
+            if (IsSame(p1.X, p2.X) == false)
+                return false;
+            if (IsSame(p1.Y, p2.Y) == false)
+                return false;
+            if (IsSame(p1.Z, p2.Z) == false)
+                return false;
+            return true;
+        }
+
+        private static bool IsSame(double a, double b)
+        {
+            // Compare to 5 decimal points
+            return Math.Abs(a - b) < 0.00001;
+        }
+
+
+        private static double dotProduct(DoubleVector3 v1, DoubleVector3 v2)
+        {
+            return v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
+        }
+
+        private static DoubleVector3 crossProduct(DoubleVector3 v1, DoubleVector3 v2)
+        {
+            return new DoubleVector3(v1.Y * v2.Z - v1.Z * v2.Y, v1.Z * v2.X - v1.X * v2.Z, v1.X * v2.Y - v1.Y * v2.X);
         }
     }
 }
