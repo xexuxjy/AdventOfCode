@@ -103,7 +103,43 @@ public struct IntVector3
     }
 
     
-    
+    public void Min(IntVector3 v)
+    {
+        if (v.X < X)
+        {
+            X = v.X;
+        }
+
+        if (v.Y < Y)
+        {
+            Y = v.Y;
+        }
+        
+        if (v.Z < Z)
+        {
+            Z = v.Z;
+        }
+        
+    }
+
+    public void Max(IntVector3 v)
+    {
+        if (v.X > X)
+        {
+            X = v.X;
+        }
+
+        if (v.Y > Y)
+        {
+            Y = v.Y;
+        }
+        if (v.Z > Z)
+        {
+            Z = v.Z;
+        }
+        
+    }
+
 
     public int ManhattanDistance(IntVector3 v)
     {
@@ -150,6 +186,36 @@ public struct IntVector3
         var yHash = Y.GetHashCode();
         var zHash = Z.GetHashCode();
         return X.GetHashCode() ^ (yHash << 4) ^ (yHash >> 28) ^ (zHash >> 4) ^ (zHash << 28);
+    }
+ 
+    public int this[int i]
+    {
+        get
+        {
+            switch (i)
+            {
+                case (0): return X;
+                case (1): return Y;
+                case (2): return Z;
+                default:
+                {
+                    return 0;
+                }
+            }
+        }
+        set
+        {
+            switch (i)
+            {
+                case (0): X = value; break;
+                case (1): Y = value; break;
+                case (2): Z = value; break;
+                default:
+                {
+                    break;
+                }
+            }
+        }
     }
     
     public int X;

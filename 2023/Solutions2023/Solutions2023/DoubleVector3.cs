@@ -79,6 +79,11 @@ public struct DoubleVector3
         return vector;
     }
 
+    public bool FuzzyEquals(DoubleVector3 v)
+    {
+        return Math.Abs(X-v.X) < EPSILON_MAGNITUDE &&  Math.Abs(Y-v.Y) < EPSILON_MAGNITUDE && Math.Abs(Z-v.Z) < EPSILON_MAGNITUDE;
+    }
+    
     public static bool operator ==(DoubleVector3 value1, DoubleVector3 value2)
     {
         return value1.X == value2.X && value1.Y == value2.Y && value1.Z == value2.Z;
@@ -231,7 +236,36 @@ public struct DoubleVector3
         get { return this.X * this.X + this.Y * this.Y+this.Z * this.Z; }
     }
 
-
+    public double this[int i]
+    {
+        get
+        {
+            switch (i)
+            {
+                case (0): return X;
+                case (1): return Y;
+                case (2): return Z;
+                default:
+                {
+                    return 0.0;
+                }
+            }
+        }
+        set
+        {
+            switch (i)
+            {
+                case (0): X = value; break;
+                case (1): Y = value; break;
+                case (2): Z = value; break;
+                default:
+                {
+                    break;
+                }
+            }
+        }
+    }
+    
     public double X;
     public double Y;
     public double Z;

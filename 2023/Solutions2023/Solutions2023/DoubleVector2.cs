@@ -107,6 +107,33 @@ public struct DoubleVector2
         }
     }
 
+    public void Min(IntVector2 v)
+    {
+        if (v.X < X)
+        {
+            X = v.X;
+        }
+
+        if (v.Y < Y)
+        {
+            Y = v.Y;
+        }
+    }
+
+    public void Max(IntVector2 v)
+    {
+        if (v.X > X)
+        {
+            X = v.X;
+        }
+
+        if (v.Y > Y)
+        {
+            Y = v.Y;
+        }
+    }
+
+    
 
     public double ManhattanDistance(DoubleVector2 v)
     {

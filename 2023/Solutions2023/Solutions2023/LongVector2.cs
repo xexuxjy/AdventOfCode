@@ -161,6 +161,34 @@ public struct LongVector2
         get { return this.X * this.X + this.Y * this.Y; }
     }
 
+    public long this[int i]
+    {
+        get
+        {
+            switch (i)
+            {
+                case (0): return X;
+                case (1): return Y;
+                default:
+                {
+                    return 0;
+                }
+            }
+        }
+        set
+        {
+            switch (i)
+            {
+                case (0): X = value; break;
+                case (1): Y = value; break;
+                default:
+                {
+                    break;
+                }
+            }
+        }
+    }
+    
 
     public long X;
     public long Y;
