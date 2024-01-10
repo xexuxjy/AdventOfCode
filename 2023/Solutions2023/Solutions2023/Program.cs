@@ -5,7 +5,8 @@ public class Program
 
     static void Main()
     {
-        new Test24().RunTest();
+        //new Day19Cheat().RunTest();
+        new Test19().RunTest();
     }
 
 

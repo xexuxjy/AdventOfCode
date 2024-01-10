@@ -1,2 +1,3 @@
-Total pushes was : 787056720
-Elapsed = 85.6267 ms
+Part2 button count is : 212986464842911
+Total pushes was : 0
+Elapsed = 43.4103 ms
