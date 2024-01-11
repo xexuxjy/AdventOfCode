@@ -3,7 +3,7 @@
     public override void Initialise()
     {
         TestID = 19;
-        IsTestInput = true;
+        IsTestInput = false;
         IsPart2 = true;
     }
 
@@ -20,43 +20,23 @@
             {
                 break;
             }
-            workflows.Add(new WorkFlow(m_dataFileContents[i],workflowDictionary,acceptList));
+
+            workflows.Add(new WorkFlow(m_dataFileContents[i], workflowDictionary, acceptList));
         }
 
         if (IsPart2)
         {
             long total = 0;
-
-            // foreach (WorkFlow wf in workflows)
-            // {
-            //     SortItem minSortItem = new SortItem();
-            //     SortItem maxSortItem = new SortItem();
-            //
-            //     wf.MinSortItem = minSortItem;
-            //     wf.MaxSortItem = maxSortItem;
-            //     
-            //     for (int j = 0; j < minSortItem.Values.Length;j++)
-            //     {
-            //         minSortItem.Values[j] = SortItem.MinLimit;
-            //         maxSortItem.Values[j] = SortItem.MaxLimit;
-            //     }
-            //
-            //     long ruleTotal = 1;
-            //     wf.AcceptedCombinations(minSortItem,maxSortItem,workflowDictionary);
-            //     for (int k = 0; k < minSortItem.Values.Length; k++)
-            //     {
-            //         ruleTotal *= ((maxSortItem.Values[k] - minSortItem.Values[k]) + 1);
-            //     }
-            //
-            //     total += ruleTotal;
-            //     
-            // }
-
-            List<List<(Rule,bool)>> rulePaths = new List<List<(Rule,bool)>>();
-            workflowDictionary["in"].BuildAcceptRules(rulePaths,null);
+            
+            BinaryNode<Rule> rootNode = WorkFlow.BuildTree(workflowDictionary["in"], 0, workflowDictionary);
 
 
-            foreach (List<(Rule,bool)> rules in rulePaths)
+            List<(Rule, bool)> start = null;
+            List<List<(Rule, bool)>> rulePaths = new List<List<(Rule, bool)>>();
+
+            WorkFlow.BuildAcceptRulesTree(rootNode, rulePaths, null);
+
+            foreach (List<(Rule, bool)> rules in rulePaths)
             {
                 SortItem minSortItem = new SortItem();
                 SortItem maxSortItem = new SortItem();
@@ -66,25 +46,26 @@
                     minSortItem.Values[j] = SortItem.MinLimit;
                     maxSortItem.Values[j] = SortItem.MaxLimit;
                 }
+
                 foreach (var r in rules)
                 {
-                    r.Item1.AcceptedCombinations(minSortItem, maxSortItem, workflowDictionary);
+                    UpdateCombinations(r, minSortItem, maxSortItem);
                 }
-                
+
                 long ruleTotal = 1;
-                 
+
                 for (int k = 0; k < minSortItem.Values.Length; k++)
                 {
                     ruleTotal *= ((maxSortItem.Values[k] - minSortItem.Values[k]) + 1);
+                    
                 }
-
-                total += ruleTotal; 
+                total += ruleTotal;
+                //string rangeInfo = $"Min(X : {minSortItem.Values[0]}  M : {minSortItem.Values[1]}  A : {minSortItem.Values[2]}  S : {minSortItem.Values[3]})  Max(X : {maxSortItem.Values[0]}  M : {maxSortItem.Values[1]}  A : {maxSortItem.Values[2]}  S : {maxSortItem.Values[3]})";
+                //DebugOutput($"rangeProduct {ruleTotal}   sum {total} "+rangeInfo);
             }
 
 
-            
             DebugOutput("Part 2 Total combinations : " + total);
-
         }
         else
         {
@@ -105,26 +86,49 @@
 
             int total = acceptList.Sum(x => x.Score);
             DebugOutput("Accept list sum is : " + total);
-            
         }
 
-        
+
         
     }
 
     
-    
-    
-    
+    public void UpdateCombinations((Rule, bool) ruleData, SortItem minItem, SortItem maxItem)
+    {
+        if (ruleData.Item1.LHS != null)
+        {
+            int valueIndex = Rule.GetValueIndex(ruleData.Item1.LHS);
+
+            if (ruleData.Item2)
+            {
+                if (ruleData.Item1.COMP == "<")
+                {
+                    maxItem.Values[valueIndex] = Int32.Min(maxItem.Values[valueIndex], ruleData.Item1.RHS - 1);
+                }
+                else if (ruleData.Item1.COMP == ">")
+                {
+                    minItem.Values[valueIndex] = Int32.Max(minItem.Values[valueIndex], ruleData.Item1.RHS + 1);
+                }
+            }
+            else
+            {
+                if (ruleData.Item1.COMP == "<")
+                {
+                    minItem.Values[valueIndex] = ruleData.Item1.RHS;
+                }
+                else if (ruleData.Item1.COMP == ">")
+                {
+                    maxItem.Values[valueIndex] = ruleData.Item1.RHS;
+                }
+            }
+
+        }
+    }
+
     public record SortItem
     {
         public static int MinLimit = 1;
         public static int MaxLimit = 4000;
-        
-        // public int X;
-        // public int M;
-        // public int A;
-        // public int S;
 
         public int[] Values = new int[4];
 
@@ -144,7 +148,6 @@
                 tokens[2].Split("=", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)[1]);
             Values[3] = int.Parse(
                 tokens[3].Split("=", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)[1]);
-
         }
 
         public int Score
@@ -163,7 +166,6 @@
     };
 
 
-
     public class WorkFlow
     {
         public string Id;
@@ -173,22 +175,22 @@
 
         public SortItem MinSortItem;
         public SortItem MaxSortItem;
-        
-        public WorkFlow(string data,Dictionary<string,WorkFlow> workflowDictionary,List<SortItem> acceptedList)
+
+        public WorkFlow(string data, Dictionary<string, WorkFlow> workflowDictionary, List<SortItem> acceptedList)
         {
             Id = data.Substring(0, data.IndexOf("{"));
             workflowDictionary[Id] = this;
             m_workflowDictionary = workflowDictionary;
             m_acceptedList = acceptedList;
-            
+
             string ruleText = data.Substring(data.IndexOf("{") + 1);
-            ruleText = ruleText.Substring(0,ruleText.IndexOf("}"));
+            ruleText = ruleText.Substring(0, ruleText.IndexOf("}"));
             string[] tokens =
                 ruleText.Split(",", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string token in tokens)
             {
-                m_rules.Add(new Rule(token,this));
+                m_rules.Add(new Rule(token, this));
             }
         }
 
@@ -212,93 +214,86 @@
                     {
                         m_workflowDictionary[destination].Process(sortItem);
                     }
+
                     break;
                 }
             }
         }
 
-        public List<Rule> AcceptRules = new List<Rule>();
 
-        public void BuildAcceptRules(List<List<(Rule,bool)>> rulePaths,List<(Rule,bool)> acceptRules)
+        private static BinaryNode<Rule> acceptRule = new BinaryNode<Rule>() { Data = new Rule("A", null) };
+        private static BinaryNode<Rule> rejectRule = new BinaryNode<Rule>() { Data = new Rule("R", null) };
+
+        public static BinaryNode<Rule> BuildTree(WorkFlow wf, int ruleIndex,
+            Dictionary<string, WorkFlow> workflowDictionary)
         {
-            List<(Rule,bool)> original = acceptRules;
-           
-            for (int i=0 ;i < m_rules.Count;++i)
+            BinaryNode<Rule> newNode = new BinaryNode<Rule>()
             {
-                Rule r = m_rules[i];
-                if (r.Destination == "A")
-                {
-                    List<(Rule,bool)> newRules = new List<(Rule,bool)>();
-                    if (acceptRules != null)
-                    {
-                        newRules.AddRange(acceptRules);
-                    }
-                    
-                    if (r.LHS != null)
-                    {
-                        acceptRules.Add((r,true));    
-                    }
-                    // else
-                    // {
-                    //     acceptRules.Add((m_rules[i-1],false));
-                    // }
-
-                    
-                    rulePaths.Add(acceptRules);
-
-                    acceptRules = newRules;
-
-                }
-                else if (r.Destination == "R")
-                {
-                    
-                }
-                else
-                {
-                    List<(Rule,bool)> newRules = new List<(Rule,bool)>();
-                    if (acceptRules != null)
-                    {
-                        newRules.AddRange(acceptRules);
-                    }
-
-                    if (r.LHS != null)
-                    {
-                        newRules.Add((r,true));    
-                    }
-                    else
-                    {
-                        newRules.Add((m_rules[i-1],false));
-                    }
-                    
-                    
-                    m_workflowDictionary[r.Destination].BuildAcceptRules(rulePaths,newRules);
-                }
-            }
-            
-        }
-        
+                Data = wf.m_rules[ruleIndex]
+            };
 
 
-
-        public void AcceptedCombinations(SortItem minSortItem,SortItem maxSortItem,Dictionary<string,WorkFlow> workflows)
-        {
-            foreach (Rule rule in m_rules)
+            if (newNode.Data.Destination == "A")
             {
-                rule.AcceptedCombinations(minSortItem, maxSortItem,workflows);
+                newNode.Left = acceptRule;
             }
+            else if (newNode.Data.Destination == "R")
+            {
+                newNode.Left = rejectRule;
+            }
+            else
+            {
+                newNode.Left = BuildTree(workflowDictionary[newNode.Data.Destination], 0, workflowDictionary);
+            }
+
+
+            if (ruleIndex < wf.m_rules.Count - 1)
+            {
+                var nextRule = wf.m_rules[ruleIndex + 1];
+                newNode.Right = BuildTree(wf, ruleIndex + 1, workflowDictionary);
+            }
+
+            return newNode;
         }
 
-        // public void AcceptRules(List<Rule> acceptRules)
-        // {
-        //     foreach (Rule rule in m_rules)
-        //     {
-        //         if (rule.Destination == "A")
-        //         {
-        //             acceptRules.Add(rule);
-        //         }
-        //     }
-        // }
-        
+
+        public static void
+            BuildAcceptRulesTree(BinaryNode<Rule> node, List<List<(Rule, bool)>> rulePaths,
+                List<(Rule, bool)> acceptRules)
+        {
+            if (acceptRules == null)
+            {
+                acceptRules = new List<(Rule, bool)>();
+            }
+
+            if (node == acceptRule)
+            {
+                rulePaths.Add(acceptRules);
+            }
+            else if (node == rejectRule)
+            {
+            }
+            else
+            {
+                if (node.Left != null)
+                {
+                    List<(Rule, bool)> lhs = new List<(Rule, bool)>();
+                    lhs.AddRange(acceptRules);
+                    lhs.Add((node.Data, true));
+                    BuildAcceptRulesTree(node.Left, rulePaths, lhs);
+                }
+
+                if (node.Right != null)
+                {
+                    List<(Rule, bool)> rhs = new List<(Rule, bool)>();
+                    rhs.AddRange(acceptRules);
+                    rhs.Add((node.Data, false));
+                    BuildAcceptRulesTree(node.Right, rulePaths, rhs);
+                }
+            }
+        }
+
+
     }
 
     public class Rule
@@ -309,19 +304,19 @@
         private string m_comparator;
         private string m_destination;
         private WorkFlow m_workflow;
-        
+
         public string Destination => m_destination;
         public string LHS => m_lhs;
         public int RHS => m_rhs;
 
         public string COMP => m_comparator;
-        
-        public Rule(string ruleText,WorkFlow workFlow)
+
+        public Rule(string ruleText, WorkFlow workFlow)
         {
             m_text = ruleText;
             m_workflow = workFlow;
             int index = ruleText.IndexOf("<");
-            if(index == -1)
+            if (index == -1)
             {
                 index = ruleText.IndexOf(">");
             }
@@ -329,23 +324,21 @@
             if (index != -1)
             {
                 m_comparator = ruleText.Substring(index, 1);
-                m_lhs = ruleText.Substring(0, index );
-                
-                
-                string temp  = ruleText.Substring(index+1);
+                m_lhs = ruleText.Substring(0, index);
+
+
+                string temp = ruleText.Substring(index + 1);
                 string[] temp2 = temp.Split(":",
                     StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
                 m_rhs = int.Parse(temp2[0]);
                 m_destination = temp2[1];
-                
-                int ibreak = 0;
 
+                int ibreak = 0;
             }
             else
             {
                 m_destination = ruleText;
             }
-            
         }
 
         public override string ToString()
@@ -353,35 +346,38 @@
             return m_text;
         }
 
-        public void AcceptedCombinations(SortItem minSortItem,SortItem maxSortItem,Dictionary<string,WorkFlow> workflows)
+        public static int GetValueIndex(string val)
         {
-            int valueIndex = 0;
-                
-            if (m_lhs == "x")
+            if (val == "x")
             {
-                valueIndex = 0;
+                return 0;
             }
-            else if (m_lhs == "m")
+            else if (val == "m")
             {
-                valueIndex = 1;
-                    
+                return 1;
             }
-            else if (m_lhs == "a")
+            else if (val == "a")
             {
-                valueIndex = 2;
-                    
+                return 2;
             }
-            else if (m_lhs == "s")
+            else if (val == "s")
             {
-                valueIndex = 3;
+                return 3;
             }
 
-            
+            return 0;            
+        }
+        
+        public void AcceptedCombinations(SortItem minSortItem, SortItem maxSortItem,
+            Dictionary<string, WorkFlow> workflows)
+        {
+            int valueIndex = GetValueIndex(m_lhs);
+
             if (m_destination == "A")
             {
                 if (m_comparator == "<")
                 {
-                    if (maxSortItem.Values[valueIndex] > m_rhs - 1 )
+                    if (maxSortItem.Values[valueIndex] > m_rhs - 1)
                     {
                         maxSortItem.Values[valueIndex] = m_rhs - 1;
                     }
@@ -395,11 +391,9 @@
                 }
             }
         }
-        
-        
-        
-        
-        public bool Process(SortItem sortItem,out string destination)
+
+
+        public bool Process(SortItem sortItem, out string destination)
         {
             // default / last case.
             if (m_lhs == null)
@@ -407,9 +401,9 @@
                 destination = m_destination;
                 return true;
             }
-            
-            
-            int compareValue=0;
+
+
+            int compareValue = 0;
             if (m_lhs == "x") compareValue = sortItem.Values[0];
             if (m_lhs == "m") compareValue = sortItem.Values[1];
             if (m_lhs == "a") compareValue = sortItem.Values[2];
@@ -435,10 +429,6 @@
 
             destination = "";
             return false;
-
         }
-        
     }
-    
-    
 }
