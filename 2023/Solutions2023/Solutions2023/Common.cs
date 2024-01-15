@@ -60,6 +60,21 @@ public static class Helper
         return sb.ToString();
     }
 
+    public static String DrawGrid(bool[] data, long width, long height)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                sb.Append(data[(y * width) + x]?"1":"0");
+            }
+
+            sb.AppendLine();
+        }
+
+        return sb.ToString();
+    }
 
     public static int[] GetNumGrid(List<string> data, ref int width, ref int height)
     {
