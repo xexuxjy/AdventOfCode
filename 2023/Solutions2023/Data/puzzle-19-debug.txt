@@ -1,2 +1,2 @@
-Accept list sum is : 425811
-Elapsed = 41.2687 ms
+Part 2 Total combinations : 131796824371749
+Elapsed = 45.2832 ms

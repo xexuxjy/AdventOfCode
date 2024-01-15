@@ -228,6 +228,28 @@ public static class Helper
 
         return offsetVertices;
     }
+
+    static Tuple<Complex, Complex> SolveQuadratic(double a, double b, double c)
+    {
+        if (a == 0) throw new ArgumentException("The coefficient of x squared can't be zero");
+        double discriminant = b * b - 4.0 * a * c;
+        Complex temp = Complex.Sqrt(discriminant);
+        Complex root1 = (-b + temp) / (2.0 * a);
+        Complex root2 = (-b - temp) / (2.0 * a);
+        return Tuple.Create(root1, root2);
+    }
+
+    public static double GetQuadratic(double f, double val1, double val2, double val3)
+    {
+        var c = val1;
+        var aPlusB = val2 - c;
+        var fourAPlusTwoB = val3 - c;
+        var twoA = fourAPlusTwoB - (2 * aPlusB);
+        var a = twoA / 2;
+        var b = aPlusB - a;
+
+        return a * (f * f) + b * f + c;
+    }
 }
 
 //https://stackoverflow.com/questions/29188686/finding-the-intersect-location-of-two-rays
@@ -1006,4 +1028,3 @@ public class BinaryNode<T>
 
     public override string ToString() => Name;
 }
-
