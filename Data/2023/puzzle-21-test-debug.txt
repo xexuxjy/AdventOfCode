@@ -1,0 +1,2 @@
+Part 2 terms : 13,129,420
+Elapsed = 17.0674 ms

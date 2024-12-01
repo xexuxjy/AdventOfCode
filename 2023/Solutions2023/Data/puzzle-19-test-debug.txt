@@ -1,2 +1,0 @@
-Part 2 Total combinations : 752280064000000
-Elapsed = 233288.1103 ms
