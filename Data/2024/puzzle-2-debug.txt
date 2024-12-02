@@ -1,0 +1,2 @@
+Total safe reports is  : 301
+Elapsed = 12.2095 ms

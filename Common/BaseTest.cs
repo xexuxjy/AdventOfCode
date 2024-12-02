@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public abstract class BaseTest
 {
-    public static string InputPath = @"..\..\Data\";
+    public static string InputPath = @"..\..\..\Data\";
 
     protected List<string> m_dataFileContents = new List<string>();
     protected List<string> m_debugInfo = new List<string>();
@@ -23,6 +23,19 @@ public abstract class BaseTest
 
     public int Year
     {get;set; }
+
+    public BaseTest SetTestInput()
+    {
+        IsTestInput = true;
+        return this;
+    }
+
+    public BaseTest SetPart2()
+    {
+        IsPart2 = true;
+        return this;
+    }
+
 
     public String Filename
     {

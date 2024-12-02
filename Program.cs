@@ -5,7 +5,7 @@ public class Program
 
     static void Main()
     {
-        new Test25_2022().RunTest();
+        new Test2_2024().SetPart2().RunTest(); 
     }
 
 

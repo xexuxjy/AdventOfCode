@@ -1,0 +1,2 @@
+Total difference is  : 23981443
+Elapsed = 11.3791 ms
