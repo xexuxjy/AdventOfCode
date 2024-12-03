@@ -1,0 +1,2 @@
+Total is : 76729637 
+Elapsed = 65.4658 ms
