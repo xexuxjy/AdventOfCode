@@ -1,0 +1,2 @@
+Have found 1982 matches
+Elapsed = 56.9189 ms

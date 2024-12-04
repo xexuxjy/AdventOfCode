@@ -148,4 +148,15 @@ public struct IntVector2
 
     public static readonly IntVector2[] Directions = new IntVector2[] { Left, Right, Up, Down };
 
+
+    public static readonly IntVector2[] DiagonalDirections = new IntVector2[] {new IntVector2(-1,-1),new IntVector2(1,1),new IntVector2(-1,1),new IntVector2(1,-1) };
+
+    public static readonly IntVector2[] AllDirections = new IntVector2[] { Left, Right,Up,Down,new IntVector2(-1,-1),new IntVector2(1,1),new IntVector2(-1,1),new IntVector2(1,-1) };
+
+
+
+
+
+
+
 }
