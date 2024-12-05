@@ -1,2 +1,2 @@
-Have found 9 matches
-Elapsed = 12.0497 ms
+Have found 18 matches
+Elapsed = 28.7553 ms
