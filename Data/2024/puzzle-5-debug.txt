@@ -1,2 +1,2 @@
-Total of mid points is : 6498
-Elapsed = 14.4419 ms
+Total of mid points is : 5017
+Elapsed = 20.2426 ms
