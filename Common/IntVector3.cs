@@ -94,7 +94,7 @@ public struct IntVector3
 
     public static bool operator ==(IntVector3 value1, IntVector3 value2)
     {
-        return value1.X == value2.X || value1.Y == value2.Y || value1.Z == value2.Z;
+        return value1.X == value2.X && value1.Y == value2.Y && value1.Z == value2.Z;
     }
 
     public static bool operator !=(IntVector3 value1, IntVector3 value2)

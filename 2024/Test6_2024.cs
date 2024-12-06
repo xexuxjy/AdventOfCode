@@ -94,14 +94,15 @@ public class Test6_2024 : BaseTest
             dataGridCopy[obstacleIndex] = Obstacle;
 
             
-            HashSet<(IntVector2, IntVector2)> previousPaths = new HashSet<(IntVector2, IntVector2)>();
+            //HashSet<(IntVector2, IntVector2)> previousPaths = new HashSet<(IntVector2, IntVector2)>();
+            HashSet<IntVector4> previousPaths = new HashSet<IntVector4>();
 
 
             int stepResult = ValidMove;
             while (stepResult == ValidMove)
             {
                 stepResult = StepSimulationWithHistory(ref positionCopy, ref directionCopy, dataGridCopy, width, height, previousPaths);
-                previousPaths.Add((positionCopy, directionCopy));
+                previousPaths.Add(new IntVector4(positionCopy.X,positionCopy.Y,directionCopy.X,directionCopy.Y));
                     
                 //DebugOutput(Helper.DrawGrid(dataGridCopy,width,height,positionCopy,guardDirection));
             }
@@ -141,7 +142,7 @@ public class Test6_2024 : BaseTest
     }
 
 
-    public int StepSimulationWithHistory(ref IntVector2 guardPosition,ref IntVector2 guardDirection,char[] dataGrid,int width,int height,HashSet<(IntVector2,IntVector2)> previous)
+    public int StepSimulationWithHistory(ref IntVector2 guardPosition,ref IntVector2 guardDirection,char[] dataGrid,int width,int height,HashSet<IntVector4> previous)
     {
         IntVector2 newPosition = guardPosition + guardDirection;
         if(Helper.InBounds(newPosition,width,height))
@@ -156,8 +157,9 @@ public class Test6_2024 : BaseTest
                 guardPosition = newPosition;
             }
 
+            IntVector4 lookup = new IntVector4(guardPosition.X,guardPosition.Y,guardDirection.X,guardDirection.Y);
             // if we're in the same position and same direction we're in a loop
-            if(previous.Contains((guardPosition,guardDirection)))
+            if(previous.Contains(lookup))
             {
                 return GuardLoop;
             }
