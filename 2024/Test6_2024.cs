@@ -69,40 +69,48 @@ public class Test6_2024 : BaseTest
         IntVector2 positionCopy = guardPosition;
         IntVector2 directionCopy = guardDirection;
 
-        int obstacleLoops = 0;
-        for (int i = 0; i < dataGrid.Length; i++)
+        // didn't notice that obstacles only make sense if they would have been on the original path
+
+        HashSet<IntVector2> visitedLocations = new HashSet<IntVector2>();
+        //visitedLocations.Add(guardPosition);
+
+        while(StepSimulation(ref positionCopy,ref directionCopy,dataGrid,width,height))
         {
-            if(dataGrid[i] == Empty) 
+            visitedLocations.Add(positionCopy);
+        }
+
+        int obstacleLoops = 0;
+
+        foreach(IntVector2 location in visitedLocations)
+        {
+            int obstacleIndex  = (location.Y * width)+location.X;
+
+            positionCopy = guardPosition;
+            directionCopy = guardDirection;
+
+            char[] dataGridCopy = new char[dataGrid.Length];
+            Array.Copy(dataGrid, 0, dataGridCopy, 0, dataGrid.Length);
+
+            dataGridCopy[obstacleIndex] = Obstacle;
+
+            
+            HashSet<(IntVector2, IntVector2)> previousPaths = new HashSet<(IntVector2, IntVector2)>();
+
+
+            int stepResult = ValidMove;
+            while (stepResult == ValidMove)
             {
-                positionCopy = guardPosition;
-                directionCopy = guardDirection;
-
-                char[] dataGridCopy = new char[dataGrid.Length];
-                Array.Copy(dataGrid, 0, dataGridCopy, 0, dataGrid.Length);
-
-                dataGridCopy[i] = Obstacle;
-
-                HashSet<IntVector2> visitedLocations = new HashSet<IntVector2>();
-                visitedLocations.Add(guardPosition);
-                HashSet<(IntVector2, IntVector2)> previousPaths = new HashSet<(IntVector2, IntVector2)>();
-
-
-                int stepResult = ValidMove;
-                while (stepResult == ValidMove)
-                {
-                    stepResult = StepSimulationWithHistory(ref positionCopy, ref directionCopy, dataGridCopy, width, height, previousPaths);
-                    visitedLocations.Add(positionCopy);
-                    previousPaths.Add((positionCopy, directionCopy));
+                stepResult = StepSimulationWithHistory(ref positionCopy, ref directionCopy, dataGridCopy, width, height, previousPaths);
+                previousPaths.Add((positionCopy, directionCopy));
                     
-                    //DebugOutput(Helper.DrawGrid(dataGridCopy,width,height,positionCopy,guardDirection));
-                }
-
-                if (stepResult == GuardLoop)
-                {
-                    obstacleLoops++;
-
-                } 
+                //DebugOutput(Helper.DrawGrid(dataGridCopy,width,height,positionCopy,guardDirection));
             }
+
+            if (stepResult == GuardLoop)
+            {
+                obstacleLoops++;
+
+            } 
         }
 
         DebugOutput("Obstacle loops: " + obstacleLoops);

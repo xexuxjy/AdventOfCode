@@ -1,2 +1,2 @@
 Obstacle loops: 1562
-Elapsed = 17345.3637 ms
+Elapsed = 2246.057 ms
