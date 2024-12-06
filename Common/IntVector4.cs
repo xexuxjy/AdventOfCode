@@ -199,13 +199,12 @@ public struct IntVector4
     {
         return X == other.X && Y == other.Y && Z == other.Z && W==other.W;
     }
-
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode()
     {
-        var yHash = Y.GetHashCode();
-        var zHash = Z.GetHashCode();
-        var wHash = W.GetHashCode();
-        return X.GetHashCode() ^ (yHash << 8) ^ (yHash >> 24) ^ (zHash << 16) ^ (zHash >> 16) ^ (wHash << 24) ^ (wHash >> 8);
+        return X ^ (Y << 8) ^ (Y >> 24) ^ (Z << 16) ^ (Z >> 16) ^ (W << 24) ^ (W >> 8);
+
     }
 
     public int this[int i]

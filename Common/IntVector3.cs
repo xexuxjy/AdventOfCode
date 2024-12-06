@@ -183,9 +183,7 @@ public struct IntVector3
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode()
     {
-        var yHash = Y.GetHashCode();
-        var zHash = Z.GetHashCode();
-        return X.GetHashCode() ^ (yHash << 4) ^ (yHash >> 28) ^ (zHash >> 4) ^ (zHash << 28);
+        return X^ (Y << 4) ^ (Y >> 28) ^ (Z >> 4) ^ (Z << 28);
     }
 
     public int this[int i]

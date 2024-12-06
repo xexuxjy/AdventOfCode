@@ -135,7 +135,7 @@ public struct IntVector2
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode()
     {
-        return X.GetHashCode() ^ (Y.GetHashCode() << 2);
+        return X ^ (Y<< 2);
     }
 
 
