@@ -1,0 +1,2 @@
+Obstacle loops: 6
+Elapsed = 14.8774 ms

@@ -8,6 +8,77 @@ using System.Threading.Tasks;
 
 public static class Helper
 {
+    // up and down look a bit odd as origin is top left.
+    public static char PointerFromDirection(IntVector2 d)
+    {
+        if(d == IntVector2.Down) return '^';
+        if(d == IntVector2.Up) return 'v';
+        if(d == IntVector2.Left) return '<';
+        if(d == IntVector2.Right) return '>';
+        return ' ';
+    }
+
+    public static IntVector2 DirectionFromPointer(char c)
+    {
+        if(c== '^') return IntVector2.Down;
+        if(c== 'v') return IntVector2.Up;
+        if(c== '<') return IntVector2.Left;
+        if(c== '>') return IntVector2.Right;
+        return new IntVector2(0,0);
+    }
+
+
+    
+    public static IntVector2 TurnRight(IntVector2 d)
+    {
+        if(d == IntVector2.Left)
+        {
+            return IntVector2.Down;
+        }
+        if(d == IntVector2.Down)
+        {
+            return IntVector2.Right;
+        }
+        if(d == IntVector2.Right)
+        {
+            return IntVector2.Up;
+        }
+        if(d == IntVector2.Up)
+        {
+            return IntVector2.Left;
+        }
+        return d;
+    }
+
+    public static IntVector2 TurnLeft(IntVector2 d)
+    {
+        if(d == IntVector2.Left)
+        {
+            return IntVector2.Up;
+        }
+        if(d == IntVector2.Up)
+        {
+            return IntVector2.Left;
+        }
+        if(d == IntVector2.Right)
+        {
+            return IntVector2.Down;
+        }
+        if(d == IntVector2.Down)
+        {
+            return IntVector2.Right;
+        }
+        return d;
+    }
+
+
+
+
+    public static bool InBounds(IntVector2 position,int width,int height)
+    {
+        return position.X >= 0 && position.Y >= 0 && position.X < width && position.Y < height;
+    }
+
     public static void ReadInts(string input, List<int> store)
     {
         string[] tokens = input.Split(new char[] { ' ', ',' },
@@ -43,6 +114,33 @@ public static class Helper
 
         return sb.ToString();
     }
+
+
+    public static string DrawGrid(char[] data, int width, int height,IntVector2 targetPosition,IntVector2 targetDirection)
+    {
+        int targetIndex = (targetPosition.Y * width) + targetPosition.X;
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                int index = y * width + x;
+                char c = data[index];
+
+                if(index == targetIndex)
+                {
+                    c = Helper.PointerFromDirection(targetDirection);
+                }
+                sb.Append(c);
+            }
+
+            sb.AppendLine();
+        }
+
+        return sb.ToString();
+    }
+
+
 
     public static string DrawGrid(char[] data, long width, long height)
     {

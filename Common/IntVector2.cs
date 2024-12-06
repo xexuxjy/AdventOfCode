@@ -138,6 +138,9 @@ public struct IntVector2
         return X.GetHashCode() ^ (Y.GetHashCode() << 2);
     }
 
+
+
+
     public int X;
     public int Y;
 
