@@ -15,33 +15,51 @@ public class Test7_2024 : BaseTest
     public override void Execute()
     {
         long finalTotal = 0;
+        long maxTerms = 0;
+        
+        long[] operations = IsPart2?new long[] { PossibleSum.ADD, PossibleSum.MUL,PossibleSum.CAT } : new long[] { PossibleSum.ADD, PossibleSum.MUL} ;
+
+
         List<PossibleSum> possibleSumList = new List<PossibleSum>();
         foreach (string line in m_dataFileContents)
         {
-            possibleSumList.Add(PossibleSum.FromString(line));
+            PossibleSum possibleSum = PossibleSum.FromString(line);
+            if(possibleSum.Terms.Length > maxTerms)
+            {
+                maxTerms = possibleSum.Terms.Length;
+            }
+            possibleSumList.Add(possibleSum);
         }
 
+        List<List<long[]>> possiblePermutations = new List<List<long[]>>();
+        for(int i=1;i<=maxTerms;++i)
+        {
+            List<long[]> list = Combinations.BuildOptions<long>(i, operations);
+            possiblePermutations.Add(list);
+        }
+       
 
         var possibleSumsBag = new ConcurrentBag<PossibleSum>();
 
-        //Parallel.ForEach(possibleSumList, possibleSum =>
-        //{
-        //    possibleSum.SolveBruteForce();
-        //    if (possibleSum.IsPossible)
-        //    {
-        //        possibleSumsBag.Add(possibleSum);
-        //    }
-        //});
-
-
-        foreach (PossibleSum possibleSum in possibleSumList)
+        Parallel.ForEach(possibleSumList, possibleSum =>
         {
-            possibleSum.SolveBruteForce(IsPart2);
+            possibleSum.SolveBruteForce(possiblePermutations, IsPart2);
             if (possibleSum.IsPossible)
             {
                 possibleSumsBag.Add(possibleSum);
             }
-        }
+        });
+
+
+
+        //foreach (PossibleSum possibleSum in possibleSumList)
+        //{
+        //    possibleSum.SolveBruteForce(possiblePermutations, IsPart2);
+        //    if (possibleSum.IsPossible)
+        //    {
+        //        possibleSumsBag.Add(possibleSum);
+        //    }
+        //}
 
 
         foreach (PossibleSum possibleSum in possibleSumsBag)
@@ -88,16 +106,12 @@ public class Test7_2024 : BaseTest
             return possibleSum;
         }
 
-        public void SolveBruteForce(bool part2)
+        public void SolveBruteForce(List<List<long[]>> possiblePermutations,bool part2)
         {
-            long[] operands = new long[Terms.Length - 1];
-            long[] operations = part2 ?new long[] { ADD, MUL,CAT } : new long[] { ADD, MUL} ;
+            long[] operands = null;;
+            List<long[]> permutations = possiblePermutations[Terms.Length-2];
 
-
-
-            List<long[]> possiblePermutations = Combinations.BuildOptions<long>(Terms.Length - 1, operations);
-
-            foreach (var result in possiblePermutations)
+            foreach (var result in permutations )
             {
                 operands = result;
                 if (GetTotal(operands) == Result)
