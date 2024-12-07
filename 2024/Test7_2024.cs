@@ -36,7 +36,7 @@ public class Test7_2024 : BaseTest
 
         foreach (PossibleSum possibleSum in possibleSumList)
         {
-            possibleSum.SolveBruteForce();
+            possibleSum.SolveBruteForce(IsPart2);
             if (possibleSum.IsPossible)
             {
                 possibleSumsBag.Add(possibleSum);
@@ -68,7 +68,7 @@ public class Test7_2024 : BaseTest
         public const int MUL = 1;
         public const int SUB = 2;
         public const int DIV = 3;
-
+        public const int CAT = 4;
 
         public bool IsPossible
         { get { return FinalOperands != null; } }
@@ -88,10 +88,11 @@ public class Test7_2024 : BaseTest
             return possibleSum;
         }
 
-        public void SolveBruteForce()
+        public void SolveBruteForce(bool part2)
         {
             long[] operands = new long[Terms.Length - 1];
-            long[] operations = new long[] { ADD, MUL };
+            long[] operations = part2 ?new long[] { ADD, MUL,CAT } : new long[] { ADD, MUL} ;
+
 
 
             List<long[]> possiblePermutations = Combinations.BuildOptions<long>(Terms.Length - 1, operations);
@@ -120,6 +121,10 @@ public class Test7_2024 : BaseTest
                 else if (operands[i] == MUL)
                 {
                     calcTotal = calcTotal * Terms[i + 1];
+                }
+                else if(operands[i] == CAT)
+                {
+                    calcTotal = long.Parse(calcTotal.ToString()+ (Terms[i + 1]).ToString());
                 }
             }
             return calcTotal;
