@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 using static Test7_2024;
 
@@ -20,16 +21,36 @@ public class Test7_2024 : BaseTest
             possibleSumList.Add(PossibleSum.FromString(line));
         }
 
+
+        var possibleSumsBag = new ConcurrentBag<PossibleSum>();
+
+        //Parallel.ForEach(possibleSumList, possibleSum =>
+        //{
+        //    possibleSum.SolveBruteForce();
+        //    if (possibleSum.IsPossible)
+        //    {
+        //        possibleSumsBag.Add(possibleSum);
+        //    }
+        //});
+
+
         foreach (PossibleSum possibleSum in possibleSumList)
         {
             possibleSum.SolveBruteForce();
             if (possibleSum.IsPossible)
             {
-                finalTotal += possibleSum.Result;
+                possibleSumsBag.Add(possibleSum);
             }
         }
+
+
+        foreach (PossibleSum possibleSum in possibleSumsBag)
+        {
+            finalTotal += possibleSum.Result;
+        }
+
         int ibreak = 0;
-        DebugOutput("Have a final total of : "+finalTotal);
+        DebugOutput("Have a final total of : " + finalTotal);
 
     }
 
@@ -73,9 +94,9 @@ public class Test7_2024 : BaseTest
             long[] operations = new long[] { ADD, MUL };
 
 
-            List<long[]> possiblePermutations = Combinations.BuildOptions(Terms.Length-1,operations);
+            List<long[]> possiblePermutations = Combinations.BuildOptions<long>(Terms.Length - 1, operations);
 
-            foreach(var result in possiblePermutations)
+            foreach (var result in possiblePermutations)
             {
                 operands = result;
                 if (GetTotal(operands) == Result)

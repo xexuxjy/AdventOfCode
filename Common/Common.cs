@@ -946,17 +946,17 @@ public static class Combinations
         }
     }
 
-    public static List<long[]> BuildOptions(int len,long[] options)
+    public static List<T[]> BuildOptions<T>(int len,T[] options)
     {
-        List<long[]> resultList = new List<long[]>();
+        List<T[]> resultList = new List<T[]>();
 
-        long[] permutation = new long[len];
+        T[] permutation = new T[len];
         BuildOptionsRec(0,len,permutation,options,resultList);
 
         return resultList;
     }
 
-    private static void BuildOptionsRec(int positionIndex,int len, long[] permutation, long[] options,List<long[]> resultList)
+    private static void BuildOptionsRec<T>(int positionIndex,int len, T[] permutation, T[] options,List<T[]> resultList)
     {
         if(positionIndex == len)
         {
@@ -964,7 +964,7 @@ public static class Combinations
         }
         for(int j=0;j<options.Length; j++)
         {
-            long[] newPermutation2= (long[])permutation.Clone();
+            T[] newPermutation2= (T[])permutation.Clone();
             newPermutation2[positionIndex] = options[j];
             resultList.Add(newPermutation2);
             BuildOptionsRec(positionIndex+1,len,newPermutation2,options,resultList);
