@@ -1,0 +1,2 @@
+Have a final total of : 1399219271639
+Elapsed = 102.6713 ms

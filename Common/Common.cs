@@ -946,6 +946,33 @@ public static class Combinations
         }
     }
 
+    public static List<long[]> BuildOptions(int len,long[] options)
+    {
+        List<long[]> resultList = new List<long[]>();
+
+        long[] permutation = new long[len];
+        BuildOptionsRec(0,len,permutation,options,resultList);
+
+        return resultList;
+    }
+
+    private static void BuildOptionsRec(int positionIndex,int len, long[] permutation, long[] options,List<long[]> resultList)
+    {
+        if(positionIndex == len)
+        {
+            return;
+        }
+        for(int j=0;j<options.Length; j++)
+        {
+            long[] newPermutation2= (long[])permutation.Clone();
+            newPermutation2[positionIndex] = options[j];
+            resultList.Add(newPermutation2);
+            BuildOptionsRec(positionIndex+1,len,newPermutation2,options,resultList);
+        }
+    }
+
+
+
     public static IEnumerable<IEnumerable<T>> Permute<T>(this IEnumerable<T> sequence)
     {
         if (sequence == null)
