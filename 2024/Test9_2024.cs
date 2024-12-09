@@ -51,7 +51,7 @@ public class Test9_2024 : BaseTest
             {
                 var freeBlock = freeBlocks[i];
                 for (int j = 0; j < freeBlock.Item3; ++j)
-                {
+                { 
                     outputList.Add(Empty);
                 }
             }
@@ -61,7 +61,7 @@ public class Test9_2024 : BaseTest
 
         //List<int> compacted = CompactData1(outputList);
 
-        List<int> compacted = IsPart2?CompactData2(outputList,diskBlocks,freeBlocks): CompactData1(outputList);
+        List<int> compacted = IsPart2?CompactData2(outputList,diskBlocks.ToArray(),freeBlocks.ToArray()): CompactData1(outputList);
 
         
 
@@ -120,14 +120,16 @@ public class Test9_2024 : BaseTest
         return output;
     }
 
-    public List<int> CompactData2(List<int> input,List<(int,int,int)> diskBlocks,List<(int,int,int)> freeBlocks
-        )
+    public List<int> CompactData2(List<int> input,(int,int,int)[] diskBlocks,(int,int,int)[] freeBlocks)
     {
 
-        for(int i=diskBlocks.Count-1; i>=0; i--)
+        int diskBlocksSize = diskBlocks.Length;
+        int freeBlocksSize = freeBlocks.Length;
+
+        for(int i=diskBlocksSize-1; i>=0; i--)
         {
 
-            for(int j =0;j<freeBlocks.Count;j++)
+            for(int j =0;j<freeBlocksSize;j++)
             {
                 // not to the left.
                 if(diskBlocks[i].Item2 < freeBlocks[j].Item2)
