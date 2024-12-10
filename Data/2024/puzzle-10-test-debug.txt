@@ -1,0 +1,2 @@
+Final score is : 81
+Elapsed = 14.2525 ms

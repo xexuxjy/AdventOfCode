@@ -1,2 +1,2 @@
 Checksum is : 6476642796832
-Elapsed = 169.2491 ms
+Elapsed = 62.8665 ms

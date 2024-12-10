@@ -179,10 +179,10 @@ public static class Helper
         width = data[0].Length;
         height = data.Count;
 
-        int[] numGrid = new int[data.Count * data[0].Length];
-        for (int y = 0; y < data.Count; ++y)
+        int[] numGrid = new int[width*height];
+        for (int y = 0; y < height; ++y)
         {
-            for (int x = 0; x < data[0].Length; ++x)
+            for (int x = 0; x < width; ++x)
             {
                 numGrid[y * width + x] = int.Parse("" + data[y][x]);
             }
@@ -196,10 +196,10 @@ public static class Helper
         width = data[0].Length;
         height = data.Count;
 
-        char[] numGrid = new char[data.Count * data[0].Length];
-        for (int y = 0; y < data.Count; ++y)
+        char[] numGrid = new char[width * height];
+        for (int y = 0; y < height; ++y)
         {
-            for (int x = 0; x < data[0].Length; ++x)
+            for (int x = 0; x < width; ++x)
             {
                 numGrid[y * width + x] = data[y][x];
             }
