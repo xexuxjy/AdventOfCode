@@ -1,0 +1,2 @@
+Total stones after 25  : 203953
+Elapsed = 27.9796 ms
