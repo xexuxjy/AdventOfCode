@@ -151,6 +151,18 @@ public struct LongVector2
         return X.GetHashCode() ^ (Y.GetHashCode() << 2);
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool operator ==(LongVector2 value1, LongVector2 value2)
+    {
+        return value1.X == value2.X && value1.Y == value2.Y;
+    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool operator !=(LongVector2 value1, LongVector2 value2)
+    {
+        return value1.X != value2.X || value1.Y != value2.Y;
+    }
+
+
     public double Magnitude
     {
         get { return Math.Sqrt(this.X * this.X + this.Y * this.Y); }

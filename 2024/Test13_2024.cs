@@ -1,5 +1,8 @@
 ﻿using static Test7_2024;
 using System.Collections.Concurrent;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static Test15_2023;
+using System.Runtime.Intrinsics.X86;
 
 public class Test13_2024 : BaseTest
 {
@@ -14,52 +17,54 @@ public class Test13_2024 : BaseTest
         int maxMove = 100;
         List<ClawGame> clawGames = new List<ClawGame>();
         ClawGame clawGame = null;
-        foreach(string line in m_dataFileContents)
+        foreach (string line in m_dataFileContents)
         {
-            if(clawGame == null)
+            if (clawGame == null)
             {
                 clawGame = new ClawGame();
                 clawGames.Add(clawGame);
             }
 
-            if(line.StartsWith("Button"))
+            if (line.StartsWith("Button"))
             {
-                string[] tokens = line.Split(new char[]{' ',',' },StringSplitOptions.RemoveEmptyEntries);
+                string[] tokens = line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
                 int x = int.Parse(tokens[2].Substring(2));
                 int y = int.Parse(tokens[3].Substring(2));
 
-                clawGame.Buttons[tokens[1]] = new IntVector2(x,y);
+                clawGame.Buttons[tokens[1]] = new LongVector2(x, y);
 
             }
-            else if(line.StartsWith("Prize"))
+            else if (line.StartsWith("Prize"))
             {
-                string[] tokens = line.Split(new char[]{' ',',' },StringSplitOptions.RemoveEmptyEntries);
+                string[] tokens = line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
                 int x = int.Parse(tokens[1].Substring(2));
                 int y = int.Parse(tokens[2].Substring(2));
-                
 
-                clawGame.PrizeLocation= new IntVector2(x,y);
+
+                clawGame.PrizeLocation = new LongVector2(x, y);
                 clawGame = null;
             }
 
         }
 
-        var validScoresBag = new ConcurrentBag<int>();
+        var validScoresBag = new ConcurrentBag<long>();
 
-        Parallel.ForEach(clawGames, cg =>
+        //Parallel.ForEach(clawGames, cg =>
+        //{
+        //    long val = cg.SolveBruteForce(maxMove,IsPart2);
+        //    if (val != long.MaxValue)
+        //    {
+        //        validScoresBag.Add(val);
+        //    }
+        //});
+
+        clawGames[1].SolveBruteForce(maxMove, IsPart2);
+
+
+        long total = 0;
+        foreach (long i in validScoresBag)
         {
-            int val = cg.SolveBruteForce(maxMove);
-            if(val != int.MaxValue)
-            {
-                validScoresBag.Add(val);
-            }
-        });
-
-
-        int total = 0;
-        foreach (int i in validScoresBag)
-        {
-            total+=i;
+            total += i;
         }
 
         //foreach(ClawGame cg in clawGames)
@@ -72,46 +77,84 @@ public class Test13_2024 : BaseTest
         //}
 
 
-        DebugOutput("The lowest cost is : "+total);
-        
+        DebugOutput("The lowest cost is : " + total);
+
 
     }
 
 
     public class ClawGame
     {
-        public Dictionary<string,IntVector2> Buttons = new Dictionary<string,IntVector2>();
-        public IntVector2 PrizeLocation = new IntVector2();
+        public Dictionary<string, LongVector2> Buttons = new Dictionary<string, LongVector2>();
+        public LongVector2 PrizeLocation = new LongVector2();
 
-        public int SolveBruteForce(int maxMoves)
+        public long SolveBruteForce(int maxMoves, bool isPart2 = false)
         {
-            
-            IntVector2 AMove = Buttons["A:"];
-            IntVector2 BMove = Buttons["B:"];
+
+            LongVector2 AMove = Buttons["A:"];
+            LongVector2 BMove = Buttons["B:"];
 
             int ACost = 3;
             int BCost = 1;
 
-            int lowestCost = int.MaxValue;
+            long lowestCost = long.MaxValue;
 
 
-            for(int a = 0; a < maxMoves; a++)
+
+            if (isPart2)
             {
-                for(int b = 0; b < maxMoves; b++)
+                long adjustment = 10000000000000;
+
+                PrizeLocation.X += adjustment;
+                PrizeLocation.Y += adjustment;
+
+                long xproduct = AMove.X * BMove.X;
+                long xremainder = PrizeLocation.X % xproduct;
+
+                long yproduct = AMove.Y * BMove.Y;
+                long yremainder = PrizeLocation.Y % yproduct;
+
+
+                long ax = (xremainder % AMove.X);
+                long ay = (yremainder % AMove.Y);
+                long bx = (xremainder % BMove.X);
+                long by = (yremainder % BMove.Y);
+
+
+                long a = ((PrizeLocation.X * BMove.Y) - (PrizeLocation.Y * BMove.X)) / (AMove.X * BMove.Y) - (AMove.Y * BMove.X);
+                long b = ((AMove.X * PrizeLocation.Y) - (AMove.Y * PrizeLocation.X)) / (AMove.X * BMove.Y) - (AMove.Y * BMove.X);
+
+                if((AMove * a) + (BMove * b) == PrizeLocation)
                 {
-                    if((AMove*a)+(BMove*b) == PrizeLocation)
+                    return  (a * ACost) + (b * BCost);
+                }
+                else
+                {
+                    return long.MaxValue;
+                }
+
+            }
+            else
+            {
+
+                for (int a = 0; a < maxMoves; a++)
+                {
+                    for (int b = 0; b < maxMoves; b++)
                     {
-                        int cost = (a*ACost)+(b*BCost);
-                        if(cost < lowestCost)
+                        if ((AMove * a) + (BMove * b) == PrizeLocation)
                         {
-                            lowestCost = cost;
+                            int cost = (a * ACost) + (b * BCost);
+                            if (cost < lowestCost)
+                            {
+                                lowestCost = cost;
+                            }
                         }
                     }
                 }
+
+                return lowestCost;
+
             }
-
-            return lowestCost;
         }
-
     }
 }
