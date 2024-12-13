@@ -1,0 +1,2 @@
+The lowest cost is : 36954
+Elapsed = 64.5602 ms
