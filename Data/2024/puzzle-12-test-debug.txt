@@ -1,0 +1,13 @@
+Plot area 12  perimeter 18 side 10
+Plot area 4  perimeter 8 side 4
+Plot area 14  perimeter 28 side 22
+Plot area 10  perimeter 18 side 12
+Plot area 13  perimeter 20 side 10
+Plot area 11  perimeter 20 side 12
+Plot area 1  perimeter 4 side 4
+Plot area 13  perimeter 18 side 8
+Plot area 14  perimeter 22 side 16
+Plot area 5  perimeter 12 side 6
+Plot area 3  perimeter 8 side 6
+Total price is : 1206
+Elapsed = 16.9826 ms

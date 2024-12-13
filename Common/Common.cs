@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,39 +14,39 @@ public static class Helper
     // up and down look a bit odd as origin is top left.
     public static char PointerFromDirection(IntVector2 d)
     {
-        if(d == IntVector2.Down) return '^';
-        if(d == IntVector2.Up) return 'v';
-        if(d == IntVector2.Left) return '<';
-        if(d == IntVector2.Right) return '>';
+        if (d == IntVector2.Down) return '^';
+        if (d == IntVector2.Up) return 'v';
+        if (d == IntVector2.Left) return '<';
+        if (d == IntVector2.Right) return '>';
         return ' ';
     }
 
     public static IntVector2 DirectionFromPointer(char c)
     {
-        if(c== '^') return IntVector2.Down;
-        if(c== 'v') return IntVector2.Up;
-        if(c== '<') return IntVector2.Left;
-        if(c== '>') return IntVector2.Right;
-        return new IntVector2(0,0);
+        if (c == '^') return IntVector2.Down;
+        if (c == 'v') return IntVector2.Up;
+        if (c == '<') return IntVector2.Left;
+        if (c == '>') return IntVector2.Right;
+        return new IntVector2(0, 0);
     }
 
 
-    
+
     public static IntVector2 TurnRight(IntVector2 d)
     {
-        if(d == IntVector2.Left)
+        if (d == IntVector2.Left)
         {
             return IntVector2.Down;
         }
-        if(d == IntVector2.Down)
+        if (d == IntVector2.Down)
         {
             return IntVector2.Right;
         }
-        if(d == IntVector2.Right)
+        if (d == IntVector2.Right)
         {
             return IntVector2.Up;
         }
-        if(d == IntVector2.Up)
+        if (d == IntVector2.Up)
         {
             return IntVector2.Left;
         }
@@ -52,19 +55,19 @@ public static class Helper
 
     public static IntVector2 TurnLeft(IntVector2 d)
     {
-        if(d == IntVector2.Left)
+        if (d == IntVector2.Left)
         {
             return IntVector2.Up;
         }
-        if(d == IntVector2.Up)
+        if (d == IntVector2.Up)
         {
             return IntVector2.Left;
         }
-        if(d == IntVector2.Right)
+        if (d == IntVector2.Right)
         {
             return IntVector2.Down;
         }
-        if(d == IntVector2.Down)
+        if (d == IntVector2.Down)
         {
             return IntVector2.Right;
         }
@@ -73,10 +76,16 @@ public static class Helper
 
 
 
-
-    public static bool InBounds(IntVector2 position,int width,int height)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool InBounds(IntVector2 position, int width, int height)
     {
         return position.X >= 0 && position.Y >= 0 && position.X < width && position.Y < height;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int GetIndex(IntVector2 position, int width)
+    {
+        return (position.Y * width + position.X);
     }
 
     public static void ReadInts(string input, List<int> store)
@@ -116,7 +125,7 @@ public static class Helper
     }
 
 
-    public static string DrawGrid(char[] data, int width, int height,IntVector2 targetPosition,IntVector2 targetDirection)
+    public static string DrawGrid(char[] data, int width, int height, IntVector2 targetPosition, IntVector2 targetDirection)
     {
         int targetIndex = (targetPosition.Y * width) + targetPosition.X;
         StringBuilder sb = new StringBuilder();
@@ -127,7 +136,7 @@ public static class Helper
                 int index = y * width + x;
                 char c = data[index];
 
-                if(index == targetIndex)
+                if (index == targetIndex)
                 {
                     c = Helper.PointerFromDirection(targetDirection);
                 }
@@ -179,7 +188,7 @@ public static class Helper
         width = data[0].Length;
         height = data.Count;
 
-        int[] numGrid = new int[width*height];
+        int[] numGrid = new int[width * height];
         for (int y = 0; y < height; ++y)
         {
             for (int x = 0; x < width; ++x)
@@ -946,28 +955,28 @@ public static class Combinations
         }
     }
 
-    public static List<T[]> BuildOptions<T>(int len,T[] options)
+    public static List<T[]> BuildOptions<T>(int len, T[] options)
     {
         List<T[]> resultList = new List<T[]>();
 
         T[] permutation = new T[len];
-        BuildOptionsRec(0,len,permutation,options,resultList);
+        BuildOptionsRec(0, len, permutation, options, resultList);
 
         return resultList;
     }
 
-    private static void BuildOptionsRec<T>(int positionIndex,int len, T[] permutation, T[] options,List<T[]> resultList)
+    private static void BuildOptionsRec<T>(int positionIndex, int len, T[] permutation, T[] options, List<T[]> resultList)
     {
-        if(positionIndex == len)
+        if (positionIndex == len)
         {
             return;
         }
-        for(int j=0;j<options.Length; j++)
+        for (int j = 0; j < options.Length; j++)
         {
-            T[] newPermutation2= (T[])permutation.Clone();
+            T[] newPermutation2 = (T[])permutation.Clone();
             newPermutation2[positionIndex] = options[j];
             resultList.Add(newPermutation2);
-            BuildOptionsRec(positionIndex+1,len,newPermutation2,options,resultList);
+            BuildOptionsRec(positionIndex + 1, len, newPermutation2, options, resultList);
         }
     }
 
@@ -1168,3 +1177,61 @@ public class BinaryNode<T>
 
     public override string ToString() => Name;
 }
+
+
+class ConvexHull
+{
+    public static double cross(IntVector2 O, IntVector2 A, IntVector2 B)
+    {
+        return (A.X - O.X) * (B.Y - O.Y) - (A.Y - O.Y) * (B.X - O.X);
+    }
+
+    public static List<IntVector2> GetConvexHull(List<IntVector2> points)
+    {
+        if (points == null)
+            return null;
+
+        if (points.Count() <= 1)
+            return points;
+
+        int n = points.Count(), k = 0;
+        List<IntVector2> H = new List<IntVector2>(new IntVector2[2 * n]);
+
+        points.Sort((a, b) =>
+             a.X == b.X ? a.Y.CompareTo(b.Y) : a.X.CompareTo(b.X));
+
+        // Build lower hull
+        for (int i = 0; i < n; ++i)
+        {
+            while (k >= 2 && cross(H[k - 2], H[k - 1], points[i]) <= 0)
+                k--;
+            H[k++] = points[i];
+        }
+
+        // Build upper hull
+        for (int i = n - 2, t = k + 1; i >= 0; i--)
+        {
+            while (k >= t && cross(H[k - 2], H[k - 1], points[i]) <= 0)
+                k--;
+            H[k++] = points[i];
+        }
+
+        return H.Take(k - 1).ToList();
+    }
+
+    public static long ManhattanPerimeter(List<IntVector2> points)
+    {
+        int n = points.Count;
+        long perimeter = 0;
+        for (int i = 0; i < n - 1; i++)
+        {
+            perimeter += points[i].ManhattanDistance(points[i + 1]);
+        }
+        perimeter += points[0].ManhattanDistance(points[n - 1]);
+
+        return perimeter;
+    }
+
+
+}
+
