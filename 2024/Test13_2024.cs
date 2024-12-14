@@ -49,16 +49,15 @@ public class Test13_2024 : BaseTest
 
         var validScoresBag = new ConcurrentBag<long>();
 
-        //Parallel.ForEach(clawGames, cg =>
-        //{
-        //    long val = cg.SolveBruteForce(maxMove,IsPart2);
-        //    if (val != long.MaxValue)
-        //    {
-        //        validScoresBag.Add(val);
-        //    }
-        //});
+        Parallel.ForEach(clawGames, cg =>
+        {
+            long val = cg.SolveBruteForce(maxMove, IsPart2);
+            if (val != long.MaxValue)
+            {
+                validScoresBag.Add(val);
+            }
+        });
 
-        clawGames[1].SolveBruteForce(maxMove, IsPart2);
 
 
         long total = 0;
@@ -103,26 +102,16 @@ public class Test13_2024 : BaseTest
 
             if (isPart2)
             {
+
+                // great help provided by : https://www.reddit.com/r/adventofcode/comments/1hd7irq/2024_day_13_an_explanation_of_the_mathematics/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
                 long adjustment = 10000000000000;
 
-                PrizeLocation.X += adjustment;
-                PrizeLocation.Y += adjustment;
+                PrizeLocation += new LongVector2(adjustment,adjustment);
 
-                long xproduct = AMove.X * BMove.X;
-                long xremainder = PrizeLocation.X % xproduct;
+                long determinant = AMove.X * BMove.Y - AMove.Y * BMove.X;
 
-                long yproduct = AMove.Y * BMove.Y;
-                long yremainder = PrizeLocation.Y % yproduct;
-
-
-                long ax = (xremainder % AMove.X);
-                long ay = (yremainder % AMove.Y);
-                long bx = (xremainder % BMove.X);
-                long by = (yremainder % BMove.Y);
-
-
-                long a = ((PrizeLocation.X * BMove.Y) - (PrizeLocation.Y * BMove.X)) / (AMove.X * BMove.Y) - (AMove.Y * BMove.X);
-                long b = ((AMove.X * PrizeLocation.Y) - (AMove.Y * PrizeLocation.X)) / (AMove.X * BMove.Y) - (AMove.Y * BMove.X);
+                long a = ((PrizeLocation.X * BMove.Y) - (PrizeLocation.Y * BMove.X)) / determinant;
+                long b = ((AMove.X * PrizeLocation.Y) - (AMove.Y * PrizeLocation.X)) / determinant;
 
                 if((AMove * a) + (BMove * b) == PrizeLocation)
                 {

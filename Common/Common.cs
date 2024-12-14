@@ -82,10 +82,37 @@ public static class Helper
         return position.X >= 0 && position.Y >= 0 && position.X < width && position.Y < height;
     }
 
+    public static bool InBounds(IntVector2 position, IntVector2 min,IntVector2 max)
+    {
+        return position.X >= min.X && position.Y >= min.Y && position.X <= max.X && position.Y <= max.Y;
+    }
+
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int GetIndex(IntVector2 position, int width)
     {
         return (position.Y * width + position.X);
+    }
+
+    public static IntVector2 WrapMove(IntVector2 position, IntVector2 bounds)
+    {
+        if(position.X < 0)
+        {
+            position.X += bounds.X;
+        }
+        if(position.X >= bounds.X)
+        {
+            position.X -= bounds.X;
+        }
+        if(position.Y < 0)
+        { 
+            position.Y += bounds.Y ;
+        }
+        if(position.Y >= bounds.Y)
+        {
+            position.Y -= bounds.Y;
+        }
+        return position;
     }
 
     public static void ReadInts(string input, List<int> store)

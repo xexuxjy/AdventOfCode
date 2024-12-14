@@ -76,6 +76,28 @@ public struct IntVector2
         return value1.X != value2.X || value1.Y != value2.Y;
     }
 
+    //public static bool operator <(IntVector2 value1, IntVector2 value2)
+    //{
+    //    return value1.X < value2.X || value1.Y < value2.Y;
+    //}
+
+    //public static bool operator <=(IntVector2 value1, IntVector2 value2)
+    //{
+    //    return value1.X <= value2.X || value1.Y <= value2.Y || value1.Z <= value2.Z;
+    //}
+
+
+    //public static bool operator >(IntVector2 value1, IntVector2 value2)
+    //{
+    //    return value1.X > value2.X || value1.Y > value2.Y || value1.Z > value2.Z;
+    //}
+
+    //public static bool operator >=(IntVector2 value1, IntVector2 value2)
+    //{
+    //    return value1.X >= value2.X || value1.Y >= value2.Y || value1.Z >= value2.Z;
+    //}
+
+
 
     public void Min(IntVector2 v)
     {

@@ -1,0 +1,6 @@
+Min 0,0  Max 49,50
+Min 51,0  Max 100,50
+Min 0,52  Max 49,102
+Min 51,52  Max 101,103
+Total safety factor is : 219512160
+Elapsed = 14.7836 ms
