@@ -30,7 +30,7 @@
 
         char[] debugGrid = new char[(roomSize.X) * (roomSize.Y)];
 
-        int numberOfSteps = IsPart2 ? 100000000 : 100;
+        int numberOfSteps = IsPart2 ? 10000 : 100;
 
         IntVector2 max = new IntVector2(roomSize.X, roomSize.Y);
         IntVector2 mid = new IntVector2(max) / 2;
@@ -38,17 +38,10 @@
         List<IntVector2> wantedPoints = new List<IntVector2>();
         if (IsPart2)
         {
-            int size = 3;
-            for (int y = mid.Y-size; y < mid.Y+size; ++y)
-            {
-                for(int x = mid.X-size;x < mid.X + size;++x)
-                {
-                    wantedPoints.Add(new IntVector2(x,y));
-                }
-            }
         }
 
-
+    
+        long lowDangerLevel = long.MaxValue;
         for (int i = 0; i < numberOfSteps; ++i)
         {
             for (int j = 0; j < positionList.Count; ++j)
@@ -58,31 +51,15 @@
                 positionList[j] = newPosition;
             }
 
-            if (IsPart2)
+            if(IsPart2 && i == 6397)
             {
-                bool allIn = true;
-
-                List<IntVector2> t2 = positionList.FindAll(x=>x.X == mid.X);
-
-                foreach (IntVector2 p in wantedPoints)
-                {
-                    if (!positionList.Contains(p))
-                    {
-                        allIn = false;
-                        break;
-                    }
-                }
-                if (allIn)
-                {
-                    List<IntVector2> intVector2s = new List<IntVector2>();
-                    List<IntVector2> t = positionList.FindAll(x=>x.X == mid.X);
-                    intVector2s.AddRange(positionList.FindAll(x=>x.X == mid.X));
-
-                    DebugOutput("Step : " + i);
-                    DebugGrid(debugGrid, positionList, roomSize);
-                }
+                DebugOutput("Step : " + i);
+                DebugGrid(debugGrid, positionList, roomSize);
+                break;
             }
         }
+
+
 
         int total = 0;
 
@@ -120,7 +97,7 @@
 
     public int CountAreas(List<IntVector2> positions, IntVector2 min, IntVector2 max)
     {
-        DebugOutput($"Min {min}  Max {max}");
+        //DebugOutput($"Min {min}  Max {max}");
         int result = 0;
         foreach (IntVector2 p in positions)
         {
