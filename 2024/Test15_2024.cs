@@ -52,12 +52,18 @@ public class Test15_2024 : BaseTest
 
         IntVector2 robotPosition = Helper.GetPosition(robotIndex, width);
 
+        Dictionary<char,Spectre.Console.Color> colourMap = new Dictionary<char, Color>();
+        colourMap[WALL] = Color.White;
+        colourMap[BOX] = Color.Yellow;
+        colourMap[ROBOT] = Color.Green;
+        colourMap[EMPTY] = Color.Grey;
+
         for(int i=0;i<commandString.Length;++i)
         {
             char move = commandString[i];
             UpdateGrid(dataGrid, ref robotPosition, move, width);
             //DebugOutput(Helper.DrawGrid(dataGrid,width,height));
-            Helper.DrawGridToConsole(dataGrid,width,height,10);
+            Helper.DrawGridToConsole(dataGrid,width,height, colourMap,10);
         }
 
 

@@ -159,12 +159,41 @@ public static class Helper
         return sb.ToString();
     }
 
+    public static string DrawGrid(char[] data, int width, int height,Dictionary<char,Spectre.Console.Color> colorMap=null)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                string s = "";
+                char c = data[y * width + x];
+                if(colorMap != null && colorMap.ContainsKey(c))
+                {
+                    s="["+colorMap[c].ToMarkup() + "]";
+                    s+=c;
+                    s+="[/]";
+                }
+                else
+                {
+                    s =""+c;
+                }
+                sb.Append(s);
+            }
 
-    public static void DrawGridToConsole(char[] data, int width, int height,int delay=100)
+            sb.AppendLine();
+        }
+
+        return sb.ToString();
+    }
+
+
+
+    public static void DrawGridToConsole(char[] data, int width, int height,Dictionary<char,Spectre.Console.Color> colorMap,int delay=100)
     {
         AnsiConsole.Clear();
         //AnsiConsole.Cursor.SetPosition(0,0);
-        AnsiConsole.Markup(DrawGrid(data, width, height));
+        AnsiConsole.Markup(DrawGrid(data, width, height,colorMap));
 
         Thread.Sleep(delay);
     }
