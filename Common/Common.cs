@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -82,7 +83,7 @@ public static class Helper
         return position.X >= 0 && position.Y >= 0 && position.X < width && position.Y < height;
     }
 
-    public static bool InBounds(IntVector2 position, IntVector2 min,IntVector2 max)
+    public static bool InBounds(IntVector2 position, IntVector2 min, IntVector2 max)
     {
         return position.X >= min.X && position.Y >= min.Y && position.X <= max.X && position.Y <= max.Y;
     }
@@ -94,21 +95,28 @@ public static class Helper
         return (position.Y * width + position.X);
     }
 
+    public static IntVector2 GetPosition(int index, int width)
+    {
+        int x = index % width;
+        int y = index / width;
+        return new IntVector2(x, y);
+    }
+
     public static IntVector2 WrapMove(IntVector2 position, IntVector2 bounds)
     {
-        if(position.X < 0)
+        if (position.X < 0)
         {
             position.X += bounds.X;
         }
-        if(position.X >= bounds.X)
+        if (position.X >= bounds.X)
         {
             position.X -= bounds.X;
         }
-        if(position.Y < 0)
-        { 
-            position.Y += bounds.Y ;
+        if (position.Y < 0)
+        {
+            position.Y += bounds.Y;
         }
-        if(position.Y >= bounds.Y)
+        if (position.Y >= bounds.Y)
         {
             position.Y -= bounds.Y;
         }
@@ -149,6 +157,16 @@ public static class Helper
         }
 
         return sb.ToString();
+    }
+
+
+    public static void DrawGridToConsole(char[] data, int width, int height,int delay=100)
+    {
+        AnsiConsole.Clear();
+        //AnsiConsole.Cursor.SetPosition(0,0);
+        AnsiConsole.Markup(DrawGrid(data, width, height));
+
+        Thread.Sleep(delay);
     }
 
 

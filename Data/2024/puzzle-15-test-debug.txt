@@ -1,0 +1,2 @@
+GPS Total is : 10092
+Elapsed = 10905.9586 ms
