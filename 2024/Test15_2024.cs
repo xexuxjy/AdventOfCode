@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 public class Test15_2024 : BaseTest
@@ -58,13 +59,30 @@ public class Test15_2024 : BaseTest
         colourMap[ROBOT] = Color.Green;
         colourMap[EMPTY] = Color.Grey;
 
-        for(int i=0;i<commandString.Length;++i)
+
+        Table table = new Table().Centered();
+
+
+        AnsiConsole.Live(table).Start(ctx=>
         {
-            char move = commandString[i];
-            UpdateGrid(dataGrid, ref robotPosition, move, width);
-            //DebugOutput(Helper.DrawGrid(dataGrid,width,height));
-            Helper.DrawGridToConsole(dataGrid,width,height, colourMap,10);
-        }
+            if (ctx != null) {
+                
+                
+                table.AddColumn("");
+                table.AddRow("");
+
+                for(int i=0;i<commandString.Length;++i)
+                {
+                    char move = commandString[i];
+                    UpdateGrid(dataGrid, ref robotPosition, move, width);
+                    string text = Helper.DrawGrid(dataGrid,width,height,colourMap);
+                    table.UpdateCell(0,0,text);
+                    //DebugOutput(Helper.DrawGrid(dataGrid,width,height));
+                    //Helper.DrawGridToConsole(dataGrid,width,height, colourMap,10);
+                    ctx.Refresh();
+                    Thread.Sleep(10);
+                }
+            } });
 
 
         long totalSum=0;
