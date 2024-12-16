@@ -95,6 +95,13 @@ public static class Helper
         return (position.Y * width + position.X);
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int GetIndex(int x,int y, int width)
+    {
+        return (y * width + x);
+    }
+
+
     public static IntVector2 GetPosition(int index, int width)
     {
         int x = index % width;

@@ -13,6 +13,8 @@ public interface IMapData
 
 public class AStar
 {
+    public static Vector2[] BasicDirections = new Vector2[]{Vector2.UnitX,-Vector2.UnitX,Vector2.UnitY,-Vector2.UnitY };
+
     // How much time has passed since the last search step
     private float timeSinceLastSearchStep = 0f;
     // Holds search nodes that are avaliable to search
@@ -87,6 +89,14 @@ public class AStar
     #endregion
 
 
+    public AStar()
+    {
+    }
+
+    public AStar(SearchMethod sm)
+    {
+        searchMethod = sm;
+    }
 
 
     #region Initialization
