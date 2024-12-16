@@ -47,7 +47,7 @@ public class Test15_2024 : BaseTest
         char[] dataGrid = Helper.GetCharGrid(warehouse, ref width, ref height);
         if (IsPart2)
         {
-            dataGrid = new char[width * height*2];
+            dataGrid = new char[width * height * 2];
             for (int y = 0; y < height; ++y)
             {
                 for (int x = 0; x < width; ++x)
@@ -56,7 +56,7 @@ public class Test15_2024 : BaseTest
                     if (m_dataFileContents[y][x] == EMPTY)
                     {
                         dataGrid[index] = EMPTY;
-                        dataGrid[index+1] = EMPTY;
+                        dataGrid[index + 1] = EMPTY;
                     }
                     else if (m_dataFileContents[y][x] == WALL)
                     {
@@ -74,8 +74,8 @@ public class Test15_2024 : BaseTest
                         dataGrid[index + 1] = ']';
 
                         WarehouseBox b = new WarehouseBox();
-                        b.Bounds = new IntVector2(1,0);
-                        b.Move(Helper.GetPosition(index,width*2));
+                        b.Bounds = new IntVector2(1, 0);
+                        b.Move(Helper.GetPosition(index, width * 2));
                         allBoxes.Add(b);
                     }
 
@@ -106,7 +106,7 @@ public class Test15_2024 : BaseTest
         colourMap[ROBOT] = Spectre.Console.Color.Green;
         colourMap[EMPTY] = Spectre.Console.Color.Grey;
 
-        Dictionary<char,IntVector2> commandTranslation = new Dictionary<char,IntVector2>();
+        Dictionary<char, IntVector2> commandTranslation = new Dictionary<char, IntVector2>();
         commandTranslation['^'] = IntVector2.Down;
         commandTranslation['v'] = IntVector2.Up;
         commandTranslation['<'] = IntVector2.Left;
@@ -118,13 +118,13 @@ public class Test15_2024 : BaseTest
 
         if (IsPart2)
         {
-            DebugOutput(Helper.DrawGrid(dataGrid,width,height));
-             for (int i = 0; i < commandString.Length; ++i)
+            DebugOutput(Helper.DrawGrid(dataGrid, width, height));
+            for (int i = 0; i < commandString.Length; ++i)
             {
                 IntVector2 direction = commandTranslation[commandString[i]];
-                SimulatePart2(dataGrid, ref robotPosition, direction, width,allBoxes);
-                UpdateDataGrid(dataGrid, allBoxes,robotPosition,width);
-                DebugOutput(Helper.DrawGrid(dataGrid,width,height));
+                SimulatePart2(dataGrid, ref robotPosition, direction, width, allBoxes);
+                UpdateDataGrid(dataGrid, allBoxes, robotPosition, width);
+                DebugOutput(Helper.DrawGrid(dataGrid, width, height));
             }
         }
         else
@@ -141,7 +141,7 @@ public class Test15_2024 : BaseTest
                     for (int i = 0; i < commandString.Length; ++i)
                     {
                         IntVector2 direction = commandTranslation[commandString[i]];
-                        
+
                         SimulatePart1(dataGrid, ref robotPosition, direction, width);
                         string text = Helper.DrawGrid(dataGrid, width, height, colourMap);
                         table.UpdateCell(0, 0, text);
@@ -236,50 +236,65 @@ public class Test15_2024 : BaseTest
         return dataGrid;
     }
 
-        public void UpdateDataGrid(char[] dataGrid,List<WarehouseBox> boxes,IntVector2 robot,int width)
+    public void UpdateDataGrid(char[] dataGrid, List<WarehouseBox> boxes, IntVector2 robot, int width)
+    {
+        for (int i = 0; i < dataGrid.Length; i++)
         {
-            for(int i=0;i<dataGrid.Length;i++)
+            if (dataGrid[i] != WALL)
             {
-                if(dataGrid[i] != WALL) 
+                dataGrid[i] = EMPTY;
+            }
+        }
+
+        dataGrid[Helper.GetIndex(robot, width)] = ROBOT;
+        foreach (WarehouseBox box in boxes)
+        {
+            box.DrawGrid(dataGrid, width, IsPart2);
+        }
+
+    }
+
+
+    public char[] SimulatePart2(char[] dataGrid, ref IntVector2 robotPosition, IntVector2 direction, int width, List<WarehouseBox> allBoxes)
+    {
+        IntVector2 originalPosition = robotPosition;
+        IntVector2 updatedPosition = originalPosition + direction;
+
+        int originalIndex = Helper.GetIndex(originalPosition, width);
+        int newIndex = Helper.GetIndex(updatedPosition, width);
+
+        if (dataGrid[newIndex] == EMPTY)
+        {
+            dataGrid[originalIndex] = EMPTY;
+            dataGrid[newIndex] = ROBOT;
+            robotPosition = updatedPosition;
+        }
+        else if (dataGrid[newIndex] != WALL)
+        {
+            // must be a box somewhere
+            List<WarehouseBox> collided = allBoxes.FindAll(x => x.ContainsPoint(updatedPosition));
+            Debug.Assert(collided.Count == 1);
+            if (collided.Count > 0)
+            {
+
+                if (MoveBox(collided[0], direction, dataGrid, width, allBoxes))
                 {
-                    dataGrid[i] = EMPTY;
+                    robotPosition = updatedPosition;
                 }
             }
-
-            dataGrid[Helper.GetIndex(robot, width)] = ROBOT;
-            foreach(WarehouseBox box in boxes)
-            {
-                box.DrawGrid(dataGrid,width,IsPart2);
-            }
-
         }
 
-
-        public char[] SimulatePart2(char[] dataGrid, ref IntVector2 robotPosition, IntVector2 direction, int width,List<WarehouseBox> allBoxes)
-        {
-            IntVector2 originalPosition = robotPosition;
-            IntVector2 updatedPosition = originalPosition+direction;
-
-            int originalIndex = Helper.GetIndex(originalPosition, width);
-            int newIndex = Helper.GetIndex(updatedPosition, width);
-
-            if (dataGrid[newIndex] == EMPTY)
-            {
-                dataGrid[originalIndex] = EMPTY;
-                dataGrid[newIndex] = ROBOT;
-            }
-            else if(dataGrid[newIndex] != WALL)
-            {
-                // must be a box somewhere
-                List<WarehouseBox> collided = allBoxes.FindAll(x=>x.ContainsPoint(updatedPosition));
-                Debug.Assert(collided.Count == 1);
-                MoveBox(collided[0],direction,dataGrid,width,allBoxes);
-            }
-            return dataGrid;
-        }
+        return dataGrid;
+    }
 
     public bool MoveBox(WarehouseBox box, IntVector2 direction, char[] dataGrid, int gridWidth, List<WarehouseBox> allBoxes)
     {
+        if (box.WallInDirection(direction, dataGrid, gridWidth))
+        {
+            return false;
+        }
+
+
         List<WarehouseBox> effectedBoxes = box.GetTouchingBoxesInDirection(direction, dataGrid, gridWidth, allBoxes);
 
         // if any of the boxes moving in direction touch a wall then it can't move.
@@ -292,7 +307,7 @@ public class Test15_2024 : BaseTest
         }
 
         // ok in theory can move , start with the left most one and shift them over.
-
+        box.Move(box.Position + direction);
         foreach (WarehouseBox b in effectedBoxes)
         {
             b.Move(b.Position + direction);
@@ -319,6 +334,20 @@ public class Test15_2024 : BaseTest
         private bool CheckCharactersInDirection(char c, IntVector2 direction, char[] dataGrid, int gridWidth, bool allMatch)
         {
             int existsCount = 0;
+
+            IntVector2 updatedMin = Min+direction;
+            IntVector2 updatedMax = Max+direction;
+
+            for(int x=updatedMin.X; x<=updatedMax.X; x++)
+            {
+                for(int y=updatedMin.Y; y<=updatedMax.Y; y++)
+                {
+                    int ibreak =0;
+                }
+            }
+
+
+
 
             if (direction == IntVector2.Left)
             {
@@ -446,6 +475,7 @@ public class Test15_2024 : BaseTest
         public List<WarehouseBox> GetTouchingBoxesInDirection(IntVector2 direction, char[] dataGrid, int gridWidth, List<WarehouseBox> allBoxes)
         {
             HashSet<WarehouseBox> boxesToCheck = new HashSet<WarehouseBox>();
+            HashSet<WarehouseBox> checkedBoxes = new HashSet<WarehouseBox>();
             HashSet<WarehouseBox> newBoxes = new HashSet<WarehouseBox>();
             bool boxAdded = true;
 
@@ -455,21 +485,26 @@ public class Test15_2024 : BaseTest
             {
                 foreach (WarehouseBox b in boxesToCheck)
                 {
+                    checkedBoxes.Add(b);
+
                     boxAdded = false;
                     foreach (WarehouseBox b2 in allBoxes)
                     {
-                        if (b.TestOverlap(b2, direction))
+                        if (!checkedBoxes.Contains(b2) && b.TestOverlap(b2, direction))
                         {
-                            newBoxes.Add(b);
+                            newBoxes.Add(b2);
                             boxAdded = true;
                         }
                     }
                 }
+
+                boxesToCheck.RemoveWhere(x => checkedBoxes.Contains(x));
+
                 foreach (WarehouseBox b3 in newBoxes)
                 {
                     boxesToCheck.Add(b3);
                 }
-                boxesToCheck.Clear();
+                newBoxes.Clear();
 
             }
 
@@ -498,15 +533,15 @@ public class Test15_2024 : BaseTest
             return resultList;
         }
 
-        public void DrawGrid(char[] dataGrid,int width,bool IsPart2)
+        public void DrawGrid(char[] dataGrid, int width, bool IsPart2)
         {
-            int index =  Helper.GetIndex(Position,width);
-            if(IsPart2)
+            int index = Helper.GetIndex(Position, width);
+            if (IsPart2)
             {
                 dataGrid[index] = '[';
-                dataGrid[index+1] = ']';
+                dataGrid[index + 1] = ']';
             }
-            else 
+            else
             {
                 dataGrid[index] = BOX;
             }
