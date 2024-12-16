@@ -5,6 +5,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -116,52 +117,63 @@ public class Test15_2024 : BaseTest
 
         Table table = new Table().Centered();
 
-        if (IsPart2)
+        AnsiConsole.Live(table).Start(ctx =>
         {
-            DebugOutput(Helper.DrawGrid(dataGrid, width, height));
-            for (int i = 0; i < commandString.Length; ++i)
+            if (ctx != null)
             {
-                IntVector2 direction = commandTranslation[commandString[i]];
-                SimulatePart2(dataGrid, ref robotPosition, direction, width, allBoxes);
-                UpdateDataGrid(dataGrid, allBoxes, robotPosition, width);
-                DebugOutput(Helper.DrawGrid(dataGrid, width, height));
+
+
+                table.AddColumn("");
+                table.AddRow("");
+
+                for (int i = 0; i < commandString.Length; ++i)
+                {
+                    IntVector2 direction = commandTranslation[commandString[i]];
+                    SimulatePart2(dataGrid, ref robotPosition, direction, width, allBoxes);
+                    UpdateDataGrid(dataGrid, allBoxes, robotPosition, width);
+
+
+                    //if(IsPart2)
+                    //{
+
+                    //    SimulatePart2(dataGrid, ref robotPosition, direction, width, allBoxes);
+                    //    UpdateDataGrid(dataGrid, allBoxes, robotPosition, width);
+                    //}
+                    //else
+                    //{
+                    //    SimulatePart1(dataGrid, ref robotPosition, direction, width);
+                    //}
+
+                    string text = Helper.DrawGrid(dataGrid, width, height, colourMap);
+                    table.Columns[0].Header($"Step [[{i}]]  [[{commandString[i]}]]");
+                    table.UpdateCell(0, 0, text);
+                    //DebugOutput($"Step [[{i}]]  [[{commandString[i]}]]");
+                    //DebugOutput(Helper.DrawGrid(dataGrid,width,height));
+                    //Helper.DrawGridToConsole(dataGrid,width,height, colourMap,10);
+                    ctx.Refresh();
+                    Thread.Sleep(10);
+                }
+            }
+        });
+
+
+        long totalSum = 0;
+        if(IsPart2)
+        {
+            foreach(WarehouseBox wb in allBoxes)
+            {
+                totalSum += ((100 * wb.Position.Y) + wb.Position.X); 
             }
         }
         else
         {
-            AnsiConsole.Live(table).Start(ctx =>
+            for (int i = 0; i < dataGrid.Length; ++i)
             {
-                if (ctx != null)
+                if (dataGrid[i] == BOX)
                 {
-
-
-                    table.AddColumn("");
-                    table.AddRow("");
-
-                    for (int i = 0; i < commandString.Length; ++i)
-                    {
-                        IntVector2 direction = commandTranslation[commandString[i]];
-
-                        SimulatePart1(dataGrid, ref robotPosition, direction, width);
-                        string text = Helper.DrawGrid(dataGrid, width, height, colourMap);
-                        table.UpdateCell(0, 0, text);
-                        //DebugOutput(Helper.DrawGrid(dataGrid,width,height));
-                        //Helper.DrawGridToConsole(dataGrid,width,height, colourMap,10);
-                        ctx.Refresh();
-                        Thread.Sleep(10);
-                    }
+                    IntVector2 pos = Helper.GetPosition(i, width);
+                    totalSum += ((100 * pos.Y) + pos.X);
                 }
-            });
-        }
-
-
-        long totalSum = 0;
-        for (int i = 0; i < dataGrid.Length; ++i)
-        {
-            if (dataGrid[i] == BOX)
-            {
-                IntVector2 pos = Helper.GetPosition(i, width);
-                totalSum += ((100 * pos.Y) + pos.X);
             }
         }
 
@@ -289,11 +301,6 @@ public class Test15_2024 : BaseTest
 
     public bool MoveBox(WarehouseBox box, IntVector2 direction, char[] dataGrid, int gridWidth, List<WarehouseBox> allBoxes)
     {
-        if (box.WallInDirection(direction, dataGrid, gridWidth))
-        {
-            return false;
-        }
-
 
         List<WarehouseBox> effectedBoxes = box.GetTouchingBoxesInDirection(direction, dataGrid, gridWidth, allBoxes);
 
@@ -305,9 +312,7 @@ public class Test15_2024 : BaseTest
                 return false;
             }
         }
-
-        // ok in theory can move , start with the left most one and shift them over.
-        box.Move(box.Position + direction);
+        
         foreach (WarehouseBox b in effectedBoxes)
         {
             b.Move(b.Position + direction);
@@ -324,143 +329,53 @@ public class Test15_2024 : BaseTest
         public IntVector2 Min;
         public IntVector2 Max;
 
+        public List<IntVector2> AllPoints = new List<IntVector2>();
+
         public void Move(IntVector2 p)
         {
             Position = p;
             Min = Position;
             Max = Min + Bounds;
-        }
-
-        private bool CheckCharactersInDirection(char c, IntVector2 direction, char[] dataGrid, int gridWidth, bool allMatch)
-        {
-            int existsCount = 0;
-
-            IntVector2 updatedMin = Min+direction;
-            IntVector2 updatedMax = Max+direction;
-
-            for(int x=updatedMin.X; x<=updatedMax.X; x++)
+            AllPoints.Clear();
+            for (int x = Min.X; x <= Max.X; x++)
             {
-                for(int y=updatedMin.Y; y<=updatedMax.Y; y++)
+                for (int y = Min.Y; y <= Max.Y; y++)
                 {
-                    int ibreak =0;
+                    AllPoints.Add(new IntVector2(x, y));
                 }
             }
 
-
-
-
-            if (direction == IntVector2.Left)
-            {
-                IntVector2 possibleMove = Position + direction;
-
-                for (int i = 0; i < Bounds.Y; ++i)
-                {
-                    int index = Helper.GetIndex(possibleMove + new IntVector2(0, i), gridWidth);
-                    if (dataGrid[index] == c)
-                    {
-                        existsCount++;
-                    }
-                }
-                if (allMatch)
-                {
-                    return existsCount == Bounds.Y;
-                }
-                else
-                {
-                    return existsCount > 0;
-                }
-
-            }
-            else if (direction == IntVector2.Right)
-            {
-                IntVector2 possibleMove = Position + new IntVector2(Bounds.X, 0) + direction;
-
-                for (int i = 0; i < Bounds.Y; ++i)
-                {
-                    int index = Helper.GetIndex(possibleMove + new IntVector2(0, i), gridWidth);
-                    if (dataGrid[index] == c)
-                    {
-                        existsCount++;
-                    }
-                }
-                if (allMatch)
-                {
-                    return existsCount == Bounds.Y;
-                }
-                else
-                {
-                    return existsCount > 0;
-                }
-
-            }
-            else if (direction == IntVector2.Down)
-            {
-                IntVector2 possibleMove = Position + direction;
-
-                for (int i = 0; i < Bounds.X; ++i)
-                {
-                    int index = Helper.GetIndex(possibleMove + new IntVector2(i, 0), gridWidth);
-                    if (dataGrid[index] == c)
-                    {
-                        existsCount++;
-                    }
-                }
-                if (allMatch)
-                {
-                    return existsCount == Bounds.X;
-                }
-                else
-                {
-                    return existsCount > 0;
-                }
-            }
-            else if (direction == IntVector2.Up)
-            {
-                IntVector2 possibleMove = Position + new IntVector2(0, Bounds.Y) + direction;
-
-                for (int i = 0; i < Bounds.X; ++i)
-                {
-                    int index = Helper.GetIndex(possibleMove + new IntVector2(i, 0), gridWidth);
-                    if (dataGrid[index] == c)
-                    {
-                        existsCount++;
-                    }
-                }
-                if (allMatch)
-                {
-                    return existsCount == Bounds.X;
-                }
-                else
-                {
-                    return existsCount > 0;
-                }
-
-            }
-            return false;
-        }
-
-        public bool SpaceInDirectionIsEmpty(IntVector2 direction, char[] dataGrid, int gridWidth)
-        {
-            return CheckCharactersInDirection(EMPTY, direction, dataGrid, gridWidth, true);
         }
 
         public bool WallInDirection(IntVector2 direction, char[] dataGrid, int gridWidth)
         {
-            return CheckCharactersInDirection(WALL, direction, dataGrid, gridWidth, false);
-        }
+            IntVector2 possibleMove = Position + direction;
 
-        public bool BoxInDirection(IntVector2 direction, char[] dataGrid, int gridWidth)
-        {
-            return CheckCharactersInDirection(BOX, direction, dataGrid, gridWidth, false);
+            IntVector2 updatedMin = Min + direction;
+            IntVector2 updatedMax = Max + direction;
+
+            for (int x = updatedMin.X; x <= updatedMax.X; x++)
+            {
+                for (int y = updatedMin.Y; y <= updatedMax.Y; y++)
+                {
+                    int index = Helper.GetIndex(new IntVector2(x, y), gridWidth);
+                    if (dataGrid[index] == WALL)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;            
         }
 
 
         public bool ContainsPoint(IntVector2 point)
         {
-            IntVector2 min = Position;
-            IntVector2 max = Position + Bounds;
+            //IntVector2 min = Position;
+            //IntVector2 max = Position + Bounds;
 
-            return (point.X >= min.X && point.X <= max.X && point.Y >= min.Y && point.Y <= max.Y);
+            //return (point.X >= min.X && point.X <= max.X && point.Y >= min.Y && point.Y <= max.Y);
+            return AllPoints.Contains(point);
         }
 
         public bool TestOverlap(WarehouseBox b, IntVector2 offset)
@@ -468,7 +383,14 @@ public class Test15_2024 : BaseTest
             IntVector2 min = Position + offset;
             IntVector2 max = min + Bounds;
 
-            return !(b.Min.X > max.X || b.Max.X < min.X || b.Min.Y > max.Y || b.Max.Y < min.Y);
+            foreach (IntVector2 iv2 in AllPoints)
+            {
+                if (b.AllPoints.Contains(iv2 + offset))
+                { 
+                    return true; 
+                 }
+            }
+            return false;
 
         }
 
@@ -483,11 +405,12 @@ public class Test15_2024 : BaseTest
 
             while (boxAdded == true)
             {
+                boxAdded = false;
+
                 foreach (WarehouseBox b in boxesToCheck)
                 {
                     checkedBoxes.Add(b);
 
-                    boxAdded = false;
                     foreach (WarehouseBox b2 in allBoxes)
                     {
                         if (!checkedBoxes.Contains(b2) && b.TestOverlap(b2, direction))
@@ -508,28 +431,8 @@ public class Test15_2024 : BaseTest
 
             }
 
-
             List<WarehouseBox> resultList = new List<WarehouseBox>();
-            resultList.AddRange(boxesToCheck);
-
-            if (direction == IntVector2.Left)
-            {
-                resultList.OrderBy(x => x.Position.X);
-            }
-            else if (direction == IntVector2.Right)
-            {
-                resultList.OrderByDescending(x => x.Position.X);
-            }
-            else if (direction == IntVector2.Down)
-            {
-                resultList.OrderBy(x => x.Position.Y);
-            }
-            else if (direction == IntVector2.Up)
-            {
-                resultList.OrderByDescending(x => x.Position.Y);
-            }
-
-
+            resultList.AddRange(checkedBoxes);
             return resultList;
         }
 
@@ -538,8 +441,12 @@ public class Test15_2024 : BaseTest
             int index = Helper.GetIndex(Position, width);
             if (IsPart2)
             {
-                dataGrid[index] = '[';
-                dataGrid[index + 1] = ']';
+                if(dataGrid[index] == WALL || dataGrid[index + 1] == WALL) 
+                {
+                    int ibreak =0;
+                }
+                dataGrid[index] = '{';
+                dataGrid[index + 1] = '}';
             }
             else
             {
