@@ -17,4 +17,4 @@
 #################
 
 Found lowest cost as : 11048
-Elapsed = 108.5107 ms
+Elapsed = 15.3881 ms

@@ -83,6 +83,18 @@ public class Test16_2024 : BaseTest
     {
         bool existingRoute;
 
+        if (!IsEmpty(position))
+        {
+            return false;
+        }
+
+        // stop overflow of continually staying in one place
+        if (depth > MAX_DEPTH)
+        {
+            return false;
+        }
+
+
         long cost = CalculateRouteCost(moveList);
         IntVector2 searchKey = new IntVector2(position.X, position.Y);
 
@@ -96,13 +108,8 @@ public class Test16_2024 : BaseTest
             return false;
         }
 
-
         m_cheapestPositionCostMap[searchKey] = cost;
 
-        if (m_exploredRoutes.TryGetValue(searchKey, out existingRoute))
-        {
-            //return existingRoute;
-        }
 
         if (position == end)
         {
@@ -116,21 +123,6 @@ public class Test16_2024 : BaseTest
             return true;
         }
 
-        // stop overflow of continually staying in one place
-        if (depth > MAX_DEPTH)
-        {
-            return false;
-        }
-
-        //if (m_shortestRoute.Count > 0 && depth >= m_shortestRoute.Count)
-        //{
-        //    return false;
-        //}
-
-        if (!IsEmpty(position))
-        {
-            return false;
-        }
 
         List<IntVector2> moveChoices = new List<IntVector2>();
         foreach (IntVector2 option in IntVector2.Directions)
@@ -138,8 +130,8 @@ public class Test16_2024 : BaseTest
             moveChoices.Add(position + option);
         }
 
-
         bool hasRoute = false;
+        
         foreach (IntVector2 option in moveChoices.OrderBy(x => x.ManhattanDistance(m_endPoint)))
         {
             moveList.Add(position);
