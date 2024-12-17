@@ -170,6 +170,7 @@ public struct IntVector2
     public static readonly IntVector2 Right = new IntVector2(1, 0);
     public static readonly IntVector2 Up = new IntVector2(0, 1);
     public static readonly IntVector2 Down = new IntVector2(0, -1);
+    public static readonly IntVector2 Zero = new IntVector2(0, 0);
 
     public static readonly IntVector2[] Directions = new IntVector2[] { Left, Right, Up, Down };
 
