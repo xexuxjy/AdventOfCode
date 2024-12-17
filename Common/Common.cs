@@ -12,6 +12,20 @@ using System.Threading.Tasks;
 
 public static class Helper
 {
+
+    public static int IntPow(int x, uint pow)
+    {
+        int ret = 1;
+        while (pow != 0)
+        {
+            if ((pow & 1) == 1)
+                ret *= x;
+            x *= x;
+            pow >>= 1;
+        }
+        return ret;
+    }
+
     // up and down look a bit odd as origin is top left.
     public static char PointerFromDirection(IntVector2 d)
     {
@@ -96,7 +110,7 @@ public static class Helper
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int GetIndex(int x,int y, int width)
+    public static int GetIndex(int x, int y, int width)
     {
         return (y * width + x);
     }
@@ -166,7 +180,7 @@ public static class Helper
         return sb.ToString();
     }
 
-    public static string DrawGrid(char[] data, int width, int height,Dictionary<char,Spectre.Console.Color> colorMap=null)
+    public static string DrawGrid(char[] data, int width, int height, Dictionary<char, Spectre.Console.Color> colorMap = null)
     {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; ++y)
@@ -175,15 +189,15 @@ public static class Helper
             {
                 string s = "";
                 char c = data[y * width + x];
-                if(colorMap != null && colorMap.ContainsKey(c))
+                if (colorMap != null && colorMap.ContainsKey(c))
                 {
-                    s="["+colorMap[c].ToMarkup() + "]";
-                    s+=c;
-                    s+="[/]";
+                    s = "[" + colorMap[c].ToMarkup() + "]";
+                    s += c;
+                    s += "[/]";
                 }
                 else
                 {
-                    s =""+c;
+                    s = "" + c;
                 }
                 sb.Append(s);
             }
@@ -196,11 +210,11 @@ public static class Helper
 
 
 
-    public static void DrawGridToConsole(char[] data, int width, int height,Dictionary<char,Spectre.Console.Color> colorMap,int delay=100)
+    public static void DrawGridToConsole(char[] data, int width, int height, Dictionary<char, Spectre.Console.Color> colorMap, int delay = 100)
     {
         AnsiConsole.Clear();
         //AnsiConsole.Cursor.SetPosition(0,0);
-        AnsiConsole.Markup(DrawGrid(data, width, height,colorMap));
+        AnsiConsole.Markup(DrawGrid(data, width, height, colorMap));
 
         Thread.Sleep(delay);
     }

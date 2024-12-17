@@ -18,6 +18,8 @@ public class Test16_2024 : BaseTest
         TestID = 16;
     }
 
+
+
     public override void Execute()
     {
         m_width = 0;
@@ -36,9 +38,23 @@ public class Test16_2024 : BaseTest
         }
 
 
+
+
         m_lowestCost+=1;
+
+        HashSet<IntVector2> uniquePoints = new HashSet<IntVector2>();
+        foreach(List<IntVector2> route in m_allRoutes)
+        {
+            foreach (IntVector2 move in route)
+            {
+                uniquePoints.Add(move);
+
+            }
+        }
         DebugOutput(Helper.DrawGrid(m_dataGrid, m_width, m_height));
         DebugOutput("Found lowest cost as : " + m_lowestCost);
+        DebugOutput("Part2 Points : "+uniquePoints.Count);
+
     }
 
     public long CalculateRouteCost(List<IntVector2> points)
@@ -77,6 +93,7 @@ public class Test16_2024 : BaseTest
 
 
     List<IntVector2> m_lowestCostRoute = new List<IntVector2>();
+    List<List<IntVector2>> m_allRoutes = new List<List<IntVector2>>();
     long m_lowestCost = long.MaxValue;
 
     public bool TestRoute(IntVector2 position, IntVector2 start, IntVector2 end, int depth, List<IntVector2> moveList)
@@ -108,6 +125,12 @@ public class Test16_2024 : BaseTest
             return false;
         }
 
+        if(cost > m_lowestCost)
+        {
+            return false;
+        }
+
+
         m_cheapestPositionCostMap[searchKey] = cost;
 
 
@@ -118,6 +141,14 @@ public class Test16_2024 : BaseTest
                 m_lowestCost = cost;
                 m_lowestCostRoute.Clear();
                 m_lowestCostRoute.AddRange(moveList);
+
+                // clear out old routes
+                m_allRoutes.RemoveAll(x=>CalculateRouteCost(x) > m_lowestCost);
+
+                List<IntVector2> listCopy = new List<IntVector2>();
+                listCopy.AddRange(moveList);
+                m_allRoutes.Add(listCopy);
+
             }
             //DebugOutput("End : "+string.Join("   ", moveList));
             return true;
