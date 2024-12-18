@@ -8,8 +8,17 @@ using static Test17_2024;
 
 public class Test17_2024 : BaseTest
 {
-    List<int> InstructionList = new List<int>();
-    public int InstructionPointer = 0;
+    List<long> InstructionList = new List<long>();
+    public long InstructionPointer = 0;
+    public bool IncrementInstructionPointer = true;
+
+
+    
+    public Dictionary<string, Register> RegisterMap = new Dictionary<string, Register>();
+
+    public Dictionary<int, Func<long, long, int>> OpCodeMap = new Dictionary<int, Func<long, long, int>>();
+
+    public List<long> OutputList = new List<long>();
 
 
     public override void Initialise()
@@ -18,13 +27,6 @@ public class Test17_2024 : BaseTest
         TestID = 17;
     }
 
-    public Dictionary<string, Register> RegisterMap = new Dictionary<string, Register>();
-
-    public Dictionary<int, Func<int, int, int>> OpCodeMap = new Dictionary<int, Func<int, int, int>>();
-
-    public List<int> OutputList = new List<int>();
-
-    public bool IncrementInstructionPointer = true;
 
     public override void Execute()
     {
@@ -54,33 +56,93 @@ public class Test17_2024 : BaseTest
             InstructionList.Add(int.Parse(token));
         }
 
-        while (InstructionPointer < InstructionList.Count)
+        if (IsPart2)
         {
-            HandleOpCode(InstructionList[InstructionPointer], InstructionList[InstructionPointer + 1]);
-            if (IncrementInstructionPointer)
+            
+            long aval = 1;
+            long val = 6 + (1 * 8) + (5 * 8 * 8) + (5 * 8 * 8 * 8) + (3 * 8 * 8 *8 * 8);
+            aval = val;
+
+            //while (!OutputList.SequenceEqual(InstructionList))
+            for(int i=0;i<10;++i)
             {
-                InstructionPointer += 2;
-            }
-            IncrementInstructionPointer = true;
+            
+                OutputList.Clear();
+                RegisterMap["A"].Value = aval;
+                RegisterMap["B"].Value = 0;
+                RegisterMap["C"].Value = 0;
+                InstructionPointer =0;
+                IncrementInstructionPointer = true;
+
+                int loopDetector = 2000;
+                int loopCount = 0;
+
+                
+                while (InstructionPointer < InstructionList.Count)
+                {
+                    HandleOpCode(InstructionList[(int)InstructionPointer], InstructionList[(int)InstructionPointer + 1]);
+                    if (IncrementInstructionPointer)
+                    {
+                        InstructionPointer += 2;
+                    }
+                    IncrementInstructionPointer = true;
 
 
-            // we went somewhere bad so halt.
-            if (InstructionPointer > InstructionList.Count)
-            {
-                break;
+                    // we went somewhere bad so halt.
+                    if (InstructionPointer > InstructionList.Count)
+                    {
+                        break;
+                    }
+
+                    loopCount++;
+
+                    if (loopCount > loopDetector)
+                    {
+                        break;
+                    }
+
+                }
+                
+                DebugOutput($"Aval {i} {Convert.ToString(i,8)}  output {string.Join(',',OutputList)}");
+
+                if(OutputList.SequenceEqual(InstructionList))
+                {
+                    DebugOutput("Found match at : " + aval);
+                    break;
+                }
             }
+            
         }
+        else
+        {
 
-        DebugOutput(string.Join(',', OutputList));
+            while (InstructionPointer < InstructionList.Count)
+            {
+                HandleOpCode(InstructionList[(int)InstructionPointer], InstructionList[(int)InstructionPointer + 1]);
+                if (IncrementInstructionPointer)
+                {
+                    InstructionPointer += 2;
+                }
+                IncrementInstructionPointer = true;
 
+
+                // we went somewhere bad so halt.
+                if (InstructionPointer > InstructionList.Count)
+                {
+                    break;
+                }
+            }
+
+            DebugOutput(string.Join(',', OutputList));
+        }
         int ibreak = 0;
     }
 
 
-    public void HandleOpCode(int opCode, int operand)
+    public void HandleOpCode(long opCode, long operand)
     {
-        int literalOperand = operand;
-        int comboOperand = operand;
+        long literalOperand = operand;
+        long comboOperand = operand;
         // translate operand
         if (operand >= 0 && operand <= 3)
         {
@@ -102,7 +164,7 @@ public class Test17_2024 : BaseTest
             Debug.Assert(false);
         }
 
-        OpCodeMap[opCode](literalOperand, comboOperand);
+        OpCodeMap[(int)opCode](literalOperand, comboOperand);
 
     }
 
@@ -124,9 +186,9 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
 
     */
 
-    bool DebugOpcodes = true;
+    bool DebugOpcodes = false;
 
-    public int HandleADV(int literalOperand, int comboOperand)
+    public int HandleADV(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
@@ -137,19 +199,19 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
         return 0;
     }
 
-    public int HandleBXL(int literalOperand, int comboOperand)
+    public int HandleBXL(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
             DebugOutput($"BXL {RegisterMap["B"].Value}  ^ {literalOperand} = {RegisterMap["B"].Value ^ literalOperand}");
         }
 
-        int val = RegisterMap["B"].Value;
+        long val = RegisterMap["B"].Value;
         val = val ^ literalOperand;
         RegisterMap["B"].Value = val;
         return 0;
     }
-    public int HandleBST(int literalOperand, int comboOperand)
+    public int HandleBST(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
@@ -157,11 +219,11 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
         }
 
 
-        int val = comboOperand % 8;
+        long val = comboOperand % 8;
         RegisterMap["B"].Value = val;
         return 0;
     }
-    public int HandleJNZ(int literalOperand, int comboOperand)
+    public int HandleJNZ(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
@@ -175,29 +237,29 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
         }
         return 0;
     }
-    public int HandleBXC(int literalOperand, int comboOperand)
+    public int HandleBXC(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
             DebugOutput($"BXC {RegisterMap["B"].Value}  ^ {RegisterMap["C"].Value} = {RegisterMap["B"].Value ^ RegisterMap["C"].Value}");
         }
 
-        int valb = RegisterMap["B"].Value;
-        int valc = RegisterMap["C"].Value;
-        int val = valb ^ valc;
+        long valb = RegisterMap["B"].Value;
+        long valc = RegisterMap["C"].Value;
+        long val = valb ^ valc;
         RegisterMap["B"].Value = val;
         return 0;
     }
-    public int HandleOUT(int literalOperand, int comboOperand)
+    public int HandleOUT(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
             DebugOutput($"OUT {comboOperand}");
         }
-        OutputList.Add(comboOperand % 8);
+        OutputList.Add((int)(comboOperand % 8));
         return 0;
     }
-    public int HandleBDV(int literalOperand, int comboOperand)
+    public int HandleBDV(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
@@ -207,7 +269,7 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
         RegisterMap["B"].Value = RegisterMap["A"].Value / (Helper.IntPow(2, (uint)comboOperand));
         return 0;
     }
-    public int HandleCDV(int literalOperand, int comboOperand)
+    public int HandleCDV(long literalOperand, long comboOperand)
     {
         if (DebugOpcodes)
         {
@@ -229,8 +291,8 @@ The cdv instruction (opcode 7) works exactly like the adv instruction except tha
     {
         public string Id;
 
-        private int m_value;
-        public int Value
+        private long m_value;
+        public long Value
         {
             get { return m_value; }
             set

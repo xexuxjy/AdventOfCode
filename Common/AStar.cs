@@ -413,3 +413,415 @@ internal struct SearchNode
         DistanceTraveled = distanceTraveled;
     }
 }
+
+
+public interface IMapDataInt
+{
+    public bool CanMove(IntVector2 from, IntVector2 to);
+    public IntVector2[] GetDirections();
+    public IntVector2 GetTargetPosition();
+
+    public float DistanceToTarget(IntVector2 v);
+}
+
+public class AStarInt
+{
+    // How much time has passed since the last search step
+    private float timeSinceLastSearchStep = 0f;
+    // Holds search nodes that are avaliable to search
+    private List<SearchNodeInt> openList;
+    // Holds the nodes that have already been searched
+    private List<SearchNodeInt> closedList;
+    // Holds all the paths we've creted so far
+    private Dictionary<IntVector2, IntVector2> paths;
+    // The map we're searching
+    // Seconds per search step        
+    public float timeStep = .5f;
+
+    public IntVector2 startIntVector2 = new IntVector2();
+    public IntVector2 endIntVector2 = new IntVector2();
+
+    public List<IntVector2> stepIntVector2s = new List<IntVector2>(4);
+
+    private IMapDataInt m_levelMap;
+
+    #region Properties
+
+    // Tells us if the search is stopped, started, finished or failed
+    public SearchStatus SearchStatus
+    {
+        get { return searchStatus; }
+    }
+    private SearchStatus searchStatus;
+
+    // Tells us which search type we're using right now
+    public SearchMethod SearchMethod
+    {
+        get { return searchMethod; }
+    }
+    //private SearchMethod searchMethod = SearchMethod.BestFirst;
+    private SearchMethod searchMethod = SearchMethod.BreadthFirst;
+
+    // Seconds per search step
+    public float TimeStep
+    {
+        get { return timeStep; }
+        set { timeStep = value; }
+    }
+
+    /// <summary>
+    /// Toggles searching on and off
+    /// </summary>
+    public bool IsSearching
+    {
+        get { return searchStatus == SearchStatus.Searching; }
+        set
+        {
+            if (searchStatus == SearchStatus.Searching)
+            {
+                searchStatus = SearchStatus.Stopped;
+            }
+            else if (searchStatus == SearchStatus.Stopped)
+            {
+                searchStatus = SearchStatus.Searching;
+            }
+        }
+    }
+
+    /// <summary>
+    /// How many search steps have elapsed on this map
+    /// </summary>
+    public int TotalSearchSteps
+    {
+        get { return totalSearchSteps; }
+    }
+    private int totalSearchSteps = 0;
+
+    #endregion
+
+
+    public AStarInt()
+    {
+    }
+
+    public AStarInt(SearchMethod sm)
+    {
+        searchMethod = sm;
+    }
+
+
+    #region Initialization
+
+    /// <summary>
+    /// Setup search
+    /// </summary>
+    /// <param name="levelMap">Map to search</param>
+    public void Initialize(IMapDataInt levelMap)
+    {
+        searchStatus = SearchStatus.Stopped;
+        openList = new List<SearchNodeInt>();
+        closedList = new List<SearchNodeInt>();
+        paths = new Dictionary<IntVector2, IntVector2>();
+        m_levelMap = levelMap;
+    }
+
+    #endregion
+
+    #region Update and Draw
+
+
+    #endregion
+
+    #region Methods
+
+    /// <summary>
+    /// Reset the search
+    /// </summary>
+    public void Reset()
+    {
+        searchStatus = SearchStatus.Stopped;
+        totalSearchSteps = 0;
+        openList.Clear();
+        closedList.Clear();
+        paths.Clear();
+    }
+
+    /// <summary>
+    /// Cycle through the search method to the next type
+    /// </summary>
+    public void NextSearchType()
+    {
+        searchMethod = (SearchMethod)(((int)searchMethod + 1) %
+            (int)SearchMethod.Max);
+    }
+
+    /// <summary>
+    /// This method find the next path node to visit, puts that node on the 
+    /// closed list and adds any nodes adjacent to the visited node to the 
+    /// open list.
+    /// </summary>
+    private void DoSearchStep()
+    {
+        SearchNodeInt newOpenListNode;
+
+        bool foundNewNode = SelectNodeToVisit(out newOpenListNode);
+        if (foundNewNode)
+        {
+            IntVector2 currentPos = newOpenListNode.Position;
+            stepIntVector2s.Clear();
+            OpenMapTiles(currentPos, stepIntVector2s);
+            foreach (IntVector2 v in stepIntVector2s)
+            {
+                SearchNodeInt mapTile = new SearchNodeInt(v, m_levelMap.DistanceToTarget(v), newOpenListNode.DistanceTraveled + 1);
+                if (!InList(openList, v) && !InList(closedList, v))
+                {
+                    openList.Add(mapTile);
+                    paths[v] = newOpenListNode.Position;
+                }
+            }
+            if (currentPos == endIntVector2)
+            {
+                searchStatus = SearchStatus.PathFound;
+            }
+            openList.Remove(newOpenListNode);
+            closedList.Add(newOpenListNode);
+        }
+        else
+        {
+            searchStatus = SearchStatus.NoPath;
+        }
+    }
+
+    /// <summary>
+    /// Determines if the given IntVector2 is inside the SearchNodeInt list given
+    /// </summary>
+    private static bool InList(List<SearchNodeInt> list, IntVector2 IntVector2)
+    {
+        bool inList = false;
+        foreach (SearchNodeInt node in list)
+        {
+            if (node.Position == IntVector2)
+            {
+                inList = true;
+            }
+        }
+        return inList;
+    }
+
+    /// <summary>
+    /// This Method looks at everything in the open list and chooses the next 
+    /// path to visit based on which search type is currently selected.
+    /// </summary>
+    /// <param name="result">The node to be visited</param>
+    /// <returns>Whether or not SelectNodeToVisit found a node to examine
+    /// </returns>
+    private bool SelectNodeToVisit(out SearchNodeInt result)
+    {
+        result = new SearchNodeInt();
+        bool success = false;
+        float smallestDistance = float.PositiveInfinity;
+        float currentDistance = 0f;
+        if (openList.Count > 0)
+        {
+            switch (searchMethod)
+            {
+                // Breadth first search looks at every possible path in the 
+                // order that we see them in.
+                case SearchMethod.BreadthFirst:
+                    totalSearchSteps++;
+                    result = openList[0];
+                    success = true;
+                    break;
+                // Best first search always looks at whatever path is closest to
+                // the goal regardless of how long that path is.
+                case SearchMethod.BestFirst:
+                    totalSearchSteps++;
+                    foreach (SearchNodeInt node in openList)
+                    {
+                        currentDistance = node.DistanceToGoal;
+                        if (currentDistance < smallestDistance)
+                        {
+                            success = true;
+                            result = node;
+                            smallestDistance = currentDistance;
+                        }
+                    }
+                    break;
+                // A* search uses a heuristic, an estimate, to try to find the 
+                // best path to take. As long as the heuristic is admissible, 
+                // meaning that it never over-estimates, it will always find 
+                // the best path.
+                case SearchMethod.AStar:
+                    totalSearchSteps++;
+                    foreach (SearchNodeInt node in openList)
+                    {
+                        currentDistance = Heuristic(node);
+                        // The heuristic value gives us our optimistic estimate 
+                        // for the path length, while any path with the same 
+                        // heuristic value is equally â€˜goodâ€™ in this case weâ€™re 
+                        // favoring paths that have the same heuristic value 
+                        // but are longer.
+                        if (currentDistance <= smallestDistance)
+                        {
+                            if (currentDistance < smallestDistance)
+                            {
+                                success = true;
+                                result = node;
+                                smallestDistance = currentDistance;
+                            }
+                            else if (currentDistance == smallestDistance &&
+                                node.DistanceTraveled > result.DistanceTraveled)
+                            {
+                                success = true;
+                                result = node;
+                                smallestDistance = currentDistance;
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+        return success;
+    }
+
+    /// <summary>
+    /// Generates an optimistic estimate of the total path length to the goal 
+    /// from the given position.
+    /// </summary>
+    /// <param name="location">Location to examine</param>
+    /// <returns>Path length estimate</returns>
+    private static float Heuristic(SearchNodeInt location)
+    {
+        return location.DistanceTraveled + location.DistanceToGoal;
+    }
+
+    /// <summary>
+    /// Generates the path from start to end.
+    /// </summary>
+    /// <returns>The path from start to end</returns>
+    public LinkedList<IntVector2> FinalPath()
+    {
+        LinkedList<IntVector2> path = new LinkedList<IntVector2>();
+        if (searchStatus == SearchStatus.PathFound)
+        {
+            IntVector2 curPrev = endIntVector2;
+            path.AddFirst(curPrev);
+            while (paths.ContainsKey(curPrev))
+            {
+                curPrev = paths[curPrev];
+                path.AddFirst(curPrev);
+            }
+        }
+        return path;
+    }
+
+    //public static float StepDistance(IntVector2 IntVector2A, IntVector2 IntVector2B)
+    //{
+    //    float distanceX = Math.Abs(IntVector2A.X - IntVector2B.X);
+    //    float distanceY = Math.Abs(IntVector2A.Y - IntVector2B.Y);
+
+    //    return distanceX + distanceY;
+    //}
+
+    //public float StepDistanceToEnd(IntVector2 IntVector2)
+    //{
+    //    return StepDistance(IntVector2, endIntVector2);
+    //}
+
+
+    public bool FindPath(IntVector2 start, IntVector2 end, List<IntVector2> result)
+    {
+
+        if (start == end)
+        {
+            return true;
+        }
+        Reset();
+        startIntVector2 = start;
+        endIntVector2 = end;
+
+        openList.Add(new SearchNodeInt(start, m_levelMap.DistanceToTarget(start), 0));
+        IsSearching = true;
+        while (IsSearching)
+        {
+            DoSearchStep();
+        }
+
+        if (searchStatus == SearchStatus.PathFound)
+        {
+            IntVector2 curPrev = endIntVector2;
+            result.Add(curPrev);
+            while (paths.ContainsKey(curPrev))
+            {
+                curPrev = paths[curPrev];
+                // copied from link list style. hmm.
+                result.Insert(0, curPrev);
+            }
+        }
+
+        return searchStatus == SearchStatus.PathFound;
+    }
+
+    public void OpenMapTiles(IntVector2 center, List<IntVector2> results)
+    {
+        foreach (IntVector2 p in m_levelMap.GetDirections())
+        {
+            IntVector2 adjusted = center + p;
+            if (m_levelMap.CanMove(center, adjusted))
+            {
+                results.Add(adjusted);
+            }
+        }
+    }
+
+    #endregion
+
+}
+
+
+internal struct SearchNodeInt
+{
+    /// <summary>
+    /// Location on the map
+    /// </summary>
+    public IntVector2 Position;
+
+    /// <summary>
+    /// Distance to goal estimate
+    /// </summary>
+    public float DistanceToGoal;
+
+    /// <summary>
+    /// Distance traveled from the start
+    /// </summary>
+    public float DistanceTraveled;
+
+    public SearchNodeInt(IntVector2 mapPosition, float distanceToGoal, float distanceTraveled)
+    {
+        Position = mapPosition;
+        DistanceToGoal = distanceToGoal;
+        DistanceTraveled = distanceTraveled;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
