@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Collections.Generic;
+using System.Numerics;
 
 public class Test18_2024 : BaseTest,IMapDataInt
 {
@@ -43,36 +44,68 @@ public class Test18_2024 : BaseTest,IMapDataInt
         m_dataGrid = new char[m_width * m_height];
         Array.Fill(m_dataGrid,EMPTY);
 
+    List<IntVector2> results = new List<IntVector2>();
         
-        int limit = 1024;
-        int count  = 0;
-
-        foreach(IntVector2 iv in FallingBytes )
+        if(IsPart2)
         {
-            m_dataGrid[Helper.GetIndex(iv,m_width)] = BYTE;
-            count++;
-            if( count >= limit )
+            m_startPosition = new IntVector2();
+            m_endPosition = max;
+
+            AStarInt astar = new AStarInt(SearchMethod.AStar);
+            astar.Initialize(this);
+            
+            int count  = 0;
+            foreach(IntVector2 iv in FallingBytes )
             {
-                break;
+                results.Clear();
+                m_dataGrid[Helper.GetIndex(iv,m_width)] = BYTE;
+                DebugOutput("Testing at block "+count);
+                if(!astar.FindPath(m_startPosition,m_endPosition,results))
+                {
+                    break;
+                }
+                count++;
+            }
+
+            DebugOutput($"Adding block at {FallingBytes[count]} stopped us");
+
+        }
+        else
+        {
+            int limit = 1024;
+            int count  = 0;
+
+            foreach(IntVector2 iv in FallingBytes )
+            {
+                m_dataGrid[Helper.GetIndex(iv,m_width)] = BYTE;
+                count++;
+                if( count >= limit )
+                {
+                    break;
+                }
+            }
+
+            DebugOutput(Helper.DrawGrid(m_dataGrid,m_width,m_height));
+
+            m_startPosition = new IntVector2();
+            m_endPosition = max;
+
+            AStarInt astar = new AStarInt(SearchMethod.AStar);
+            astar.Initialize(this);
+
+            if(astar.FindPath(m_startPosition,m_endPosition,results))
+            {
+                foreach(IntVector2 iv in results )
+                {
+                    m_dataGrid[Helper.GetIndex(iv,m_width)] = 'O';
+                }
             }
         }
+        
 
-        DebugOutput(Helper.DrawGrid(m_dataGrid,m_width,m_height));
 
-        m_startPosition = new IntVector2();
-        m_endPosition = max;
 
-        AStarInt astar = new AStarInt(SearchMethod.AStar);
-        astar.Initialize(this);
 
-        List<IntVector2> results = new List<IntVector2>();
-        if(astar.FindPath(m_startPosition,m_endPosition,results))
-        {
-            foreach(IntVector2 iv in results )
-            {
-                m_dataGrid[Helper.GetIndex(iv,m_width)] = 'O';
-            }
-        }
         DebugOutput(Helper.DrawGrid(m_dataGrid,m_width,m_height));
 
         DebugOutput("Minimum steps is : "+(results.Count-1));
