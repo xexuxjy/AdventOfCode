@@ -59,7 +59,7 @@ public class Test18_2024 : BaseTest,IMapDataInt
             {
                 results.Clear();
                 m_dataGrid[Helper.GetIndex(iv,m_width)] = BYTE;
-                DebugOutput("Testing at block "+count);
+                //DebugOutput("Testing at block "+count);
                 if(!astar.FindPath(m_startPosition,m_endPosition,results))
                 {
                     break;

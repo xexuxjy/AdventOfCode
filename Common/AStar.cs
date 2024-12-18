@@ -186,15 +186,7 @@ public class AStar
     /// </summary>
     private static bool InList(List<SearchNode> list, Vector2 Vector2)
     {
-        bool inList = false;
-        foreach (SearchNode node in list)
-        {
-            if (node.Position == Vector2)
-            {
-                inList = true;
-            }
-        }
-        return inList;
+        return list.Exists(x=>x.Position == Vector2);
     }
 
     /// <summary>
@@ -595,17 +587,9 @@ public class AStarInt
     /// <summary>
     /// Determines if the given IntVector2 is inside the SearchNodeInt list given
     /// </summary>
-    private static bool InList(List<SearchNodeInt> list, IntVector2 IntVector2)
+    private static bool InList(List<SearchNodeInt> list, IntVector2 val)
     {
-        bool inList = false;
-        foreach (SearchNodeInt node in list)
-        {
-            if (node.Position == IntVector2)
-            {
-                inList = true;
-            }
-        }
-        return inList;
+        return list.Exists(x=>x.Position ==  val);
     }
 
     /// <summary>
