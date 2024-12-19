@@ -1,9 +1,1367 @@
 Testing pattern 0  valid False 
 Testing pattern 1  valid True 
 Testing pattern 2  valid False 
-1 out of 3  are possible.
+Testing pattern 3  valid True 
+Testing pattern 4  valid False 
+Testing pattern 5  valid True 
+Testing pattern 6  valid True 
+Testing pattern 7  valid False 
+Testing pattern 8  valid True 
+Testing pattern 9  valid True 
+Testing pattern 10  valid True 
+Testing pattern 11  valid True 
+Testing pattern 12  valid False 
+Testing pattern 13  valid True 
+Testing pattern 14  valid True 
+Testing pattern 15  valid True 
+Testing pattern 16  valid True 
+Testing pattern 17  valid True 
+Testing pattern 18  valid True 
+Testing pattern 19  valid True 
+Testing pattern 20  valid False 
+Testing pattern 21  valid True 
+Testing pattern 22  valid True 
+Testing pattern 23  valid False 
+Testing pattern 24  valid True 
+Testing pattern 25  valid True 
+Testing pattern 26  valid True 
+Testing pattern 27  valid True 
+Testing pattern 28  valid False 
+Testing pattern 29  valid False 
+Testing pattern 30  valid True 
+Testing pattern 31  valid True 
+Testing pattern 32  valid False 
+Testing pattern 33  valid True 
+Testing pattern 34  valid True 
+Testing pattern 35  valid True 
+Testing pattern 36  valid True 
+Testing pattern 37  valid True 
+Testing pattern 38  valid True 
+Testing pattern 39  valid True 
+Testing pattern 40  valid True 
+Testing pattern 41  valid True 
+Testing pattern 42  valid False 
+Testing pattern 43  valid True 
+Testing pattern 44  valid False 
+Testing pattern 45  valid True 
+Testing pattern 46  valid True 
+Testing pattern 47  valid True 
+Testing pattern 48  valid False 
+Testing pattern 49  valid True 
+Testing pattern 50  valid True 
+Testing pattern 51  valid True 
+Testing pattern 52  valid True 
+Testing pattern 53  valid True 
+Testing pattern 54  valid True 
+Testing pattern 55  valid True 
+Testing pattern 56  valid True 
+Testing pattern 57  valid True 
+Testing pattern 58  valid True 
+Testing pattern 59  valid True 
+Testing pattern 60  valid True 
+Testing pattern 61  valid True 
+Testing pattern 62  valid True 
+Testing pattern 63  valid False 
+Testing pattern 64  valid False 
+Testing pattern 65  valid True 
+Testing pattern 66  valid True 
+Testing pattern 67  valid True 
+Testing pattern 68  valid True 
+Testing pattern 69  valid True 
+Testing pattern 70  valid False 
+Testing pattern 71  valid True 
+Testing pattern 72  valid True 
+Testing pattern 73  valid True 
+Testing pattern 74  valid True 
+Testing pattern 75  valid True 
+Testing pattern 76  valid True 
+Testing pattern 77  valid True 
+Testing pattern 78  valid True 
+Testing pattern 79  valid False 
+Testing pattern 80  valid False 
+Testing pattern 81  valid True 
+Testing pattern 82  valid True 
+Testing pattern 83  valid True 
+Testing pattern 84  valid True 
+Testing pattern 85  valid False 
+Testing pattern 86  valid True 
+Testing pattern 87  valid True 
+Testing pattern 88  valid False 
+Testing pattern 89  valid False 
+Testing pattern 90  valid True 
+Testing pattern 91  valid True 
+Testing pattern 92  valid True 
+Testing pattern 93  valid True 
+Testing pattern 94  valid True 
+Testing pattern 95  valid True 
+Testing pattern 96  valid False 
+Testing pattern 97  valid True 
+Testing pattern 98  valid True 
+Testing pattern 99  valid True 
+Testing pattern 100  valid True 
+Testing pattern 101  valid True 
+Testing pattern 102  valid True 
+Testing pattern 103  valid True 
+Testing pattern 104  valid False 
+Testing pattern 105  valid True 
+Testing pattern 106  valid True 
+Testing pattern 107  valid True 
+Testing pattern 108  valid True 
+Testing pattern 109  valid True 
+Testing pattern 110  valid False 
+Testing pattern 111  valid False 
+Testing pattern 112  valid True 
+Testing pattern 113  valid True 
+Testing pattern 114  valid True 
+Testing pattern 115  valid True 
+Testing pattern 116  valid True 
+Testing pattern 117  valid False 
+Testing pattern 118  valid True 
+Testing pattern 119  valid True 
+Testing pattern 120  valid True 
+Testing pattern 121  valid True 
+Testing pattern 122  valid True 
+Testing pattern 123  valid True 
+Testing pattern 124  valid True 
+Testing pattern 125  valid False 
+Testing pattern 126  valid True 
+Testing pattern 127  valid True 
+Testing pattern 128  valid False 
+Testing pattern 129  valid True 
+Testing pattern 130  valid False 
+Testing pattern 131  valid True 
+Testing pattern 132  valid True 
+Testing pattern 133  valid False 
+Testing pattern 134  valid False 
+Testing pattern 135  valid True 
+Testing pattern 136  valid True 
+Testing pattern 137  valid True 
+Testing pattern 138  valid True 
+Testing pattern 139  valid False 
+Testing pattern 140  valid True 
+Testing pattern 141  valid True 
+Testing pattern 142  valid True 
+Testing pattern 143  valid True 
+Testing pattern 144  valid True 
+Testing pattern 145  valid True 
+Testing pattern 146  valid False 
+Testing pattern 147  valid True 
+Testing pattern 148  valid True 
+Testing pattern 149  valid True 
+Testing pattern 150  valid True 
+Testing pattern 151  valid True 
+Testing pattern 152  valid True 
+Testing pattern 153  valid True 
+Testing pattern 154  valid True 
+Testing pattern 155  valid True 
+Testing pattern 156  valid True 
+Testing pattern 157  valid True 
+Testing pattern 158  valid False 
+Testing pattern 159  valid True 
+Testing pattern 160  valid True 
+Testing pattern 161  valid True 
+Testing pattern 162  valid True 
+Testing pattern 163  valid False 
+Testing pattern 164  valid True 
+Testing pattern 165  valid True 
+Testing pattern 166  valid True 
+Testing pattern 167  valid True 
+Testing pattern 168  valid True 
+Testing pattern 169  valid True 
+Testing pattern 170  valid True 
+Testing pattern 171  valid True 
+Testing pattern 172  valid True 
+Testing pattern 173  valid False 
+Testing pattern 174  valid True 
+Testing pattern 175  valid False 
+Testing pattern 176  valid True 
+Testing pattern 177  valid False 
+Testing pattern 178  valid False 
+Testing pattern 179  valid False 
+Testing pattern 180  valid True 
+Testing pattern 181  valid True 
+Testing pattern 182  valid True 
+Testing pattern 183  valid False 
+Testing pattern 184  valid True 
+Testing pattern 185  valid True 
+Testing pattern 186  valid False 
+Testing pattern 187  valid True 
+Testing pattern 188  valid True 
+Testing pattern 189  valid True 
+Testing pattern 190  valid False 
+Testing pattern 191  valid True 
+Testing pattern 192  valid True 
+Testing pattern 193  valid True 
+Testing pattern 194  valid True 
+Testing pattern 195  valid True 
+Testing pattern 196  valid True 
+Testing pattern 197  valid True 
+Testing pattern 198  valid True 
+Testing pattern 199  valid True 
+Testing pattern 200  valid True 
+Testing pattern 201  valid True 
+Testing pattern 202  valid True 
+Testing pattern 203  valid True 
+Testing pattern 204  valid True 
+Testing pattern 205  valid True 
+Testing pattern 206  valid True 
+Testing pattern 207  valid True 
+Testing pattern 208  valid True 
+Testing pattern 209  valid True 
+Testing pattern 210  valid True 
+Testing pattern 211  valid True 
+Testing pattern 212  valid True 
+Testing pattern 213  valid True 
+Testing pattern 214  valid True 
+Testing pattern 215  valid True 
+Testing pattern 216  valid False 
+Testing pattern 217  valid True 
+Testing pattern 218  valid True 
+Testing pattern 219  valid True 
+Testing pattern 220  valid True 
+Testing pattern 221  valid True 
+Testing pattern 222  valid True 
+Testing pattern 223  valid True 
+Testing pattern 224  valid False 
+Testing pattern 225  valid True 
+Testing pattern 226  valid True 
+Testing pattern 227  valid True 
+Testing pattern 228  valid True 
+Testing pattern 229  valid True 
+Testing pattern 230  valid True 
+Testing pattern 231  valid True 
+Testing pattern 232  valid True 
+Testing pattern 233  valid False 
+Testing pattern 234  valid True 
+Testing pattern 235  valid True 
+Testing pattern 236  valid True 
+Testing pattern 237  valid True 
+Testing pattern 238  valid True 
+Testing pattern 239  valid True 
+Testing pattern 240  valid True 
+Testing pattern 241  valid True 
+Testing pattern 242  valid True 
+Testing pattern 243  valid True 
+Testing pattern 244  valid True 
+Testing pattern 245  valid True 
+Testing pattern 246  valid True 
+Testing pattern 247  valid True 
+Testing pattern 248  valid True 
+Testing pattern 249  valid True 
+Testing pattern 250  valid True 
+Testing pattern 251  valid False 
+Testing pattern 252  valid True 
+Testing pattern 253  valid True 
+Testing pattern 254  valid True 
+Testing pattern 255  valid False 
+Testing pattern 256  valid True 
+Testing pattern 257  valid False 
+Testing pattern 258  valid True 
+Testing pattern 259  valid False 
+Testing pattern 260  valid True 
+Testing pattern 261  valid True 
+Testing pattern 262  valid False 
+Testing pattern 263  valid True 
+Testing pattern 264  valid True 
+Testing pattern 265  valid True 
+Testing pattern 266  valid False 
+Testing pattern 267  valid True 
+Testing pattern 268  valid False 
+Testing pattern 269  valid False 
+Testing pattern 270  valid True 
+Testing pattern 271  valid True 
+Testing pattern 272  valid False 
+Testing pattern 273  valid True 
+Testing pattern 274  valid True 
+Testing pattern 275  valid True 
+Testing pattern 276  valid False 
+Testing pattern 277  valid False 
+Testing pattern 278  valid True 
+Testing pattern 279  valid True 
+Testing pattern 280  valid True 
+Testing pattern 281  valid True 
+Testing pattern 282  valid True 
+Testing pattern 283  valid True 
+Testing pattern 284  valid False 
+Testing pattern 285  valid True 
+Testing pattern 286  valid True 
+Testing pattern 287  valid True 
+Testing pattern 288  valid True 
+Testing pattern 289  valid True 
+Testing pattern 290  valid False 
+Testing pattern 291  valid True 
+Testing pattern 292  valid False 
+Testing pattern 293  valid True 
+Testing pattern 294  valid True 
+Testing pattern 295  valid True 
+Testing pattern 296  valid True 
+Testing pattern 297  valid True 
+Testing pattern 298  valid True 
+Testing pattern 299  valid True 
+Testing pattern 300  valid True 
+Testing pattern 301  valid True 
+Testing pattern 302  valid True 
+Testing pattern 303  valid False 
+Testing pattern 304  valid True 
+Testing pattern 305  valid True 
+Testing pattern 306  valid True 
+Testing pattern 307  valid True 
+Testing pattern 308  valid True 
+Testing pattern 309  valid True 
+Testing pattern 310  valid True 
+Testing pattern 311  valid True 
+Testing pattern 312  valid True 
+Testing pattern 313  valid False 
+Testing pattern 314  valid True 
+Testing pattern 315  valid True 
+Testing pattern 316  valid True 
+Testing pattern 317  valid True 
+Testing pattern 318  valid True 
+Testing pattern 319  valid True 
+Testing pattern 320  valid False 
+Testing pattern 321  valid True 
+Testing pattern 322  valid True 
+Testing pattern 323  valid True 
+Testing pattern 324  valid False 
+Testing pattern 325  valid True 
+Testing pattern 326  valid True 
+Testing pattern 327  valid True 
+Testing pattern 328  valid True 
+Testing pattern 329  valid True 
+Testing pattern 330  valid True 
+Testing pattern 331  valid False 
+Testing pattern 332  valid True 
+Testing pattern 333  valid True 
+Testing pattern 334  valid False 
+Testing pattern 335  valid True 
+Testing pattern 336  valid True 
+Testing pattern 337  valid False 
+Testing pattern 338  valid True 
+Testing pattern 339  valid True 
+Testing pattern 340  valid True 
+Testing pattern 341  valid True 
+Testing pattern 342  valid True 
+Testing pattern 343  valid True 
+Testing pattern 344  valid True 
+Testing pattern 345  valid True 
+Testing pattern 346  valid True 
+Testing pattern 347  valid True 
+Testing pattern 348  valid False 
+Testing pattern 349  valid True 
+Testing pattern 350  valid True 
+Testing pattern 351  valid True 
+Testing pattern 352  valid True 
+Testing pattern 353  valid True 
+Testing pattern 354  valid True 
+Testing pattern 355  valid False 
+Testing pattern 356  valid True 
+Testing pattern 357  valid True 
+Testing pattern 358  valid False 
+Testing pattern 359  valid True 
+Testing pattern 360  valid False 
+Testing pattern 361  valid True 
+Testing pattern 362  valid True 
+Testing pattern 363  valid True 
+Testing pattern 364  valid True 
+Testing pattern 365  valid True 
+Testing pattern 366  valid True 
+Testing pattern 367  valid True 
+Testing pattern 368  valid True 
+Testing pattern 369  valid True 
+Testing pattern 370  valid False 
+Testing pattern 371  valid True 
+Testing pattern 372  valid True 
+Testing pattern 373  valid False 
+Testing pattern 374  valid True 
+Testing pattern 375  valid True 
+Testing pattern 376  valid False 
+Testing pattern 377  valid False 
+Testing pattern 378  valid True 
+Testing pattern 379  valid True 
+Testing pattern 380  valid False 
+Testing pattern 381  valid True 
+Testing pattern 382  valid True 
+Testing pattern 383  valid True 
+Testing pattern 384  valid True 
+Testing pattern 385  valid False 
+Testing pattern 386  valid False 
+Testing pattern 387  valid True 
+Testing pattern 388  valid True 
+Testing pattern 389  valid True 
+Testing pattern 390  valid True 
+Testing pattern 391  valid True 
+Testing pattern 392  valid True 
+Testing pattern 393  valid True 
+Testing pattern 394  valid True 
+Testing pattern 395  valid True 
+Testing pattern 396  valid True 
+Testing pattern 397  valid True 
+Testing pattern 398  valid True 
+Testing pattern 399  valid True 
+322 out of 400  are possible.
 Testing ruwbwwgrgrwwwgwrgrrbrrurrwggrgrbrururgwruw
+Testing rgrgwrgbguuugwgrrbgrubwwwbrbwuguggbgbuwuwuu
+Testing wgrgrrrgubwgrwbguwrgbwuggwuruwggbuggwuwugrwwugguwgwburrrg
+Testing rgbrwgurwbwwgbguuuubuuuwuurrrguwwbwwgbruwbubu
+Testing rruruuwgguugrugwguuwwgguggrwuuuwrbgbbuwwruwrwrrrbubgurg
+Elapsed = 1.3196 ms
+Elapsed = 1.9714 ms
+Elapsed = 1.312 ms
+Elapsed = 1.6628 ms
+Elapsed = 1.3219 ms
+Pattern rgbrwgurwbwwgbguuuubuuuwuurrrguwwbwwgbruwbubu can be made in 10806279900 ways
+Pattern rgrgwrgbguuugwgrrbgrubwwwbrbwuguggbgbuwuwuu can be made in 4681109900 ways
+Pattern rruruuwgguugrugwguuwwgguggrwuuuwrbgbbuwwruwrwrrrbubgurg can be made in 1069352790987 ways
+Pattern wgrgrrrgubwgrwbguwrgbwuggwuruwggbuggwuwugrwwugguwgwburrrg can be made in 11221483065606 ways
+Pattern rwbbgwuwwrwbwbgrbgrrguuwbbrubbgrbgbbuwwrbggubggrugur can be made in 224248896696 ways
 Pattern ruwbwwgrgrwwwgwrgrrbrrurrwggrgrbrururgwruw can be made in 72497918 ways
-Elapsed = 38270.0894 ms
-Total score is 72497918
-Elapsed = 38294.8791 ms
+Testing brwgbwwrubguwwbbruugbbugurbrwgbrgbrrwguubwuuuubgggwwgr
+Testing wugguubgwbbbwbgwgbwrubuugbbbgwrruwwugrbuubbuubr
+Testing rbugrrbwrrbrbrruwbbubrubwbrbgggwrgbbuurgrgbwbb
+Testing bbwuwwbuuwbbgwuubbrrrbgubrubrrrrruuuguurguuwbuwguubu
+Testing ubwrgrwwgbwgwbgwbbuwbuurgwgruwrrurubwbgbuww
+Elapsed = 0.3784 ms
+Elapsed = 3.1992 ms
+Elapsed = 3.0031 ms
+Elapsed = 2.7249 ms
+Elapsed = 2.4734 ms
+Testing uwgrrbggugrurrruugrgwrwgubrwrgggwrrrbbbruwb
+Pattern ubwrgrwwgbwgwbgwbbuwbuurgwgruwrrurubwbgbuww can be made in 8279945550 ways
+Pattern brwgbwwrubguwwbbruugbbugurbrwgbrgbrrwguubwuuuubgggwwgr can be made in 781491457125 ways
+Testing uwuwgwugwuwurgrrgwwurbwubbgbubgwwwggruguwbgwgbuggrrrbuwggr
+Pattern rbugrrbwrrbrbrruwbbubrubwbrbgggwrgbbuurgrgbwbb can be made in 1412218690 ways
+Testing ggrubugurrbugwgrgbbrrwrwgrwbwgubwgwubwuwrrrgb
+Elapsed = 1.9525 ms
+Testing grrgruuwurgwrbwbrubwugrggwgubruuubgwbrrwggrbrwr
+Elapsed = 0.3434 ms
+Elapsed = 1.9114 ms
+Pattern bbwuwwbuuwbbgwuubbrrrbgubrubrrrrruuuguurguuwbuwguubu can be made in 269961879624 ways
+Testing uugwruwubbugguubgubgubwrguwgrrwbbbbruwbwbwub
+Pattern uwgrrbggugrurrruugrgwrwgubrwrgggwrrrbbbruwb can be made in 154142066 ways
+Pattern wugguubgwbbbwbgwgbwrubuugbbbgwrruwwugrbuubbuubr can be made in 35559612678 ways
+Testing bbrbgbwurubugurbuuruwuuuwbwrgbubggbwbuwwbwbwuwbrbwrbg
+Pattern uwuwgwugwuwurgrrgwwurbwubbgbubgwwwggruguwbgwgbuggrrrbuwggr can be made in 12926976082964 ways
+Elapsed = 5.6449 ms
+Elapsed = 4.1213 ms
+Testing gggwbggwgurugbwbgwwwggbwuggbwgbbgbuwrururwwbuwwbgg
+Elapsed = 0.4699 ms
+Elapsed = 4.3415 ms
+Testing wbwwuurbbbubbbbubwuwrwgwuuguwwgwgrrwrrbruwbrw
+Pattern ggrubugurrbugwgrgbbrrwrwgrwbwgubwgwubwuwrrrgb can be made in 9552140976 ways
+Pattern uugwruwubbugguubgubgubwrguwgrrwbbbbruwbwbwub can be made in 27278613918 ways
+Pattern grrgruuwurgwrbwbrubwugrggwgubruuubgwbrrwggrbrwr can be made in 2196709080 ways
+Pattern gggwbggwgurugbwbgwwwggbwuggbwgbbgbuwrururwwbuwwbgg can be made in 2360801787900 ways
+Pattern bbrbgbwurubugurbuuruwuuuwbwrgbubggbwbuwwbwbwuwbrbwrbg can be made in 1822550914533 ways
+Elapsed = 2.268 ms
+Testing grrgbubuwwgruwbuburgbwgbgbgrbwubgwbwggbugwwuwbrguwrg
+Testing wbrwwgubugrwubbuubgrwwwrubgrwubrwgrrbgguburrubbwuggguu
+Testing gubbruwubwuwwbrbwgbguuwbguwwgwwbbwubwwbwururbbrwurru
+Testing uwwburbrburwrrbwbrwwubrggggbbwwggbbugwbbwbggrrgbwgggu
+Testing ggrggwguwwuuggurugbwwwgrbbgrburrwguubrwrbg
+Pattern wbwwuurbbbubbbbubwuwrwgwuuguwwgwgrrwrrbruwbrw can be made in 12074029950 ways
+Elapsed = 2.2063 ms
+Elapsed = 2.2427 ms
+Elapsed = 2.2523 ms
+Elapsed = 1.9796 ms
+Elapsed = 1.9838 ms
+Testing brrbrbbbuwbwrrbrrwurubrrgrwwbwuwbrwrwuururwgr
+Pattern grrgbubuwwgruwbuburgbwgbgbgrbwubgwbwggbugwwuwbrguwrg can be made in 1627817232326 ways
+Pattern wbrwwgubugrwubbuubgrwwwrubgrwubrwgrrbgguburrubbwuggguu can be made in 3275728575015 ways
+Pattern gubbruwubwuwwbrbwgbguuwbguwwgwwbbwubwwbwururbbrwurru can be made in 709598037105 ways
+Pattern uwwburbrburwrrbwbrwwubrggggbbwwggbbugwbbwbggrrgbwgggu can be made in 804746013796 ways
+Testing bgrbwbbbgwwwbrbbrbbbuugbwugbburuuwbbbbrgwwgrrgg
+Elapsed = 4.6646 ms
+Testing bgbwbrrurwggbwwugrrgrwwrwurgwruuuuuwwggrgggwugbrrwwrwgg
+Testing bbrwggwrrrggggrwwruggwrguubwrggrwbugwwuguw
+Testing gwwbbuuwwrggruguubbbwurwwgwwbrbrrubrrbwwrrrbwrrgburwgwg
+Elapsed = 0.3258 ms
+Elapsed = 5.701 ms
+Pattern brrbrbbbuwbwrrbrrwurubrrgrwwbwuwbrwrwuururwgr can be made in 105917910 ways
+Elapsed = 1.8712 ms
+Elapsed = 1.747 ms
+Pattern ggrggwguwwuuggurugbwwwgrbbgrburrwguubrwrbg can be made in 2541014080 ways
+Testing wrgwurwuubruwbuuwbwuwbrggrbgrgbugguwrbbwbu
+Pattern bgrbwbbbgwwwbrbbrbbbuugbwugbburuuwbbbbrgwwgrrgg can be made in 78013942518 ways
+Testing ugguuugbrubwrwbuwbgwwgbbbgurggwwuwwwbwgubuwruurbr
+Pattern bgbwbrrurwggbwwugrrgrwwrwurgwruuuuuwwggrgggwugbrrwwrwgg can be made in 1918161824556 ways
+Pattern bbrwggwrrrggggrwwruggwrguubwrggrwbugwwuguw can be made in 1832239964 ways
+Testing wruruubrbugbgbrwwrrgurrbuugbuubuwguuwgugru
+Elapsed = 1.7586 ms
+Testing wwbwubgbbugwgubbuwrugbwrurwwuruwbruuuguggbwrurgruuugbwwgww
+Elapsed = 1.7061 ms
+Testing wwrwrgugwbwbuguwguugwubwrwwbwggggwgrubrgggbu
+Pattern gwwbbuuwwrggruguubbbwurwwgwwbrbrrubrrbwwrrrbwrrgburwgwg can be made in 603349751124 ways
+Testing ubrugrgurrgugwrubwrgbbuwwgggugwuugruwbbbbu
+Pattern wrgwurwuubruwbuuwbwuwbrggrbgrgbugguwrbbwbu can be made in 1547863298 ways
+Testing rgbbrgugggwurwurggbrugwuwggrbbwwrgugbburuguwrggrwguw
+Pattern ugguuugbrubwrwbuwbgwwgbbbgurggwwuwwwbwgubuwruurbr can be made in 92928357320 ways
+Testing rurbwbrrbwrwrruurgubuubuubbgwrrwwbbugrwggwurrrbggwrbgwbrug
+Elapsed = 0.3159 ms
+Elapsed = 1.6874 ms
+Elapsed = 3.0472 ms
+Elapsed = 1.6474 ms
+Elapsed = 3.0765 ms
+Elapsed = 4.6311 ms
+Pattern rurbwbrrbwrwrruurgubuubuubbgwrrwwbbugrwggwurrrbggwrbgwbrug can be made in 1933100420250 ways
+Testing bbggburbbuggbrrwgugubwguugwbguuurguwrrwgwrgrg
+Pattern wwbwubgbbugwgubbuwrugbwrurwwuruwbruuuguggbwrurgruuugbwwgww can be made in 37251796470420 ways
+Pattern rgbbrgugggwurwurggbrugwuwggrbbwwrgugbburuguwrggrwguw can be made in 156975142080 ways
+Testing uwurbgbwrrbwbrbrubuurgubwuwrrbrbbgwggwrubbgwbwrgburrrggr
+Elapsed = 0.3491 ms
+Pattern ubrugrgurrgugwrubwrgbbuwwgggugwuugruwbbbbu can be made in 3577954426 ways
+Testing uwgwuuuguugbruugwbrgwugburwbrbggbbwgbgwbrgwwbrbbwbbww
+Testing gbwbruuurgwwgwrbgrbrubgwbbruwurwrgurbugwubbuubuwguu
+Pattern wwrwrgugwbwbuguwguugwubwrwwbwggggwgrubrgggbu can be made in 25738669360 ways
+Testing wrrruuwggrwwwwrgugbwbrwwbwuurwguugugbbgrbb
+Pattern uwurbgbwrrbwbrbrubuurgubwuwrrbrbbgwggwrubbgwbwrgburrrggr can be made in 189216121312 ways
+Elapsed = 6.1825 ms
+Elapsed = 6.1347 ms
+Elapsed = 5.8025 ms
+Pattern wruruubrbugbgbrwwrrgurrbuugbuubuwguuwgugru can be made in 1670555152 ways
+Elapsed = 8.5662 ms
+Testing brugruwbrburugbbgwuguurrrgbgubrbgwwurubruw
+Pattern bbggburbbuggbrrwgugubwguugwbguuurguwrrwgwrgrg can be made in 31173755328 ways
+Pattern uwgwuuuguugbruugwbrgwugburwbrbggbbwgbgwbrgwwbrbbwbbww can be made in 2031094032480 ways
+Testing wwbrguurbrrrwbwurrwrgwbrrwurrgwwuwbbbwwwgbrbguubgbguwgu
+Pattern wrrruuwggrwwwwrgugbwbrwwbwuurwguugugbbgrbb can be made in 4083567981 ways
+Testing rbwurbrggbbrwggbbrrrgbgrurrwggubwgwwwrrgwrrguurug
+Elapsed = 2.0868 ms
+Elapsed = 4.1529 ms
+Pattern gbwbruuurgwwgwrbgrbrubgwbbruwurwrgurbugwubbuubuwguu can be made in 213296487854 ways
+Testing gurbwbbrububuwwgwuurwwbwuuuwbuuugbbbuururrwuubbwwgb
+Testing guwguguwugrwrugbrwwrwuugwgrwbuubuwbbuwrbrbbbbgbwwrbrggbwb
+Elapsed = 1.3347 ms
+Pattern wwbrguurbrrrwbwurrwrgwbrrwurrgwwuwbbbwwwgbrbguubgbguwgu can be made in 697879901952 ways
+Testing wuwbguugwbrgrgugwuwbgrgrgugurgbbwrrubruguwrwbburrwgbuwwr
+Testing gwwwugurbrburbbbbugrwwguwgbuugrgubgburuururwrrubwugurr
+Elapsed = 3.3058 ms
+Pattern rbwurbrggbbrwggbbrrrgbgrurrwggubwgwwwrrgwrrguurug can be made in 12229076244 ways
+Elapsed = 3.3583 ms
+Pattern brugruwbrburugbbgwuguurrrgbgubrbgwwurubruw can be made in 319396980 ways
+Testing grguggwrgbgbwbuurwbuwbgbrwruurbburrwggbrubgrwurbwbgb
+Elapsed = 3.2221 ms
+Pattern gurbwbbrububuwwgwuurwwbwuuuwbuuugbbbuururrwuubbwwgb can be made in 1326824595260 ways
+Testing brrrrwurbrrbbbbbuwbrwgrwubwwwbbguwbbrubgugugwbburrbburguu
+Pattern guwguguwugrwrugbrwwrwuugwgrwbuubuwbbuwrbrbbbbgbwwrbrggbwb can be made in 7124858093670 ways
+Testing ugrbwbgwubruwwgwruwwgbgubgbguggwrrgbguwbrbgwuwg
+Elapsed = 1.7807 ms
+Pattern gwwwugurbrburbbbbugrwwguwgbuugrgubgburuururwrrubwugurr can be made in 1346474367672 ways
+Testing rgwwrgwguubwruuuurwgwbwrgbubrubwwugbggugrbugggrwwgwbrw
+Elapsed = 1.6591 ms
+Elapsed = 6.4266 ms
+Elapsed = 2.0041 ms
+Pattern grguggwrgbgbwbuurwbuwbgbrwruurbburrwggbrubgrwurbwbgb can be made in 396434702977 ways
+Testing bwggwurggguubbbggwrbbuwgwbrwgugburbrbwwrwu
+Elapsed = 2.3983 ms
+Pattern brrrrwurbrrbbbbbuwbrwgrwubwwwbbguwbbrubgugugwbburrbburguu can be made in 994527675156 ways
+Pattern wuwbguugwbrgrgugwuwbgrgrgugurgbbwrrubruguwrwbburrwgbuwwr can be made in 844203632622 ways
+Testing gwburgbgrwwwwrrubgwubruggrubgubwruwwrwruggubrgrwrubb
+Testing gwbuubrrwugrrbuuurggurruugwbwwbrrbbrbwbbwbbbr
+Elapsed = 1.9848 ms
+Pattern rgwwrgwguubwruuuurwgwbwrgbubrubwwugbggugrbugggrwwgwbrw can be made in 2066486340256 ways
+Testing uguwggwubbgurwwrrrgwbuwgwbwwwgubggruuurgrurgrwrr
+Pattern ugrbwbgwubruwwgwruwwgbgubgbguggwrrgbguwbrbgwuwg can be made in 51093315130 ways
+Elapsed = 1.7704 ms
+Elapsed = 1.7352 ms
+Pattern bwggwurggguubbbggwrbbuwgwbrwgugburbrbwwrwu can be made in 4353530990 ways
+Testing gurrrrgburbwwguuwburbwgwgwrwgwwwrrrbrgrgrwwbgg
+Elapsed = 1.6868 ms
+Testing wrwbubrwrruburubwrugbwwwuuggbrbbbwrrbwgbugurbuguwugrw
+Elapsed = 0.3706 ms
+Pattern gwbuubrrwugrrbuuurggurruugwbwwbrrbbrbwbbwbbbr can be made in 1567784064 ways
+Testing rbguwgbwrrgbububgwbrrwbgwwrgbbrbuguwwggwbu
+Elapsed = 0.3144 ms
+Pattern uguwggwubbgurwwrrrgwbuwgwbwwwgubggruuurgrurgrwrr can be made in 30513292596 ways
+Testing bgbbgwbbbwgbbwrrrgurbuwugbwuwbgwuurgbbrrrrguwwuw
+Pattern wrwbubrwrruburubwrugbwwwuuggbrbbbwrrbwgbugurbuguwugrw can be made in 493843542759 ways
+Testing rgrurwbrbwgwwrbwubgwrwbubgbgbrubbwbuuubbgrbgbwbrubrwg
+Elapsed = 0.3878 ms
+Pattern rbguwgbwrrgbububgwbrrwbgwwrgbbrbuguwwggwbu can be made in 2258188452 ways
+Testing ubwubwrwbgrggggrbrgbruggbuubwgwuwwbrgrgggubggugbgg
+Elapsed = 0.3988 ms
+Testing buwrgbbrrgbwbrgwbubrgugwbgbgbwbwbwwrgrwbwgurbuwu
+Elapsed = 4.6233 ms
+Pattern rgrurwbrbwgwwrbwubgwrwbubgbgbrubbwbuuubbgrbgbwbrubrwg can be made in 323071848908 ways
+Testing wrbbgbrwrrwurbuwruuuugwrgrwgrguwwubwrugbwrwwgwurw
+Elapsed = 5.1421 ms
+Pattern ubwubwrwbgrggggrbrgbruggbuubwgwuwwbrgrgggubggugbgg can be made in 279991383967 ways
+Elapsed = 3.807 ms
+Pattern gurrrrgburbwwguuwburbwgwgwrwgwwwrrrbrgrgrwwbgg can be made in 7916441946 ways
+Testing grgwubggbbgwwggubgbwwrbbuugwrbwuruuwubggwuuw
+Elapsed = 3.7953 ms
+Pattern bgbbgwbbbwgbbwrrrgurbuwugbwuwbgwuurgbbrrrrguwwuw can be made in 67378295639 ways
+Testing wuruubbuugbbrwubguwgrgwbbgrbuuugwrwbgwgwgwbbwrgrbgrbw
+Pattern buwrgbbrrgbwbrgwbubrgugwbgbgbwbwbwwrgrwbwgurbuwu can be made in 79332345270 ways
+Pattern gwburgbgrwwwwrrubgwubruggrubgubwruwwrwruggubrgrwrubb can be made in 153882008292 ways
+Pattern wrbbgbrwrrwurbuwruuuugwrgrwgrguwwubwrugbwrwwgwurw can be made in 25087891092 ways
+Testing uuwuugbrwgugbgbrrbwrgwbwubggbrrwwwggwbubuubrbwg
+Elapsed = 5.3277 ms
+Elapsed = 3.0921 ms
+Testing rubbwbrgwggbbgwgburrbrbrwbggbgugbgurbbwbuwbbbbubg
+Testing gbrwbwgwwwbbggwubwggggwbwbuwuurwggwurbwwgburuw
+Testing wrrruwuwwgrwbrwbgguuubwubuggbrbrwwgwbwrbgwrwbrwrburw
+Elapsed = 2.7689 ms
+Pattern grgwubggbbgwwggubgbwwrbbuugwrbwuruuwubggwuuw can be made in 47322911394 ways
+Pattern wuruubbuugbbrwubguwgrgwbbgrbuuugwrwbgwgwgwbbwrgrbgrbw can be made in 1504503769752 ways
+Elapsed = 2.0679 ms
+Elapsed = 2.046 ms
+Elapsed = 1.7798 ms
+Pattern uuwuugbrwgugbgbrrbwrgwbwubggbrrwwwggwbubuubrbwg can be made in 62614633126 ways
+Testing bwwwurbburrgubbggbbugubwbgruguwugrrbggrurbwwru
+Testing rbbuwuwwrwgbwwwurgwrurggwrrrbrruuwbwwgwgwggrbrrrbbwgrwr
+Pattern rubbwbrgwggbbgwgburrbrbrwbggbgugbgurbbwbuwbbbbubg can be made in 129560905296 ways
+Pattern gbrwbwgwwwbbggwubwggggwbwbuwuurwggwurbwwgburuw can be made in 188445988284 ways
+Testing uurgurgwwwgwbrgbgbwwwrrgugrbwwuguwbwbwwuwurb
+Elapsed = 0.107 ms
+Elapsed = 3.4269 ms
+Elapsed = 0.3215 ms
+Testing rgggbubwggubgrbgwuugburbubbguwuurwububwubuwrbugbuuugwgr
+Pattern wrrruwuwwgrwbrwbgguuubwubuggbrbrwwgwbwrbgwrwbrwrburw can be made in 118115893448 ways
+Testing ggwruwrwgurwggggruurugbgrrbbwbrugguuugrbbbwg
+Pattern uurgurgwwwgwbrgbgbwwwrrgugrbwwuguwbwbwwuwurb can be made in 14405466915 ways
+Testing urrrgrrguruububwugwrwgurggwbbrbbrguuwbrbrwbwburgrwb
+Pattern rbbuwuwwrwgbwwwurgwrurggwrrrbrruuwbwwgwgwggrbrrrbbwgrwr can be made in 87234924728 ways
+Testing wrgbgbgrggbrurrbrwrbbruwbrwbrrggurrrguwuubwuwuwb
+Elapsed = 0.338 ms
+Elapsed = 2.8249 ms
+Pattern bwwwurbburrgubbggbbugubwbgruguwugrrbggrurbwwru can be made in 36028539240 ways
+Testing uruuugbbbuwrrwbugbggrwwurbbrbrwbwuwbuwuugwuwrb
+Testing wwgurwrwbbwgubburwgrguububbguuwbrubrrgubbbr
+Elapsed = 9.1087 ms
+Elapsed = 2.1857 ms
+Pattern ggwruwrwgurwggggruurugbgrrbbwbrugguuugrbbbwg can be made in 6511686384 ways
+Elapsed = 6.2884 ms
+Elapsed = 4.5003 ms
+Pattern wrgbgbgrggbrurrbrwrbbruwbrwbrrggurrrguwuubwuwuwb can be made in 3325062520 ways
+Testing rbwwurugwuuwwbbwgbbugrbbggbrguuuguwrbuuruwu
+Pattern wwgurwrwbbwgubburwgrguububbguuwbrubrrgubbbr can be made in 976725453 ways
+Testing gugwruwrrubgrubrgburwrbbwgbrrbuuwggbuuwrubrbbgbgbbrg
+Pattern urrrgrrguruububwugwrwgurggwbbrbbrguuwbrbrwbwburgrwb can be made in 67532623084 ways
+Pattern uruuugbbbuwrrwbugbggrwwurbbrbrwbwuwbuwuugwuwrb can be made in 31314659944 ways
+Pattern rgggbubwggubgrbgwuugburbubbguwuurwububwubuwrbugbuuugwgr can be made in 9056278052616 ways
+Testing wuurgugwrwwwgwuwugrugrwbbburbwrruwbwgggguwgbruwbg
+Testing rwbgwwbbrugrgbbgguruwrruwbbwuuuuuubgrgrgbuurrrurrrggbu
+Testing ruurwgbwbwrbwbgrwrbbwggwrbbgrubrbwwgbrwgbwuuuwbuwrwrwwg
+Testing ubrggrgrrbbbbrbbbwwuubbrwrwugbrbbrggggbgrrwrgurbbbgb
+Elapsed = 0.1069 ms
+Elapsed = 0.0973 ms
+Elapsed = 0.2864 ms
+Elapsed = 3.8343 ms
+Elapsed = 0.2262 ms
+Pattern rwbgwwbbrugrgbbgguruwrruwbbwuuuuuubgrgrgbuurrrurrrggbu can be made in 534404496792 ways
+Elapsed = 7.6095 ms
+Pattern ubrggrgrrbbbbrbbbwwuubbrwrwugbrbbrggggbgrrwrgurbbbgb can be made in 43667746892 ways
+Pattern wuurgugwrwwwgwuwugrugrwbbburbwrruwbwgggguwgbruwbg can be made in 131476473655 ways
+Testing bggurbrwbuggugwbubguuwwguwguwwubwwrwrubgggug
+Elapsed = 0.6864 ms
+Testing rugbuuuuugurwgrgubggbgrgwggwbuwgwrwbubrgwgrwwgubbrw
+Pattern rbwwurugwuuwwbbwgbbugrbbggbrguuuguwrbuuruwu can be made in 5228040969 ways
+Testing ggrrwwruwrbugwgurgrggwwbugrgurwbwuuwwburwbubub
+Pattern gugwruwrrubgrubrgburwrbbwgbrrbuuwggbuuwrubrbbgbgbbrg can be made in 69276840144 ways
+Pattern ruurwgbwbwrbwbgrwrbbwggwrbbgrubrbwwgbrwgbwuuuwbuwrwrwwg can be made in 530211588920 ways
+Pattern bggurbrwbuggugwbubguuwwguwguwwubwwrwrubgggug can be made in 32839595193 ways
+Testing wugrgbbuwuwgruruwwbgwuguurgbwugrwbbuwwgbuwugugbubwgwgr
+Testing uburrrrwugububrbwugbugwggggwbgwugugbbrbwbwwggbbg
+Elapsed = 4.3931 ms
+Testing gurguuwbbbgbubrwgwuuwwwgbwgrwwrrubgurugwwrbwwubrw
+Testing gbuuuwuggrwuwgwubbububbuwgwgwrrwgguwwgwgurrwubbb
+Elapsed = 6.3395 ms
+Elapsed = 1.901 ms
+Elapsed = 2.1389 ms
+Pattern ggrrwwruwrbugwgurgrggwwbugrgurwbwuuwwburwbubub can be made in 32822228208 ways
+Elapsed = 2.0979 ms
+Elapsed = 1.9861 ms
+Pattern rugbuuuuugurwgrgubggbgrgwggwbuwgwrwbubrgwgrwwgubbrw can be made in 320946476610 ways
+Pattern wugrgbbuwuwgruruwwbgwuguurgbwugrwbbuwwgbuwugugbubwgwgr can be made in 5588720040222 ways
+Testing brwwwguwrubgwgrrguwrrgrbbguuwbrruwwbgbwuwbgwurgwbgb
+Elapsed = 0.4109 ms
+Pattern gurguuwbbbgbubrwgwuuwwwgbwgrwwrrubgurugwwrbwwubrw can be made in 114571841412 ways
+Pattern gbuuuwuggrwuwgwubbububbuwgwgwrrwgguwwgwgurrwubbb can be made in 364840735982 ways
+Testing grwuwbwbgbrwgwggbburwbrurbuwurwbwwugwwwbwwwgggwwrrbgu
+Pattern uburrrrwugububrbwugbugwggggwbgwugugbbrbwbwwggbbg can be made in 239761778914 ways
+Testing rrruuuurbwbwbwguurgubrrrgwbbwrrububbrrbbbbrugwwwg
+Pattern brwwwguwrubgwgrrguwrrgrbbguuwbrruwwbgbwuwbgwurgwbgb can be made in 180016367397 ways
+Testing wugwuurbbwgrwrrrbrwbgwrrrwbwrwguwruuuwwuwrgrbgrbru
+Elapsed = 0.3234 ms
+Elapsed = 2.5872 ms
+Testing ruwwbbuwwwrrbwbugbrurbrbbrrbguwrrrrwrwbwbubgggbbwrurwrbw
+Elapsed = 1.9421 ms
+Testing wrrurrwubbgbbbuurbruggrrwgguuwbuurgruwbuugwrwgwuuugurgru
+Testing urrubgbrbugrgwguwbubugwbrwwrurrrrwgrwuwuurrru
+Pattern wugwuurbbwgrwrrrbrwbgwrrrwbwrwguwruuuwwuwrgrbgrbru can be made in 19409447864 ways
+Pattern grwuwbwbgbrwgwggbburwbrurbuwurwbwwugwwwbwwwgggwwrrbgu can be made in 629708021304 ways
+Testing wwbrurbgbugrggrrwgubggubwrbbbgbrbwrwwuggbgruububbwuwgu
+Pattern rrruuuurbwbwbwguurgubrrrgwbbwrrububbrrbbbbrugwwwg can be made in 28850129352 ways
+Elapsed = 2.1224 ms
+Testing wgrbububurugwwrbrwrrwbwbggrurwwwbrwgrbuuurwwwr
+Elapsed = 2.1885 ms
+Elapsed = 5.101 ms
+Elapsed = 4.4141 ms
+Testing uguwwwbrwurruuugrbrguuwbgwububugbgwruguuuurbruwrrrgwugb
+Pattern wrrurrwubbgbbbuurbruggrrwgguuwbuurgruwbuugwrwgwuuugurgru can be made in 3726781321512 ways
+Elapsed = 4.2344 ms
+Pattern urrubgbrbugrgwguwbubugwbrwwrurrrrwgrwuwuurrru can be made in 2211706192 ways
+Testing gbbrwbggwbbbwguwwrwwwwgbrbrgururubgrbbuugbwggrwgurbrbuuub
+Pattern wwbrurbgbugrggrrwgubggubwrbbbgbrbwrwwuggbgruububbwuwgu can be made in 2283881709840 ways
+Testing bwuburbwbuguuuuwrwrguuwrbbuuwbrrwgrrgugrrbbuwbgwugwgg
+Testing grrbbbwwuwurgwrbrwugubbrrguwbguggwugurbbrrrb
+Pattern wgrbububurugwwrbrwrrwbwbggrurwwwbrwgrbuuurwwwr can be made in 5658181978 ways
+Pattern ruwwbbuwwwrrbwbugbrurbrbbrrbguwrrrrwrwbwbubgggbbwrurwrbw can be made in 159891960004 ways
+Testing bbgggubgwgrwgguubuurbbugruwbwgbrbuuugggbwbburwwruuwwrwg
+Elapsed = 0.3703 ms
+Elapsed = 1.8166 ms
+Elapsed = 1.8503 ms
+Testing ubburgububwrrbuurugwuuubgrrbggwrrgwwrgrurubrwgrrwr
+Elapsed = 0.3714 ms
+Elapsed = 5.2143 ms
+Pattern bbgggubgwgrwgguubuurbbugruwbwgbrbuuugggbwbburwwruuwwrwg can be made in 10080562610055 ways
+Testing uburbwrwguuruuwrbuwrbwruuwrgggwrgugurbbgrrgrbguu
+Pattern grrbbbwwuwurgwrbrwugubbrrguwbguggwugurbbrrrb can be made in 2157188499 ways
+Testing wugbguugbgwuubrgguuubbubbbbgburrwgrurbrbbu
+Pattern ubburgububwrrbuurugwuuubgrrbggwrrgwwrgrurubrwgrrwr can be made in 20523614092 ways
+Pattern uguwwwbrwurruuugrbrguuwbgwububugbgwruguuuurbruwrrrgwugb can be made in 1621615367200 ways
+Testing rggrbuuurrrwbbgwbwruuburbgggrurguwbgbrrruuguuww
+Elapsed = 2.0539 ms
+Elapsed = 6.7703 ms
+Elapsed = 1.8692 ms
+Testing burrwgbwggwrrbgwrgwrrgbbbbrgwubugwgrrugbrugr
+Pattern bwuburbwbuguuuuwrwrguuwrbbuuwbrrwgrrgugrrbbuwbgwugwgg can be made in 1182612118329 ways
+Testing wbwguubwbugruwgburruuwrbbrwbwbubrbwwrgrbwbuw
+Pattern uburbwrwguuruuwrbuwrbwruuwrgggwrgugurbbgrrgrbguu can be made in 31031620944 ways
+Testing rgubwbbbbgwugburbrrugruwruwgwururbugrrwrguu
+Pattern wugbguugbgwuubrgguuubbubbbbgburrwgrurbrbbu can be made in 5130401696 ways
+Testing wwuurwwwgbbwrwgbgrrgrwrgbubbuubgwwurwgbwbubwrwrbbbgbub
+Elapsed = 3.1518 ms
+Pattern gbbrwbggwbbbwguwwrwwwwgbrbrgururubgrbbuugbwggrwgurbrbuuub can be made in 6775978559511 ways
+Elapsed = 3.1112 ms
+Elapsed = 3.3774 ms
+Elapsed = 4.727 ms
+Elapsed = 3.4409 ms
+Pattern rggrbuuurrrwbbgwbwruuburbgggrurguwbgbrrruuguuww can be made in 9832081000 ways
+Testing wgwgrugbrgbbwuuggbugbgugurbgruuugrgwwwuugwr
+Pattern wbwguubwbugruwgburruuwrbbrwbwbubrbwwrgrbwbuw can be made in 3400865600 ways
+Testing rgwurubrrbgrbburwbgugrrrbgbrbgwruwubbuuwrg
+Pattern burrwgbwggwrrbgwrgwrrgbbbbrgwubugwgrrugbrugr can be made in 1075902989 ways
+Testing gwggrguuwgbubrugurrrwrwuwrugwuguuggbbbwrwg
+Testing rrurgrruwbbbwuwgrurwurgbbggbuwbbgrwggrwbrrrgwuubr
+Elapsed = 2.5 ms
+Pattern rgubwbbbbgwugburbrrugruwruwgwururbugrrwrguu can be made in 1070006080 ways
+Elapsed = 2.341 ms
+Pattern wwuurwwwgbbwrwgbgrrgrwrgbubbuubgwwurwgbwbubwrwrbbbgbub can be made in 2837732760131 ways
+Elapsed = 2.3845 ms
+Elapsed = 2.1928 ms
+Pattern wgwgrugbrgbbwuuggbugbgugurbgruuugrgwwwuugwr can be made in 7489173876 ways
+Testing guurbbbruububgrurrgbwuwwrbugbrguwrwubwbwgbwurrrguwuuuwrugr
+Pattern rgwurubrrbgrbburwbgugrrrbgbrbgwruwubbuuwrg can be made in 288148185 ways
+Testing ugbrubwgugwwrugbrgubbbuurguuggwwubgggbrbwbwbwwgb
+Elapsed = 0.3843 ms
+Pattern rrurgrruwbbbwuwgrurwurgbbggbuwbbgrwggrwbrrrgwuubr can be made in 1814888514 ways
+Testing uuguwbwrgbugrbgwguuwrgbrrwuggrwwburrgwguwbrrwubru
+Elapsed = 1.7178 ms
+Testing wbgwwwbrgurbbrwuuwbggwwgugwrbbgwugubbgrwbgrrgwgg
+Elapsed = 0.3074 ms
+Pattern ugbrubwgugwwrugbrgubbbuurguuggwwubgggbrbwbwbwwgb can be made in 222089772091 ways
+Testing gbbuuwbrrggbbrugrwbbbbgrurgbbguurggwurwbrwuguwwwgrbubuw
+Elapsed = 0.3481 ms
+Pattern guurbbbruububgrurrgbwuwwrbugbrguwrwubwbwgbwurrrguwuuuwrugr can be made in 3631627913904 ways
+Testing brgbbbwwruwrrwbbbbwwwrrbwbrbwbwubwbrrbwgur
+Elapsed = 0.403 ms
+Testing rbgbgrgwggwbguggwuuwbuwruguguwwbuwwuurbbgrruwbugwwgbrg
+Elapsed = 0.3159 ms
+Pattern gbbuuwbrrggbbrugrwbbbbgrurgbbguurggwurwbrwuguwwwgrbubuw can be made in 803751070824 ways
+Testing bggwbggrbrggrurrgrbbuwrwggrwbuuurguubrwbwuwrwuwr
+Elapsed = 0.3175 ms
+Pattern brgbbbwwruwrrwbbbbwwwrrbwbrbwbwubwbrrbwgur can be made in 399765031 ways
+Testing rrruwbwbgruugbugurgrgwgwbrwgwgrrrgbbgruugbwuuggrrubu
+Elapsed = 0.3256 ms
+Pattern gwggrguuwgbubrugurrrwrwuwrugwuguuggbbbwrwg can be made in 1660316916 ways
+Testing ggrbwuurwbrwrbgbbubwbgwurggrgguurwrbuugbguuwwrrb
+Pattern bggwbggrbrggrurrgrbbuwrwggrwbuuurguubrwbwuwrwuwr can be made in 8993375160 ways
+Testing bururguuuuwwrgwububrrugwuuwwwwwugwwwgrugbggwrgrgrurgubrwug
+Pattern rbgbgrgwggwbguggwuuwbuwruguguwwbuwwuurbbgrruwbugwwgbrg can be made in 2834382848417 ways
+Pattern rrruwbwbgruugbugurgrgwgwbrwgwgrrrgbbgruugbwuuggrrubu can be made in 325888910886 ways
+Testing wggrbuwbuurbwububwrurgrugwgggwruburbrwrrgwu
+Elapsed = 1.1848 ms
+Elapsed = 6.9554 ms
+Elapsed = 1.6495 ms
+Testing gwwbggwwrubwurbrubgurgrrwbgrwuwgbwuwrbgbwbrwrgbugwrgwrgub
+Pattern wbgwwwbrgurbbrwuuwbggwwgugwrbbgwugubbgrwbgrrgwgg can be made in 230706165810 ways
+Testing ugugggrggrwwbubrbrbgbgwgrgbuburbgggbugbwbu
+Elapsed = 0.0854 ms
+Pattern uuguwbwrgbugrbgwguuwrgbrrwuggrwwburrgwguwbrrwubru can be made in 64105079850 ways
+Pattern bururguuuuwwrgwububrrugwuuwwwwwugwwwgrugbggwrgrgrurgubrwug can be made in 6199984389904 ways
+Testing gwbgrguwurgrbgrwuwgwwuwruurrbbugrwwbbwbwgwuggbbgbgwugww
+Elapsed = 4.592 ms
+Pattern ggrbwuurwbrwrbgbbubwbgwurggrgguurwrbuugbguuwwrrb can be made in 26528590074 ways
+Testing urgurbwrrgurgwwbbwwruguwgbwrubwwbwbbrwuwugrrwuw
+Testing wbrbgbwwbbbrbguugbrwgbbuuuugwwrururrrgrwgw
+Elapsed = 0.3154 ms
+Elapsed = 1.7916 ms
+Pattern wggrbuwbuurbwububwrurgrugwgggwruburbrwrrgwu can be made in 2671095552 ways
+Testing rubrbuurggrwwrggrrguruwwbugbgugrbrbbuubugrggurw
+Elapsed = 0.3112 ms
+Elapsed = 4.8945 ms
+Pattern wbrbgbwwbbbrbguugbrwgbbuuuugwwrururrrgrwgw can be made in 1357653482 ways
+Testing ggwurrgrburbbrrrguwgurgwwguuuubggrubbwguwbru
+Pattern ugugggrggrwwbubrbrbgbgwgrgbuburbgggbugbwbu can be made in 6487944120 ways
+Testing wgbwbrwggbuguwwuwrwgwgruwrrgwbgwwguburwrubububrguuguw
+Pattern rubrbuurggrwwrggrrguruwwbugbgugrbrbbuubugrggurw can be made in 8048129376 ways
+Testing gbgwurwurrubuubbbbrbubwuruurbwwubgrrwbuuburgrgbwwbuug
+Pattern gwbgrguwurgrbgrwuwgwwuwruurrbbugrwwbbwbwgwuggbbgbgwugww can be made in 7315507410096 ways
+Elapsed = 2.3914 ms
+Elapsed = 5.5584 ms
+Elapsed = 2.1336 ms
+Pattern gwwbggwwrubwurbrubgurgrrwbgrwuwgbwuwrbgbwbrwrgbugwrgwrgub can be made in 1921980808842 ways
+Elapsed = 1.9479 ms
+Testing grggbbwurgrrbugbwbgrrruubwgbugggrwwgwuuwwuwrgugwwwgg
+Pattern ggwurrgrburbbrrrguwgurgwwguuuubggrubbwguwbru can be made in 4537536632 ways
+Pattern urgurbwrrgurgwwbbwwruguwgbwrubwwbwbbrwuwugrrwuw can be made in 18976887549 ways
+Testing ugwrurrwgrubuuuwwwrrrruwubugwwwrgbwrwwubbggrrwgwuwbwwwruu
+Testing uubwwrwrbuubbwguuwwrurrurwbgurgwuuwbgbbrgubggr
+Pattern gbgwurwurrubuubbbbrbubwuruurbwwubgrrwbuuburgrgbwwbuug can be made in 1460273796560 ways
+Elapsed = 2.2857 ms
+Testing rwruwrwbbbwwbbwgwgwgruuwbbguuuggwbrbrurrgrgrgwuw
+Pattern wgbwbrwggbuguwwuwrwgwgruwrrgwbgwwguburwrubububrguuguw can be made in 680548976486 ways
+Elapsed = 2.3965 ms
+Elapsed = 2.334 ms
+Testing gbgwbrrwurwrrubggwwbbuwgbuggubwrubbggwbuuwwburgbrbgrgrwrrw
+Pattern grggbbwurgrrbugbwbgrrruubwgbugggrwwgwuuwwuwrgugwwwgg can be made in 1421919801334 ways
+Elapsed = 4.2541 ms
+Testing wbwrugrgbwrurbguwggbguwrurrgrwwwrrbubuwwwrwbwwwrgrgbrr
+Pattern ugwrurrwgrubuuuwwwrrrruwubugwwwrgbwrwwubbggrrwgwuwbwwwruu can be made in 6260521960402 ways
+Testing rwrguuwbuwbrgrgbbrrbbwubrggrggwbguuwurgggwuguubb
+Elapsed = 4.3623 ms
+Testing wrwbrgbwbrwbuwwwrrgggbbguuuuubuwurgwguuwurrggbwwrwugwgbrg
+Pattern rwruwrwbbbwwbbwgwgwgruuwbbguuuggwbrbrurrgrgrgwuw can be made in 20925989604 ways
+Pattern uubwwrwrbuubbwguuwwrurrurwbgurgwuuwbgbbrgubggr can be made in 12239103564 ways
+Elapsed = 4.1958 ms
+Elapsed = 3.5889 ms
+Pattern gbgwbrrwurwrrubggwwbbuwgbuggubwrubbggwbuuwwburgbrbgrgrwrrw can be made in 8305839336924 ways
+Elapsed = 3.6353 ms
+Testing ggwwwrrrbrrwgbugrggbbwrrrbggwuwgwrrwbgwuwbuguwuur
+Testing brwuwbrgbuubwbwwbgbwrwugbgwgbbubrbwgruuwbwubgururbuggggur
+Pattern wbwrugrgbwrurbguwggbguwrurrgrwwwrrbubuwwwrwbwwwrgrgbrr can be made in 200429856433 ways
+Pattern rwrguuwbuwbrgrgbbrrbbwubrggrggwbguuwurgggwuguubb can be made in 9861983832 ways
+Testing brubwwgruguwbwwugrwubugrwgbbuwwuwbgrrgbgrrgw
+Pattern wrwbrgbwbrwbuwwwrrgggbbguuuuubuwurgwguuwurrggbwwrwugwgbrg can be made in 3853497302300 ways
+Testing gbuwgurgrwwbgbwuwgbwrruuwrrgrgbguguwbrgwrgrgrr
+Elapsed = 2.2721 ms
+Testing wuguuubrbgwguwwrgbwwwgbubuurrrgwrgrgbuugugrrbwbugrwurgg
+Testing ugwbggbuwbgwrwugrbwbggrrggwbgugruruwrgbguwrwuubgur
+Elapsed = 0.4222 ms
+Elapsed = 4.3059 ms
+Elapsed = 2.3312 ms
+Pattern brwuwbrgbuubwbwwbgbwrwugbgwgbbubrbwgruuwbwubgururbuggggur can be made in 4320107877852 ways
+Testing gwwbburwgwwrrgrwbwurrwbugrgwwwbgbgbwwwbrgbrwugbrrub
+Elapsed = 0.3376 ms
+Pattern ugwbggbuwbgwrwugrbwbggrrggwbgugruruwrgbguwrwuubgur can be made in 203957615400 ways
+Pattern ggwwwrrrbrrwgbugrggbbwrrrbggwuwgwrrwbgwuwbuguwuur can be made in 25257242808 ways
+Testing urgrgbrgugugbbwggbugwwgrubgrgwbwurggrwwrbbbub
+Elapsed = 4.3574 ms
+Elapsed = 7.9274 ms
+Pattern gwwbburwgwwrrgrwbwurrwbugrgwwwbgbgbwwwbrgbrwugbrrub can be made in 183625758144 ways
+Testing wrbubbrgwwwgbgbuurgrwurrgwgrubwubrggrwuubbrwrbbrwgwrggbwww
+Pattern gbuwgurgrwwbgbwuwgbwrruuwrrgrgbguguwbrgwrgrgrr can be made in 2819165142 ways
+Elapsed = 4.3394 ms
+Pattern wuguuubrbgwguwwrgbwwwgbubuurrrgwrgrgbuugugrrbwbugrwurgg can be made in 2032752484080 ways
+Pattern brubwwgruguwbwwugrwubugrwgbbuwwuwbgrrgbgrrgw can be made in 6279371582 ways
+Testing urwggbwggrgggwgubgrbururgwwbrgbubbbgbrugubgggwrbr
+Elapsed = 1.9315 ms
+Testing uuurugbgrwrrubwbwbgugguurrguguuurrgrrwbbgwurwwwrbgwgw
+Pattern urgrgbrgugugbbwggbugwwgrubgrgwbwurggrwwrbbbub can be made in 19799930028 ways
+Testing rgrrgwuwugurgbwrrwrubwbguwgwbguwugggwwgrrbrwrgwburbrwu
+Elapsed = 0.3183 ms
+Elapsed = 1.7233 ms
+Pattern wrbubbrgwwwgbgbuurgrwurrgwgrubwubrggrwuubbrwrbbrwgwrggbwww can be made in 2439115015676 ways
+Testing buuuwgruggwwwgggwbggwwrbruuubruubbbrwggggrgbbrwrwr
+Elapsed = 0.4492 ms
+Testing rgrggwbwurwbwrwwubggwrbbbrgbgbwbgrurgrurbgurrgwgburbgbbgbu
+Pattern rgrrgwuwugurgbwrrwrubwbguwgwbguwugggwwgrrbrwrgwburbrwu can be made in 210289580536 ways
+Pattern urwggbwggrgggwgubgrbururgwwbrgbubbbgbrugubgggwrbr can be made in 56224734576 ways
+Testing wrwbwuguwgbrwuuwwbwbbgwuwwgbuuwbubuggbwwbgwwurrbrgwr
+Elapsed = 0.3241 ms
+Pattern buuuwgruggwwwgggwbggwwrbruuubruubbbrwggggrgbbrwrwr can be made in 77937238788 ways
+Testing ggbbwgwurrwuuwubrbwuguggbrugrgggwwrgubbuuwrburrwgr
+Testing bwbwwguwubrrgbrrbwrwwgbuuuwbrrgwbwrrgbggwuwrugrwwbwbburu
+Elapsed = 0.3119 ms
+Testing rgbrwgurbbwbgbbguwwrrbbguwburuwrgrwubrrgguwur
+Pattern wrwbwuguwgbrwuuwwbwbbgwuwwgbuuwbubuggbwwbgwwurrbrgwr can be made in 528813642984 ways
+Testing buwubwgbguwuggruurrurgrgrugrwggrgwrrrwbwrwburugwgbgwwg
+Elapsed = 0.3135 ms
+Elapsed = 6.2544 ms
+Pattern bwbwwguwubrrgbrrbwrwwgbuuuwbrrgwbwrrgbggwuwrugrwwbwbburu can be made in 3782041600440 ways
+Testing uggwuwruugwbbruwuggurgwburwrrgbuurwbbgrwuwrgugguw
+Elapsed = 0.4734 ms
+Elapsed = 3.2511 ms
+Pattern buwubwgbguwuggruurrurgrgrugrwggrgwrrrwbwrwburugwgbgwwg can be made in 786420455982 ways
+Testing gruwwugwrrurbggrrbbbbbuguuwurwbgurgwgggrbubggbgrwrwwwbr
+Elapsed = 0.3111 ms
+Elapsed = 6.0722 ms
+Pattern uggwuwruugwbbruwuggurgwburwrrgbuurwbbgrwuwrgugguw can be made in 134011366080 ways
+Testing wrggrbuuwbbbwugbbuugbgbwwbgbwuwrurwbugbrgurbbubgurrgg
+Elapsed = 0.408 ms
+Elapsed = 5.9781 ms
+Pattern gruwwugwrrurbggrrbbbbbuguuwurwbgurgwgggrbubggbgrwrwwwbr can be made in 766246194420 ways
+Testing uwubwubgwwuwuubbuburruwwruwbubugruurrbrburwgwbbwuwwrgwr
+Pattern ggbbwgwurrwuuwubrbwuguggbrugrgggwwrgubbuuwrburrwgr can be made in 93489618866 ways
+Testing rwbwurbrwbrbuugbuggubbgggwwbrgbrrggugruurbr
+Pattern wrggrbuuwbbbwugbbuugbgbwwbgbwuwrurwbugbrgurbbubgurrgg can be made in 2657615937588 ways
+Testing guwbbgbwbugubgrbwgrrugwbbgggwwbbbrwrwuguurrurwbrbwgubb
+Pattern rgrggwbwurwbwrwwubggwrbbbrgbgbwbgrurgrurbgurrgwgburbgbbgbu can be made in 4205874752460 ways
+Testing rrrrggbrwuggbruwwwgwggubwwuugbbubbuurgrbgrgwrwrubrg
+Pattern uuurugbgrwrrubwbwbgugguurrguguuurrgrrwbbgwurwwwrbgwgw can be made in 1730174103839 ways
+Testing rgwrugrugrgbwwburwwwbggwwwwbwbwgrgbrgurbguubbguguubrb
+Elapsed = 0.3294 ms
+Elapsed = 1.6981 ms
+Elapsed = 3.1021 ms
+Elapsed = 1.6266 ms
+Elapsed = 3.0184 ms
+Pattern rgbrwgurbbwbgbbguwwrrbbguwburuwrgrwubrrgguwur can be made in 467057730 ways
+Pattern rgwrugrugrgbwwburwwwbggwwwwbwbwgrgbrgurbguubbguguubrb can be made in 844182569988 ways
+Testing uggrwguwurubwbwrugguwggbbrrrrwwbruugwbrrgurubrgwbgwggr
+Pattern uwubwubgwwuwuubbuburruwwruwbubugruurrbrburwgwbbwuwwrgwr can be made in 1121424702998 ways
+Testing wuwrugruggrbgggwugwwubuuuwgbbbbrrgbuubrururbrrurwwruurbggr
+Pattern rwbwurbrwbrbuugbuggubbgggwwbrgbrrggugruurbr can be made in 340639893 ways
+Testing bggrgwuuguuwbruuurrwwbgwbgrgrbugbbrurbbwgurwwrwrrgr
+Pattern guwbbgbwbugubgrbwgrrugwbbgggwwbbbrwrwuguurrurwbrbwgubb can be made in 2799138292356 ways
+Testing wbwrubgruuubgbrurguuwwbubbwuuwgrbugbguwrbruruwgrug
+Elapsed = 0.3061 ms
+Elapsed = 1.7142 ms
+Testing rggubwuuwgugubuggwbwrbggrgubbbubwurwwwurwguggbbgubguu
+Elapsed = 1.7034 ms
+Elapsed = 2.9826 ms
+Pattern rrrrggbrwuggbruwwwgwggubwwuugbbubbuurgrbgrgwrwrubrg can be made in 69248670719 ways
+Testing ruuburbwrruwwrgwuwbwguggwguurgburwurugubgrrgbw
+Elapsed = 0.3103 ms
+Pattern bggrgwuuguuwbruuurrwwbgwbgrgrbugbbrurbbwgurwwrwrrgr can be made in 49467914958 ways
+Elapsed = 4.4967 ms
+Pattern uggrwguwurubwbwrugguwggbbrrrrwwbruugwbrrgurubrgwbgwggr can be made in 166235715828 ways
+Pattern rggubwuuwgugubuggwbwrbggrgubbbubwurwwwurwguggbbgubguu can be made in 4800043681356 ways
+Testing wuubgrrrugrgbubuwuuruuurrwbuuuwburrubuggruguwurwbbb
+Pattern wuwrugruggrbgggwugwwubuuuwgbbbbrrgbuubrururbrrurwwruurbggr can be made in 1947133281600 ways
+Testing bggwuggbbbgurguruubgwbuwuurgrrwurwwwwrguwwggbrgbrwgbuwuub
+Testing rrwuwuwwruwwbgwrgbbbrbrrbguguurubbwuurguugubbr
+Elapsed = 0.3217 ms
+Pattern wbwrubgruuubgbrurguuwwbubbwuuwgrbugbguwrbruruwgrug can be made in 97775783532 ways
+Elapsed = 1.804 ms
+Pattern ruuburbwrruwwrgwuwbwguggwguurgburwurugubgrrgbw can be made in 12849516060 ways
+Elapsed = 3.5011 ms
+Testing rrrbguburwgubrbubuwwwrgwwugbrwwwbuwuwrgrburbw
+Elapsed = 0.3347 ms
+Testing bgwuugrgbuwgwgbuubbrruubwwwgrrububggggwrrrbgrugwguburrrbrr
+Elapsed = 0.3123 ms
+Testing urgrbuggugrgubbwuwwwuwuuuguugbrurgwuugrwbgggub
+Pattern bggwuggbbbgurguruubgwbuwuurgrrwurwwwwrguwwggbrgbrwgbuwuub can be made in 7053159239840 ways
+Testing bwubgwwugbwgurgwgbwrbwugbrgwrgwgwwbbubugrwbggwbgwubg
+Pattern rrrbguburwgubrbubuwwwrgwwugbrwwwbuwuwrgrburbw can be made in 3118669452 ways
+Pattern wuubgrrrugrgbubuwuuruuurrwbuuuwburrubuggruguwurwbbb can be made in 317940666460 ways
+Testing wrbbuuggrbrbwbbubugrubwurgrggwgrwbwgrugbubbbgbbrgwu
+Elapsed = 0.395 ms
+Pattern rrwuwuwwruwwbgwrgbbbrbrrbguguurubbwuurguugubbr can be made in 1470557840 ways
+Testing wrwrbwbrurwwwbggwrbwrrrgrubgrurrwubwbugrrwrbgguwubruu
+Testing bwwgrwwrwrrgrbuuurrugrugurgwrurwrubgwwwurwuug
+Pattern bgwuugrgbuwgwgbuubbrruubwwwgrrububggggwrrrbgrugwguburrrbrr can be made in 6061788731058 ways
+Testing urgbgwwgwgwubbugbbugwbrrguubbgrgrwugurgugrrububrwgwbwub
+Pattern wrbbuuggrbrbwbbubugrubwurgrggwgrwbwgrugbubbbgbbrgwu can be made in 291096835324 ways
+Elapsed = 3.2021 ms
+Elapsed = 1.6088 ms
+Elapsed = 1.7294 ms
+Elapsed = 4.8483 ms
+Elapsed = 1.7565 ms
+Testing gwuggguuwwwuburwggruwwbubrgwugrububrgurrgu
+Pattern bwubgwwugbwgurgwgbwrbwugbrgwrgwgwwbbubugrwbggwbgwubg can be made in 6587478487625 ways
+Testing wrwrubbuuurgbbwgrgrugugbwuwwurbgwwrbbrbwgugrurwuruguwbbr
+Elapsed = 0.3144 ms
+Pattern urgrbuggugrgubbwuwwwuwuuuguugbrurgwuugrwbgggub can be made in 62305980660 ways
+Testing rbrgrgrrwuuwubbbgwbuuwbrbgbrgwuburwrbuuwgbgrug
+Elapsed = 0.3119 ms
+Pattern wrwrbwbrurwwwbggwrbwrrrgrubgrurrwubwbugrrwrbgguwubruu can be made in 93384185859 ways
+Testing rwuuubrruuwuggrruubrrgguwwwgbwbrgwguuwubbguru
+Elapsed = 0.3264 ms
+Pattern urgbgwwgwgwubbugbbugwbrrguubbgrgrwugurgugrrububrwgwbwub can be made in 6568130379008 ways
+Testing rwwrwbggwbbwwgwgrbgrbgrgugruubgwrrwuggugugbgu
+Elapsed = 0.3199 ms
+Pattern bwwgrwwrwrrgrbuuurrugrugurgwrurwrubgwwwurwuug can be made in 4721321646 ways
+Testing rgwrggbrrbbgguwbbwwubggrbggugwrwbrgrruwuurgbwwu
+Elapsed = 0.3725 ms
+Elapsed = 4.4374 ms
+Pattern rbrgrgrrwuuwubbbgwbuuwbrbgbrgwuburwrbuuwgbgrug can be made in 5577404847 ways
+Testing gbrwubuggwruuwbwwburrurggububurbguugbuwrgggbgubwrugwurwbbr
+Pattern wrwrubbuuurgbbwgrgrugugbwuwwurbgwwrbbrbwgugrurwuruguwbbr can be made in 400460244208 ways
+Testing buwgwgggubuwrrruwgwggrrurwuwrbwgugbrrgrruuwrrugugw
+Pattern rgwrggbrrbbgguwbbwwubggrbggugwrwbrgrruwuurgbwwu can be made in 11083829478 ways
+Testing wwuurwugrwuguuubuwwurrgrrggggurrbbuwwbgrbrwwgurgrbggrruwg
+Pattern rwwrwbggwbbwwgwgrbgrbgrgugruubgwrrwuggugugbgu can be made in 15925045528 ways
+Elapsed = 3.4701 ms
+Pattern rwuuubrruuwuggrruubrrgguwwwgbwbrgwguuwubbguru can be made in 6000922920 ways
+Testing rbrubburggbrwbgrwrgbruggrbggrurrrwrbuurbubbuw
+Pattern gwuggguuwwwuburwggruwwbubrgwugrububrgurrgu can be made in 2186406356 ways
+Elapsed = 2.4732 ms
+Testing gruurrwgubbggububbrbrrubgrguwwuwbgburrwrrw
+Pattern gbrwubuggwruuwbwwburrurggububurbguugbuwrgggbgubwrugwurwbbr can be made in 4813981663510 ways
+Testing buwwbrrugwgbgurwbgrwbubwrwbruubwgrrwrwrrrr
+Elapsed = 0.3651 ms
+Testing buwgwwgbwuwrwugubwgggbbwuwrurbgugwrgwrugbwgbrgu
+Pattern wwuurwugrwuguuubuwwurrgrrggggurrbbuwwbgrbrwwgurgrbggrruwg can be made in 4504278596134 ways
+Testing brrubwwgugwrrugugurruwrwbuuuruubrbbguwggurbrwuwg
+Elapsed = 0.4084 ms
+Elapsed = 3.072 ms
+Pattern buwwbrrugwgbgurwbgrwbubwrwbruubwgrrwrwrrrr can be made in 295984710 ways
+Testing ruwuburrrgrgbbwggguwbwwruruurgugwbrwgubwguuwwburg
+Elapsed = 0.307 ms
+Elapsed = 7.9549 ms
+Pattern brrubwwgugwrrugugurruwrwbuuuruubrbbguwggurbrwuwg can be made in 22011521154 ways
+Testing wgbbuwbgbgwuurwbbuuwgbuurbuggrwwugbgwgurwu
+Elapsed = 0.3128 ms
+Elapsed = 4.413 ms
+Pattern ruwuburrrgrgbbwggguwbwwruruurgugwbrwgubwguuwwburg can be made in 85371037677 ways
+Testing brwrbugruwbgrwurbbbbubbbbbbgwwuggrwrgwrbrruubrbwwrwuurr
+Elapsed = 0.3112 ms
+Elapsed = 4.4187 ms
+Pattern wgbbuwbgbgwuurwbbuuwgbuurbuggrwwugbgwgurwu can be made in 13818599424 ways
+Testing gwwgguuugugruubrwbwbbwwgurrgrrgrwrbbuguruub
+Elapsed = 0.3739 ms
+Pattern rbrubburggbrwbgrwrgbruggrbggrurrrwrbuurbubbuw can be made in 846196892 ways
+Testing rbbbwwrurrrgubbrwrrgrrwuwgrrwbbuuubgrwubgbbuug
+Pattern buwgwwgbwuwrwugubwgggbbwuwrurbgugwrgwrugbwgbrgu can be made in 72572540842 ways
+Testing bgbuguurbrugubuggbgrrubbguurgbbbbburubwgwbrgbubrw
+Pattern buwgwgggubuwrrruwgwggrrurwuwrbwgugbrrgrruuwrrugugw can be made in 53006092026 ways
+Pattern gwwgguuugugruubrwbwbbwwgurrgrrgrwrbbuguruub can be made in 3278519590 ways
+Testing wbuuuwrbbbbbbbwgwubuugggrubwubgurbwugrgrubwrw
+Elapsed = 0.3151 ms
+Pattern gruurrwgubbggububbrbrrubgrguwwuwbgburrwrrw can be made in 1327632225 ways
+Testing grguugwrrrurbwgguurbuwrbuwrwuuubruggbbwbubuubgwbbg
+Elapsed = 0.3421 ms
+Pattern brwrbugruwbgrwurbbbbubbbbbbgwwuggrwrgwrbrruubrbwwrwuurr can be made in 415887450276 ways
+Testing rrgbggururubuggwrurwrwwrububruguuurgugbbgbugwggguurw
+Elapsed = 0.3104 ms
+Elapsed = 3.018 ms
+Testing rgwbrubrwwwwugugbbgrrruwgrggubwgrwwrbbgugbrugwwguwr
+Pattern grguugwrrrurbwgguurbuwrbuwrwuuubruggbbwbubuubgwbbg can be made in 236592304832 ways
+Testing ugwuurwggrwwwggbugwgbwurrrbbgwwgbuuwwburrbbw
+Pattern rrgbggururubuggwrurwrwwrububruguuurgugbbgbugwggguurw can be made in 524104596083 ways
+Elapsed = 2.0026 ms
+Testing ubwruwuuuuubwwrwubguuwrwrrwbuguwurwrbuurbrwruwuurwubgww
+Elapsed = 3.3214 ms
+Elapsed = 7.3799 ms
+Pattern wbuuuwrbbbbbbbwgwubuugggrubwubgurbwugrgrubwrw can be made in 59859033840 ways
+Testing gurwrruwbguwrurwrbwrbggbbrwwgrbwrbrbururbubwbrurwwbubu
+Elapsed = 0.3413 ms
+Elapsed = 2.2294 ms
+Pattern rgwbrubrwwwwugugbbgrrruwgrggubwgrwwrbbgugbrugwwguwr can be made in 69265557559 ways
+Testing ubrbuuugwgguwugwgbgwwburwurrggrggubrurggugwwbbrrgbr
+Elapsed = 0.4823 ms
+Pattern ugwuurwggrwwwggbugwgbwurrrbbgwwgbuuwwburrbbw can be made in 16742559050 ways
+Testing ggwwuugrgwwrbgburggrrgbbbggrrugruwbgrgbwgbwbuwbuurgrbru
+Elapsed = 0.3288 ms
+Pattern rbbbwwrurrrgubbrwrrgrrwuwgrrwbbuuubgrwubgbbuug can be made in 4194891952 ways
+Testing uuwrgrgbrwuurgrgrrbbbwrbubgwgbwgwbuuwgbrurburbrbrruurub
+Elapsed = 0.3105 ms
+Pattern gurwrruwbguwrurwrbwrbggbbrwwgrbwrbrbururbubwbrurwwbubu can be made in 117259416661 ways
+Testing rrggbbbrrrrwbbwgwrbbwwwwururgrwbgbguubgbwruru
+Pattern ggwwuugrgwwrbgburggrrgbbbggrrugruwbgrgbwgbwbuwbuurgrbru can be made in 2235166495569 ways
+Testing urwrrbrrggububguuwbbrbrbruwbbrugrgwubuggggrgwgbubbwburuwr
+Elapsed = 0.3175 ms
+Pattern uuwrgrgbrwuurgrgrrbbbwrbubgwgbwgwbuuwgbrurburbrbrruurub can be made in 169191792000 ways
+Testing rurrrgbwwbbrubgrbwbbggrwubrwurubgwgwwuwrwbrbwgugugbubgbg
+Elapsed = 0.3142 ms
+Pattern bgbuguurbrugubuggbgrrubbguurgbbbbburubwgwbrgbubrw can be made in 154178929008 ways
+Pattern ubrbuuugwgguwugwgbgwwburwurrggrggubrurggugwwbbrrgbr can be made in 21096823275 ways
+Testing ruububuuwbggrbugrwbrbrwrrwbruugubrurrrgugguwbr
+Elapsed = 0.3148 ms
+Elapsed = 3.025 ms
+Pattern rurrrgbwwbbrubgrbwbbggrwubrwurubgwgwwuwrwbrbwgugugbubgbg can be made in 1699921213132 ways
+Testing rwurbrruwuruburgugwwbggrurugwggbgwuwgbwwurbuub
+Elapsed = 0.3513 ms
+Pattern ubwruwuuuuubwwrwubguuwrwrrwbuguwurwrbuurbrwruwuurwubgww can be made in 1518342106320 ways
+Testing gbbbwggrgwrgubgrrrwuggbwwgbwbubrwbgurrgbrrrguuw
+Elapsed = 0.3139 ms
+Testing bwbrwrguburrguwrubwrwguuugguwbbgubbrbrburugbuugrrrrw
+Pattern urwrrbrrggububguuwbbrbrbruwbbrugrgwubuggggrgwgbubbwburuwr can be made in 752383067360 ways
+Testing bwwwgrguurgwgurururgwbrwrurrgbrrrurwrguuuwgrbrwwubuwubrug
+Elapsed = 0.3103 ms
+Pattern rrggbbbrrrrwbbwgwrbbwwwwururgrwbgbguubgbwruru can be made in 4694874742 ways
+Testing bgrwggurgwuubbrbgwgwguubrbwwwbrggwgbgrbwrrgwwubrgug
+Elapsed = 0.3428 ms
+Pattern rwurbrruwuruburgugwwbggrurugwggbgwuwgbwwurbuub can be made in 8332093086 ways
+Pattern ruububuuwbggrbugrwbrbrwrrwbruugubrurrrgugguwbr can be made in 332746996 ways
+Testing wwgbwuwwgrgurguwbrrrwbgwwggbggggbuuwwrbwwgrwrgurgwrwrwrwww
+Elapsed = 0.4546 ms
+Elapsed = 4.6361 ms
+Pattern bgrwggurgwuubbrbgwgwguubrbwwwbrggwgbgrbwrrgwwubrgug can be made in 242681972248 ways
+Testing bgwwgwgugrgrgwwbbgubwgugbuugrgrruugwwggwbr
+Elapsed = 0.3084 ms
+Pattern gbbbwggrgwrgubgrrrwuggbwwgbwbubrwbgurrgbrrrguuw can be made in 15778245045 ways
+Testing ruwwgbbuubgrwubgwwbgugwbbrugwuugurrgrrwbgubwgwwrrwbgbgrbu
+Elapsed = 0.3079 ms
+Testing ggrwbbgbuburwguuuruwbbbrububuwbburugwgrgwbbb
+Elapsed = 0.3028 ms
+Pattern bgwwgwgugrgrgwwbbgubwgugbuugrgrruugwwggwbr can be made in 3149077200 ways
+Testing rbrugrgurbwwrburbgrugugrubbgrgrrugwggwgubbrru
+Elapsed = 0.3062 ms
+Pattern ruwwgbbuubgrwubgwwbgugwbbrugwuugurrgrrwbgubwgwwrrwbgbgrbu can be made in 11748218381100 ways
+Testing wurrrguwggwbwuuuurwbbruwbuubbbugwgwgrwbgurrrrburrwuwbwrbb
+Elapsed = 0.3081 ms
+Pattern wwgbwuwwgrgurguwbrrrwbgwwggbggggbuuwwrbwwgrwrgurgwrwrwrwww can be made in 8056736390100 ways
+Testing wbgrgubguwrbwbgggbwbrwwrgubbrruuugwgbbrwggwwbwru
+Pattern rbrugrgurbwwrburbgrugugrubbgrgrrugwggwgubbrru can be made in 2719335604 ways
+Testing urwwbwgbuguurbbugrwrgugwwwgwuwgbuwwugbgbgrrrwbgrggrwbwu
+Elapsed = 0.3272 ms
+Pattern wurrrguwggwbwuuuurwbbruwbuubbbugwgwgrwbgurrrrburrwuwbwrbb can be made in 3830667513856 ways
+Testing wwbrwggbbuggruurrbuugwbgbwrugguuurguugwgwbwguug
+Elapsed = 0.3082 ms
+Pattern bwwwgrguurgwgurururgwbrwrurrgbrrrurwrguuuwgrbrwwubuwubrug can be made in 532472532392 ways
+Testing wrwbbwgugubbwbwgbwggrruuwrbrbggurubbrrrgbw
+Elapsed = 0.4092 ms
+Pattern bwbrwrguburrguwrubwrwguuugguwbbgubbrbrburugbuugrrrrw can be made in 129788195022 ways
+Testing wruuwbwbgggwrwwuwwugbbuuburbwurgbruwbggwgu
+Pattern wwbrwggbbuggruurrbuugwbgbwrugguuurguugwgwbwguug can be made in 202909847488 ways
+Testing bgbrbrrrbwbuuurgwuwbugugubbgbruuuwbwwgruguggbg
+Pattern urwwbwgbuguurbbugrwrgugwwwgwuwgbuwwugbgbgrrrwbgrggrwbwu can be made in 7676151808640 ways
+Testing wrwubbwwrgrbrurwrgwrgwuwbubrwuugwggbwbbrrugrgbwwbubu
+Elapsed = 4.8049 ms
+Elapsed = 2.158 ms
+Pattern ggrwbbgbuburwguuuruwbbbrububuwbburugwgrgwbbb can be made in 20341517756 ways
+Elapsed = 2.3482 ms
+Pattern wrwbbwgugubbwbwgbwggrruuwrbrbggurubbrrrgbw can be made in 2092129536 ways
+Testing bururrwrbbgruwuggwgrwgrwwgwwuuwbbbgwuwgrwuwwbubgbgwrrrbw
+Pattern wbgrgubguwrbwbgggbwbrwwrgubbrruuugwgbbrwggwwbwru can be made in 56682064494 ways
+Testing uugbwrgbrwrbruwguurggggugggbbrrwbwbruwgrubwgr
+Elapsed = 0.3063 ms
+Pattern bgbrbrrrbwbuuurgwuwbugugubbgbruuuwbwwgruguggbg can be made in 24585739542 ways
+Testing rwbuuburgbuwuuubgwrbguugbwrbgubwbwbwrrgwurgbwg
+Elapsed = 1.6277 ms
+Pattern wruuwbwbgggwrwwuwwugbbuuburbwurgbruwbggwgu can be made in 7667293104 ways
+Testing bbruwrwugwurgwwwrbwgbbuuugbrgrwggwbubugwwgwwubwrbbrrguggru
+Pattern uugbwrgbrwrbruwguurggggugggbbrrwbwbruwgrubwgr can be made in 3496844760 ways
+Testing gbguwruubrurwrgbrwgrgwugbgbbgugbbrgbrwurggb
+Elapsed = 0.3047 ms
+Pattern bururrwrbbgruwuggwgrwgrwwgwwuuwbbbgwuwgrwuwwbubgbgwrrrbw can be made in 5149071885992 ways
+Testing brrrbrwgrrrgrwrrugbugubruububrwwwgrwwgwubbbrrggrugwwbbgww
+Elapsed = 1.6989 ms
+Elapsed = 7.454 ms
+Pattern gbguwruubrurwrgbrwgrgwugbgbbgugbbrgbrwurggb can be made in 566677134 ways
+Testing ugbuggubbwgwrruubwugwwugbuwrbrrugrwgrbrbrggbwwuwu
+Elapsed = 6.1719 ms
+Elapsed = 5.5053 ms
+Pattern brrrbrwgrrrgrwrrugbugubruububrwwwgrwwgwubbbrrggrugwwbbgww can be made in 794790340464 ways
+Testing rbrbuubuurugggubugwrgbggurugwbruwurwuuwgurbbbrwgw
+Elapsed = 0.3444 ms
+Elapsed = 1.234 ms
+Pattern rwbuuburgbuwuuubgwrbguugbwrbgubwbwbwrrgwurgbwg can be made in 45727333180 ways
+Testing wbggrwugbggrrbwwwbgwurgbbuwbwbrrrbrwbwrrugbwgggrbw
+Elapsed = 0.4132 ms
+Testing wbgbrugurgbugwwruwggubrrbgruguwrbrgbwgrwuburrrurw
+Pattern rbrbuubuurugggubugwrgbggurugwbruwurwuuwgurbbbrwgw can be made in 61823121494 ways
+Testing ugbugrrbwwbwrwrrwrurwwwgurgwgubwgwwrrwgrbbrbgwbbu
+Elapsed = 0.3094 ms
+Pattern wrwubbwwrgrbrurwrgwrgwuwbubrwuugwggbwbbrrugrgbwwbubu can be made in 213520854811 ways
+Pattern wbggrwugbggrrbwwwbgwurgbbuwbwbrrrbrwbwrrugbwgggrbw can be made in 144654405219 ways
+Testing guwurbbwgrwurwuggwwgwgwbwbuuwgubuguggburbruggbrgrrrw
+Elapsed = 0.3127 ms
+Pattern bbruwrwugwurgwwwrbwgbbuuugbrgrwggwbubugwwgwwubwrbbrrguggru can be made in 18531691276032 ways
+Testing wugrrugwwbggrbggrrwwwgbrbgrgbuguggwuwuwwubwbruurbgwrbbwrbg
+Testing rgbrubuurubgbwgbrgwrurgbggwgruruwwruurwugwwwurbbgwburguur
+Elapsed = 3.0152 ms
+Pattern ugbuggubbwgwrruubwugwwugbuwrbrrugrwgrbrbrggbwwuwu can be made in 108538690596 ways
+Testing grrwgwbubuwwuugrwgubbrwurwrbguwrrwbwwwrwbggg
+Elapsed = 0.3182 ms
+Elapsed = 1.722 ms
+Elapsed = 1.6416 ms
+Pattern wbgbrugurgbugwwruwggubrrbgruguwrbrgbwgrwuburrrurw can be made in 12831164580 ways
+Testing wrbuuwbrubbbrwwwwrgrrwubgrrrwwuwubrrruugbrurrrgugg
+Elapsed = 0.3072 ms
+Pattern grrwgwbubuwwuugrwgubbrwurwrbguwrrwbwwwrwbggg can be made in 4699507476 ways
+Testing bgguggwbwrbwrbubbbubgwgwbuwrwggwggrbuuwguubbrbguugrurrwu
+Pattern rgbrubuurubgbwgbrgwrurgbggwgruruwwruurwugwwwurbbgwburguur can be made in 1084255495316 ways
+Testing gbrruwrgbwwubrbwgruuwuurbwugwruuubgruggwubugrbrrbrgwburgbb
+Elapsed = 0.4184 ms
+Pattern wrbuuwbrubbbrwwwwrgrrwubgrrrwwuwubrrruugbrurrrgugg can be made in 13060689652 ways
+Pattern wugrrugwwbggrbggrrwwwgbrbgrgbuguggwuwuwwubwbruurbgwrbbwrbg can be made in 14348426338833 ways
+Testing grgwuwruwbgwbugbuuwgrurbwwwwguuwuwwuurwbuubg
+Elapsed = 0.3108 ms
+Pattern ugbugrrbwwbwrwrrwrurwwwgurgwgubwgwwrrwgrbbrbgwbbu can be made in 75141900240 ways
+Testing uurbruwwwbrugbwwgrubrwbruuuggrbwwggbwbugurwgwubbrbbgwbww
+Elapsed = 1.6761 ms
+Elapsed = 4.8367 ms
+Pattern guwurbbwgrwurwuggwwgwgwbwbuuwgubuguggburbruggbrgrrrw can be made in 561248582484 ways
+Testing ggbrubgwgubbbrgruuwggwbrggrgbuguwbwwwurbggwrwbruuubrww
+Pattern gbrruwrgbwwubrbwgruuwuurbwugwruuubgruggwubugrbrrbrgwburgbb can be made in 6127946696415 ways
+Testing bggbwbgbwrgggrrggrbgubgwbbuwwrrwwggrwruwrbbbb
+Elapsed = 0.5157 ms
+Pattern bgguggwbwrbwrbubbbubgwgwbuwrwggwggrbuuwguubbrbguugrurrwu can be made in 15334124810900 ways
+Testing rbgrguugrururggwwwurwgwggrrbrrwguwubgurwubbbubrrgwu
+Elapsed = 0.3893 ms
+Testing bbwwbwuubbgbgbrrwruwruwbbwggrwubguruwwwrguggwwwgrugrgwww
+Elapsed = 0.3042 ms
+Pattern bggbwbgbwrgggrrggrbgubgwbbuwwrrwwggrwruwrbbbb can be made in 19772891392 ways
+Testing uwbrwwgbwwgbbrguubbrurbwgwwwgwugggruugrwrbwrugbw
+Elapsed = 0.3395 ms
+Pattern rbgrguugrururggwwwurwgwggrrbrrwguwubgurwubbbubrrgwu can be made in 59990257104 ways
+Testing ubwgururrugggbwuuwwbruggubuuruwwbruurrwuwuwrwrwwuuw
+Elapsed = 0.3093 ms
+Pattern grgwuwruwbgwbugbuuwgrurbwwwwguuwuwwuurwbuubg can be made in 25024237002 ways
+Testing urbwuurggbgwgrgburbbrubwgrbrrgrbbuggbrwwuuuuuuuwbu
+Elapsed = 0.3944 ms
+Pattern uurbruwwwbrugbwwgrubrwbruuuggrbwwggbwbugurwgwubbrbbgwbww can be made in 1732998821868 ways
+Testing uruwugrubuwguwurwwwubruwwrgwrwuubrggbrguuwrrbggru
+Pattern ubwgururrugggbwuuwwbruggubuuruwwbruurrwuwuwrwrwwuuw can be made in 156124093630 ways
+Testing wuuwrwburwgwubrbwurbbgrbrbwuurgbwbbugrbgrgugbrbrbubgguwr
+Elapsed = 0.3432 ms
+Pattern urbwuurggbgwgrgburbbrubwgrbrrgrbbuggbrwwuuuuuuuwbu can be made in 166354189272 ways
+Testing wwwugwgbwwbwrrrbgrggrugugwruwbwbwwwubbbrwuguwuwgurrwuwrr
+Elapsed = 0.3077 ms
+Elapsed = 7.7674 ms
+Pattern uwbrwwgbwwgbbrguubbrurbwgwwwgwugggruugrwrbwrugbw can be made in 37329560881 ways
+Testing ggururbbrbbuubwbgbwurggggurrwubwurrrrrrgrbwgubgwrwbbgrggw
+Elapsed = 0.316 ms
+Elapsed = 3.5273 ms
+Pattern wwwugwgbwwbwrrrbgrggrugugwruwbwbwwwubbbrwuguwuwgurrwuwrr can be made in 2817485006448 ways
+Testing wubrgwwbgwbrwurugrbrgrururrugrbrggwgbwbugbrugguggurgwbwugb
+Elapsed = 0.32 ms
+Pattern bbwwbwuubbgbgbrrwruwruwbbwggrwubguruwwwrguggwwwgrugrgwww can be made in 12991757462364 ways
+Testing wwwrbwrgrbugbrrrbrrrwburuwguruwwwrgrbrugurrwbug
+Pattern uruwugrubuwguwurwwwubruwwrgwrwuubrggbrguuwrrbggru can be made in 15616498299 ways
+Testing gwwwgrwwgururguwwbrwgwuuwrubgbwwrbwubbbwwbbr
+Elapsed = 0.305 ms
+Pattern wubrgwwbgwbrwurugrbrgrururrugrbrggwgbwbugbrugguggurgwbwugb can be made in 3189937984920 ways
+Testing rbbrgwurbbruubgbbgwwwbwwwurbrruugwubrwuubbuwgbguwwg
+Elapsed = 0.3206 ms
+Pattern ggbrubgwgubbbrgruuwggwbrggrgbuguwbwwwurbggwrwbruuubrww can be made in 747291296756 ways
+Testing uwruwrrwwurwggwruurwbubrrbgwrbwruuwwwrgggwuuur
+Pattern gwwwgrwwgururguwwbrwgwuuwrubgbwwrbwubbbwwbbr can be made in 4523322372 ways
+Testing guwbrbwrwggugggwuwgurbrruubrbbwrrbwuguubwubuurbgrbuu
+Elapsed = 0.3024 ms
+Pattern rbbrgwurbbruubgbbgwwwbwwwurbrruugwubrwuubbuwgbguwwg can be made in 171942614400 ways
+Testing rurrwgrwbbwrububrruwrubuwugwrbrgbrrwuuwrguwgwururw
+Pattern ggururbbrbbuubwbgbwurggggurrwubwurrrrrrgrbwgubgwrwbbgrggw can be made in 2295705869642 ways
+Elapsed = 0.3907 ms
+Testing wgwubuguwuuggwuwwgugbgugbwbgguggwugugguuurwbgwwwbururgwwru
+Elapsed = 0.3742 ms
+Pattern wuuwrwburwgwubrbwurbbgrbrbwuurgbwbbugrbgrgugbrbrbubgguwr can be made in 873336284254 ways
+Testing uugbbrbburrwwwgwugwwrbgrbbuburuggbwrrugrbbrbugwgwgwrbg
+Elapsed = 0.3114 ms
+Pattern rurrwgrwbbwrububrruwrubuwugwrbrgbrrwuuwrguwgwururw can be made in 7888681512 ways
+Testing ubbgrrgrrrwbwgurugrrgrwrugwgrwgwruurrgwguwuwubbugggurbu
+Elapsed = 0.3048 ms
+Pattern uugbbrbburrwwwgwugwwrbgrbbuburuggbwrrugrbbrbugwgwgwrbg can be made in 1746860065552 ways
+Testing rubuwgwburbggbugbggbbuggurwbgrwgwubggbgwwgwwr
+Elapsed = 7.4803 ms
+Elapsed = 9.6984 ms
+Elapsed = 0.3464 ms
+Pattern ubbgrrgrrrwbwgurugrrgrwrugwgrwgwruurrgwguwuwubbugggurbu can be made in 1585398663820 ways
+Testing rrbbrrbuwbrbwwwbbuwgwwgrwbugrwbuwgggbbbwguuwgbburbb
+Elapsed = 0.3056 ms
+Pattern uwruwrrwwurwggwruurwbubrrbgwrbwruuwwwrgggwuuur can be made in 3732256119 ways
+Testing grbgwbrbbwbgbruwwbbbrwgurbrgbgbbwurgugwbgbwgbwurw
+Pattern rubuwgwburbggbugbggbbuggurwbgrwgwubggbgwwgwwr can be made in 34971743268 ways
+Testing bubbrwgwwwbrwggrrbbrgrbgugggwbwugbwbbrrgwbgggbbuwrbgr
+Elapsed = 0.3023 ms
+Pattern rrbbrrbuwbrbwwwbbuwgwwgrwbugrwbuwgggbbbwguuwgbburbb can be made in 233713690108 ways
+Testing bwguwgrrurbbwuugbbwgwwurgrrrwwrurggwrggrubuu
+Elapsed = 0.3063 ms
+Pattern guwbrbwrwggugggwuwgurbrruubrbbwrrbwuguubwubuurbgrbuu can be made in 301907803136 ways
+Pattern wgwubuguwuuggwuwwgugbgugbwbgguggwugugguuurwbgwwwbururgwwru can be made in 268948512136080 ways
+Testing uwrrbbubbggbgbwuruggrugwbwrrgrubwbrgbwbwguurrubrb
+Elapsed = 0.3118 ms
+Elapsed = 2.9897 ms
+Pattern bwguwgrrurbbwuugbbwgwwurgrrrwwrurggwrggrubuu can be made in 3510983972 ways
+Testing ugubrwrwgbuwwgbgugwgrrubuwruwgbgrgbubwwgwwwurr
+Elapsed = 0.3429 ms
+Pattern wwwrbwrgrbugbrrrbrrrwburuwguruwwwrgrbrugurrwbug can be made in 2412435519 ways
+Pattern uwrrbbubbggbgbwuruggrugwbwrrgrubwbrgbwbwguurrubrb can be made in 42917674428 ways
+Pattern grbgwbrbbwbgbruwwbbbrwgurbrgbgbbwurgugwbgbwgbwurw can be made in 88753132350 ways
+Testing uwbrrggwugrgwrrgbbgggbggrugrbggwbgbrwgwuwgwubgurwugruwgur
+Pattern bubbrwgwwwbrwggrrbbrgrbgugggwbwugbwbbrrgwbgggbbuwrbgr can be made in 463905597896 ways
+Testing bggbwgubgwrgrbbggwgwwwwgrrwrwwbbugwurugwwgubrbwgbgbb
+Elapsed = 0.5356 ms
+Testing rbgwrrurrurgrrgwburbrgbugbwurwbbgurubuwruuwbbwbwgr
+Testing bgguubbwgbwuwwwrgwgwbuurwgrbrwwbguuwwruwgrr
+Elapsed = 0.4533 ms
+Pattern ugubrwrwgbuwwgbgugwgrrubuwruwgbgrgbubwwgwwwurr can be made in 11265350400 ways
+Testing rurrwgrwrbwwgrbuwrwguuubbbbguurbgrugbgrwurwurrwbwgrwbbuw
+Pattern bggbwgubgwrgrbbggwgwwwwgrrwrwwbbugwurugwwgubrbwgbgbb can be made in 1045638563034 ways
+Testing rrrrwugrrrrrubrbrgwgrrgwrubgwuuuburburburwrrgbwu
+Elapsed = 5.0694 ms
+Pattern bgguubbwgbwuwwwrgwgwbuurwgrbrwwbguuwwruwgrr can be made in 5714815867 ways
+Testing burrurbbwurrrbbgrubgwrbbrguwrwwwugggbruuwurgw
+Elapsed = 0.8051 ms
+Elapsed = 5.7506 ms
+Elapsed = 2.6983 ms
+Pattern uwbrrggwugrgwrrgbbgggbggrugrbggwbgbrwgwuwgwubgurwugruwgur can be made in 4127139094612 ways
+Testing uubggbwwwggubbrurubbgbgrwuwuuurbrgubwbwrbuwwgwgbr
+Elapsed = 4.6826 ms
+Pattern burrurbbwurrrbbgrubgwrbbrguwrwwwugggbruuwurgw can be made in 2113176604 ways
+Pattern rbgwrrurrurgrrgwburbrgbugbwurwbbgurubuwruuwbbwbwgr can be made in 18108213816 ways
+Testing rwwuwgbwgbggburgwwugrrbbbgwbwgrbgrrwgugbgrr
+Elapsed = 0.3429 ms
+Elapsed = 1.9794 ms
+Pattern rurrwgrwrbwwgrbuwrwguuubbbbguurbgrugbgrwurwurrwbwgrwbbuw can be made in 838813445028 ways
+Testing ugbwubrwgbggbugwuubwruurwgbrrwgurwggbrwrurubbgwrru
+Elapsed = 0.3357 ms
+Testing grgbbwbrggrbrwrbuuururrwgruggwbrwwgbwbrwgwgruggbggwrwbbggg
+Pattern rwwuwgbwgbggburgwwugrrbbbgwbwgrbgrrwgugbgrr can be made in 2951880545 ways
+Testing ugbgbggbwwuwggrgwrwwwwuurwrbwbwrggbwwrwwrrrbwwuwbrgbggurb
+Testing gbruwrugbbubggburwgrrbgubbuwbuwbbgguwrggwrrrgur
+Pattern rrrrwugrrrrrubrbrgwgrrgwrubgwuuuburburburwrrgbwu can be made in 2888310516 ways
+Testing ruwgugbguwuwgrwbrbgwruwurbugwwgbwwugbrrbwguur
+Elapsed = 0.3068 ms
+Pattern uubggbwwwggubbrurubbgbgrwuwuuurbrgubwbwrbuwwgwgbr can be made in 44585904036 ways
+Testing gbwwbwwbuguwugwrurrbbbwurwurggurguguguruwuwgb
+Elapsed = 1.6592 ms
+Pattern ugbwubrwgbggbugwuubwruurwgbrrwgurwggbrwrurubbgwrru can be made in 126411003486 ways
+Testing rbwwrgwguubbgrbguuwggrbbgbugbgwurrrrwbwwbr
+Elapsed = 0.3175 ms
+Elapsed = 2.9871 ms
+Elapsed = 1.6084 ms
+Pattern gbruwrugbbubggburwgrrbgubbuwbuwbbgguwrggwrrrgur can be made in 18245046005 ways
+Testing gbuwwgrubbwwgugwwbgbwrbwwgrburrgruggugrwwwrggurwggbwbgub
+Pattern ruwgugbguwuwgrwbrbgwruwurbugwwgbwwugbrrbwguur can be made in 3802619163 ways
+Testing ugrrwbbwwbwwbbururwguuwwurwrguggggugrwbugwwgwgg
+Elapsed = 0.3415 ms
+Pattern gbwwbwwbuguwugwrurrbbbwurwurggurguguguruwuwgb can be made in 16041195744 ways
+Testing uurububbgruwguwurbrgrruuuurruwwuburwrrbbgrgugrgggwrwrrg
+Elapsed = 0.3049 ms
+Pattern rbwwrgwguubbgrbguuwggrbbgbugbgwurrrrwbwwbr can be made in 543387680 ways
+Testing grgbugbwugbbuggwgwwurguwbwuwwurbwrurrrwgwwwuguurbwgwub
+Elapsed = 0.3608 ms
+Elapsed = 8.8244 ms
+Elapsed = 4.5314 ms
+Pattern uurububbgruwguwurbrgrruuuurruwwuburwrrbbgrgugrgggwrwrrg can be made in 280004411400 ways
+Testing rbgruwuugbgbrgrgugrgrrrwruuggubbwrbruubbbr
+Elapsed = 0.3545 ms
+Pattern grgbugbwugbbuggwgwwurguwbwuwwurbwrurrrwgwwwuguurbwgwub can be made in 5639250820020 ways
+Pattern gbuwwgrubbwwgugwwbgbwrbwwgrburrgruggugrwwwrggurwggbwbgub can be made in 12875359848828 ways
+Testing ubguuruuwwruubrrwbwuwggbburgwrbwggbguburrrb
+Pattern ugrrwbbwwbwwbbururwguuwwurwrguggggugrwbugwwgwgg can be made in 125299092128 ways
+Testing gbwurruuubuurrwurbuwwwubbwbwbbrgrbrwbbwrrrbruwrwubbrbgwbwb
+Elapsed = 0.3303 ms
+Pattern ugbgbggbwwuwggrgwrwwwwuurwrbwbwrggbwwrwwrrrbwwuwbrgbggurb can be made in 6601831816708 ways
+Testing bbrgwrwwbggbbwbwrrwwbbwubgguwgugrrgbrwgbrgurggwwbuwuwwu
+Elapsed = 0.311 ms
+Pattern grgbbwbrggrbrwrbuuururrwgruggwbrwwgbwbrwgwgruggbggwrwbbggg can be made in 3595821590872 ways
+Pattern gbwurruuubuurrwurbuwwwubbwbwbbrgrbrwbbwrrrbruwrwubbrbgwbwb can be made in 2496057331516 ways
+Pattern rbgruwuugbgbrgrgugrgrrrwruuggubbwrbruubbbr can be made in 97840741 ways
+Testing wwurgbbgwrrwuubguuugguubwbrgubggwrwggwbwwrgrugbwbg
+Elapsed = 0.3072 ms
+Pattern bbrgwrwwbggbbwbwrrwwbbwubgguwgugrrgbrwgbrgurggwwbuwuwwu can be made in 3159106138080 ways
+Testing grgwgrbugurburbrggwugrrbwwguwbwgrrrwurwbbbggwbbbggu
+Elapsed = 0.3109 ms
+Pattern wwurgbbgwrrwuubguuugguubwbrgubggwrwggwbwwrgrugbwbg can be made in 665260357959 ways
+Pattern grgwgrbugurburbrggwugrrbwwguwbwgrrrwurwbbbggwbbbggu can be made in 274108232646 ways
+Elapsed = 6.1711 ms
+Testing uwugrgubrwwwgugwrwgbggwbggbwbuuurguwwggbrrgwgwuggrgruuu
+Pattern ubguuruuwwruubrrwbwuwggbburgwrbwggbguburrrb can be made in 2676445560 ways
+Testing bwrrwggubgbgbrrwgruwburrubbrrbrugrbwwggbrurwgub
+Elapsed = 1.6434 ms
+Elapsed = 0.6179 ms
+Pattern uwugrgubrwwwgugwrwgbggwbggbwbuuurguwwggbrrgwgwuggrgruuu can be made in 4997599279104 ways
+Testing wuwrububwgrgbbuubrwbrguwbwubbwuwwuubggwwwuggbw
+Elapsed = 0.3114 ms
+Pattern bwrrwggubgbgbrrwgruwburrubbrrbrugrbwwggbrurwgub can be made in 6108323168 ways
+Pattern wuwrububwgrgbbuubrwbrguwbwubbwuwwuubggwwwuggbw can be made in 68528376778 ways
+Testing wgbwwgbrwurwrwrrrburbwgurwbwbwbbugrwrbguwwgubwbrugruuu
+Elapsed = 1.7389 ms
+Pattern wgbwwgbrwurwrwrrrburbwgurwbwbwbbugrwrbguwwgubwbrugruuu can be made in 374969501016 ways
+Total score is 715514563508258
+Elapsed = 955.3997 ms

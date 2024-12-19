@@ -7,11 +7,19 @@ Testing pattern 5  valid True
 Testing pattern 6  valid True 
 Testing pattern 7  valid False 
 6 out of 8  are possible.
-Pattern brgr can be made in 2 ways
+Testing bwurrg
+Testing bggr
+Testing gbbr
+Testing rrbgbr
+Testing brgr
+Elapsed = 1.6036 ms
+Elapsed = 1.6123 ms
+Elapsed = 1.6102 ms
 Pattern bggr can be made in 1 ways
+Pattern gbbr can be made in 4 ways
+Pattern brgr can be made in 2 ways
 Pattern bwurrg can be made in 1 ways
 Pattern brwrr can be made in 2 ways
 Pattern rrbgbr can be made in 6 ways
-Pattern gbbr can be made in 4 ways
 Total score is 16
-Elapsed = 41.1025 ms
+Elapsed = 36.3124 ms

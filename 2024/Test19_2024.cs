@@ -83,7 +83,18 @@ public class Test19_2024 : BaseTest
                 DateTime startTime = DateTime.Now;
                 DebugOutput($"Testing {pattern}");
 
-                long localScore = TestPossibility2(pattern, sortedPatterns);
+                //long localScore = TestPossibility2(pattern, sortedPatterns);
+                Trie trie = new Trie();
+                foreach (string s in sortedPatterns)
+                {
+                    char[] arr = s.ToCharArray();
+                    Array.Reverse(arr);
+
+                    trie.Insert(new string(arr));
+                }
+
+                long localScore = trie.WaysOfFormingString(pattern);
+
                 bagResults.Add(localScore);
                 DateTime endTime = DateTime.Now;
                 double bpElapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
@@ -197,7 +208,7 @@ public class Test19_2024 : BaseTest
 
     // need to reduce the set of possible types.
 
-
+    //https://www.geeksforgeeks.org/number-of-ways-to-form-a-given-string-from-the-given-set-of-strings/
     public class TrieNode
     {
         public bool endOfWord = false;
@@ -224,10 +235,10 @@ public class Test19_2024 : BaseTest
 
         // Find the number of ways to form the given string
         // using the strings in the trie
-        public int WaysOfFormingString(string str)
+        public long WaysOfFormingString(string str)
         {
             int n = str.Length;
-            int[] count = new int[n];
+            long[] count = new long[n];
 
             // For each index i in the input string
             for (int i = 0; i < n; i++)
