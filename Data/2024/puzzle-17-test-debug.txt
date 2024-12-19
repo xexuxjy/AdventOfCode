@@ -1,2 +1,2 @@
-4,6,3,5,6,3,5,2,1,0
-Elapsed = 12.8925 ms
+Found match at : 117441
+Elapsed = 137.0326 ms

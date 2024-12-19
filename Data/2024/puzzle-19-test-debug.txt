@@ -1,0 +1,10 @@
+Testing pattern 0  valid True 
+Testing pattern 1  valid True 
+Testing pattern 2  valid True 
+Testing pattern 3  valid True 
+Testing pattern 4  valid False 
+Testing pattern 5  valid True 
+Testing pattern 6  valid True 
+Testing pattern 7  valid False 
+6 out of 8  are possible.
+Elapsed = 15.0968 ms
