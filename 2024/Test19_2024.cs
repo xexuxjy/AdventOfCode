@@ -64,7 +64,7 @@ public class Test19_2024 : BaseTest
                 possiblePatterns.Add(targetPattern);
                 score++;
             }
-            DebugOutput($"Testing pattern {count}  valid {foundPossible} ");
+            //DebugOutput($"Testing pattern {count}  valid {foundPossible} ");
             count++;
         }
 
@@ -75,32 +75,32 @@ public class Test19_2024 : BaseTest
 
         if (IsPart2)
         {
+            Trie trie = new Trie();
+            foreach (string s in sortedPatterns)
+            {
+                char[] arr = s.ToCharArray();
+                Array.Reverse(arr);
+
+                trie.Insert(new string(arr));
+            }
 
             ConcurrentBag<long> bagResults = new ConcurrentBag<long>();
             long totalScore = 0;
             Parallel.ForEach(possiblePatterns, new ParallelOptions { MaxDegreeOfParallelism = 6 }, pattern =>
             {
                 DateTime startTime = DateTime.Now;
-                DebugOutput($"Testing {pattern}");
+                //DebugOutput($"Testing {pattern}");
 
                 //long localScore = TestPossibility2(pattern, sortedPatterns);
-                Trie trie = new Trie();
-                foreach (string s in sortedPatterns)
-                {
-                    char[] arr = s.ToCharArray();
-                    Array.Reverse(arr);
-
-                    trie.Insert(new string(arr));
-                }
 
                 long localScore = trie.WaysOfFormingString(pattern);
 
                 bagResults.Add(localScore);
                 DateTime endTime = DateTime.Now;
                 double bpElapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
-                DebugOutput("Elapsed = " + bpElapsed + " ms");
+                //DebugOutput("Elapsed = " + bpElapsed + " ms");
 
-                DebugOutput($"Pattern {pattern} can be made in {localScore} ways");
+                //DebugOutput($"Pattern {pattern} can be made in {localScore} ways");
             });
 
             foreach (long b in bagResults)

@@ -22,6 +22,8 @@ public class Test16_2024 : BaseTest
 
     public override void Execute()
     {
+
+
         m_width = 0;
         m_height = 0;
         m_dataGrid = Helper.GetCharGrid(m_dataFileContents, ref m_width, ref m_height);
