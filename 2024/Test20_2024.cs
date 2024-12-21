@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Numerics;
 using System.Reflection.Metadata;
 using System.Runtime.Intrinsics;
@@ -59,21 +60,23 @@ public class Test20_2024 : BaseTest, IMapDataInt
         DebugOutput($"Standard Path [{standardRoute.Count}] : " + string.Join(", ", standardRoute));
 
 
-        DebugOutput(Helper.DrawGrid(m_dataGrid,m_width,m_height));
+        //DebugOutput(Helper.DrawGrid(m_dataGrid, m_width, m_height));
 
-        foreach(IntVector2 iv2 in standardRoute)
-        {
-            m_dataGrid[Helper.GetIndex(iv2,m_width)] = 'o';
-        }
+        //foreach (IntVector2 iv2 in standardRoute)
+        //{
+        //    m_dataGrid[Helper.GetIndex(iv2, m_width)] = 'o';
+        //}
 
-        DebugOutput(Helper.DrawGrid(m_dataGrid,m_width,m_height));
+        //DebugOutput(Helper.DrawGrid(m_dataGrid, m_width, m_height));
 
         List<List<IntVector2>> cheatPaths = new List<List<IntVector2>>();
 
-        List<(IntVector4, int)> cheatPositions = new List<(IntVector4, int)>();
+        HashSet<IntVector4> cheatPositions = new HashSet<IntVector4>();
 
 
-        int minimumSave = IsTestInput?1: 100;
+        int minimumSave = IsTestInput ? IsPart2?50 : 1 : 100;
+        int cheatDistance = IsPart2 ? 20 : 2;
+
 
         for (int i = 0; i < standardRoute.Count; i++)
         {
@@ -85,54 +88,41 @@ public class Test20_2024 : BaseTest, IMapDataInt
 
             for (int j = standardRoute.Count - 1; j > i; j--)
             {
-                // furtherst point within 2.
+                // furtherst point within cheatdistance.
                 int mhd = standardRoute[i].ManhattanDistance(standardRoute[j]);
-                if (mhd >= 1 && mhd <= 2)
+                if (mhd >= 1 && mhd <= cheatDistance)
                 {
-                    IntVector2 diffv = standardRoute[j] - standardRoute[i];
-                    diffv = diffv / mhd;
+                    //IntVector2 diffv = standardRoute[j] - standardRoute[i];
+                    //diffv = diffv / mhd;
 
-                    if(diffv.X != 0 && diffv.Y !=0)
-                    {
-                        int ibreak3 = 0;
-                    }
-
-
-                    List<IntVector2> cheatPath = new List<IntVector2>();
-                    for (int a = 0; a <= i; a++)
-                    {
-                        cheatPath.Add(standardRoute[a]);
-                    }
-
-                    for(int a=1;a<mhd; a++)
-                    {
-                        cheatPath.Add(standardRoute[i]+(diffv*a));
-                    }
-
-                    for (int a = j; a < standardRoute.Count; a++)
-                    {
-                        cheatPath.Add(standardRoute[a]);
-                    }
-
-
-                    int diff = standardRoute.Count - cheatPath.Count;
-
-                    //int ad = j-i;
-                    //if(ad == 6)
+                    //List<IntVector2> cheatPath = new List<IntVector2>();
+                    //for (int a = 0; a <= i; a++)
                     //{
-                    //    DebugOutput($"J-I = {ad}  diff {diff}   [{standardRoute[i]}->{standardRoute[j]}]");
+                    //    cheatPath.Add(standardRoute[a]);
                     //}
 
+                    //for (int a = 1; a < mhd; a++)
+                    //{
+                    //    cheatPath.Add(standardRoute[i] + (diffv * a));
+                    //}
 
+                    //for (int a = j; a < standardRoute.Count; a++)
+                    //{
+                    //    cheatPath.Add(standardRoute[a]);
+                    //}
 
-                    if (diff >= minimumSave)
+                    int diff2 = standardRoute.Count - (j-i) + mhd;
+
+                    int diff4 = standardRoute.Count - (standardRoute.Count - (j-i) + mhd);
+
+                    if ( diff4 >= minimumSave)
                     {
 
                         IntVector4 pos = new IntVector4(standardRoute[i].X, standardRoute[i].Y, standardRoute[j].X, standardRoute[j].Y);
-                        cheatPositions.Add((pos, diff));
+                        cheatPositions.Add(pos);
 
 
-                        cheatPaths.Add(cheatPath);
+                        //cheatPaths.Add(cheatPath);
                         //DebugOutput($"Cheat Path [{diff}]  [{standardRoute[i]}->{standardRoute[j]}] [{cheatPath.Count}] : " + string.Join(", ", cheatPath));
                         //break;
                     }
@@ -141,17 +131,22 @@ public class Test20_2024 : BaseTest, IMapDataInt
             }
 
         }
+
+
         long total = 0;
         Dictionary<int, int> cheatGroups = new Dictionary<int, int>();
-        for (int i = 0; i < cheatPaths.Count; i++)
+
+        foreach (IntVector4 iv4 in cheatPositions)
         {
-            int diff = standardRoute.Count - cheatPaths[i].Count;
-            if (!cheatGroups.ContainsKey(diff))
+            int distance = new IntVector2(iv4.X, iv4.Y).ManhattanDistance(new IntVector2(iv4.Z, iv4.W));
+            if (!cheatGroups.ContainsKey(distance))
             {
-                cheatGroups[diff] = 0;
+                cheatGroups[distance] = 0;
             }
-            cheatGroups[diff] += 1;
+            cheatGroups[distance] += 1;
+
         }
+
 
         foreach (int i in cheatGroups.Keys.OrderBy(k => k))
         {

@@ -1,60 +1,17 @@
 Standard Path [85] : 1,3, 1,2, 1,1, 2,1, 3,1, 3,2, 3,3, 4,3, 5,3, 5,2, 5,1, 6,1, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, 7,7, 8,7, 9,7, 9,6, 9,5, 9,4, 9,3, 9,2, 9,1, 10,1, 11,1, 12,1, 13,1, 13,2, 13,3, 12,3, 11,3, 11,4, 11,5, 12,5, 13,5, 13,6, 13,7, 12,7, 11,7, 11,8, 11,9, 12,9, 13,9, 13,10, 13,11, 12,11, 11,11, 11,12, 11,13, 10,13, 9,13, 9,12, 9,11, 9,10, 9,9, 8,9, 7,9, 7,10, 7,11, 7,12, 7,13, 6,13, 5,13, 5,12, 5,11, 4,11, 3,11, 3,12, 3,13, 2,13, 1,13, 1,12, 1,11, 1,10, 1,9, 2,9, 3,9, 3,8, 3,7, 4,7, 5,7
-###############
-#...#...#.....#
-#.#.#.#.#.###.#
-#S#...#.#.#...#
-#######.#.#.###
-#######.#.#...#
-#######.#.###.#
-###..E#...#...#
-###.#######.###
-#...###...#...#
-#.#####.#.###.#
-#.#...#.#.#...#
-#.#.#.#.#.#.###
-#...#...#...###
-###############
-
-###############
-#ooo#ooo#ooooo#
-#o#o#o#o#o###o#
-#o#ooo#o#o#ooo#
-#######o#o#o###
-#######o#o#ooo#
-#######o#o###o#
-###ooo#ooo#ooo#
-###o#######o###
-#ooo###ooo#ooo#
-#o#####o#o###o#
-#o#ooo#o#o#ooo#
-#o#o#o#o#o#o###
-#ooo#ooo#ooo###
-###############
-
-J-I = 6  diff 4   [1,3->3,3]
-J-I = 6  diff 4   [3,1->5,1]
-J-I = 6  diff 4   [5,3->7,3]
-J-I = 6  diff 4   [7,5->9,5]
-J-I = 6  diff 4   [11,1->11,3]
-J-I = 6  diff 4   [13,3->13,5]
-J-I = 6  diff 4   [11,5->11,7]
-J-I = 6  diff 4   [13,7->13,9]
-J-I = 6  diff 4   [11,9->11,11]
-J-I = 6  diff 4   [11,11->9,11]
-J-I = 6  diff 4   [9,11->7,11]
-J-I = 6  diff 4   [7,11->5,11]
-J-I = 6  diff 4   [5,13->3,13]
-J-I = 6  diff 4   [3,11->1,11]
-There are 14 cheats that save 2 picoseconds.
-There are 14 cheats that save 4 picoseconds.
-There are 2 cheats that save 6 picoseconds.
-There are 4 cheats that save 8 picoseconds.
-There are 2 cheats that save 10 picoseconds.
-There are 3 cheats that save 12 picoseconds.
-There are 1 cheats that save 20 picoseconds.
-There are 1 cheats that save 36 picoseconds.
-There are 1 cheats that save 38 picoseconds.
-There are 1 cheats that save 40 picoseconds.
-There are 1 cheats that save 64 picoseconds.
-In total there are 44 cheats that save 1 or more
-Elapsed = 35.8788 ms
+There are 1 cheats that save 2 picoseconds.
+There are 3 cheats that save 3 picoseconds.
+There are 8 cheats that save 4 picoseconds.
+There are 14 cheats that save 5 picoseconds.
+There are 20 cheats that save 6 picoseconds.
+There are 28 cheats that save 7 picoseconds.
+There are 37 cheats that save 8 picoseconds.
+There are 41 cheats that save 9 picoseconds.
+There are 30 cheats that save 10 picoseconds.
+There are 30 cheats that save 11 picoseconds.
+There are 30 cheats that save 12 picoseconds.
+There are 23 cheats that save 13 picoseconds.
+There are 13 cheats that save 14 picoseconds.
+There are 7 cheats that save 15 picoseconds.
+In total there are 285 cheats that save 50 or more
+Elapsed = 27.1432 ms
