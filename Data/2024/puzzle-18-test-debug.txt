@@ -14,4 +14,5 @@ OO.#OOO
 .#.O#..
 #.#OOOO
 
-Elapsed = 1770.7734 ms
+Minimum steps is : 22
+Elapsed = 16.7785 ms

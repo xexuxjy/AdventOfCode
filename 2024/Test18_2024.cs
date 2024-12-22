@@ -127,8 +127,8 @@ public class Test18_2024 : BaseTest,IMapDataInt
         return m_endPosition;
     }
 
-    public float DistanceToTarget(IntVector2 v)
+    public float DistanceToTarget(IntVector2 v,IntVector2 t)
     {
-        return v.ManhattanDistance(m_endPosition);
+        return v.ManhattanDistance(t);
     }
 }

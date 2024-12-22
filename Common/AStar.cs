@@ -411,9 +411,8 @@ public interface IMapDataInt
 {
     public bool CanMove(IntVector2 from, IntVector2 to);
     public IntVector2[] GetDirections();
-    public IntVector2 GetTargetPosition();
 
-    public float DistanceToTarget(IntVector2 v);
+    public float DistanceToTarget(IntVector2 v,IntVector2 t);
 }
 
 public class AStarInt
@@ -564,7 +563,7 @@ public class AStarInt
             OpenMapTiles(currentPos, stepIntVector2s);
             foreach (IntVector2 v in stepIntVector2s)
             {
-                SearchNodeInt mapTile = new SearchNodeInt(v, m_levelMap.DistanceToTarget(v), newOpenListNode.DistanceTraveled + 1);
+                SearchNodeInt mapTile = new SearchNodeInt(v, m_levelMap.DistanceToTarget(v,endIntVector2), newOpenListNode.DistanceTraveled + 1);
                 if (!InList(openList, v) && !InList(closedList, v))
                 {
                     openList.Add(mapTile);
@@ -724,7 +723,7 @@ public class AStarInt
         startIntVector2 = start;
         endIntVector2 = end;
 
-        openList.Add(new SearchNodeInt(start, m_levelMap.DistanceToTarget(start), 0));
+        openList.Add(new SearchNodeInt(start, m_levelMap.DistanceToTarget(start,end), 0));
         IsSearching = true;
         while (IsSearching)
         {
