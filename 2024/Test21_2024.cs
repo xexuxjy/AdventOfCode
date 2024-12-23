@@ -47,7 +47,7 @@ public class Test21_2024 : BaseTest
         ControlPadMoveMap[('>', 'v')] = new char[] { '<' };
         ControlPadMoveMap[('>', '^')] = new char[] { '^', '<' };
         ControlPadMoveMap[('>', '<')] = new char[] { '<', '<' };
-        
+
         ControlPadMoveMap[('^', '^')] = new char[] { };
         ControlPadMoveMap[('^', 'A')] = new char[] { '>' };
         ControlPadMoveMap[('^', '>')] = new char[] { 'v', '>' };
@@ -68,100 +68,118 @@ public class Test21_2024 : BaseTest
 
         List<List<IntVector2>> allPaths = new List<List<IntVector2>>();
 
-        string keys= "0123456789A";
-        for(int i=0; i<keys.Length; i++)
+        IntVector2 originalStartPos = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
+
+        int numIterations = IsPart2 ? 10 : 2;
+
+
+        string keys = "0123456789A";
+        for (int i = 0; i < keys.Length; i++)
         {
             IntVector2 a = Helper.GetPosition(Array.FindIndex<char>(NumericPad, x => x == keys[i]), NumericPadWidth);
             char from = keys[i];
 
-            for(int j=0; j<keys.Length; j++)
+            for (int j = 0; j < keys.Length; j++)
             {
                 char to = keys[j];
 
                 allPaths.Clear();
                 IntVector2 b = Helper.GetPosition(Array.FindIndex<char>(NumericPad, x => x == keys[j]), NumericPadWidth);
-        
-                if(from == '9' && to == 'A')
+
+
+                BuildAllPaths(a, b, 7, NumericPad, NumericPadWidth, NumericPadHeight, new List<IntVector2>(), allPaths);
+
+                for (int z = 2;z < 10; ++z)
                 {
-                    int ibreak3 = 0;
-                }
+                    int shortestLen = int.MaxValue;
+                    string shortestTemp = "";
 
-                BuildAllPaths(a,b,8,NumericPad,NumericPadWidth,NumericPadHeight,new List<IntVector2>(),allPaths);
-
-                string shortest = "                                                                                                                     ";
-                string shortestTemp = "";
-
-                foreach(List<IntVector2> path in allPaths)
-                {
-                    string temp ="";
-                    for (int k = 1; k < path.Count; k++)
+                    foreach (List<IntVector2> path in allPaths)
                     {
-                        IntVector2 diff = path [k] - path[k - 1];
-                        temp += (Helper.PointerFromDirection(diff));
+                        string temp = "";
+                        for (int k = 1; k < path.Count; k++)
+                        {
+                            IntVector2 diff = path[k] - path[k - 1];
+                            temp += (Helper.PointerFromDirection(diff));
+                        }
+
+
+                        IntVector2 startPos = originalStartPos;
+                        string controlPad1Commands = temp;
+                        //for (int c = 0; c < numIterations; c++)
+                        for (int c = 0; c < z; c++)
+                        {
+                            controlPad1Commands = GetMapCommandsForCode(controlPad1Commands, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
+                            startPos = originalStartPos;
+                        }
+
+
+                        if (controlPad1Commands.Length < shortestLen)
+                        {
+                            shortestLen = controlPad1Commands.Length;
+                            shortestTemp = temp;
+
+                        }
+
                     }
 
+                    char[] shortestCA = shortestTemp.ToCharArray();
 
-
-                    IntVector2 startPos = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
-
-
-                    string controlPad1Commands = GetMapCommandsForCode(temp, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
-
-                    startPos = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
-                    controlPad1Commands = GetMapCommandsForCode(controlPad1Commands, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
-
-                    if(controlPad1Commands.Length < shortest.Length)
+                    if(NumericPadMoveMap.ContainsKey((from,to)))
                     {
-                        shortest = controlPad1Commands;
-                        shortestTemp = temp;
+                        char[] existing =  NumericPadMoveMap[(from, to)];
+                        if(!Enumerable.SequenceEqual(existing,shortestCA))
+                        { 
+                            int ibreak9 = 0;
+                        }
                     }
-
+                    
+                        
+                        NumericPadMoveMap[(from, to)] = shortestCA;
+                    DebugOutput($"Shortest between {from} {to} for {z} iterations is : {shortestLen}");
                 }
-
-                NumericPadMoveMap[(keys[i],keys[j])] = shortestTemp.ToCharArray();
-
             }
         }
 
 
 
-        int ibreak =0;
+        int ibreak = 0;
 
     }
 
 
-    
 
-    public bool BuildAllPaths(IntVector2 current,IntVector2 target,int depth,char[]dataGrid,int width,int height,List<IntVector2> currentPath,List<List<IntVector2>> validPaths)
+
+    public bool BuildAllPaths(IntVector2 current, IntVector2 target, int depth, char[] dataGrid, int width, int height, List<IntVector2> currentPath, List<List<IntVector2>> validPaths)
     {
 
-        if(depth == 0)
+        if (depth == 0)
         {
-            return false; 
+            return false;
         }
 
         currentPath.Add(current);
 
-        if(current == target)
+        if (current == target)
         {
             validPaths.Add(currentPath);
-            return true; 
+            return true;
         }
 
 
         bool pathExists = false;
-        foreach(IntVector2 direction in IntVector2.Directions)
+        foreach (IntVector2 direction in IntVector2.Directions)
         {
             IntVector2 updated = current + direction;
-            if(Helper.InBounds(updated,width,height))
+            if (Helper.InBounds(updated, width, height))
             {
-                int index = Helper.GetIndex(updated,width);
-                if(dataGrid[index] != ' ')
+                int index = Helper.GetIndex(updated, width);
+                if (dataGrid[index] != ' ')
                 {
                     List<IntVector2> pathCopy = new List<IntVector2>();
                     pathCopy.AddRange(currentPath);
 
-                    pathExists |= BuildAllPaths(updated,target,depth-1,dataGrid,width,height,pathCopy,validPaths);
+                    pathExists |= BuildAllPaths(updated, target, depth - 1, dataGrid, width, height, pathCopy, validPaths);
                 }
             }
         }

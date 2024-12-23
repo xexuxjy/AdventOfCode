@@ -24,4 +24,4 @@ v<<A>>^AAvA^Av<A<AA>>^AAvA^<A>AvA^Av<A<A>>^AAvA^<A>Av<A>^AAv<<A>>^AvA^<A>A
 code 671A  is 74 * 671 = 49654
 671A: v<<A>>^AAvA^Av<A<AA>>^AAvA^<A>AvA^Av<A<A>>^AAvA^<A>Av<A>^AAv<<A>>^AvA^<A>A
 The final score is : 278748
-Elapsed = 15.8244 ms
+Elapsed = 15.8543 ms
