@@ -1,0 +1,27 @@
+<^^^AvvvA^^Avv>A
+v<<A>^AAA>Av<AAA>^A<AA>Av<AA>A^A
+v<A<AA>>^AvA^<A>AAAvA^Av<A<A>>^AAAvA^<A>Av<<A>>^AAvA^Av<A<A>>^AAvA^A<A>A
+code 805A  is 72 * 805 = 57960
+805A: v<A<AA>>^AvA^<A>AAAvA^Av<A<A>>^AAAvA^<A>Av<<A>>^AAvA^Av<A<A>>^AAvA^A<A>A
+^^^AvA<<A>>vvA
+<AAA>Av<A>^Av<<AA>>^AvAA<AA>^A
+v<<A>>^AAAvA^Av<A<A>>^AvA^<A>Av<A<AA>>^AAvAA^<A>Av<A>^AAv<<A>>^AAvA^<A>A
+code 964A  is 72 * 964 = 69408
+964A: v<<A>>^AAAvA^Av<A<A>>^AvA^<A>Av<A<AA>>^AAvAA^<A>Av<A>^AAv<<A>>^AAvA^<A>A
+^^<<A>A>^AvvvA
+<AAv<AA>>^AvA^AvA^<A>Av<AAA>^A
+v<<A>>^AAv<A<A>>^AAvAA^<A>Av<A>^A<A>Av<A>^A<Av<A>>^AvA^Av<A<A>>^AAAvA^<A>A
+code 459A  is 74 * 459 = 33966
+459A: v<<A>>^AAv<A<A>>^AAvAA^<A>Av<A>^A<A>Av<A>^A<Av<A>>^AvA^Av<A<A>>^AAAvA^<A>A
+^^^AvA<^Avvv>A
+<AAA>Av<A>^Av<<A>^A>Av<AAA>A^A
+v<<A>>^AAAvA^Av<A<A>>^AvA^<A>Av<A<AA>>^AvA^<A>AvA^Av<A<A>>^AAAvA^A<A>A
+code 968A  is 70 * 968 = 67760
+968A: v<<A>>^AAAvA^Av<A<A>>^AvA^<A>Av<A<AA>>^AvA^<A>AvA^Av<A<A>>^AAAvA^A<A>A
+^^A<<^AvvA>>vA
+<AA>Av<<AA>^A>Av<AA>^AvAA<A>^A
+v<<A>>^AAvA^Av<A<AA>>^AAvA^<A>AvA^Av<A<A>>^AAvA^<A>Av<A>^AAv<<A>>^AvA^<A>A
+code 671A  is 74 * 671 = 49654
+671A: v<<A>>^AAvA^Av<A<AA>>^AAvA^<A>AvA^Av<A<A>>^AAvA^<A>Av<A>^AAv<<A>>^AvA^<A>A
+The final score is : 278748
+Elapsed = 15.8244 ms

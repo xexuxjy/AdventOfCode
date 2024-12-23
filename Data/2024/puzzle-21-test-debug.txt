@@ -1,2 +1,27 @@
 <A^A>^^AvvvA
-Elapsed = 3.7915 ms
+v<<A>>^A<A>AvA^<AA>Av<AAA>^A
+v<A<AA>>^AvAA^<A>Av<<A>>^AvA^Av<A>^A<Av<A>>^AAvA^Av<A<A>>^AAAvA^<A>A
+code 029A  is 68 * 29 = 1972
+029A: v<A<AA>>^AvAA^<A>Av<<A>>^AvA^Av<A>^A<Av<A>>^AAvA^Av<A<A>>^AAAvA^<A>A
+^^^A<AvvvA>A
+<AAA>Av<<A>>^Av<AAA>^AvA^A
+v<<A>>^AAAvA^Av<A<AA>>^AvAA^<A>Av<A<A>>^AAAvA^<A>Av<A>^A<A>A
+code 980A  is 60 * 980 = 58800
+980A: v<<A>>^AAAvA^Av<A<AA>>^AvAA^<A>Av<A<A>>^AAAvA^<A>Av<A>^A<A>A
+^<<A^^A>>AvvvA
+<Av<AA>>^A<AA>AvAA^Av<AAA>^A
+v<<A>>^Av<A<A>>^AAvAA^<A>Av<<A>>^AAvA^Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+code 179A  is 68 * 179 = 12172
+179A: v<<A>>^Av<A<A>>^AAvAA^<A>Av<<A>>^AAvA^Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+^^<<A>A>AvvA
+<AAv<AA>>^AvA^AvA^Av<AA>^A
+v<<A>>^AAv<A<A>>^AAvAA^<A>Av<A>^A<A>Av<A>^A<A>Av<A<A>>^AAvA^<A>A
+code 456A  is 64 * 456 = 29184
+456A: v<<A>>^AAv<A<A>>^AAvAA^<A>Av<A>^A<A>Av<A>^A<A>Av<A<A>>^AAvA^<A>A
+^A<<^^A>>AvvvA
+<A>Av<<AA>^AA>AvAA^Av<AAA>^A
+v<<A>>^AvA^Av<A<AA>>^AAvA^<A>AAvA^Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+code 379A  is 64 * 379 = 24256
+379A: v<<A>>^AvA^Av<A<AA>>^AAvA^<A>AAvA^Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+The final score is : 126384
+Elapsed = 10.7026 ms

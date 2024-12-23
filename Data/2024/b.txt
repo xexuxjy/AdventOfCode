@@ -1,15 +1,5 @@
-###############
-#ooo#ooo#ooooo#
-#o#o#o#o#o###o#
-#S#ooo#o#o#ooo#
-#######o#o#o###
-#######o#o#ooo#
-#######o#o###o#
-###ooo#ooo#ooo#
-###o#######o###
-#ooo###ooo#ooo#
-#o#####o#o###o#
-#o#ooo#o#o#ooo#
-#o#o#o#o#o#o###
-#ooo#ooo#ooo###
-###############
+029A: v<A<AA^>>A<A>vAA^Av<<A^>>AvA^Av<<A^>>AAvA<A^>A<A>Av<A<A^>>AAA<A>vA^A
+980A: v<<A^>>AAAvA^Av<A<AA^>>A<A>vAA^Av<A<A^>>AAA<A>vA^Av<A^>A<A>A
+179A: v<<A^>>Av<A<A^>>AA<A>vAA^Av<<A^>>AAvA^Av<A^>AA<A>Av<A<A^>>AAA<A>vA^A
+456A: v<<A^>>AAv<A<A^>>AA<A>vAA^Av<A^>A<A>Av<A^>A<A>Av<A<A^>>AA<A>vA^A
+379A: v<<A^>>AvA^Av<<A^>>AAv<A<A^>>AA<A>vAA^Av<A^>AA<A>Av<A<A^>>AAA<A>vA^A
