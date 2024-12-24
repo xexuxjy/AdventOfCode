@@ -29,7 +29,8 @@ public class Test21_2024 : BaseTest
 
     public Dictionary<(char, char), char[]> NumericPadMoveMap = new Dictionary<(char, char), char[]>();
     public Dictionary<(char, char), char[]> ControlPadMoveMap = new Dictionary<(char, char), char[]>();
-
+    
+    public Dictionary<(char,int),long> ValueCache = new Dictionary<(char,int),long>();
 
 
 
@@ -70,7 +71,33 @@ public class Test21_2024 : BaseTest
 
         IntVector2 originalStartPos = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
 
-        int numIterations = IsPart2 ? 10 : 2;
+
+        foreach(char c in ControlPad)
+        {
+            if(c == ' ')
+            {
+                continue;
+            }
+            char[] values = ControlPadMoveMap[('A',c)];
+            List<char> sourceList = Array1;
+            List<char> targetList = Array2;
+
+            sourceList.Clear();
+            sourceList.AddRange(values);
+            IntVector2 startPos = originalStartPos;
+
+            for(int i=0;i<25;i++)
+            {
+                GetMapCommandsForCode(sourceList, targetList, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
+                ValueCache[(c,i)] = targetList.Count;
+                SwapList(ref sourceList, ref targetList);
+            }
+
+        }
+
+
+
+        int numIterations = 2;
 
 
         string keys = "0123456789A";
@@ -89,54 +116,47 @@ public class Test21_2024 : BaseTest
 
                 BuildAllPaths(a, b, 7, NumericPad, NumericPadWidth, NumericPadHeight, new List<IntVector2>(), allPaths);
 
-                for (int z = 2;z < 10; ++z)
+                int shortestLen = int.MaxValue;
+                string shortestTemp = "";
+
+                foreach (List<IntVector2> path in allPaths)
                 {
-                    int shortestLen = int.MaxValue;
-                    string shortestTemp = "";
-
-                    foreach (List<IntVector2> path in allPaths)
+                    string temp = "";
+                    for (int k = 1; k < path.Count; k++)
                     {
-                        string temp = "";
-                        for (int k = 1; k < path.Count; k++)
-                        {
-                            IntVector2 diff = path[k] - path[k - 1];
-                            temp += (Helper.PointerFromDirection(diff));
-                        }
-
-
-                        IntVector2 startPos = originalStartPos;
-                        string controlPad1Commands = temp;
-                        //for (int c = 0; c < numIterations; c++)
-                        for (int c = 0; c < z; c++)
-                        {
-                            controlPad1Commands = GetMapCommandsForCode(controlPad1Commands, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
-                            startPos = originalStartPos;
-                        }
-
-
-                        if (controlPad1Commands.Length < shortestLen)
-                        {
-                            shortestLen = controlPad1Commands.Length;
-                            shortestTemp = temp;
-
-                        }
-
+                        IntVector2 diff = path[k] - path[k - 1];
+                        temp += (Helper.PointerFromDirection(diff));
                     }
 
-                    char[] shortestCA = shortestTemp.ToCharArray();
 
-                    if(NumericPadMoveMap.ContainsKey((from,to)))
+                    IntVector2 startPos = originalStartPos;
+
+
+                    List<char> sourceList = Array1;
+                    List<char> targetList = Array2;
+
+                    sourceList.Clear();
+                    sourceList.AddRange(temp.ToCharArray());
+
+                    for (int c = 0; c < numIterations; c++)
                     {
-                        char[] existing =  NumericPadMoveMap[(from, to)];
-                        if(!Enumerable.SequenceEqual(existing,shortestCA))
-                        { 
-                            int ibreak9 = 0;
-                        }
+                        GetMapCommandsForCode(sourceList, targetList, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
+                        SwapList(ref sourceList, ref targetList);
+                        startPos = originalStartPos;
                     }
-                    
-                        
+
+
+                    SwapList(ref sourceList, ref targetList);
+
+                    if (targetList.Count < shortestLen)
+                    {
+                        shortestLen = targetList.Count;
+                        shortestTemp = temp;
+
+                        char[] shortestCA = shortestTemp.ToCharArray();
+
                         NumericPadMoveMap[(from, to)] = shortestCA;
-                    DebugOutput($"Shortest between {from} {to} for {z} iterations is : {shortestLen}");
+                    }
                 }
             }
         }
@@ -148,7 +168,7 @@ public class Test21_2024 : BaseTest
     }
 
 
-
+    
 
     public bool BuildAllPaths(IntVector2 current, IntVector2 target, int depth, char[] dataGrid, int width, int height, List<IntVector2> currentPath, List<List<IntVector2>> validPaths)
     {
@@ -220,22 +240,20 @@ public class Test21_2024 : BaseTest
     }
 
 
-    public string GetMapCommandsForCode(string code, ref IntVector2 startPosition, char[] dataGrid, int width, Dictionary<(char, char), char[]> map)
+    public void GetMapCommandsForCode(List<char> sourceList, List<char> targetList, ref IntVector2 startPosition, char[] dataGrid, int width, Dictionary<(char, char), char[]> map)
     {
-        List<char> commands = new List<char>();
-        foreach (char c in code)
+        targetList.Clear();
+        foreach (char c in sourceList)
         {
             char currentChar = dataGrid[Helper.GetIndex(startPosition, width)];
             char[] moves = map[(currentChar, c)];
-            commands.AddRange(moves);
-            commands.Add('A');
+            targetList.AddRange(moves);
+            targetList.Add('A');
 
             startPosition = Helper.GetPosition(Array.FindIndex<char>(dataGrid, x => x == c), width);
 
         }
 
-        string original = new string(commands.ToArray());
-        return original;
     }
 
 
@@ -256,6 +274,16 @@ public class Test21_2024 : BaseTest
     }
 
 
+    private void SwapList(ref List<char> list1, ref List<char> list2)
+    {
+        List<char> t = list1;
+        list1 = list2;
+        list2 = t;
+    }
+
+    public List<char> Array1 = new List<char>();
+    public List<char> Array2 = new List<char>();
+
     public override void Execute()
     {
 
@@ -263,26 +291,39 @@ public class Test21_2024 : BaseTest
         ControlPad1RobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
         ControlPad2RobotArmPosition = ControlPad1RobotArmPosition;
 
-        int totalScore = 0;
+        int numIterations = IsPart2 ? 25 : 2;
+
+        List<char> sourceList = Array1;
+        List<char> targetList = Array2;
+
+        List<char> tempList = null;
+        long totalScore = 0;
         foreach (string desiredCode in m_dataFileContents)
         {
-            //string commands = GetCommandsForCode(desiredCode, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadHeight);
-            string commands = GetMapCommandsForCode(desiredCode, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadMoveMap);
+            sourceList.Clear();
+            sourceList.AddRange(desiredCode.ToCharArray());
 
-            DebugOutput(commands);
-            string controlPad1Commands = GetMapCommandsForCode(commands, ref ControlPad1RobotArmPosition, ControlPad, ControlPadWidth, ControlPadMoveMap);
-            DebugOutput(controlPad1Commands);
 
-            string controlPad2Commands = GetMapCommandsForCode(controlPad1Commands, ref ControlPad2RobotArmPosition, ControlPad, ControlPadWidth, ControlPadMoveMap);
-            DebugOutput(controlPad2Commands);
+            GetMapCommandsForCode(sourceList, targetList, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadMoveMap);
+            SwapList(ref sourceList, ref targetList);
 
-            int num = int.Parse(desiredCode.Replace("A", ""));
-            int score = controlPad2Commands.Length * num;
+
+            for (int i = 0; i < numIterations; i++)
+            {
+                GetMapCommandsForCode(sourceList, targetList, ref ControlPad1RobotArmPosition, ControlPad, ControlPadWidth, ControlPadMoveMap);
+                SwapList(ref sourceList, ref targetList);
+            }
+
+            // and back 
+            SwapList(ref sourceList, ref targetList);
+
+            long num = long.Parse(desiredCode.Replace("A", ""));
+            long score = targetList.Count * num;
 
             totalScore += score;
 
-            DebugOutput($"code {desiredCode}  is {controlPad2Commands.Length} * {num} = {score}");
-            DebugOutput($"{desiredCode}: {controlPad2Commands}");
+            DebugOutput($"code {desiredCode}  is {targetList.Count} * {num} = {score}");
+            DebugOutput($"{desiredCode}: {targetList}");
         }
 
         DebugOutput("The final score is : " + totalScore);
