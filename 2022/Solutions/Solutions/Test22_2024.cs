@@ -11,14 +11,26 @@ public class Test22_2024 : BaseTest
 
     public override void Execute()
     {
-        long startNumber = long.Parse(m_dataFileContents[0]);
-
-        DebugOutput(""+startNumber);
-        for(int i=0;i<10;i++)
+        long total = 0;
+        foreach (string line in m_dataFileContents)
         {
-            startNumber = ApplyRules(startNumber);
-            DebugOutput(""+startNumber);
+            long startNumber = long.Parse(line);
+            long startNumberOriginal = startNumber;
+
+            int numIterations = 2000;
+
+
+            for (int i = 0; i < numIterations; i++)
+            {
+                startNumber = ApplyRules(startNumber);
+
+            }
+
+            DebugOutput($"{startNumberOriginal}: {startNumber}");
+            total += startNumber;
         }
+
+        DebugOutput("Total is : "+total);
     }
 
     public long ApplyRules(long secretValue)
@@ -27,18 +39,18 @@ public class Test22_2024 : BaseTest
         long step1 = secretValue * 64;
         // mix result into secret number (value)
 
-        secretValue = Mix(secretValue,step1);
+        secretValue = Mix(secretValue, step1);
         secretValue = Prune(secretValue);
 
         long step2 = secretValue / 32; // round to neearest integer 
         // mix result into secret number (value)
-        secretValue = Mix(secretValue,step2);
+        secretValue = Mix(secretValue, step2);
         //prune this result
         secretValue = Prune(secretValue);
 
         long step3 = secretValue * 2048;
         // mix result into secret number (value)
-        secretValue = Mix(secretValue,step3);
+        secretValue = Mix(secretValue, step3);
 
         //prune this result
         secretValue = Prune(secretValue);
@@ -46,9 +58,9 @@ public class Test22_2024 : BaseTest
         return secretValue;
     }
 
-    public long Mix(long secret,long value)
+    public long Mix(long secret, long value)
     {
-        return (long)(secret^value);
+        return (long)(secret ^ value);
     }
 
     public long Prune(long value)

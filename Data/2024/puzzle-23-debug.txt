@@ -1,0 +1,2 @@
+ad,jw,kt,kz,mt,nc,nr,sb,so,tg,vs,wh,yh
+Elapsed = 53.6301 ms
