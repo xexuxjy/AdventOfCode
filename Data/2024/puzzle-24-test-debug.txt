@@ -1,0 +1,2 @@
+After all z wires have value we had result of 2024 reached after 3 steps
+Elapsed = 18.7151 ms
