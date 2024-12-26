@@ -2172,4 +2172,5 @@
 7368481: 3559563
 8680288: 13239894
 Total is : 17965282217
-Elapsed = 941.5039 ms
+The best pattern was 1, -3, 3, 1 with a score of 2152
+Elapsed = 607670.9568 ms

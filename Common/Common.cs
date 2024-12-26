@@ -1330,3 +1330,62 @@ class ConvexHull
 
 }
 
+// need to reduce the set of possible types.
+
+//https://www.geeksforgeeks.org/number-of-ways-to-form-a-given-string-from-the-given-set-of-strings/
+public class TrieNode
+{
+    public bool endOfWord = false;
+    public TrieNode[] children = new TrieNode[26];
+}
+
+public class Trie
+{
+    private TrieNode root = new TrieNode();
+
+    // Insert a string into the trie
+    public void Insert(string s)
+    {
+        TrieNode prev = root;
+        foreach (char c in s)
+        {
+            int index = c - 'a';
+            if (prev.children[index] == null)
+                prev.children[index] = new TrieNode();
+            prev = prev.children[index];
+        }
+        prev.endOfWord = true;
+    }
+
+    // Find the number of ways to form the given string
+    // using the strings in the trie
+    public long WaysOfFormingString(string str)
+    {
+        int n = str.Length;
+        long[] count = new long[n];
+
+        // For each index i in the input string
+        for (int i = 0; i < n; i++)
+        {
+            TrieNode ptr = root;
+            // Check all possible substrings of str ending
+            // at index i
+            for (int j = i; j >= 0; j--)
+            {
+                char ch = str[j];
+                int index = ch - 'a';
+                if (ptr.children[index] == null)
+                    break;
+                ptr = ptr.children[index];
+                if (ptr.endOfWord)
+                    // If the substring ending at index j is
+                    // in the trie, update the count
+                    count[i] += j > 0 ? count[j - 1] : 1;
+            }
+        }
+
+        // The final count is the number of ways to form the
+        // entire string
+        return count[n - 1];
+    }
+}
