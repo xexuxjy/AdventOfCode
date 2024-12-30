@@ -1,16 +1,101 @@
-z12 = *
-z11 = *
-z10 = *
-z09 = *
-z08 = *
-z07 = *
-z06 = *
-z05 = *
-z04 = *
-z03 = *
-z02 = *
-z01 = *
-z00 = *
+graph{
+ntg_fgs [shape = triangle,label = "ntg_fgs-XOR"]
+y02_x01 [shape = triangle,label = "y02_x01-OR"]
+kwq_kpj [shape = triangle,label = "kwq_kpj-OR"]
+x00_x03 [shape = triangle,label = "x00_x03-OR"]
+tgd_rvg [shape = triangle,label = "tgd_rvg-XOR"]
+vdt_tnw [shape = triangle,label = "vdt_tnw-OR"]
+bfw_frj [shape = triangle,label = "bfw_frj-AND"]
+ffh_nrd [shape = triangle,label = "ffh_nrd-OR"]
+y00_y03 [shape = triangle,label = "y00_y03-AND"]
+y03_y00 [shape = triangle,label = "y03_y00-OR"]
+bqk_frj [shape = triangle,label = "bqk_frj-OR"]
+tnw_fst [shape = triangle,label = "tnw_fst-OR"]
+gnj_tgd [shape = triangle,label = "gnj_tgd-AND"]
+bfw_mjb [shape = triangle,label = "bfw_mjb-XOR"]
+x03_x00 [shape = triangle,label = "x03_x00-OR"]
+gnj_wpb [shape = triangle,label = "gnj_wpb-AND"]
+x04_y00 [shape = triangle,label = "x04_y00-AND"]
+djm_pbm [shape = triangle,label = "djm_pbm-OR"]
+nrd_vdt [shape = triangle,label = "nrd_vdt-AND"]
+kjc_fst [shape = triangle,label = "kjc_fst-AND"]
+y04_y02 [shape = triangle,label = "y04_y02-OR"]
+y01_x02 [shape = triangle,label = "y01_x02-AND"]
+ntg_kjc [shape = triangle,label = "ntg_kjc-OR"]
+psh_fgs [shape = triangle,label = "psh_fgs-XOR"]
+qhw_tgd [shape = triangle,label = "qhw_tgd-XOR"]
+pbm_djm [shape = triangle,label = "pbm_djm-OR"]
+x03_y03 [shape = triangle,label = "x03_y03-XOR"]
+x00_y04 [shape = triangle,label = "x00_y04-XOR"]
+bfw_bqk [shape = triangle,label = "bfw_bqk-OR"]
+nrd_fgs [shape = triangle,label = "nrd_fgs-XOR"]
+frj_qhw [shape = triangle,label = "frj_qhw-XOR"]
+bqk_frj [shape = triangle,label = "bqk_frj-OR"]
+y03_x01 [shape = triangle,label = "y03_x01-OR"]
+hwm_bqk [shape = triangle,label = "hwm_bqk-AND"]
+tgd_rvg [shape = triangle,label = "tgd_rvg-XOR"]
+tnw_pbm [shape = triangle,label = "tnw_pbm-OR"]
+x00 -- x00_y04
+x01 -- y03_x01
+x02 -- y01_x02
+x03 -- x03_y03
+x04 -- x04_y00
+y00 -- x04_y00
+y01 -- y01_x02
+y02 -- y04_y02
+y03 -- y03_x01
+y04 -- x00_y04
+x00_y04 -- ntg_kjc
+y04_y02 -- nrd_fgs
+ntg_fgs -- bfw_mjb
+y02_x01 -- tnw_pbm
+ntg_kjc -- kwq_kpj
+pbm_djm -- kwq_kpj
+kwq_kpj -- z05
+x00_x03 -- kjc_fst
+psh_fgs -- tgd_rvg
+kjc_fst -- tgd_rvg
+tgd_rvg -- z01
+x03_x00 -- nrd_vdt
+vdt_tnw -- bfw_bqk
+tnw_fst -- bqk_frj
+bfw_frj -- z10
+x03_y03 -- ffh_nrd
+y03_x01 -- nrd_fgs
+ffh_nrd -- hwm_bqk
+y00_y03 -- pbm_djm
+y03_y00 -- psh_fgs
+bqk_frj -- z08
+tnw_pbm -- gnj_wpb
+gnj_tgd -- z11
+bfw_mjb -- z00
+nrd_fgs -- gnj_wpb
+gnj_wpb -- z02
+x04_y00 -- ntg_kjc
+y01_x02 -- tnw_pbm
+djm_pbm -- frj_qhw
+nrd_vdt -- hwm_bqk
+qhw_tgd -- z09
+bfw_bqk -- z06
+frj_qhw -- z04
+bqk_frj -- z07
+hwm_bqk -- z03
+tgd_rvg -- z12
+}
+
+z12 = 0
+z11 = 0
+z10 = 0
+z09 = 0
+z08 = 0
+z07 = 0
+z06 = 0
+z05 = 0
+z04 = 0
+z03 = 0
+z02 = 0
+z01 = 0
+z00 = 0
 y04 = 0
 y03 = 0
 y02 = 1
@@ -92,4 +177,4 @@ djm = 0
 bqk = 0
 bfw = 1
 
-Elapsed = 135.9895 ms
+Elapsed = 23.9359 ms

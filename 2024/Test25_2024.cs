@@ -12,15 +12,6 @@ public class Test25_2024 : BaseTest
 
     public override void Execute()
     {
-        Trie trie = new Trie();
-
-        trie.Insert("a");
-        trie.Insert("b");
-        trie.Insert("ba");
-
-        trie.WaysOfFormingString("abab");
-
-
         List<string> lines = new List<string>();
         List<LockItem> lockItems = new List<LockItem>();
 

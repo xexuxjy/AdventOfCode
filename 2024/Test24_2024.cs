@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using System.Text;
 
 public class Test24_2024 : BaseTest
 {
@@ -43,44 +44,55 @@ public class Test24_2024 : BaseTest
             Wire input2 = GetOrCreateWire(tokens[2]);
             Wire output = GetOrCreateWire(tokens[4]);
 
-            Gate gate = new Gate() { m_input1 = input1, m_input2 = input2, GateType = tokens[1], Output = output };
+            Gate gate = new Gate(input1, input2, tokens[1], output);
             allGates.Add(gate);
 
 
         }
         if (IsPart2)
         {
+
+            CreateGraphViz(allGates);
+
             Reset();
             //DebugOutput(DisplayState("",true));
 
             int val1 = 5;
             int val2 = 7;
 
-            SetInputGateToValue(val1,"x");
-            SetInputGateToValue(val2,"y");
-            DebugOutput(DisplayState("",true));
+            SetInputGateToValue(0, "z");
+            SetInputGateToValue(val1, "x");
+            SetInputGateToValue(val2, "y");
+            DebugOutput(DisplayState("", true));
 
             long result = 0;
-            int escape = 10000;
+
             int count = 0;
-            while(result != val1+val2)
+            bool stable = false;
+            while (!stable)
             {
                 foreach (Gate g in allGates)
                 {
                     g.Calculate();
                 }
                 result = GetGateValue("z");
-                count++;
-                if(count > escape)
-                {
-                    break;
-                }
-            }
-            DebugOutput(DisplayState("",true));
 
-            if(result == val1+val2)
+                stable = true;
+                foreach (Wire w in WireDictionary.Values)
+                {
+                    if (!w.Stable)
+                    {
+                        stable = false;
+                        break;
+                    }
+                }
+                count++;
+            }
+            DebugOutput(DisplayState("", true));
+
+            if (result == val1 + val2)
             {
-                DebugOutput($"Gates worked for {val1} + {val2} = {(val1+val2)}");
+                DebugOutput($"Gates worked for {val1} + {val2} = {(val1 + val2)}");
             }
 
 
@@ -128,7 +140,7 @@ public class Test24_2024 : BaseTest
     public void SetInputGateToValue(long value, string gatePrefix)
     {
         int maxIndex = int.Parse(WireDictionary.Keys.Where(x => x.StartsWith(gatePrefix)).OrderDescending().First().Replace(gatePrefix, ""));
-        maxIndex+=1;
+        maxIndex += 1;
 
         string stringValue = Convert.ToString(value, 2);
         stringValue = new string(stringValue.Reverse().ToArray());
@@ -136,12 +148,16 @@ public class Test24_2024 : BaseTest
         {
             string id = gatePrefix + i.ToString("D2");
 
-            if(i < stringValue.Length)
+            if (i < stringValue.Length)
             {
+                // do twice to set as stable
+                WireDictionary[id].Value = stringValue[i] == '1' ? true : false;
                 WireDictionary[id].Value = stringValue[i] == '1' ? true : false;
             }
             else
             {
+                // do twice to set as stable
+                WireDictionary[id].Value = false;
                 WireDictionary[id].Value = false;
             }
 
@@ -153,8 +169,11 @@ public class Test24_2024 : BaseTest
     public long GetGateValue(string gatePrefix)
     {
         string temp = DisplayState(gatePrefix);
-        temp = temp.Replace("*","");
-        return Convert.ToInt64(temp,2);
+        if (temp.Contains("*"))
+        {
+            return long.MaxValue;
+        }
+        return Convert.ToInt64(temp, 2);
     }
 
 
@@ -166,7 +185,7 @@ public class Test24_2024 : BaseTest
         }
     }
 
-    public string DisplayState(string prefix="z",bool full=false)
+    public string DisplayState(string prefix = "z", bool full = false)
     {
         string result = "";
         foreach (String key in WireDictionary.Keys.Where(x => x.StartsWith(prefix)).OrderDescending())
@@ -177,7 +196,7 @@ public class Test24_2024 : BaseTest
                 resultChar = WireDictionary[key].Value.Value ? "1" : "0";
             }
             //result += $"{key} = {resultChar} ,";
-            result += (full?$"{key} = {resultChar}\n":resultChar);
+            result += (full ? $"{key} = {resultChar}\n" : resultChar);
         }
 
         //DebugOutput(result);
@@ -194,17 +213,78 @@ public class Test24_2024 : BaseTest
         return wire;
     }
 
+
+    public void CreateGraphViz(List<Gate> allGates)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine("graph{");
+
+
+        foreach (Gate gate in allGates)
+        {
+            string gateName = gate.Input1.Id + "_" + gate.Input2.Id;
+            sb.AppendLine($"{gateName} [shape = triangle,label = \"{gateName+"-"+gate.GateType}\"]");
+        }
+
+
+
+        foreach (Wire w in WireDictionary.Values)
+        {
+            if (w.GateFrom != null & w.GateTo != null)
+            {
+                sb.AppendLine($"{w.GateFrom.Input1.Id}_{w.GateFrom.Input2.Id} -- {w.GateTo.Input1.Id}_{w.GateTo.Input2.Id}");
+            }
+            else if (w.GateFrom == null)
+            {
+                sb.AppendLine($"{w.Id} -- {w.GateTo.Input1.Id}_{w.GateTo.Input2.Id}");
+            }
+            else
+            {
+                sb.AppendLine($"{w.GateFrom.Input1.Id}_{w.GateFrom.Input2.Id} -- {w.Id}");
+            }
+
+        }
+
+        sb.AppendLine("}");
+
+        DebugOutput(sb.ToString());
+
+    }
+
     public class Wire
     {
         public string Id;
         public bool? InitialValue;
-        public bool? Value;
+        public Gate GateFrom;
+        public Gate GateTo;
 
+
+        private bool? m_value;
+        private bool? m_lastValue;
+
+        public bool? Value
+        {
+            get { return m_value; }
+            set
+            {
+                m_lastValue = m_value;
+                m_value = value;
+            }
+        }
+
+        public bool Stable
+        {
+            get { return m_lastValue == m_value; }
+        }
 
         public void Reset()
         {
             Value = InitialValue;
+            m_lastValue = InitialValue;
         }
+
+
+
     }
 
 
@@ -218,6 +298,27 @@ public class Test24_2024 : BaseTest
         public string GateType;
         public Wire Output;
 
+
+        public Gate(Wire input1, Wire input2, string gateType, Wire output)
+        {
+            m_input1 = input1;
+            m_input2 = input2;
+            GateType = gateType;
+            Output = output;
+
+            if (m_input1 != null)
+            {
+                m_input1.GateTo = this;
+            }
+            if (m_input2 != null)
+            {
+                m_input2.GateTo = this;
+            }
+            if (output != null)
+            {
+                output.GateFrom = this;
+            }
+        }
 
         public Wire Input1
         {

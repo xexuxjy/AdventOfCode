@@ -44,6 +44,45 @@ public class Test22_2024 : BaseTest
                 buyer.Calc();
             }
 
+
+            if(true)
+            {
+
+                
+                Tuple<int,int,int,int> bestTuple = new Tuple<int, int, int, int>(0,0,0,0);
+                HashSet<Tuple<int,int,int,int>> UniqueTuples = new HashSet<Tuple<int, int, int, int>>();
+                foreach(Buyer b in buyers)
+                {
+                   foreach(Tuple<int,int,int,int> t in b.ScoreDictionary.Keys)
+                    {
+                        UniqueTuples.Add(t);
+                    }
+                }
+
+                int bestScore = 0;
+                foreach(var t in UniqueTuples)
+                {
+                    int score = 0;
+                    foreach(Buyer b in buyers)
+                    {
+                        if(b.ScoreDictionary.ContainsKey(t))
+                        {
+                            score += b.ScoreDictionary[t];
+                        }
+                    }
+
+                    if(score > bestScore)
+                    {
+                        bestScore = score;
+                        bestTuple = t;
+                    }
+                }
+                
+                DebugOutput($"Best score was {bestScore} with {bestTuple}");
+            }
+            else
+            {
+
             int[] bestNumbers = new int[4];
             int[] currentNumbers = new int[4];
 
@@ -85,8 +124,9 @@ public class Test22_2024 : BaseTest
                     }
                 }
             }
-
-            DebugOutput($"The best pattern was {string.Join(", ", bestNumbers)} with a score of {bestScore}");
+                DebugOutput($"The best pattern was {string.Join(", ", bestNumbers)} with a score of {bestScore}");
+            }
+            
 
         }
     }
@@ -134,6 +174,8 @@ public class Test22_2024 : BaseTest
         public List<int> LastDigits = new List<int>();
         public List<int> Diffs = new List<int>();
 
+        public Dictionary<Tuple<int,int,int,int>, int> ScoreDictionary = new Dictionary<Tuple<int,int,int,int>,int>();
+
         public void Calc()
         {
             foreach (long n in SecretNumbers)
@@ -144,6 +186,30 @@ public class Test22_2024 : BaseTest
             for (int i = 1; i < LastDigits.Count; i++)
             {
                 Diffs.Add(LastDigits[i] - LastDigits[i - 1]);
+            }
+
+            int range = 4;
+
+            for(int i=0;i< Diffs.Count; i++)
+            {
+                if(i >= range)
+                {
+                    var t = new Tuple<int,int,int,int>(Diffs[i-3],Diffs[i-2],Diffs[i-1],Diffs[i]);
+                    //var t2 = new Tuple<int,int,int,int>(-2,1,-1,3);
+                    //var t2 = new Tuple<int,int,int,int>(0,6,-4,4);
+
+                    if(!ScoreDictionary.ContainsKey(t))
+                    {
+                        ScoreDictionary[t] = LastDigits[i+1];
+                    }
+
+                    //if(t.Equals(t2))
+                    //{
+                    //    string s = ("Score : "+ScoreDictionary[t]);
+                    //    int ibreak =0 ;
+                    //}
+
+                }
             }
         }
 

@@ -1,11 +1,20 @@
-Aval 0 0  output 4,4,7,0,7
-Aval 1 1  output 4,4,7,0,7
-Aval 2 2  output 4,4,7,0,7
-Aval 3 3  output 4,4,7,0,7
-Aval 4 4  output 4,4,7,0,7
-Aval 5 5  output 4,4,7,0,7
-Aval 6 6  output 4,4,7,0,7
-Aval 7 7  output 4,4,7,0,7
-Aval 8 10  output 4,4,7,0,7
-Aval 9 11  output 4,4,7,0,7
-Elapsed = 20.4735 ms
+Found value at : 164541017976509
+Found value at : 164541017976765
+Found value at : 164541026365117
+Found value at : 164541026365373
+Found value at : 164541034753725
+Found value at : 164541034753981
+Found value at : 164545858203325
+Found value at : 164545858203581
+Found value at : 164545925312189
+Found value at : 164545925312445
+Found value at : 164546384918965
+Found value at : 164546386685629
+Found value at : 164546386685885
+Found value at : 164546395074237
+Found value at : 164546395074493
+Found value at : 164546403462845
+Found value at : 164546403463101
+Found value at : 164546487348925
+Found value at : 164546487349181
+Elapsed = 33.6435 ms

@@ -26,6 +26,20 @@ public static class Helper
         return ret;
     }
 
+    public static long LongPow(long x, ulong pow)
+    {
+        long ret = 1;
+        while (pow != 0)
+        {
+            if ((pow & 1) == 1)
+                ret *= x;
+            x *= x;
+            pow >>= 1;
+        }
+        return ret;
+    }
+
+
     // up and down look a bit odd as origin is top left.
     public static char PointerFromDirection(IntVector2 d)
     {

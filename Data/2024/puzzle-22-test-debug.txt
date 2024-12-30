@@ -3,5 +3,5 @@
 3: 14660944
 2024: 8667524
 Total is : 37990510
-The best pattern was -2, 1, -1, 3 with a score of 23
-Elapsed = 23346.999 ms
+Best score was 23 with (-2, 1, -1, 3)
+Elapsed = 37.8266 ms
