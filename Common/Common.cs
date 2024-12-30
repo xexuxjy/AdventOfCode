@@ -90,7 +90,7 @@ public static class Helper
         }
         if (d == IntVector2.Up)
         {
-            return IntVector2.Left;
+            return IntVector2.Right;
         }
         if (d == IntVector2.Right)
         {
@@ -98,7 +98,7 @@ public static class Helper
         }
         if (d == IntVector2.Down)
         {
-            return IntVector2.Right;
+            return IntVector2.Left;
         }
         return d;
     }
