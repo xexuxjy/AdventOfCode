@@ -1,6 +1,8 @@
 ﻿
 
 using System.Numerics;
+using System.Text;
+using static Test8_2023;
 
 public class Test21_2024 : BaseTest
 {
@@ -24,17 +26,101 @@ public class Test21_2024 : BaseTest
     {
         Year = 2024;
         TestID = 21;
-        SetupMaps();
     }
+
+
+    public List<char> Array1 = new List<char>();
+    public List<char> Array2 = new List<char>();
+
+
+    public override void Execute()
+    {
+
+        NumericPadRobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(NumericPad, x => x == 'A'), NumericPadWidth);
+        ControlPad1RobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
+        ControlPad2RobotArmPosition = ControlPad1RobotArmPosition;
+
+        int numIterations = IsPart2 ? 25 : 5;
+
+        SetupMaps(numIterations);
+
+
+        List<char> sourceList = Array1;
+        List<char> targetList = Array2;
+
+        List<char> tempList = null;
+        long totalScore = 0;
+        foreach (string desiredCode in m_dataFileContents)
+        {
+            sourceList.Clear();
+            sourceList.AddRange(desiredCode.ToCharArray());
+
+
+            GetMapCommandsForCode(sourceList, targetList, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadMoveMap, false);
+            SwapList(ref sourceList, ref targetList);
+
+            DebugOutput($"First level list is is {string.Join(',', sourceList)}");
+
+
+            for (int i = 0; i < numIterations; i++)
+            {
+                GetMapCommandsForCode(sourceList, targetList, ref ControlPad1RobotArmPosition, ControlPad, ControlPadWidth, ControlPadMoveMap, false);
+                SwapList(ref sourceList, ref targetList);
+                DebugOutput($"Iteration  {i}  is {string.Join(',', sourceList)}");
+
+            }
+
+            // and back 
+            SwapList(ref sourceList, ref targetList);
+
+            long num = long.Parse(desiredCode.Replace("A", ""));
+            long score = targetList.Count * num;
+
+
+            DebugOutput($"code {desiredCode}  is {targetList.Count} * {num} = {score}");
+            DebugOutput($"{desiredCode}: {string.Join(',', targetList)}");
+
+
+            totalScore += score;
+
+
+            sourceList.Clear();
+            sourceList.AddRange(desiredCode.ToCharArray());
+
+            GetMapCommandsForCode(sourceList, targetList, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadMoveMap);
+            SwapList(ref sourceList, ref targetList);
+
+            Dictionary<int,List<char>> debug = new Dictionary<int,List<char>>();
+            long score2 = 0;
+            sourceList.Insert(0,'A');
+
+            for (int i = 0; i < sourceList.Count - 1; ++i)
+            {
+                score2 += Cost(sourceList[i], sourceList[i + 1], numIterations-1, debug);
+            }
+            
+            foreach(int key in debug.Keys)
+            {
+                DebugOutput($"code2 {desiredCode}  level {key} is  :   {string.Join(',', debug[key])}");
+            }
+        }
+
+        DebugOutput("The final score is : " + totalScore);
+
+
+    }
+
+
+
 
     public Dictionary<(char, char), char[]> NumericPadMoveMap = new Dictionary<(char, char), char[]>();
     public Dictionary<(char, char), char[]> ControlPadMoveMap = new Dictionary<(char, char), char[]>();
-    
-    public Dictionary<(char,int),long> ValueCache = new Dictionary<(char,int),long>();
+
+    public Dictionary<(char, int), long> ValueCache = new Dictionary<(char, int), long>();
 
 
 
-    public void SetupMaps()
+    public void SetupMaps(int numIterations)
     {
 
         ControlPadMoveMap[('A', 'A')] = new char[] { };
@@ -71,33 +157,29 @@ public class Test21_2024 : BaseTest
 
         IntVector2 originalStartPos = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
 
+        //foreach (char c in ControlPad)
+        //{
+        //    if (c == ' ')
+        //    {
+        //        continue;
+        //    }
 
-        foreach(char c in ControlPad)
-        {
-            if(c == ' ')
-            {
-                continue;
-            }
-            char[] values = ControlPadMoveMap[('A',c)];
-            List<char> sourceList = Array1;
-            List<char> targetList = Array2;
+        //    char[] values = ControlPadMoveMap[('A', c)];
+        //    List<char> sourceList = Array1;
+        //    List<char> targetList = Array2;
 
-            sourceList.Clear();
-            sourceList.AddRange(values);
-            IntVector2 startPos = originalStartPos;
+        //    sourceList.Clear();
+        //    sourceList.AddRange(values);
+        //    IntVector2 startPos = originalStartPos;
 
-            for(int i=0;i<25;i++)
-            {
-                GetMapCommandsForCode(sourceList, targetList, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
-                ValueCache[(c,i)] = targetList.Count;
-                SwapList(ref sourceList, ref targetList);
-            }
+        //    for (int i = 0; i < numIterations; i++)
+        //    {
+        //        GetMapCommandsForCode(sourceList, targetList, ref startPos, ControlPad, ControlPadWidth, ControlPadMoveMap);
+        //        ValueCache[(c, i)] = targetList.Count;
+        //        SwapList(ref sourceList, ref targetList);
+        //    }
 
-        }
-
-
-
-        int numIterations = 2;
+        //}
 
 
         string keys = "0123456789A";
@@ -163,12 +245,13 @@ public class Test21_2024 : BaseTest
 
 
 
+
         int ibreak = 0;
 
     }
 
 
-    
+
 
     public bool BuildAllPaths(IntVector2 current, IntVector2 target, int depth, char[] dataGrid, int width, int height, List<IntVector2> currentPath, List<List<IntVector2>> validPaths)
     {
@@ -239,8 +322,7 @@ public class Test21_2024 : BaseTest
         return original;
     }
 
-
-    public void GetMapCommandsForCode(List<char> sourceList, List<char> targetList, ref IntVector2 startPosition, char[] dataGrid, int width, Dictionary<(char, char), char[]> map)
+    public void GetMapCommandsForCode(List<char> sourceList, List<char> targetList, ref IntVector2 startPosition, char[] dataGrid, int width, Dictionary<(char, char), char[]> map, bool debug = false)
     {
         targetList.Clear();
         foreach (char c in sourceList)
@@ -252,11 +334,75 @@ public class Test21_2024 : BaseTest
 
             startPosition = Helper.GetPosition(Array.FindIndex<char>(dataGrid, x => x == c), width);
 
+            if (debug)
+            {
+                //DebugOutput($"From char {currentChar} to char {c} adding {string.Join(",", moves)},A");
+            }
         }
 
     }
 
+    public Dictionary<(char, int), long> CostDictionary = new Dictionary<(char, int), long>();
+    public long Cost(char from, char to, int level, Dictionary<int,List<char>>? debug = null)
+    {
+        var key = (from, to);
+        long totalCost = 0;
+        bool firstForLevel = false;
 
+        if(false)
+            {
+        DebugOutput($"From char {from} to char {to} adding {string.Join(",", ControlPadMoveMap[(from, to)])},A");
+        }
+
+        List<char> debugLine = null;
+        if(debug != null)
+        {
+            if(!debug.TryGetValue(level,out debugLine))
+            {
+                debugLine = new List<char>();
+                debug[level] = debugLine;
+                firstForLevel = true;
+            }
+        }
+
+        if (debug != null)
+        {
+            debugLine.AddRange(ControlPadMoveMap[(from, to)]);
+            debugLine.Add('A');
+        }
+
+
+        //if (CostDictionary.TryGetValue(key, out totalCost))
+        if(false)
+        {
+            //return totalCost;
+        }
+        else
+        {
+            if (level == 0)
+            {
+                totalCost = ControlPadMoveMap[(from, to)].LongLength;
+            }
+            else
+            {
+                List<char> temp = new List<char>();
+                //if(firstForLevel)
+                {
+                    temp.Add('A');
+                }
+                temp.AddRange(ControlPadMoveMap[(from, to)]);
+                temp.Add('A');
+                for (int i = 0; i < temp.Count - 1; i++)
+                {
+                    long cost = Cost(temp[i], temp[i + 1], level - 1, debug);
+                    totalCost += cost;
+                }
+            }
+        }
+
+        CostDictionary[key] = totalCost;
+        return totalCost;
+    }
 
 
 
@@ -279,56 +425,6 @@ public class Test21_2024 : BaseTest
         List<char> t = list1;
         list1 = list2;
         list2 = t;
-    }
-
-    public List<char> Array1 = new List<char>();
-    public List<char> Array2 = new List<char>();
-
-    public override void Execute()
-    {
-
-        NumericPadRobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(NumericPad, x => x == 'A'), NumericPadWidth);
-        ControlPad1RobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);
-        ControlPad2RobotArmPosition = ControlPad1RobotArmPosition;
-
-        int numIterations = IsPart2 ? 25 : 2;
-
-        List<char> sourceList = Array1;
-        List<char> targetList = Array2;
-
-        List<char> tempList = null;
-        long totalScore = 0;
-        foreach (string desiredCode in m_dataFileContents)
-        {
-            sourceList.Clear();
-            sourceList.AddRange(desiredCode.ToCharArray());
-
-
-            GetMapCommandsForCode(sourceList, targetList, ref NumericPadRobotArmPosition, NumericPad, NumericPadWidth, NumericPadMoveMap);
-            SwapList(ref sourceList, ref targetList);
-
-
-            for (int i = 0; i < numIterations; i++)
-            {
-                GetMapCommandsForCode(sourceList, targetList, ref ControlPad1RobotArmPosition, ControlPad, ControlPadWidth, ControlPadMoveMap);
-                SwapList(ref sourceList, ref targetList);
-            }
-
-            // and back 
-            SwapList(ref sourceList, ref targetList);
-
-            long num = long.Parse(desiredCode.Replace("A", ""));
-            long score = targetList.Count * num;
-
-            totalScore += score;
-
-            DebugOutput($"code {desiredCode}  is {targetList.Count} * {num} = {score}");
-            DebugOutput($"{desiredCode}: {targetList}");
-        }
-
-        DebugOutput("The final score is : " + totalScore);
-
-
     }
 
 
