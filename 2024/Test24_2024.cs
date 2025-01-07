@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 
 public class Test24_2024 : BaseTest
@@ -52,48 +53,101 @@ public class Test24_2024 : BaseTest
         if (IsPart2)
         {
 
-            CreateGraphViz(allGates);
+            char[] standardConnections = new char[] { 'x', 'y', 'z' };
+            HashSet<string> wrongWires = new HashSet<string>();
+            List<Gate> wrongGates = new List<Gate>();
 
-            Reset();
-            //DebugOutput(DisplayState("",true));
-
-            int val1 = 5;
-            int val2 = 7;
-
-            SetInputGateToValue(0, "z");
-            SetInputGateToValue(val1, "x");
-            SetInputGateToValue(val2, "y");
-            DebugOutput(DisplayState("", true));
-
-            long result = 0;
-
-            int count = 0;
-            bool stable = false;
-            while (!stable)
+            foreach (Gate gate in allGates)
             {
-                foreach (Gate g in allGates)
-                {
-                    g.Calculate();
-                }
-                result = GetGateValue("z");
+                char input1FC = gate.Input1.Id[0];
+                char input2FC = gate.Input2.Id[0];
+                char outputFC = gate.Output.Id[0];
 
-                stable = true;
-                foreach (Wire w in WireDictionary.Values)
+                if (outputFC == 'z' && gate.GateType != "XOR" && gate.Output.Id != "z45")
                 {
-                    if (!w.Stable)
+                    wrongWires.Add(gate.Output.Id);
+                }
+                
+                if (gate.GateType == "XOR" && !standardConnections.Contains(input1FC) && !standardConnections.Contains(input2FC) && !standardConnections.Contains(outputFC))
+                {
+                    wrongWires.Add(gate.Output.Id);
+                }
+                
+                if (gate.GateType == "AND" && !(gate.Input1.Id == "x00" || gate.Input2.Id == "x00"))
+                {
+                    foreach (Gate gate2 in allGates)
                     {
-                        stable = false;
-                        break;
+                        if ((gate.Output == gate2.Input1 || gate.Output == gate2.Input1) && gate2.GateType != "OR")
+                        {
+                            wrongWires.Add(gate.Output.Id);
+                        }
+
+                    }
+
+                }
+                
+                if (gate.GateType == "XOR")
+                {
+                    foreach (Gate gate2 in allGates)
+                    {
+                        {
+                            if ((gate.Output == gate2.Input1 || gate.Output == gate2.Input2) && gate2.GateType == "OR")
+                            {
+                                wrongWires.Add(gate.Output.Id);
+                            }
+                        }
                     }
                 }
-                count++;
             }
-            DebugOutput(DisplayState("", true));
 
-            if (result == val1 + val2)
-            {
-                DebugOutput($"Gates worked for {val1} + {val2} = {(val1 + val2)}");
-            }
+            int ibreak  =0;
+
+            
+            DebugOutput(string.Join(',',wrongWires.Order()));
+
+
+            //CreateGraphViz(allGates);
+
+            //Reset();
+            ////DebugOutput(DisplayState("",true));
+
+            //int val1 = 5;
+            //int val2 = 7;
+
+            //SetInputGateToValue(0, "z");
+            //SetInputGateToValue(val1, "x");
+            //SetInputGateToValue(val2, "y");
+            //DebugOutput(DisplayState("", true));
+
+            //long result = 0;
+
+            //int count = 0;
+            //bool stable = false;
+            //while (!stable)
+            //{
+            //    foreach (Gate g in allGates)
+            //    {
+            //        g.Calculate();
+            //    }
+            //    result = GetGateValue("z");
+
+            //    stable = true;
+            //    foreach (Wire w in WireDictionary.Values)
+            //    {
+            //        if (!w.Stable)
+            //        {
+            //            stable = false;
+            //            break;
+            //        }
+            //    }
+            //    count++;
+            //}
+            //DebugOutput(DisplayState("", true));
+
+            //if (result == val1 + val2)
+            //{
+            //    DebugOutput($"Gates worked for {val1} + {val2} = {(val1 + val2)}");
+            //}
 
 
 
@@ -223,7 +277,7 @@ public class Test24_2024 : BaseTest
         foreach (Gate gate in allGates)
         {
             string gateName = gate.Input1.Id + "_" + gate.Input2.Id;
-            sb.AppendLine($"{gateName} [shape = triangle,label = \"{gateName+"-"+gate.GateType}\"]");
+            sb.AppendLine($"{gateName} [shape = triangle,label = \"{gateName + "-" + gate.GateType}\"]");
         }
 
 
