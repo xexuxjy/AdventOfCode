@@ -53,6 +53,8 @@ public class Test24_2024 : BaseTest
         if (IsPart2)
         {
 
+            // no credit to me on this one, answer taken from : https://blog.lojic.com/2024/12/29/advent-of-code-2024-day-24-crossed-wires.html  , thanks
+
             char[] standardConnections = new char[] { 'x', 'y', 'z' };
             HashSet<string> wrongWires = new HashSet<string>();
             List<Gate> wrongGates = new List<Gate>();
