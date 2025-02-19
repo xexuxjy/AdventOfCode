@@ -1,0 +1,2 @@
+We entered the basement at position : 1
+Elapsed = 2986.6899 ms

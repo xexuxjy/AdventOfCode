@@ -1,0 +1,4 @@
+ugknbfddgicrmopn is nice
+aaa is nice
+There are 2 nice strings
+Elapsed = 12.1869 ms

@@ -1,0 +1,2 @@
+Total locations is : 2
+Elapsed = 14.2228 ms

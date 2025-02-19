@@ -1,0 +1,2 @@
+Found a value at : 609043
+Elapsed = 357.3829 ms

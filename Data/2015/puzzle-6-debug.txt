@@ -1,0 +1,2 @@
+The total brightness is : 17836115
+Elapsed = 175.2049 ms

@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 using System.Text;
 using static System.Formats.Asn1.AsnWriter;
@@ -37,6 +38,22 @@ public class Test21_2024 : BaseTest
 
     public override void Execute()
     {
+        int[] arr1 = new int[]{1,2,3 };
+        int[] arr2 = new int[]{4,5,6 };
+
+        int[][] arrs = new int[][] {arr1,arr2 };
+
+            //    return options2
+            //.CartesianProduct()
+            //.Select(arr => string.Join("", arr))
+            //.ToArray();
+
+
+        var data = arrs.CartesianProduct().Select(x=>x.ToList()).ToList();
+
+        
+
+
 
         NumericPadRobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(NumericPad, x => x == 'A'), NumericPadWidth);
         ControlPad1RobotArmPosition = Helper.GetPosition(Array.FindIndex<char>(ControlPad, x => x == 'A'), ControlPadWidth);

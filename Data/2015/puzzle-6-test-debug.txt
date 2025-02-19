@@ -1,0 +1,2 @@
+There are : 998996 lights on
+Elapsed = 9238.6518 ms

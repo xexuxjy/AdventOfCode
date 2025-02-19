@@ -1,12 +1,7 @@
-code 805A  is 72 * 805 = 57960
-805A: System.Collections.Generic.List`1[System.Char]
-code 964A  is 72 * 964 = 69408
-964A: System.Collections.Generic.List`1[System.Char]
-code 459A  is 74 * 459 = 33966
-459A: System.Collections.Generic.List`1[System.Char]
-code 968A  is 70 * 968 = 67760
-968A: System.Collections.Generic.List`1[System.Char]
-code 671A  is 74 * 671 = 49654
-671A: System.Collections.Generic.List`1[System.Char]
-The final score is : 278748
-Elapsed = 9.7371 ms
+score2 calc is : code 805A  is 86475783012 * 805 = 69613005324660
+score2 calc is : code 964A  is 85006969638 * 964 = 81946718731032
+score2 calc is : code 459A  is 90594397580 * 459 = 41582828489220
+score2 calc is : code 968A  is 86475783010 * 968 = 83708557953680
+score2 calc is : code 671A  is 90750571882 * 671 = 60893633732822
+The final score is : 337744744231414 
+Elapsed = 28.7153 ms

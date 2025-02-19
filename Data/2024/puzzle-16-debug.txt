@@ -142,4 +142,4 @@
 
 Found lowest cost as : 85420
 Part2 Points : 492
-Elapsed = 1945.2518 ms
+Elapsed = 23183.6995 ms

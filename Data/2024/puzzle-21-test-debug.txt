@@ -1,12 +1,7 @@
-code 029A  is 68 * 29 = 1972
-029A: System.Collections.Generic.List`1[System.Char]
-code 980A  is 60 * 980 = 58800
-980A: System.Collections.Generic.List`1[System.Char]
-code 179A  is 68 * 179 = 12172
-179A: System.Collections.Generic.List`1[System.Char]
-code 456A  is 64 * 456 = 29184
-456A: System.Collections.Generic.List`1[System.Char]
-code 379A  is 64 * 379 = 24256
-379A: System.Collections.Generic.List`1[System.Char]
-The final score is : 126384
-Elapsed = 10.1968 ms
+score2 calc is : code 029A  is 82050061710 * 29 = 2379451789590
+score2 calc is : code 980A  is 72242026390 * 980 = 70797185862200
+score2 calc is : code 179A  is 81251039228 * 179 = 14543936021812
+score2 calc is : code 456A  is 80786362258 * 456 = 36838581189648
+score2 calc is : code 379A  is 77985628636 * 379 = 29556553253044
+The final score is : 154115708116294  (154115708116294)
+Elapsed = 49.8463 ms
