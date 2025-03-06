@@ -1,0 +1,6 @@
+Line ""   rc: 6   cc: 2   mc : 0
+Line "abc"   rc: 9   cc: 5   mc : 3
+Line "aaa\"aaa"   rc: 16   cc: 10   mc : 7
+Line "\x27"   rc: 11   cc: 6   mc : 1
+The difference is 19   (cc : 42   mc: 23
+Elapsed = 11.2756 ms

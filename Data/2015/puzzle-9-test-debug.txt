@@ -1,0 +1,4 @@
+Found low cost for [London,Dublin,Belfast] 605
+Num Permutations is 6
+Lowest cost is 605
+Elapsed = 13.6091 ms

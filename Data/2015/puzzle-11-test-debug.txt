@@ -1,0 +1,5 @@
+abcdefgh is valid 3
+Next password after abcdefgh is abcdffaa
+ghijklmn is valid 2
+Next password after ghijklmn is ghjaabcc
+Elapsed = 424.5399 ms

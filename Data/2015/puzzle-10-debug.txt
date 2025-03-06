@@ -1,0 +1,2 @@
+1113122113 becomes length 360154
+Elapsed = 207.4432 ms

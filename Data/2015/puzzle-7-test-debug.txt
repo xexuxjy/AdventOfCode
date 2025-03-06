@@ -1,0 +1,9 @@
+Wire d has value 72
+Wire e has value 507
+Wire f has value 492
+Wire g has value 114
+Wire h has value 65412
+Wire i has value 65079
+Wire x has value 123
+Wire y has value 456
+Elapsed = 20.157 ms

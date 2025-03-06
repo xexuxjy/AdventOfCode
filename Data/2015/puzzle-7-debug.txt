@@ -1,0 +1,5 @@
+Setting fixed value to : 0
+Setting fixed value to : 1674
+Wire a has value 46065
+Part2 Wire a has value 14134
+Elapsed = 17.1985 ms

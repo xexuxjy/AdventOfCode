@@ -1,0 +1,17 @@
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Faerun,Norrath,Straylight,Arbre] 464
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Faerun,Norrath,Arbre,Straylight] 484
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Faerun,Straylight,Norrath,Arbre] 527
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Faerun,Straylight,Arbre,Norrath] 539
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Faerun,Arbre,Norrath,Straylight] 605
+Found high cost for [Tristram,AlphaCentauri,Snowdin,Tambi,Norrath,Straylight,Arbre,Faerun] 663
+Found high cost for [Tristram,AlphaCentauri,Tambi,Snowdin,Faerun,Arbre,Norrath,Straylight] 707
+Found high cost for [Tristram,AlphaCentauri,Tambi,Norrath,Straylight,Arbre,Faerun,Snowdin] 728
+Found high cost for [Tristram,AlphaCentauri,Norrath,Tambi,Snowdin,Faerun,Arbre,Straylight] 786
+Found high cost for [Tristram,AlphaCentauri,Norrath,Tambi,Straylight,Arbre,Faerun,Snowdin] 788
+Found high cost for [Tristram,Snowdin,Tambi,AlphaCentauri,Norrath,Straylight,Arbre,Faerun] 817
+Found high cost for [Tristram,Snowdin,Tambi,Faerun,Arbre,Norrath,AlphaCentauri,Straylight] 832
+Found high cost for [Tristram,Snowdin,Tambi,Norrath,AlphaCentauri,Straylight,Arbre,Faerun] 890
+Found high cost for [Tristram,Faerun,Arbre,Straylight,AlphaCentauri,Norrath,Tambi,Snowdin] 898
+Num Permutations is 40320
+Highest cost is 898
+Elapsed = 128.1906 ms

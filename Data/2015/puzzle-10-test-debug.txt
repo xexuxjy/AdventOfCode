@@ -1,0 +1,6 @@
+1 becomes 11
+11 becomes 21
+21 becomes 1211
+1211 becomes 111221
+111221 becomes 312211
+Elapsed = 11.4347 ms
