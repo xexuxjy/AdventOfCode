@@ -9,7 +9,7 @@ public class GenerateYear
     static void Main()
     {
         string pathBase = "../../../";
-        int year = 2016;
+        int year = 2015;
 
         string codePath = pathBase + year.ToString();
         if (!Directory.Exists(codePath))
