@@ -1,0 +1,2 @@
+The winner is Dancer with 689
+Elapsed = 12.068 ms

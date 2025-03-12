@@ -1,0 +1,14 @@
+Sum of line [1,2,3] is 6
+Sum of line {"a":2,"b":4} is 6
+Sum of line [[[3]]] is 3
+Sum of line {"a":{"b":4},"c":-1} is 3
+Sum of line {"a":[-1,1]} is 0
+Sum of line [-1,{"a":1}] is 0
+Sum of line [] is 0
+Sum of line {} is 0
+Sum of line [1,2,3] is 6
+Sum of line [1,{"c":"red","b":2},3] is 4
+Sum of line {"d":"red","e":[1,2,3,4],"f":5} is 0
+Sum of line [1,"red",5] is 6
+Sum of line  is 0
+Elapsed = 20.3603 ms

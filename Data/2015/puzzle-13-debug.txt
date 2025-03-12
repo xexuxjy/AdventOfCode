@@ -1,0 +1,2 @@
+Highest score was 601
+Elapsed = 1432.2348 ms
