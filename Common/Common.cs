@@ -12,6 +12,22 @@ using System.Threading.Tasks;
 
 public static class Helper
 {
+    public static List<int> Factor(int number)
+    {
+        var factors = new List<int>();
+        int max = (int)Math.Sqrt(number);  // Round down
+
+        for (int factor = 1; factor <= max; ++factor) // Test from 1 to the square root, or the int below it, inclusive.
+        {
+            if (number % factor == 0)
+            {
+                factors.Add(factor);
+                if (factor != number / factor) // Don't add the square root twice!  Thanks Jon
+                    factors.Add(number / factor);
+            }
+        }
+        return factors;
+    }
 
     public static int IntPow(int x, uint pow)
     {
@@ -1122,6 +1138,48 @@ public static class Combinations
             }
         }
     }
+
+
+
+    // Recursive
+    public static List<List<T>> GetAllCombosRec<T>(List<T> list)
+    {
+        List<List<T>> result = new List<List<T>>();
+        // head
+        result.Add(new List<T>());
+        result.Last().Add(list[0]);
+        if (list.Count == 1)
+            return result;
+        // tail
+        List<List<T>> tailCombos = GetAllCombosRec(list.Skip(1).ToList());
+        tailCombos.ForEach(combo =>
+        {
+            result.Add(new List<T>(combo));
+            combo.Add(list[0]);
+            result.Add(new List<T>(combo));
+        });
+        return result;
+    }
+
+    // Iterative, using 'i' as bitmask to choose each combo members
+    public static List<List<T>> GetAllCombosIter<T>(List<T> list)
+    {
+        int comboCount = (int)Math.Pow(2, list.Count) - 1;
+        List<List<T>> result = new List<List<T>>();
+        for (int i = 1; i < comboCount + 1; i++)
+        {
+            // make each combo here
+            result.Add(new List<T>());
+            for (int j = 0; j < list.Count; j++)
+            {
+                if ((i >> j) % 2 != 0)
+                    result.Last().Add(list[j]);
+            }
+        }
+        return result;
+    }
+
+
 }
 //https://github.com/iisfaq/CyrusBeck/blob/master/CyrusBeck.cs
 

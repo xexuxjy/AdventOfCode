@@ -1,0 +1,3 @@
+57600000  40,60
+Highest Score is 57600000
+Elapsed = 24.2906 ms
