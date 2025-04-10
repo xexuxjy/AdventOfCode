@@ -21,6 +21,11 @@ public abstract class BaseTest
     public bool IsPart2
     { get; set; }
 
+    public bool IsPart1
+    {
+        get{return !IsPart2; }
+    }
+
     public int Year
     {get;set; }
 

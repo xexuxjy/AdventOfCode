@@ -1,0 +1,8 @@
+The most expensive loss was : 148
+Player-17   Damage[7]  Armour[2] Health [-2] TotalCost [148]
+Items:
+	 Dagger
+	 Damage+3
+	 Defense+2
+
+Elapsed = 17.5434 ms
