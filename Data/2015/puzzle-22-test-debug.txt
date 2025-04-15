@@ -1,0 +1,2 @@
+Best mana spent is : 601 with spells : Recharge,Shield,Drain,Poison,MagicMissile
+Elapsed = 11.6389 ms
