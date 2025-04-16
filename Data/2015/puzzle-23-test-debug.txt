@@ -1,0 +1,2 @@
+Final values of registers : a [2]  b [0] 
+Elapsed = 12.0824 ms
