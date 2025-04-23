@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static Test19_2022;
 using static Test8_2023;
@@ -23,7 +24,9 @@ public class Test19_2015 : BaseTest
     public override void Execute()
     {
         Dictionary<string, List<string>> combinationDictionary = new Dictionary<string, List<string>>();
-        List<(string,string)> replacements = new List<(string, string)>();
+        Dictionary<string, List<string>> reverseDictionary = new Dictionary<string, List<string>>();
+
+        List<(string, string)> replacements = new List<(string, string)>();
 
         for (int i = 0; i < m_dataFileContents.Count - 1; ++i)
         {
@@ -45,6 +48,16 @@ public class Test19_2015 : BaseTest
 
             replacements.Add((strTokens[0], strTokens[1]));
 
+
+            if (!reverseDictionary.TryGetValue(strTokens[1], out List<string> reverseList))
+            {
+                reverseList = new List<string>();
+                reverseDictionary[strTokens[1]] = reverseList;
+            }
+            reverseList.Add(strTokens[0]);
+
+
+
         }
 
         string startPoint = m_dataFileContents.Last();
@@ -56,33 +69,7 @@ public class Test19_2015 : BaseTest
 
         List<List<string>> conversions = new List<List<string>>();
 
-        List<string> tokens = new List<string>();
-
-
-        int tokenIndex = 0;
-        string token = "";
-        while (tokenIndex < startPoint.Length - 1)
-        {
-            if (char.IsUpper(startPoint[tokenIndex]) && char.IsLower(startPoint[tokenIndex + 1]))
-            {
-                token = "" + startPoint[tokenIndex] + startPoint[tokenIndex + 1];
-                tokenIndex += 2;
-            }
-            else
-            {
-                token = "" + startPoint[tokenIndex];
-                tokenIndex += 1;
-            }
-            tokens.Add(token);
-        }
-
-        if (tokenIndex < startPoint.Length)
-        {
-            tokens.Add("" + startPoint.Last());
-        }
-
-
-        // 
+        List<string> tokens = TokenizeString(startPoint);
 
 
         HashSet<string> uniqueTokens = new HashSet<string>();
@@ -94,14 +81,14 @@ public class Test19_2015 : BaseTest
         DebugOutput("Unique Tokens");
         foreach (string s in uniqueTokens)
         {
-            string info = s+"  ";
-            if(!combinationDictionary.ContainsKey(s))
+            string info = s + "  ";
+            if (!combinationDictionary.ContainsKey(s))
             {
-                info +=" no values";
+                info += " no values";
             }
             else
             {
-                info+=combinationDictionary[s].Count+" values";
+                info += combinationDictionary[s].Count + " values";
             }
             DebugOutput(info);
         }
@@ -129,17 +116,17 @@ public class Test19_2015 : BaseTest
             // merge together contiguous 1 length strings?
             List<List<string>> mergedConversions = new List<List<string>>();
             string mergedString = "";
-            foreach(var option in conversions)
+            foreach (var option in conversions)
             {
-                if(option.Count == 1)
+                if (option.Count == 1)
                 {
                     mergedString += option[0];
                 }
                 else
                 {
-                    if(mergedString != "")
+                    if (mergedString != "")
                     {
-                        List<string> mergedlist  = new List<string>();
+                        List<string> mergedlist = new List<string>();
                         mergedlist.Add(mergedString);
                         mergedConversions.Add(mergedlist);
                         mergedString = "";
@@ -149,9 +136,9 @@ public class Test19_2015 : BaseTest
                 }
             }
 
-            if(mergedString != "")
+            if (mergedString != "")
             {
-                List<string> mergedlist  = new List<string>();
+                List<string> mergedlist = new List<string>();
                 mergedlist.Add(mergedString);
                 mergedConversions.Add(mergedlist);
                 mergedString = "";
@@ -165,37 +152,44 @@ public class Test19_2015 : BaseTest
             int[] indices = new int[conversions.Count];
 
 
-            foreach(var replacement in replacements)
+            foreach (var replacement in replacements)
             {
                 int searchIndex = startPoint.IndexOf(replacement.Item1);
-                while(searchIndex != -1) 
+                while (searchIndex != -1)
                 {
-                    string value = startPoint.Substring(0,searchIndex);
+                    string value = startPoint.Substring(0, searchIndex);
                     value += replacement.Item2;
-                    value+= startPoint.Substring(searchIndex+replacement.Item1.Length);
-                    searchIndex = startPoint.IndexOf(replacement.Item1,searchIndex+replacement.Item1.Length);
+                    value += startPoint.Substring(searchIndex + replacement.Item1.Length);
+                    searchIndex = startPoint.IndexOf(replacement.Item1, searchIndex + replacement.Item1.Length);
                     possibleResults.Add(value);
                 }
 
             }
 
 
-            if(IsPart2)
+            string newResult = "";
+
+            int part2Count = 0;
+
+
+            //https://www.reddit.com/r/adventofcode/comments/3xflz8/day_19_solutions/
+            // still dont' quite get this...
+            if (IsPart2)
             {
-                int numReplacements = 0;
-                foreach(var replacement in replacements)
+                string finalResult = m_dataFileContents.Last();
+                while(finalResult != "e")
                 {
-                    if(replacement.Item1 == "e")
+                    foreach(var replacement in replacements)
                     {
-                        int searchIndex = startPoint.IndexOf(replacement.Item2);
-                        while(searchIndex != -1) 
+                        if(finalResult.Contains(replacement.Item2))
                         {
-                            numReplacements++;
-                            searchIndex = startPoint.IndexOf(replacement.Item2,searchIndex+replacement.Item2.Length);
+                            Regex regex = new Regex(replacement.Item2);
+                            finalResult = regex.Replace(finalResult, replacement.Item1, 1);
+                            part2Count++;
                         }
                     }
-
                 }
+
             }
 
 
@@ -203,17 +197,49 @@ public class Test19_2015 : BaseTest
 
             DebugOutput("");
             DebugOutput("");
-            
+
             foreach (string option in possibleResults)
             {
-                DebugOutput(option);
+                //DebugOutput(option);
             }
 
             DebugOutput("" + possibleResults.Count);
 
+            DebugOutput($"Part 2 : {part2Count}");
+
         }
 
     }
+
+    public List<string> TokenizeString(string input)
+    {
+        List<string> tokens = new List<string>();
+
+
+        int tokenIndex = 0;
+        string token = "";
+        while (tokenIndex < input.Length - 1)
+        {
+            if (char.IsUpper(input[tokenIndex]) && char.IsLower(input[tokenIndex + 1]))
+            {
+                token = "" + input[tokenIndex] + input[tokenIndex + 1];
+                tokenIndex += 2;
+            }
+            else
+            {
+                token = "" + input[tokenIndex];
+                tokenIndex += 1;
+            }
+            tokens.Add(token);
+        }
+
+        if (tokenIndex < input.Length)
+        {
+            tokens.Add("" + input.Last());
+        }
+        return tokens;
+    }
+
     public void BuildOptions(List<List<string>> strings, int depth, int[] indices, HashSet<string> results)
     {
         if (depth >= strings.Count)

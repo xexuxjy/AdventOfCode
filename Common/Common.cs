@@ -8,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static Test21_2015;
 
 
 public static class Helper
@@ -1179,23 +1180,105 @@ public static class Combinations
         return result;
     }
 
-    //https://stackoverflow.com/questions/5132758/how-can-i-create-all-possible-combinations-for-a-set-of-words-without-repetition
-    public static IEnumerable<IEnumerable<T>> GetPermutations<T>(IEnumerable<T> items, int count)
-{
-    int i = 0;
-    foreach (var item in items)
+    public static IEnumerable<List<T>> GetAllCombosIterYield<T>(List<T> list)
     {
-        if (count == 1)
-            yield return new T[] { item };
+        int comboCount = (int)Math.Pow(2, list.Count) - 1;
+        if (comboCount == 1)
+        {
+            yield return list;
+        }
         else
         {
-            foreach (var result in GetPermutations(items.Skip(i + 1), count - 1))
-                yield return new T[] { item }.Concat(result);
+            for (int i = 1; i < comboCount + 1; i++)
+            {
+                List<T> tempList = new List<T>();
+                for (int j = 0; j < list.Count; j++)
+                {
+                    if ((i >> j) % 2 != 0)
+                    {
+                        tempList.Add(list[j]);
+                    }
+                }
+                yield return tempList;
+            }
         }
-
-        ++i;
     }
-}
+
+
+
+
+    //https://stackoverflow.com/questions/5132758/how-can-i-create-all-possible-combinations-for-a-set-of-words-without-repetition
+    public static IEnumerable<IEnumerable<T>> GetPermutations<T>(IEnumerable<T> items, int count)
+    {
+        int i = 0;
+        foreach (var item in items)
+        {
+            if (count == 1)
+                yield return new T[] { item };
+            else
+            {
+                foreach (var result in GetPermutations(items.Skip(i + 1), count - 1))
+                    yield return new T[] { item }.Concat(result);
+            }
+
+            ++i;
+        }
+    }
+
+
+    //https://stackoverflow.com/questions/1952153/what-is-the-best-way-to-find-all-combinations-of-items-in-an-array
+    public static IEnumerable<T[]> GetPermutations<T>(T[] items)
+    {
+        int[] work = new int[items.Length];
+        for (int i = 0; i < work.Length; i++)
+        {
+            work[i] = i;
+        }
+        foreach (int[] index in GetIntPermutations(work, 0, work.Length))
+        {
+            T[] result = new T[index.Length];
+            for (int i = 0; i < index.Length; i++) result[i] = items[index[i]];
+            yield return result;
+        }
+    }
+
+    public static IEnumerable<int[]> GetIntPermutations(int[] index, int offset, int len)
+    {
+        if (len == 1)
+        {
+            yield return index;
+        }
+        else if (len == 2)
+        {
+            yield return index;
+            Swap(index, offset, offset + 1);
+            yield return index;
+            Swap(index, offset, offset + 1);
+        }
+        else
+        {
+            foreach (int[] result in GetIntPermutations(index, offset + 1, len - 1))
+            {
+                yield return result;
+            }
+            for (int i = 1; i < len; i++)
+            {
+                Swap(index, offset, offset + i);
+                foreach (int[] result in GetIntPermutations(index, offset + 1, len - 1))
+                {
+                    yield return result;
+                }
+                Swap(index, offset, offset + i);
+            }
+        }
+    }
+
+    private static void Swap(int[] index, int offset1, int offset2)
+    {
+        int temp = index[offset1];
+        index[offset1] = index[offset2];
+        index[offset2] = temp;
+    }
 
 }
 //https://github.com/iisfaq/CyrusBeck/blob/master/CyrusBeck.cs

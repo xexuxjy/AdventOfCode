@@ -1,0 +1,2 @@
+Total is 1536 average is 384 cabinList has 4 items and entanglement 74850409
+Elapsed = 26547.1217 ms

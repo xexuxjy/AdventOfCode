@@ -1,0 +1,2 @@
+The value at (2978,3083) is 2650453
+Elapsed = 464.4118 ms
