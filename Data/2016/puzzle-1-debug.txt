@@ -1,0 +1,2 @@
+Distance to first duplicate is 165
+Elapsed = 16.7318 ms

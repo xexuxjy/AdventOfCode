@@ -126,8 +126,6 @@ public class Test25_2015 : BaseTest
 
     public IEnumerable<(int,int)> GetNextTrianglePosition()
     {
-        int row = 0;
-        int col = 0;
         List<int> rowLengths = new List<int>();
         
         while(true)
