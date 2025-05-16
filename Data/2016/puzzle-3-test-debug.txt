@@ -1,0 +1,2 @@
+Test Valid triangle False
+Elapsed = 10.7833 ms

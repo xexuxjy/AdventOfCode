@@ -1,0 +1,3 @@
+Sector 343 encrypted qzmt zixmtkozy ivhz  decrypted very encrypted name
+Number of real rooms is 0 / 1  Sector sum : 0 
+Elapsed = 27.7414 ms

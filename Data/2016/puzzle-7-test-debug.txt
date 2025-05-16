@@ -1,0 +1,10 @@
+abba[mnop]qrst  supports TLS : True  supports SLS : False
+abcd[bddb]xyyx  supports TLS : False  supports SLS : False
+aaaa[qwer]tyui  supports TLS : False  supports SLS : False
+ioxxoj[asdfgh]zxcvbn  supports TLS : True  supports SLS : False
+aba[bab]xyz  supports TLS : False  supports SLS : True
+xyx[xyx]xyx  supports TLS : False  supports SLS : False
+aaa[kek]eke  supports TLS : False  supports SLS : True
+zazbz[bzb]cdb  supports TLS : False  supports SLS : True
+There are 3 SLS valid lines
+Elapsed = 2850.9067 ms

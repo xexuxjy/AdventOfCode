@@ -1,0 +1,2 @@
+Total possible triangles is 1836
+Elapsed = 11.7052 ms

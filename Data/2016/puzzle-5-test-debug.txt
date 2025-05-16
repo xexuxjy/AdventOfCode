@@ -1,0 +1,2 @@
+Final code is 18F47A30
+Elapsed = 3868.1704 ms
