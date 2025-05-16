@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text;
 
 public class Test9_2016 : BaseTest
@@ -78,35 +79,53 @@ public class Test9_2016 : BaseTest
         return finalMessageLength;
     }
 
-    public long CalculatePart2(string line)
+    public long CalculatePart2(string line,int depth=0)
     {
+        int index = 0;
+        long total = 0;
 
         if (!line.Contains('('))
         {
             return line.Length;
         }
-
-        long finalMessageLength = 0;
         
-        if (TryParseBlock(line, out var block))
+        
+        while(index < line.Length)
         {
-            string repeatBlock = line.Substring(block.Item3, block.Item1);
-            long len = CalculatePart2(repeatBlock);
-            finalMessageLength += (len * block.Item2);
+            int multiplier = 1;
+            char c = line[index];
+            if (line[index] == '(')
+            {
+                if (TryParseBlock(line, index,out var block))
+                {
+                    multiplier = block.Item2;
+                    int numChars = block.Item1;
+                    int blockSize = block.Item3;
+                    string segment = line.Substring(index+blockSize, numChars);
+                    total += CalculatePart2(segment,depth+1) * multiplier;
+                    index += (blockSize + numChars);
+                }
+            }
+            else
+            {
+                total++;
+                index++;
+            }
         }
 
-        return finalMessageLength;
+        return total;
     }
 
-    public bool TryParseBlock(string line, out (int, int,int) block)
+    public bool TryParseBlock(string line, int index,out (int, int,int) block)
     {
         if (line == null || line.Length == 0)
         {
             block = (-1,-1,-1);
             return false;
         }
+
+        int indexCopy = index;
         
-        int index = 0;
         if (line[index] == '(')
         {
             string numCharsStr = "";
@@ -130,17 +149,12 @@ public class Test9_2016 : BaseTest
 
             int numChars = int.Parse(numCharsStr);
             int numRepeats = int.Parse(numRepeatsStr);
-            block = (numChars, numRepeats,index);
+            int blockSize = index - indexCopy; 
+            block = (numChars, numRepeats,blockSize);
             return true;
         }
-
-        while (index < line.Length && line[index] != '(')
-        {
-            index++;
-        }
-
-        block = (line.Length-index, 1,index);
-        return true;
+        block = (-1,-1,-1);
+        return false;
     }
 
     

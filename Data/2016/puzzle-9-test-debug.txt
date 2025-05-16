@@ -1,2 +1,2 @@
-Decompressed length : 5
-Elapsed = 41135.8591 ms
+Decompressed length : 241920
+Elapsed = 34.1308 ms
