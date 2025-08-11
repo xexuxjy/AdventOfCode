@@ -1,0 +1,8 @@
+Bot [0]  Low : output 2    High : output 0 
+Bot [1]  Low : output 1    High : bot 0 
+Bot [2]  Low : bot 1    High : bot 0 
+Output [0] is : OutputDictionary[5]
+Output [1] is : OutputDictionary[2]
+Output [2] is : OutputDictionary[3]
+Bot containing [5,2] is 2
+Elapsed = 44.8785 ms

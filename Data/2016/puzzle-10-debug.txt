@@ -1,0 +1,234 @@
+Bot [0]  Low : bot 58    High : bot 69 
+Bot [1]  Low : bot 17    High : bot 4 
+Bot [2]  Low : bot 116    High : bot 30 
+Bot [3]  Low : bot 140    High : bot 186 
+Bot [4]  Low : bot 91    High : bot 190 
+Bot [5]  Low : bot 36    High : bot 141 
+Bot [6]  Low : bot 10    High : bot 26 
+Bot [7]  Low : bot 194    High : bot 94 
+Bot [8]  Low : bot 167    High : bot 21 
+Bot [9]  Low : bot 127    High : bot 117 
+Bot [10]  Low : bot 45    High : bot 104 
+Bot [11]  Low : bot 168    High : bot 143 
+Bot [12]  Low : bot 141    High : bot 101 
+Bot [13]  Low : bot 166    High : bot 173 
+Bot [14]  Low : bot 28    High : bot 39 
+Bot [15]  Low : bot 9    High : bot 150 
+Bot [16]  Low : bot 174    High : bot 109 
+Bot [17]  Low : bot 136    High : bot 91 
+Bot [18]  Low : output 0    High : bot 202 
+Bot [19]  Low : bot 43    High : bot 89 
+Bot [20]  Low : bot 62    High : bot 198 
+Bot [21]  Low : bot 122    High : bot 209 
+Bot [22]  Low : bot 184    High : bot 185 
+Bot [23]  Low : output 8    High : bot 116 
+Bot [24]  Low : bot 5    High : bot 12 
+Bot [25]  Low : bot 106    High : bot 207 
+Bot [26]  Low : bot 104    High : bot 35 
+Bot [27]  Low : bot 98    High : bot 174 
+Bot [28]  Low : bot 21    High : bot 206 
+Bot [29]  Low : bot 31    High : bot 192 
+Bot [30]  Low : bot 137    High : bot 193 
+Bot [31]  Low : bot 14    High : bot 57 
+Bot [32]  Low : output 9    High : bot 115 
+Bot [33]  Low : bot 51    High : bot 160 
+Bot [34]  Low : bot 88    High : bot 11 
+Bot [35]  Low : bot 121    High : bot 20 
+Bot [36]  Low : bot 22    High : bot 135 
+Bot [37]  Low : bot 59    High : bot 194 
+Bot [38]  Low : bot 163    High : bot 159 
+Bot [39]  Low : bot 206    High : bot 112 
+Bot [40]  Low : bot 48    High : bot 6 
+Bot [41]  Low : bot 105    High : bot 154 
+Bot [42]  Low : bot 84    High : bot 147 
+Bot [43]  Low : bot 161    High : bot 102 
+Bot [44]  Low : bot 191    High : bot 47 
+Bot [45]  Low : bot 24    High : bot 176 
+Bot [46]  Low : bot 186    High : bot 133 
+Bot [47]  Low : bot 196    High : bot 19 
+Bot [48]  Low : bot 156    High : bot 10 
+Bot [49]  Low : bot 173    High : bot 88 
+Bot [50]  Low : output 18    High : bot 200 
+Bot [51]  Low : output 15    High : bot 32 
+Bot [52]  Low : bot 54    High : bot 103 
+Bot [53]  Low : bot 35    High : bot 76 
+Bot [54]  Low : bot 201    High : bot 103 
+Bot [55]  Low : bot 69    High : bot 93 
+Bot [56]  Low : bot 0    High : bot 55 
+Bot [57]  Low : bot 39    High : bot 189 
+Bot [58]  Low : output 16    High : bot 23 
+Bot [59]  Low : bot 108    High : bot 79 
+Bot [60]  Low : bot 162    High : bot 166 
+Bot [61]  Low : bot 148    High : bot 163 
+Bot [62]  Low : bot 41    High : bot 146 
+Bot [63]  Low : bot 101    High : bot 41 
+Bot [64]  Low : bot 26    High : bot 53 
+Bot [65]  Low : bot 157    High : bot 52 
+Bot [66]  Low : bot 207    High : bot 82 
+Bot [67]  Low : bot 123    High : bot 164 
+Bot [68]  Low : bot 110    High : bot 129 
+Bot [69]  Low : bot 23    High : bot 2 
+Bot [70]  Low : bot 132    High : bot 205 
+Bot [71]  Low : bot 100    High : bot 78 
+Bot [72]  Low : bot 3    High : bot 46 
+Bot [73]  Low : bot 204    High : bot 36 
+Bot [74]  Low : bot 128    High : bot 184 
+Bot [75]  Low : bot 144    High : bot 123 
+Bot [76]  Low : bot 20    High : bot 198 
+Bot [77]  Low : bot 109    High : bot 169 
+Bot [78]  Low : bot 131    High : bot 42 
+Bot [79]  Low : bot 15    High : bot 130 
+Bot [80]  Low : output 20    High : output 13 
+Bot [81]  Low : bot 89    High : bot 68 
+Bot [82]  Low : bot 113    High : bot 171 
+Bot [83]  Low : bot 158    High : bot 80 
+Bot [84]  Low : bot 164    High : bot 147 
+Bot [85]  Low : bot 208    High : bot 0 
+Bot [86]  Low : bot 171    High : bot 152 
+Bot [87]  Low : bot 67    High : bot 84 
+Bot [88]  Low : bot 77    High : bot 168 
+Bot [89]  Low : bot 102    High : bot 68 
+Bot [90]  Low : bot 70    High : bot 167 
+Bot [91]  Low : bot 64    High : bot 190 
+Bot [92]  Low : bot 130    High : bot 118 
+Bot [93]  Low : bot 2    High : bot 165 
+Bot [94]  Low : bot 92    High : bot 118 
+Bot [95]  Low : bot 159    High : bot 14 
+Bot [96]  Low : output 12    High : bot 51 
+Bot [97]  Low : bot 133    High : bot 60 
+Bot [98]  Low : bot 115    High : bot 85 
+Bot [99]  Low : bot 13    High : bot 49 
+Bot [100]  Low : bot 143    High : bot 131 
+Bot [101]  Low : bot 175    High : bot 105 
+Bot [102]  Low : bot 86    High : bot 110 
+Bot [103]  Low : bot 195    High : bot 83 
+Bot [104]  Low : bot 176    High : bot 121 
+Bot [105]  Low : bot 199    High : bot 145 
+Bot [106]  Low : bot 178    High : bot 99 
+Bot [107]  Low : bot 155    High : bot 203 
+Bot [108]  Low : bot 193    High : bot 15 
+Bot [109]  Low : bot 56    High : bot 114 
+Bot [110]  Low : bot 152    High : bot 129 
+Bot [111]  Low : bot 73    High : bot 5 
+Bot [112]  Low : bot 25    High : bot 66 
+Bot [113]  Low : bot 49    High : bot 34 
+Bot [114]  Low : bot 55    High : bot 144 
+Bot [115]  Low : output 7    High : bot 208 
+Bot [116]  Low : output 14    High : bot 137 
+Bot [117]  Low : bot 180    High : bot 151 
+Bot [118]  Low : bot 65    High : bot 52 
+Bot [119]  Low : bot 97    High : bot 178 
+Bot [120]  Low : bot 46    High : bot 97 
+Bot [121]  Low : bot 63    High : bot 62 
+Bot [122]  Low : bot 120    High : bot 119 
+Bot [123]  Low : bot 153    High : bot 37 
+Bot [124]  Low : bot 19    High : bot 81 
+Bot [125]  Low : output 4    High : bot 50 
+Bot [126]  Low : bot 47    High : bot 124 
+Bot [127]  Low : output 1    High : bot 180 
+Bot [128]  Low : bot 61    High : bot 38 
+Bot [129]  Low : bot 71    High : bot 78 
+Bot [130]  Low : bot 150    High : bot 65 
+Bot [131]  Low : bot 87    High : bot 42 
+Bot [132]  Low : bot 181    High : bot 72 
+Bot [133]  Low : bot 33    High : bot 162 
+Bot [134]  Low : bot 124    High : bot 81 
+Bot [135]  Low : bot 185    High : bot 29 
+Bot [136]  Low : bot 6    High : bot 64 
+Bot [137]  Low : output 6    High : bot 182 
+Bot [138]  Low : bot 149    High : bot 17 
+Bot [139]  Low : bot 66    High : bot 161 
+Bot [140]  Low : output 17    High : bot 96 
+Bot [141]  Low : bot 135    High : bot 175 
+Bot [142]  Low : bot 107    High : bot 203 
+Bot [143]  Low : bot 172    High : bot 87 
+Bot [144]  Low : bot 93    High : bot 153 
+Bot [145]  Low : bot 44    High : bot 126 
+Bot [146]  Low : bot 154    High : bot 183 
+Bot [147]  Low : bot 7    High : bot 94 
+Bot [148]  Low : bot 170    High : bot 90 
+Bot [149]  Low : bot 40    High : bot 136 
+Bot [150]  Low : bot 117    High : bot 157 
+Bot [151]  Low : bot 125    High : bot 201 
+Bot [152]  Low : bot 177    High : bot 71 
+Bot [153]  Low : bot 165    High : bot 59 
+Bot [154]  Low : bot 145    High : bot 179 
+Bot [155]  Low : bot 138    High : bot 1 
+Bot [156]  Low : bot 197    High : bot 45 
+Bot [157]  Low : bot 151    High : bot 54 
+Bot [158]  Low : output 11    High : bot 80 
+Bot [159]  Low : bot 8    High : bot 28 
+Bot [160]  Low : bot 32    High : bot 98 
+Bot [161]  Low : bot 82    High : bot 86 
+Bot [162]  Low : bot 160    High : bot 27 
+Bot [163]  Low : bot 90    High : bot 8 
+Bot [164]  Low : bot 37    High : bot 7 
+Bot [165]  Low : bot 30    High : bot 108 
+Bot [166]  Low : bot 27    High : bot 16 
+Bot [167]  Low : bot 205    High : bot 122 
+Bot [168]  Low : bot 169    High : bot 172 
+Bot [169]  Low : bot 114    High : bot 75 
+Bot [170]  Low : bot 188    High : bot 70 
+Bot [171]  Low : bot 34    High : bot 177 
+Bot [172]  Low : bot 75    High : bot 67 
+Bot [173]  Low : bot 16    High : bot 77 
+Bot [174]  Low : bot 85    High : bot 56 
+Bot [175]  Low : bot 29    High : bot 199 
+Bot [176]  Low : bot 12    High : bot 63 
+Bot [177]  Low : bot 11    High : bot 100 
+Bot [178]  Low : bot 60    High : bot 13 
+Bot [179]  Low : bot 126    High : bot 134 
+Bot [180]  Low : output 2    High : bot 125 
+Bot [181]  Low : bot 202    High : bot 3 
+Bot [182]  Low : output 3    High : bot 127 
+Bot [183]  Low : bot 179    High : bot 134 
+Bot [184]  Low : bot 38    High : bot 95 
+Bot [185]  Low : bot 95    High : bot 31 
+Bot [186]  Low : bot 96    High : bot 33 
+Bot [187]  Low : bot 18    High : bot 181 
+Bot [188]  Low : bot 187    High : bot 132 
+Bot [189]  Low : bot 112    High : bot 139 
+Bot [190]  Low : bot 53    High : bot 76 
+Bot [191]  Low : bot 189    High : bot 196 
+Bot [192]  Low : bot 57    High : bot 191 
+Bot [193]  Low : bot 182    High : bot 9 
+Bot [194]  Low : bot 79    High : bot 92 
+Bot [195]  Low : bot 200    High : bot 83 
+Bot [196]  Low : bot 139    High : bot 43 
+Bot [197]  Low : bot 111    High : bot 24 
+Bot [198]  Low : bot 146    High : bot 183 
+Bot [199]  Low : bot 192    High : bot 44 
+Bot [200]  Low : output 10    High : bot 158 
+Bot [201]  Low : bot 50    High : bot 195 
+Bot [202]  Low : output 19    High : bot 140 
+Bot [203]  Low : bot 1    High : bot 4 
+Bot [204]  Low : bot 74    High : bot 22 
+Bot [205]  Low : bot 72    High : bot 120 
+Bot [206]  Low : bot 209    High : bot 25 
+Bot [207]  Low : bot 99    High : bot 113 
+Bot [208]  Low : output 5    High : bot 58 
+Bot [209]  Low : bot 119    High : bot 106 
+Output [0] is : 18
+Output [1] is : 127
+Output [2] is : 180
+Output [3] is : 182
+Output [4] is : 125
+Output [5] is : 208
+Output [6] is : 137
+Output [7] is : 115
+Output [8] is : 23
+Output [9] is : 32
+Output [10] is : 200
+Output [11] is : 158
+Output [12] is : 96
+Output [13] is : 80
+Output [14] is : 116
+Output [15] is : 51
+Output [16] is : 58
+Output [17] is : 140
+Output [18] is : 50
+Output [19] is : 202
+Output [20] is : 80
+Bot containing [61,17] is Bot 98
+Part 2 is 4042
+Elapsed = 50.075 ms
