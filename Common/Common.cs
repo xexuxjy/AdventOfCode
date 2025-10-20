@@ -1125,6 +1125,7 @@ public static class Combinations
 
 
 
+    
     public static IEnumerable<IEnumerable<T>> Permute<T>(this IEnumerable<T> sequence)
     {
         if (sequence == null)

@@ -1,0 +1,13 @@
+F4 . .  .  .  .  
+F3 . .  .  LG .  
+F2 . HG .  .  .  
+F1 E .  HM .  LM 
+
+Quickest move was 8
+Replaying Moves
+F4 . .  .  .  .  
+F3 . .  .  LG .  
+F2 . HG .  .  .  
+F1 E .  HM .  LM 
+
+Elapsed = 17963.3956 ms

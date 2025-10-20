@@ -1,0 +1,2 @@
+Value in Register a is : 9227731
+Elapsed = 8613.3915 ms

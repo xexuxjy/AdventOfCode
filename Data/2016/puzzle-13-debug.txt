@@ -1,0 +1,2 @@
+Visited 135 unique squares
+Elapsed = 14.2237 ms
