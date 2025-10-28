@@ -1,0 +1,3 @@
+Finished search : 3208583
+Product : 4849845
+Elapsed = 118.4161 ms

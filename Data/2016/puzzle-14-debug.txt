@@ -1,3 +1,3 @@
 Found all keys by index 20092
 Complete
-Elapsed = 34649.1449 ms
+Elapsed = 25209.6491 ms

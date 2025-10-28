@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 public class Test14_2016 : BaseTest
 {
     public Dictionary<string,string> StretchedCache = new Dictionary<string, string>();
+    public Dictionary<byte,string> ByteStringCache = new Dictionary<byte,string>();
     
     public override void Initialise()
     {
@@ -22,7 +23,12 @@ public class Test14_2016 : BaseTest
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < hash.Length; i++) 
         {
-            sb.Append(hash[i].ToString("X2"));
+            if (!ByteStringCache.TryGetValue(hash[i], out string str))
+            {
+                str = hash[i].ToString("X2");
+                ByteStringCache[hash[i]] = str;
+            }
+            sb.Append(str);
         }
         return  sb.ToString().ToLower();
     }

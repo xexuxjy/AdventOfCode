@@ -1,0 +1,2 @@
+Finished search : 5
+Elapsed = 30.3128 ms
