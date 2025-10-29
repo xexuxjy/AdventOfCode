@@ -1,0 +1,2 @@
+Final checksum is : 01001101001000101
+Elapsed = 928.2032 ms
