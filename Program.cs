@@ -6,10 +6,10 @@ public class Program
 
     static void Main()
     {
-        //new Test16_2016().SetTestInput().RunTest(); 
-        //new Test16_2016().RunTest(); 
-        //new Test16_2016().SetTestInput().SetPart2().RunTest(); 
-        new Test16_2016().SetPart2().RunTest(); 
+        //new Test17_2016().SetTestInput().RunTest(); 
+        //new Test17_2016().RunTest(); 
+        //new Test17_2016().SetTestInput().SetPart2().RunTest(); 
+        new Test17_2016().SetPart2().RunTest(); 
     }
 
     

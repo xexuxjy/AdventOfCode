@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static Test21_2015;
@@ -515,6 +516,21 @@ public static class Helper
 
         return a * (f * f) + b * f + c;
     }
+    
+    public static string FormattedHash(string message, MD5 md5)
+    {
+        byte[] input = Encoding.ASCII.GetBytes(message);
+        byte[] hash = md5.ComputeHash(input);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < hash.Length; i++) 
+        {
+            string str = hash[i].ToString("X2");
+            sb.Append(str);
+        }
+        return  sb.ToString().ToLower();
+    }
+
+    
 }
 
 //https://stackoverflow.com/questions/29188686/finding-the-intersect-location-of-two-rays
