@@ -1,2 +1,2 @@
 Longest movepath is 536
-Elapsed = 230.5921 ms
+Elapsed = 163.4565 ms
