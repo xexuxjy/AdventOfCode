@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 public class Test18_2016 : BaseTest
 {
@@ -41,16 +42,17 @@ public class Test18_2016 : BaseTest
         char rightTile = ' ';
 
 
-        string line = "";
+        StringBuilder sb = new StringBuilder();
+        
         for (int i = 0; i < previousLine.Length; i++)
         {
             leftTile = i == 0 ? SAFE : previousLine[i - 1];
             centerTile = previousLine[i];
             rightTile = i == previousLine.Length - 1 ? SAFE : previousLine[i + 1];
-            line += IsTrap(leftTile, centerTile, rightTile) ? TRAP : SAFE;
+            sb.Append(IsTrap(leftTile, centerTile, rightTile) ? TRAP : SAFE);
         }
 
-        return line;
+        return sb.ToString();
     }
 
 /*
