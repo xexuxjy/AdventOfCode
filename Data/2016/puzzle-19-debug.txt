@@ -1,23 +1,23 @@
-Active Elves : 1502645
-Active Elves : 751322
-Active Elves : 375661
-Active Elves : 187830
-Active Elves : 93915
-Active Elves : 46957
-Active Elves : 23478
-Active Elves : 11739
-Active Elves : 5869
-Active Elves : 2934
-Active Elves : 1467
-Active Elves : 733
-Active Elves : 366
-Active Elves : 183
-Active Elves : 91
-Active Elves : 45
-Active Elves : 22
-Active Elves : 11
-Active Elves : 5
-Active Elves : 2
-Active Elves : 1
+Active Elves : 1502645 time 31.1608
+Active Elves : 751322 time 18.0083
+Active Elves : 375661 time 19.5731
+Active Elves : 187830 time 16.3904
+Active Elves : 93915 time 10.7077
+Active Elves : 46957 time 6.7798
+Active Elves : 23478 time 1.5477
+Active Elves : 11739 time 0.4666
+Active Elves : 5869 time 1
+Active Elves : 2934 time 0.1447
+Active Elves : 1467 time 0.0742
+Active Elves : 733 time 0.041
+Active Elves : 366 time 0.0201
+Active Elves : 183 time 0.0095
+Active Elves : 91 time 0.0105
+Active Elves : 45 time 0.0108
+Active Elves : 22 time 0.004
+Active Elves : 11 time 0.0029
+Active Elves : 5 time 0.0024
+Active Elves : 2 time 0.0007
+Active Elves : 1 time 0.0018
 The winner is Elf 1816277 with 3005290 presents.
-Elapsed = 503952.8228 ms
+Elapsed = 445.2328 ms

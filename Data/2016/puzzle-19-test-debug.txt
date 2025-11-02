@@ -1,2 +1,4 @@
-The winner is Elf 3 with 5 presents.
-Elapsed = 24.1959 ms
+Active Elves : 2 time 0.3981
+Active Elves : 1 time 0.0069
+The winner is Elf 1 with 5 presents.
+Elapsed = 33.1523 ms

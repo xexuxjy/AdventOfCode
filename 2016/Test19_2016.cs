@@ -12,40 +12,36 @@ public class Test19_2016 : BaseTest
     public override void Execute()
     {
         List<int> presentCounts = new List<int>();
-        List<int> activeElves = new List<int>();
+        LinkedList<int> activeElves = new LinkedList<int>();
         List<int> removeList = new List<int>();
-
+        
         int numElves = IsTestInput?5:3005290;
         
         for (int i = 0; i < numElves; i++)
         {
             presentCounts.Add(1);
-            activeElves.Add(i);
+            activeElves.AddLast(i);
         }
 
         while (true)
-        {
-            for(int i=0;i<activeElves.Count;i++)
+        {        
+            DateTime startTime = DateTime.Now;
+
+            if (IsPart1)
             {
-                int elf = activeElves[i];
-                if (!removeList.Contains(elf))
+                for(LinkedListNode<int> node = activeElves.First; node != null; node=node.Next)
                 {
-                    for (int j = 1; j < activeElves.Count; j++)
+                    LinkedListNode<int> targetElf = CircularLinkedList.NextOrFirst<int>(node);
+                    if (targetElf != null)
                     {
-                        int target = activeElves[(i + j) % activeElves.Count];
-                        if (!removeList.Contains(target))
-                        {
-                            presentCounts[elf] += presentCounts[target];
-                            presentCounts[target] = 0;
-                            removeList.Add(target);
-                            break;
-                        }
+                        activeElves.Remove(targetElf);
                     }
                 }
             }
-            activeElves.RemoveAll(removeList.Contains);
-            removeList.Clear();
-            DebugOutput("Active Elves : "+activeElves.Count);
+
+            double bpElapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
+
+            DebugOutput($"Active Elves : {activeElves.Count} time {bpElapsed}");
             if (activeElves.Count == 1)
             {
                 goto WinnerFound;
@@ -53,12 +49,8 @@ public class Test19_2016 : BaseTest
 
         }
 
-        for (int i = 0; i < activeElves.Count; i += 2)
-        {
-            int target = i+1 % activeElves.Count;
-        }
         
         WinnerFound:
-            DebugOutput($"The winner is Elf {activeElves[0]+1} with {presentCounts[activeElves[0]]} presents.");
+            DebugOutput($"The winner is Elf {activeElves.First.Value+1} with {numElves} presents.");
     }
 }
