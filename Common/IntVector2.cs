@@ -126,6 +126,7 @@ public struct IntVector2
     }
 
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public int ManhattanDistance(IntVector2 v)
     {
         int distanceX = Math.Abs(X - v.X);
@@ -135,6 +136,16 @@ public struct IntVector2
 
     }
 
+    public int ManhattanDistance(ref IntVector2 v)
+    {
+        int distanceX = Math.Abs(X - v.X);
+        int distanceY = Math.Abs(Y - v.Y);
+
+        return distanceX + distanceY;
+
+    }
+
+    
     public override string ToString()
     {
         return "" + X + "," + Y;

@@ -1,0 +1,14 @@
+Total number of lines: 8
+Total number of rules: 8
+interim message : ecabd
+interim message : abdec
+interim message : bdeac
+interim message : bcdea
+interim message : abcde
+interim message : edcba
+interim message : ebcda
+interim message : abcde
+Reverse message : decab
+Original message : abcde
+Final message : abcde
+Elapsed = 48.4707 ms

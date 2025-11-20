@@ -1,0 +1,6 @@
+Total viable nodes is : 4
+*.G
+._.
+#..
+
+Elapsed = 60.9514 ms

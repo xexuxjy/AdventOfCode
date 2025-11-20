@@ -1,0 +1,9 @@
+Interpreting instruction: cpy 2 a
+Interpreting instruction: tgl a
+Changing instruction at 3 from tgl to  inc a  
+Interpreting instruction: tgl a
+Changing instruction at 4 from cpy to  jnz 1 a 
+Interpreting instruction: inc a
+Interpreting instruction: jnz 1 a
+Value in Register a is : 3
+Elapsed = 30.6425 ms
