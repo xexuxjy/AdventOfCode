@@ -446,12 +446,9 @@ public class AStarInt
     private SearchStatus searchStatus;
 
     // Tells us which search type we're using right now
-    public SearchMethod SearchMethod
-    {
-        get { return searchMethod; }
-    }
+
     //private SearchMethod searchMethod = SearchMethod.BestFirst;
-    private SearchMethod searchMethod = SearchMethod.BreadthFirst;
+    public SearchMethod SearchMethod = SearchMethod.BreadthFirst;
 
     // Seconds per search step
     public float TimeStep
@@ -497,7 +494,7 @@ public class AStarInt
 
     public AStarInt(SearchMethod sm)
     {
-        searchMethod = sm;
+        SearchMethod = sm;
     }
 
 
@@ -542,7 +539,7 @@ public class AStarInt
     /// </summary>
     public void NextSearchType()
     {
-        searchMethod = (SearchMethod)(((int)searchMethod + 1) %
+        SearchMethod = (SearchMethod)(((int)SearchMethod + 1) %
             (int)SearchMethod.Max);
     }
 
@@ -606,7 +603,7 @@ public class AStarInt
         float currentDistance = 0f;
         if (openList.Count > 0)
         {
-            switch (searchMethod)
+            switch (SearchMethod)
             {
                 // Breadth first search looks at every possible path in the 
                 // order that we see them in.

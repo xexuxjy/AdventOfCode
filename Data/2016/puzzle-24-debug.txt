@@ -1,0 +1,2 @@
+Shortest path is : 700
+Elapsed = 1348.5999 ms
