@@ -1,0 +1,12 @@
+F4 E PoG PoM ThG ThM PrG PrM RuG RuM CoG CoM EG EM DG DM 
+F3 . .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+F2 . .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+F1 . .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+
+F4 . .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+F3 . .  .  .  .  .  .  .  .  .  .  .  .  .  .  
+F2 . .  PoM .  .  .  PrM .  .  .  .  .  .  .  .  
+F1 E PoG .  ThG ThM PrG .  RuG RuM CoG CoM EG EM DG DM 
+
+Quickest move was 71
+Elapsed = 204.3395 ms

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
+using CompactPack.Packers;
+using Newtonsoft.Json.Linq;
 
 public class Test11_2016 : BaseTest
 {
@@ -19,30 +21,35 @@ public class Test11_2016 : BaseTest
     public static int QuickestMove = int.MaxValue;
 
     public static List<string> SlotNames = new List<string>();
-    public static int[] SlotPositions = null;
 
     public static List<(List<int>, bool)> BestMoveList = new List<(List<int>, bool)>();
 
+    public static Bit64Packer FloorPacker = new Bit64Packer();
+
+    
     public override void Execute()
     {
         int elevatorFloor = 0;
 
         if (IsTestInput)
         {
-            int column = 0;
-
             SlotNames.Clear();
             SlotNames.Add("HG");
             SlotNames.Add("HM");
             SlotNames.Add("LG");
             SlotNames.Add("LM");
 
-            SlotPositions = new int[SlotNames.Count];
+            FloorPacker = new Bit64Packer();
+            for (int i = 0; i < SlotNames.Count; i++)
+            {
+                FloorPacker.AddField("Slot"+i, 2);
+            }
+
             int count = 0;
-            SlotPositions[count++] = 1;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 2;
-            SlotPositions[count++] = 0;
+            FloorPacker.SetValue("Slot" + (count++), 1);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 2);
+            FloorPacker.SetValue("Slot" + (count++), 0);
         }
         else
         {
@@ -58,22 +65,55 @@ public class Test11_2016 : BaseTest
             SlotNames.Add("RuM");
             SlotNames.Add("CoG");
             SlotNames.Add("CoM");
-            SlotPositions = new int[SlotNames.Count];
+
+            if (IsPart2)
+            {
+                SlotNames.Add("EG");
+                SlotNames.Add("EM");
+                SlotNames.Add("DG");
+                SlotNames.Add("DM");
+            }
+            
+            
+            FloorPacker = new Bit64Packer();
+            for (int i = 0; i < SlotNames.Count; i++)
+            {
+                FloorPacker.AddField("Slot"+i, 2);
+            }
+
+            
+            // SlotPositions = new int[SlotNames.Count];
+            // int count = 0;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 1;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 1;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 0;
+            // SlotPositions[count++] = 0;
+            
             int count = 0;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 1;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 1;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 0;
-            SlotPositions[count++] = 0;
+            
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 1);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 1);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+            FloorPacker.SetValue("Slot" + (count++), 0);
+
+            
         }
 
 
-        FloorState initialState = new FloorState(elevatorFloor, SlotPositions);
+        
+        FloorState initialState = new FloorState(elevatorFloor, FloorPacker.Pack());
 
         var allUpCombos = BuildAllCombinations(SlotNames.Count,true);
         var allDownCombos = BuildAllCombinations(SlotNames.Count,false);
@@ -81,8 +121,13 @@ public class Test11_2016 : BaseTest
         List<(List<int>, bool)> moveList = new List<(List<int>, bool)>();
 
         //GenerateMovesDepth(initialState, allUpCombos,allDownCombos, 0, moveList);
-        GenerateMovesBreadth(initialState, allUpCombos,allDownCombos, 0, moveList);
-
+        //GenerateMovesBreadth(initialState, allUpCombos,allDownCombos, 0, moveList);
+        PriorityQueue<FloorState,int> workQueue = new PriorityQueue<FloorState,int>();
+        List<FloorState> visitedList = new List<FloorState>();
+        
+        workQueue.Enqueue(initialState, 0);
+        TestBF(workQueue, visitedList ,allUpCombos, allDownCombos,0,moveList);
+        
         // FloorState currentState = initialState;
         // currentState = currentState.MoveItems(true, new int[] { 1 }.ToList());
         // DebugState(currentState);
@@ -141,17 +186,19 @@ public class Test11_2016 : BaseTest
 
 
         DebugOutput($"Quickest move was {QuickestMove}");
-        foreach (var item in BestMoveList)
-        {
-            DebugOutput($"{string.Join(',', item.Item1)},{item.Item2}");
-        }
-
-        DebugOutput("Replaying Moves");
-        DebugState(initialState);
-        GenerateMovesPlanned(initialState, BestMoveList, 0);
+        // foreach (var item in BestMoveList)
+        // {
+        //     DebugOutput($"{string.Join(',', item.Item1)},{item.Item2}");
+        // }
+        // //
+        //  DebugOutput("Replaying Moves");
+        // // DebugState(initialState);
+        //  GenerateMovesPlanned(initialState, BestMoveList, 0);
 
 
         int ibreak2 = 0;
+        
+        
     }
 
     public void GenerateMovesPlanned(FloorState currentState, List<(List<int>, bool)> moveList, int depth)
@@ -263,53 +310,58 @@ public class Test11_2016 : BaseTest
         }
     }
 
-        public void GenerateMovesBreadth(FloorState currentState, List<List<int>> upCombinations, List<List<int>> downCombinations,int depth,
-        List<(List<int>, bool)> moveList)
+    public void TestBF(PriorityQueue<FloorState,int> workQueue, List<FloorState> visitedStates, List<List<int>> upCombinations, List<List<int>> downCombinations,
+        int depth, List<(List<int>, bool)> moveList)
     {
-        if (depth > MaxDepth || QuickestMove < depth)
+        int debugLimit = 1000;
+        int iterCount = debugLimit;
+        while(workQueue.Count > 0)
         {
-            return;
-        }
-
-        CacheState cacheState = new CacheState(currentState);
-        
-        if (!Cache.Contains(cacheState))
-        {
-            Cache.Add(cacheState);
-            List<FloorState> newStates = new List<FloorState>();
-            for (int i = 0; i < upCombinations.Count; i++)
+            FloorState currentState = workQueue.Dequeue();
+            visitedStates.Add(currentState);
+            
+            iterCount--;
+            if (iterCount == 0)
             {
-                FloorState newState = currentState.MoveItems(true, upCombinations[i]);
-
-                if (newState != null && ValidState(newState))
-                {
-                    newStates.Add(newState);
-                }
-                newState = currentState.MoveItems(false, downCombinations[i]);
-                if (newState != null && ValidState(newState))
-                {
-                    newStates.Add(newState);
-                }
+                iterCount = debugLimit;
+                DebugOutput($"Work queue size {+workQueue.Count} quickest {QuickestMove}");
+                
             }
-
-            foreach (var state in newStates)
+            
+            
+            if (GoalState(currentState) && currentState.MoveCount < QuickestMove)
             {
-                if (GoalState(state))
+                //DebugOutput("Moves to reach goal state is  " + currentState.MoveCount);
+                DebugState(currentState);
+                QuickestMove = currentState.MoveCount;
+                return;
+            }
+            else
+            {
+                for (int i = 0; i < upCombinations.Count; i++)
                 {
-                    if (depth < QuickestMove)
+                    FloorState newState = currentState.MoveItems(true, upCombinations[i]);
+
+                    if (newState != null && newState.MoveCount < QuickestMove && ValidState(newState) && !visitedStates.Contains(newState))
                     {
-                        QuickestMove = depth;
+                        // calc score for state,
+                        int score = FloorStateScore(newState);
+                        workQueue.Enqueue(newState, score);
+                    }
+
+                    newState = currentState.MoveItems(false, downCombinations[i]);
+                    if (newState != null && newState.MoveCount < QuickestMove && ValidState(newState) && !visitedStates.Contains(newState))
+                    {
+                        // calc score for state,
+                        int score = FloorStateScore(newState);
+                        workQueue.Enqueue(newState, score);
                     }
                 }
             }
-
-            foreach (var state in newStates)
-            {
-                GenerateMovesBreadth(state, upCombinations,downCombinations, depth + 1, moveList);
-            }
+            //TestBF(workQueue,visitedStates,upCombinations,downCombinations,depth,moveList);
         }
     }
-
+    
     
     
     public List<List<int>> BuildAllCombinations(int slots,bool favourUp)
@@ -351,98 +403,42 @@ public class Test11_2016 : BaseTest
         return resultList;
     }
 
+    public int FloorStateScore(FloorState state)
+    {
+        int score = 0;
+        for (int i = 0; i < SlotNames.Count; i++)
+        {
+            int slotScore = FloorPacker.GetValueAsInt("Slot" + i); 
+            score += (NumFloors - 1) - slotScore;
+        }
+
+        // weight things on position then move.
+        // score *= 10;
+        // score += state.MoveCount;
+        
+        return score;
+    }
 
     public bool GoalState(FloorState state)
     {
+        FloorPacker.Unpack(state.FloorsUL);
         bool valid = true;
-        foreach (int val in state.Floors)
+
+        for (int i = 0; i < SlotNames.Count; i++)
         {
-            if (val != NumFloors - 1)
+            if (FloorPacker.GetValueAsInt("Slot" + i) != NumFloors - 1)
             {
                 valid = false;
                 break;
             }
         }
 
-        if (valid)
-        {
-            int ibreak = 0;
-        }
-
         return valid;
     }
-
-
-    HashSet<string> chipsOnFloor = new HashSet<string>();
-    HashSet<string> generatorsOnFloor = new HashSet<string>();
-    HashSet<string> chipsCopy = new HashSet<string>();
-    List<string> sameFloors = new List<string>();
 
     public bool ValidState(FloorState state, bool currentFloorOnly = true)
     {
         return ValidState2(state, currentFloorOnly);
-        if (state == null)
-        {
-            return false;
-        }
-
-        bool valid = true;
-
-
-        for (int floorNum = 0; floorNum < NumFloors; floorNum++)
-        {
-            if (currentFloorOnly && floorNum != state.ElevatorFloor)
-            {
-                continue;
-            }
-
-            chipsOnFloor.Clear();
-            generatorsOnFloor.Clear();
-            chipsCopy.Clear();
-            sameFloors.Clear();
-
-
-            for (int i = 0; i < SlotPositions.Length; i++)
-            {
-                if (state.Floors[i] == floorNum)
-                {
-                    sameFloors.Add(SlotNames[i]);
-                }
-            }
-
-            foreach (var pair in sameFloors)
-            {
-                if (pair.EndsWith('M'))
-                {
-                    chipsOnFloor.Add("" + pair.Substring(0, pair.Length - 1));
-                }
-                else if (pair.EndsWith('G'))
-                {
-                    generatorsOnFloor.Add("" + pair.Substring(0, pair.Length - 1));
-                }
-            }
-
-            foreach (string chip in chipsOnFloor)
-            {
-                chipsCopy.Add(chip);
-            }
-
-            foreach (string chip in chipsCopy)
-            {
-                if (generatorsOnFloor.Contains(chip))
-                {
-                    chipsOnFloor.Remove(chip);
-                    generatorsOnFloor.Remove(chip);
-                }
-            }
-
-            if (chipsOnFloor.Count != 0 && generatorsOnFloor.Count != 0)
-            {
-                return false;
-            }
-        }
-
-        return valid;
     }
 
     public bool ValidState2(FloorState state, bool currentFloorOnly = true)
@@ -462,22 +458,37 @@ public class Test11_2016 : BaseTest
                 continue;
             }
 
-            int unpairedChips = 0;
-            int unpairedGenerators = 0;
-            for (int i = 0; i < SlotPositions.Length; i += 2)
+            int chipsOnFloor = 0;
+            int generatorsOnFloor = 0;
+            
+            int pairedChips = 0;
+            int pairedGenerators = 0;
+
+            FloorPacker.Unpack(state.FloorsUL);
+            
+            for (int i = 0; i < SlotNames.Count; i += 2)
             {
-                if (state.Floors[i] == floorNum && state.Floors[i + 1] != floorNum)
+                int genPos = FloorPacker.GetValueAsInt("Slot" + i);
+                int chipPos = FloorPacker.GetValueAsInt("Slot" + (i+1));
+                
+                if(genPos == floorNum)
                 {
-                    unpairedGenerators++;
+                    generatorsOnFloor++;
+                }
+                if (chipPos == floorNum)
+                {
+                    chipsOnFloor++;
+                }
+                
+                if (genPos == floorNum && chipPos == floorNum)
+                {
+                    pairedGenerators++;
+                    pairedChips++;
                 }
 
-                if (state.Floors[i + 1] == floorNum && state.Floors[i] != floorNum)
-                {
-                    unpairedChips++;
-                }
             }
 
-            if (unpairedChips > 0 && unpairedGenerators > 0)
+            if(chipsOnFloor > 0 &&  generatorsOnFloor > 0 && pairedChips != chipsOnFloor)
             {
                 return false;
             }
@@ -502,9 +513,13 @@ public class Test11_2016 : BaseTest
             info += (floorState.ElevatorFloor == floorNum) ? "E" : ".";
             info += " ";
 
-            for (int i = 0; i < SlotPositions.Length; i++)
+            FloorPacker.Unpack(floorState.FloorsUL);
+
+            bool valid = true;
+        
+            for (int i = 0; i < SlotNames.Count; i++)
             {
-                if (floorState.Floors[i] == floorNum)
+                if (FloorPacker.GetValueAsInt("Slot" + i) == floorNum)
                 {
                     info += SlotNames[i];
                 }
@@ -520,9 +535,9 @@ public class Test11_2016 : BaseTest
         }
 
         results.Reverse();
-        foreach (string info in results)
+        foreach (string info2 in results)
         {
-            DebugOutput(info);
+            DebugOutput(info2);
         }
 
         DebugOutput("");
@@ -531,33 +546,34 @@ public class Test11_2016 : BaseTest
 
     public class FloorState
     {
+        public int MoveCount;
         public int ElevatorFloor;
-
-        //public List<List<string>> Floors = new List<List<string>>();
-        //public List<int> Floors = new List<int>();
-        public int[] Floors = null;
-
-        public FloorState(int elevatorFloor, int[] floors)
+        public ulong FloorsUL = 0;
+        
+        
+        public FloorState(int elevatorFloor, ulong floorsUL)
         {
             ElevatorFloor = elevatorFloor;
-            Floors = new int[floors.Length];
-            Array.Copy(floors, Floors, floors.Length);
+            FloorsUL = floorsUL;
         }
 
         public FloorState Clone()
         {
-            return new FloorState(ElevatorFloor, Floors);
+            return new FloorState(ElevatorFloor, FloorsUL);
         }
 
         public FloorState MoveItems(bool up, List<int> moveItems)
         {
             FloorState clone = null;
 
+            FloorPacker.Unpack(this.FloorsUL);
+            
+            
             // check and see if the moveItemes are on this floor.
             foreach (var item in moveItems)
             {
                 // not on this floor.
-                if (Floors[item] != ElevatorFloor)
+                if (FloorPacker.GetValueAsInt("Slot"+item) != ElevatorFloor)
                 {
                     return clone;
                 }
@@ -568,12 +584,15 @@ public class Test11_2016 : BaseTest
             {
                 clone = this.Clone();
 
-                foreach (int index in moveItems)
+                foreach (var slot in moveItems)
                 {
-                    clone.Floors[index] = newFloor;
+                    FloorPacker.SetValue("Slot"+slot,newFloor);
                 }
 
+                clone.FloorsUL = FloorPacker.Pack();
+                
                 clone.ElevatorFloor = newFloor;
+                clone.MoveCount = this.MoveCount+1;
             }
 
             return clone;
@@ -582,9 +601,10 @@ public class Test11_2016 : BaseTest
         protected bool Equals(FloorState other)
         {
             bool equals = ElevatorFloor.Equals(other.ElevatorFloor);
-            bool listsEqual = Floors.SequenceEqual(other.Floors);
-
+            bool listsEqual = FloorsUL.Equals(other.FloorsUL);
+            
             equals &= listsEqual;
+            
             return equals;
         }
 
@@ -598,7 +618,7 @@ public class Test11_2016 : BaseTest
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(ElevatorFloor, Floors);
+            return HashCode.Combine(ElevatorFloor, FloorsUL);
         }
     }
 
