@@ -1,0 +1,4 @@
+Found high alternating count with start value : 192
+Complete
+Value in Register a is : 85
+Elapsed = 2606.38 ms
