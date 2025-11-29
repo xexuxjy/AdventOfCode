@@ -60,7 +60,7 @@ public class Test14_2022 : BaseTest
         }
 
         stepCount--;
-        m_debugInfo.Add("Finished sim with " + stepCount + " steps.");
+        DebugOutput("Finished sim with " + stepCount + " steps.");
 
         DrawDebug();
         WriteDebugInfo();
@@ -272,7 +272,7 @@ public class Test14_2022 : BaseTest
                     header.Append(" ");
                 }
             }
-            m_debugInfo.Add(header.ToString());
+            DebugOutput(header.ToString());
         }
 
         for (int y = 0; y < yrange; y++)
@@ -289,7 +289,7 @@ public class Test14_2022 : BaseTest
                 data.Append(c);
 
             }
-            m_debugInfo.Add(data.ToString());
+            DebugOutput(data.ToString());
         }
 
 

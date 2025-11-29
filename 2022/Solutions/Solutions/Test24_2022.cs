@@ -118,7 +118,7 @@ public class Test24_2022 : BaseTest
 
         //for(int i=0;i<20;++i)
         //{
-        //    m_debugInfo.Add(GetCave(i).GenerateDebug(new IntVector2()));
+        //    DebugOutput(GetCave(i).GenerateDebug(new IntVector2()));
         //}
 
 
@@ -128,7 +128,7 @@ public class Test24_2022 : BaseTest
             {
                 for (int i = 0; i < m_shortestRoute.Count; i++)
                 {
-                    m_debugInfo.Add(GetCave(i).GenerateDebug(m_shortestRoute[i],StartPosition,EndPosition));
+                    DebugOutput(GetCave(i).GenerateDebug(m_shortestRoute[i],StartPosition,EndPosition));
                 }
             }
         }

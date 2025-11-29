@@ -56,11 +56,11 @@
         m_freeSides = 0;
         foreach (IntVector3 pos in m_positions)
         {
-            m_debugInfo.Add("Cube : " + pos + " - " + string.Join(' ', m_touchingMap[pos]));
+            DebugOutput("Cube : " + pos + " - " + string.Join(' ', m_touchingMap[pos]));
             m_freeSides += (6 - (m_touchingMap[pos].Count * 2));
 
         }
-        m_debugInfo.Add("Total area : " + m_freeSides);
+        DebugOutput("Total area : " + m_freeSides);
 
     }
 
@@ -117,8 +117,8 @@
         // check and see which are empty.
 
 
-        //m_debugInfo.Add("Part 2 : FreeSides = " + m_freeSides + "  Enclosed = " + enclosedCount + "  Total = " + (m_freeSides - enclosedCount));
-        //m_debugInfo.Add("Part 2b : FreeSides = " + m_freeSides + "  Enclosed = " + altEnclosedCount + "  Total = " + (m_freeSides - altEnclosedCount));
+        //DebugOutput("Part 2 : FreeSides = " + m_freeSides + "  Enclosed = " + enclosedCount + "  Total = " + (m_freeSides - enclosedCount));
+        //DebugOutput("Part 2b : FreeSides = " + m_freeSides + "  Enclosed = " + altEnclosedCount + "  Total = " + (m_freeSides - altEnclosedCount));
 
     }
 

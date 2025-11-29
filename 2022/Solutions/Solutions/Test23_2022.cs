@@ -124,7 +124,7 @@ public class Test23_2022 : BaseTest
                 numRounds++;
                 
                 // debug.
-                m_debugInfo.Add("Round  : "+numRounds);
+                DebugOutput("Round  : "+numRounds);
                 DrawBoard();
 
                 //if (numRounds > 5)
@@ -199,7 +199,7 @@ public class Test23_2022 : BaseTest
             occupiedPositions.Add(elf.Position);
         }
 
-        m_debugInfo.Add(GenerateDebug(occupiedPositions));
+        DebugOutput(GenerateDebug(occupiedPositions));
 
     }
 

@@ -59,7 +59,7 @@ public class Test17_2022 : BaseTest
         Simulate();
 
         m_board.CalcHighestPoint();
-        m_debugInfo.Add("Final Height : " + (m_board.HighestPoint+m_extraHeight));
+        DebugOutput("Final Height : " + (m_board.HighestPoint+m_extraHeight));
 
         WriteDebugInfo();
 
@@ -165,7 +165,7 @@ public class Test17_2022 : BaseTest
     {
         if (!IsPart2)
         {
-            m_debugInfo.Add(m_board.DrawDebug());
+            DebugOutput(m_board.DrawDebug());
         }
     }
 

@@ -174,7 +174,7 @@ public class Test19_2022 : BaseTest
         m_currentTime = 0;
         RobotType[] preferred = new RobotType[] { RobotType.Geode, RobotType.Obsidian, RobotType.Clay, RobotType.Ore };
 
-        SimulationResult simulationResult = new SimulationResult(bluePrint, debugInfo ? m_debugInfo : null);
+        SimulationResult simulationResult = new SimulationResult(bluePrint);
 
         for (int i = 0; i < limits.Length; ++i)
         {
@@ -186,14 +186,14 @@ public class Test19_2022 : BaseTest
 
         if (debugInfo)
         {
-            m_debugInfo.Add("===========================BluePrint " + bluePrint.Id + " : " + string.Join(", ", limits) + "===========================");
+            DebugOutput("===========================BluePrint " + bluePrint.Id + " : " + string.Join(", ", limits) + "===========================");
         }
 
         while (m_currentTime < m_totalTime)
         {
             if (debugInfo)
             {
-                m_debugInfo.Add("\n== Minute " + (m_currentTime + 1) + " ==");
+                DebugOutput("\n== Minute " + (m_currentTime + 1) + " ==");
             }
 
             int[] projectedInventory = simulationResult.ProjectedInventory(2);
@@ -504,11 +504,10 @@ public class Test19_2022 : BaseTest
 
         private List<string> m_debugInfo;
 
-        public SimulationResult(BluePrint blueprint, List<string> debugInfo)
+        public SimulationResult(BluePrint blueprint)
         {
             BluePrint = blueprint;
             m_robots[(int)RobotType.Ore] = 1;
-            m_debugInfo = debugInfo;
         }
 
         public int Score
@@ -522,10 +521,6 @@ public class Test19_2022 : BaseTest
             for (int i = 0; i < m_robots.Length; ++i)
             {
                 m_inventory[i] += m_robots[i];
-            }
-            if (m_debugInfo != null)
-            {
-                m_debugInfo.Add(DebugSummary);
             }
         }
 
@@ -586,21 +581,6 @@ public class Test19_2022 : BaseTest
             int[] costs = BluePrint.Costs[type];
 
 
-            if (m_debugInfo != null)
-            {
-                string robotCost = "";
-                for (int i = 0; i < costs.Length; ++i)
-                {
-                    if (costs[i] > 0)
-                    {
-                        robotCost += costs[i] + " " + ((RobotType)i) + " ";
-                    }
-                }
-
-                m_debugInfo.Add(string.Format("Spend {0} to start building a {1}-collecting robot.", robotCost, type));
-            }
-
-
             for (int i = 0; i < costs.Length; i++)
             {
                 m_inventory[i] -= costs[i];
@@ -616,10 +596,6 @@ public class Test19_2022 : BaseTest
                 if (m_building[i])
                 {
                     m_robots[i]++;
-                    if (m_debugInfo != null)
-                    {
-                        m_debugInfo.Add(string.Format("The new {0}-collecting robot is ready. You now have {1} of them.", (RobotType)i, m_robots[i]));
-                    }
                 }
                 m_building[i] = false;
             }

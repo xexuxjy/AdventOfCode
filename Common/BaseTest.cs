@@ -4,14 +4,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using ZLogger;
+
 
 public abstract class BaseTest
 {
     public static string InputPath = @"..\..\..\Data\";
 
     protected List<string> m_dataFileContents = new List<string>();
-    protected List<string> m_debugInfo = new List<string>();
-
+    
     public int TestID
     { get; set; }
 
@@ -54,13 +56,13 @@ public abstract class BaseTest
 
     public void WriteDebugInfo()
     {
-        using (StreamWriter sw = new StreamWriter(new FileStream(DebugFilename, FileMode.Create)))
-        {
-            foreach (string line in m_debugInfo)
-            {
-                sw.WriteLine(line);
-            }
-        }
+        // using (StreamWriter sw = new StreamWriter(new FileStream(DebugFilename, FileMode.Create)))
+        // {
+        //     foreach (string line in m_debugInfo)
+        //     {
+        //         sw.WriteLine(line);
+        //     }
+        // }
     }
 
     public void ReadDataFile()
@@ -83,19 +85,30 @@ public abstract class BaseTest
     {
         if (!testOnly || (testOnly && IsTestInput))
         {
-            m_debugInfo.Add(s);
+            Logger.LogDebug(s);
             System.Console.WriteLine(s);
         }
     }
 
-
-
+    
     public abstract void Initialise();
     public abstract void Execute();
 
+    public ILogger Logger;
+    
     public void RunTest()
     {
         Initialise();
+
+        using var factory = LoggerFactory.Create(logging =>
+            {
+                logging.SetMinimumLevel(LogLevel.Debug);
+                logging.AddZLoggerFile(DebugFilename);
+            }
+        );
+
+        Logger = factory.CreateLogger("AOC");
+        
         ReadDataFile();
         DateTime startTime = DateTime.Now;
         Execute();

@@ -57,14 +57,14 @@ public class Test22_2022 : BaseTest
             if (command == "L")
             {
                 m_player.TurnLeft();
-                //m_debugInfo.Add($"TURN LEFT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
-                m_debugInfo.Add($"TURN LEFT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90}");
+                //DebugOutput($"TURN LEFT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
+                DebugOutput($"TURN LEFT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90}");
             }
             else if (command == "R")
             {
                 m_player.TurnRight();
-                //m_debugInfo.Add($"TURN RIGHT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
-                m_debugInfo.Add($"TURN RIGHT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90}");
+                //DebugOutput($"TURN RIGHT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
+                DebugOutput($"TURN RIGHT Instuction {i} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90}");
             }
             else
             {
@@ -89,7 +89,7 @@ public class Test22_2022 : BaseTest
             //}
 
         }
-        //m_debugInfo.Add(m_player.GetRoute());
+        //DebugOutput(m_player.GetRoute());
         int score = (1000 * (m_player.Position.Y + 1) + (4 * (m_player.Position.X + 1)) + m_player.Degrees / 90);
         DebugOutput($"Result is {m_player.Position.Y + 1}  {m_player.Position.X + 1} {m_player.Degrees / 90}  Score {score}");
 
@@ -116,14 +116,14 @@ public class Test22_2022 : BaseTest
 
    
             Test22_2022.FaceForCoordinate(m_player.Position);
-            //m_debugInfo.Add($"Instuction {instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
+            //DebugOutput($"Instuction {instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
             if(startPos == m_player.Position)
             {
-                m_debugInfo.Add($"Instuction wall{instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
+                DebugOutput($"Instuction wall{instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
             }
             else
             {
-                m_debugInfo.Add($"Instuction {instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
+                DebugOutput($"Instuction {instructionNumber} position is ({m_player.Position.X}+{m_player.Position.Y}j) dir is {m_player.Degrees/90} face is {FaceForCoordinate(m_player.Position)}");
             }
                      // can't go any futher
             if(m_player.Position == startPos)

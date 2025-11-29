@@ -73,7 +73,7 @@ public class Test15_2022 : BaseTest
         }
 
         double elapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
-        m_debugInfo.Add("Elapsed Time : "+elapsed);
+        DebugOutput("Elapsed Time : "+elapsed);
 
         WriteDebugInfo();
     }
@@ -121,7 +121,7 @@ public class Test15_2022 : BaseTest
         }
 
 
-        m_debugInfo.Add(String.Format("Line {0} has {1} blank spaces", ChosenLine, CountRow(ChosenLine)));
+        DebugOutput(String.Format("Line {0} has {1} blank spaces", ChosenLine, CountRow(ChosenLine)));
 
     }
     public void DoPart2()
@@ -146,7 +146,7 @@ public class Test15_2022 : BaseTest
             {
                 foundx = result;
                 foundy = y;
-                m_debugInfo.Add("Found gap at " + foundx + "," + foundy + "  = " + ((4000000 * foundx) + foundy));
+                DebugOutput("Found gap at " + foundx + "," + foundy + "  = " + ((4000000 * foundx) + foundy));
                 //break;
             }
 
@@ -254,7 +254,7 @@ public class Test15_2022 : BaseTest
                     header.Append(" ");
                 }
             }
-            m_debugInfo.Add(header.ToString());
+            DebugOutput(header.ToString());
         }
 
         for (long y = 0; y < yrange; y++)
@@ -278,7 +278,7 @@ public class Test15_2022 : BaseTest
                 data.Append(c);
 
             }
-            m_debugInfo.Add(data.ToString());
+            DebugOutput(data.ToString());
         }
 
 

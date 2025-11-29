@@ -50,7 +50,7 @@ public class Test13_2022 : BaseTest
             ListNode left = BuildListNode(m_pairList[i].Item1);
             ListNode right = BuildListNode(m_pairList[i].Item2);
 
-            m_debugInfo.Add("== Pair " + (i + 1) + " ==");
+            DebugOutput("== Pair " + (i + 1) + " ==");
 
             int compare = Compare(left, right, 0);
 
@@ -58,9 +58,9 @@ public class Test13_2022 : BaseTest
             {
                 total += (i + 1);
             }
-            m_debugInfo.Add("\n");
+            DebugOutput("\n");
         }
-        m_debugInfo.Add("Final score : " + total);
+        DebugOutput("Final score : " + total);
     }
 
     public void SolvePuzzle2()
@@ -82,17 +82,17 @@ public class Test13_2022 : BaseTest
         nodes.Add(BuildListNode(decoder2));
         nodes.Add(BuildListNode(decoder6));
 
-        m_debugInfo.Add("Before sort");
+        DebugOutput("Before sort");
         foreach(INode node in nodes) 
         {
-            m_debugInfo.Add(node.Debug);
+            DebugOutput(node.Debug);
         }
         nodes.Sort((INode left,INode right) => Compare(left,right,0));
-        m_debugInfo.Add("After sort");
+        DebugOutput("After sort");
         
         foreach(INode node in nodes) 
         {
-            m_debugInfo.Add(node.Debug);
+            DebugOutput(node.Debug);
         }
 
         int decoder2Index = -1;
@@ -111,7 +111,7 @@ public class Test13_2022 : BaseTest
 
         }
 
-        m_debugInfo.Add(String.Format("2 at {0} 6 at {1} product = {2}",decoder2Index,decoder6Index,(decoder2Index*decoder6Index)));
+        DebugOutput(String.Format("2 at {0} 6 at {1} product = {2}",decoder2Index,decoder6Index,(decoder2Index*decoder6Index)));
 
         int total = 0;
 
@@ -221,7 +221,7 @@ public class Test13_2022 : BaseTest
             result += "    ";
         }
         result += " - " + data;
-        m_debugInfo.Add(result);
+        DebugOutput(result);
     }
 
 

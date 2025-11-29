@@ -58,19 +58,19 @@ public class Test11_2022 : BaseTest
                     // initial worry level.
                     worryLevel = monkey.CurrentItemWorry;
 
-                    //m_debugInfo.Add(string.Format("Monkey {0} worry {1}", monkey.ID, worryLevel));
+                    //DebugOutput(string.Format("Monkey {0} worry {1}", monkey.ID, worryLevel));
 
                     // inspect current item and update worry level
 
                     worryLevel = monkey.Inspect(worryLevel);
-                    //m_debugInfo.Add(string.Format("Monkey {0} updated worry {1}", monkey.ID, worryLevel));
+                    //DebugOutput(string.Format("Monkey {0} updated worry {1}", monkey.ID, worryLevel));
 
 
                     if (!extraWorried)
                     {
                         // boredom
                         worryLevel /= 3;
-                        //m_debugInfo.Add(string.Format("Monkey {0} boredom {1}", monkey.ID, worryLevel));
+                        //DebugOutput(string.Format("Monkey {0} boredom {1}", monkey.ID, worryLevel));
                     }
                     else
                     {
@@ -81,30 +81,30 @@ public class Test11_2022 : BaseTest
                     // check and move items.
                     Monkey target = null;
                     monkey.Check(worryLevel, monkeyMap, out target);
-                    //m_debugInfo.Add(string.Format("Monkey {0} thrown item of worry {1} to {2}", monkey.ID, worryLevel, target.ID));
-                    //m_debugInfo.Add("\n");
+                    //DebugOutput(string.Format("Monkey {0} thrown item of worry {1} to {2}", monkey.ID, worryLevel, target.ID));
+                    //DebugOutput("\n");
                 }
 
 
             }
 
             System.Console.WriteLine("After Round {0}", round + 1);
-            m_debugInfo.Add(String.Format("After Round {0}", round + 1));
+            DebugOutput(String.Format("After Round {0}", round + 1));
             foreach (Monkey m in monkeyList)
             {
-                m_debugInfo.Add(m.DebugInfo);
+                DebugOutput(m.DebugInfo);
             }
 
         }
 
         List<Monkey> sorted = monkeyList.OrderByDescending(x => x.InspectionCount).ToList();
 
-        m_debugInfo.Add("Highest : " + sorted[0].InspectionCount);
-        m_debugInfo.Add("Second : " + sorted[1].InspectionCount);
+        DebugOutput("Highest : " + sorted[0].InspectionCount);
+        DebugOutput("Second : " + sorted[1].InspectionCount);
 
         UInt128 finalResult = (sorted[0].InspectionCount * sorted[1].InspectionCount);
 
-        m_debugInfo.Add(String.Format("Final result = " + (sorted[0].InspectionCount * sorted[1].InspectionCount)));    
+        DebugOutput(String.Format("Final result = " + (sorted[0].InspectionCount * sorted[1].InspectionCount)));    
 
         WriteDebugInfo();
         int ibreak = 0;

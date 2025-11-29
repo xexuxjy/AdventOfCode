@@ -81,7 +81,7 @@ public class Test16_2022 : BaseTest
         ////foreach(string[] combo in Combinations.CombinationsRosettaWoRecursion<string>(strings,3))
         //foreach(var combo in Combinations.Permute<string>(strings))
         //{
-        //    m_debugInfo.Add(string.Join(", ", combo.ToArray()));
+        //    DebugOutput(string.Join(", ", combo.ToArray()));
         //    int ibreak2 =0;
         //}
 
@@ -96,7 +96,7 @@ public class Test16_2022 : BaseTest
     public void Simulate2()
     {
         Search(ValveLookup["AA"], AllValves.FindAll(x => x.FlowRate > 0), (MaxTime, 0),!IsPart2);
-        m_debugInfo.Add("High score was : "+HighScore);
+        DebugOutput("High score was : "+HighScore);
         int ibreak = 0;
     }
 
@@ -156,7 +156,7 @@ public class Test16_2022 : BaseTest
                 TravelToValve(destination);
             }
         }
-        m_debugInfo.Add("Total flow was " + TotalFlow);
+        DebugOutput("Total flow was " + TotalFlow);
     }
 
 
@@ -232,7 +232,7 @@ public class Test16_2022 : BaseTest
 
     public void TravelToValve(Valve move)
     {
-        m_debugInfo.Add("Moving from " + CurrentValve.Id + " to " + move.Id);
+        DebugOutput("Moving from " + CurrentValve.Id + " to " + move.Id);
         CurrentValve = move;
         AdvanceTime();
 
@@ -249,7 +249,7 @@ public class Test16_2022 : BaseTest
 
     public void OpenCurrentValve()
     {
-        m_debugInfo.Add("Opening valve " + CurrentValve.Id);
+        DebugOutput("Opening valve " + CurrentValve.Id);
         Debug.Assert(CurrentValve != null && CurrentValve.Open == false);
         CurrentValve.Open = true;
         AdvanceTime();

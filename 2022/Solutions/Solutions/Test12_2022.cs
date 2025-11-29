@@ -72,7 +72,7 @@ public class Test12_2022 : BaseTest, IMapData
 
         // we win!
         int ibreak2 = 0;
-        m_debugInfo.Add(DrawRoute(shortestResults));
+        DebugOutput(DrawRoute(shortestResults));
 
         WriteDebugInfo();
     }
