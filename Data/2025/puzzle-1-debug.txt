@@ -1,0 +1,2 @@
+The number of times zero occured is 6858
+Elapsed = 27.8409 ms

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 public class GenerateYear
 {
-    static void Main()
+    
+    
+    public void Create(int year)
     {
         string pathBase = "../../../";
-        int year = 2016;
 
         string codePath = pathBase + year.ToString();
         if (!Directory.Exists(codePath))

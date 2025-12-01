@@ -100,6 +100,8 @@ public abstract class BaseTest
     {
         Initialise();
 
+        File.Create(DebugFilename).Close();
+        
         using var factory = LoggerFactory.Create(logging =>
             {
                 logging.SetMinimumLevel(LogLevel.Debug);

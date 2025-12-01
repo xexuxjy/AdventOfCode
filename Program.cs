@@ -6,10 +6,12 @@ public class Program
 
     static void Main()
     {
-        new Test25_2016().SetTestInput().RunTest(); 
-        //new Test25_2016().RunTest(); 
-        //new Test25_2016().SetTestInput().SetPart2().RunTest(); 
-        //new Test25_2016().SetPart2().RunTest(); 
+        //new GenerateYear().Create(2025);
+        
+        //new Test1_2025().SetTestInput().RunTest(); 
+        //new Test1_2025().RunTest(); 
+        //new Test1_2025().SetTestInput().SetPart2().RunTest(); 
+        new Test1_2025().SetPart2().RunTest(); 
     }
 
     
