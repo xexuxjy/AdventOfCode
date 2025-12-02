@@ -1,0 +1,15 @@
+Original Value 11 splitLength 1 testVal 1  matches
+Original Value 22 splitLength 1 testVal 2  matches
+Original Value 99 splitLength 1 testVal 9  matches
+Original Value 111 splitLength 1 testVal 1  matches
+Original Value 999 splitLength 1 testVal 9  matches
+Original Value 1010 splitLength 2 testVal 10  matches
+Original Value 1188511885 splitLength 5 testVal 11885  matches
+Original Value 222222 splitLength 3 testVal 222  matches
+Original Value 446446 splitLength 3 testVal 446  matches
+Original Value 38593859 splitLength 4 testVal 3859  matches
+Original Value 565656 splitLength 2 testVal 56  matches
+Original Value 824824824 splitLength 3 testVal 824  matches
+Original Value 2121212121 splitLength 2 testVal 21  matches
+Total of invalid ID's is : 4174379265
+Elapsed = 23.597 ms
