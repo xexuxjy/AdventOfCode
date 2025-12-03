@@ -100,12 +100,12 @@ public class Test2_2025 : BaseTest
 
                 if (sanity && sanity2)
                 {
-                    DebugOutput($"Original Value {value} splitLength {splitLength} testVal {testVal}  matches");
+                    //DebugOutput($"Original Value {value} splitLength {splitLength} testVal {testVal}  matches");
                     return long.Parse(valueAsString);
                 }
                 else
-                {
-                    DebugOutput($"***** FAILED SANITY {splitLength}  {numSplits}  {numSplits*testVal.Length}  {valueAsString.Length}");
+                {   
+                    //DebugOutput($"***** FAILED SANITY {splitLength}  {numSplits}  {numSplits*testVal.Length}  {valueAsString.Length}");
                 }
             }
             splitLength--;

@@ -1,0 +1,2 @@
+Best total is 16993
+Elapsed = 22.5947 ms

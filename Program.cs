@@ -8,10 +8,10 @@ public class Program
     {
         //new GenerateYear().Create(2025);
         
-        //new Test2_2025().SetTestInput().RunTest(); 
-        //new Test2_2025().RunTest(); 
-        //new Test2_2025().SetTestInput().SetPart2().RunTest(); 
-        new Test2_2025().SetPart2().RunTest(); 
+        //new Test3_2025().SetTestInput().RunTest(); 
+        new Test3_2025().RunTest(); 
+        //new Test3_2025().SetTestInput().SetPart2().RunTest(); 
+        //new Test3_2025().SetPart2().RunTest(); 
     }
 
     
