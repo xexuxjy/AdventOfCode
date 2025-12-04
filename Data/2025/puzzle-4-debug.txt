@@ -1,0 +1,2 @@
+Total removable is 8765
+Elapsed = 69.2197 ms

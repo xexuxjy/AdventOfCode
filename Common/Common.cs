@@ -44,6 +44,7 @@ public static class Helper
         return ret;
     }
 
+   
     public static long LongPow(long x, ulong pow)
     {
         long ret = 1;
