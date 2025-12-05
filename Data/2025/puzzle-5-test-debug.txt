@@ -1,0 +1,2 @@
+Part2 AllFresh count is : 14
+Elapsed = 25.0005 ms
