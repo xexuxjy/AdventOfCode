@@ -1,0 +1,46 @@
+https://www.reddit.com/r/adventofcode/comments/1pgltoe/2025_day_07_part_2_using_instinct_instead_of/
+
+My experience is that you can usually derive the "dynamic programming" solution to a problem by going through the following steps:
+
+    Write the naive recursive solution.
+
+    Introduce a memoization point -- you introduce a "memoization key" that is some part of your input and then store partial results under that key.
+
+At this point you have the memoized solution, which is frequently more useful anyways, but for DP you do a few things that are more specific:
+
+    Figure out how to represent the memoization key as a tuple of small integers starting from zero. DP is most often used with array-based algorithms, so this usually means rewriting your algorithm so it operates on indices into the array, instead of elements.
+
+    Replace your memoization store with an n-dimensional array indexed by your integer-based memoization key. Then find an iteration order such that you hit each cell's recursive dependencies before you hit the original cell!
+
+This apparently has a handful of perf advantages, although it's less likely to get you a data structure you can use across two separate calls. Anyways, for fibonacci numbers, this looks like this:
+
+# naive solution
+fib(x):
+  if x == 0: return 1
+  if x == 1: return 1
+  return fib(x - 1) + fib(x - 2)
+
+# memoized
+fib_store = {}
+memoized(x):
+  if x == 0: return 1
+  if x == 1: return 1
+  if x in fib_store: return fib_store[x]
+  return (fib_store[x] := memoized(x - 1) + memoized(x - 2))
+
+# dynamic programming
+fib(x):
+  store = [0] * (x + 1)
+  store[0] = 1
+  store[1] = 1
+  for i in range(2, x + 1):
+    # by construction: i - 1 and i - 2 were reached before we got here!
+    store[i] = store[i - 1] + store[i - 2]
+  return store[x]
+
+7
+
+
+7980502
+
+4509723641302
