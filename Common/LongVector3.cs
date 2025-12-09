@@ -1,41 +1,41 @@
 ﻿using System.Collections;
 using System.Runtime.CompilerServices;
 
-public struct IntVector3 : IComparable<IntVector3>
+public struct LongVector3 : IComparable<LongVector3>, IEquatable<LongVector3>
 {
-    public static readonly IntVector3 Zero = new IntVector3();
+    public static readonly LongVector3 Zero = new LongVector3();
 
-    public IntVector3(int x, int y, int z)
+    public LongVector3(long x, long y, long z)
     {
         X = x;
         Y = y;
         Z = z;
     }
 
-    public IntVector3(int x)
+    public LongVector3(long x)
     {
         X = x;
         Y = x;
         Z = x;
     }
 
-    public IntVector3(IntVector3 v)
+    public LongVector3(LongVector3 v)
     {
         X = v.X;
         Y = v.Y;
         Z = v.Z;
     }
 
-    public IntVector3(ref IntVector3 v)
+    public LongVector3(ref LongVector3 v)
     {
         X = v.X;
         Y = v.Y;
         Z = v.Z;
     }
 
-    public static IntVector3 operator +(IntVector3 value1, IntVector3 value2)
+    public static LongVector3 operator +(LongVector3 value1, LongVector3 value2)
     {
-        IntVector3 vector;
+        LongVector3 vector;
         vector.X = value1.X + value2.X;
         vector.Y = value1.Y + value2.Y;
         vector.Z = value1.Z + value2.Z;
@@ -44,66 +44,66 @@ public struct IntVector3 : IComparable<IntVector3>
 
 
 
-    public static IntVector3 operator -(IntVector3 value1, IntVector3 value2)
+    public static LongVector3 operator -(LongVector3 value1, LongVector3 value2)
     {
-        IntVector3 vector;
+        LongVector3 vector;
         vector.X = value1.X - value2.X;
         vector.Y = value1.Y - value2.Y;
         vector.Z = value1.Z - value2.Z;
         return vector;
     }
 
-    public static IntVector3 operator /(IntVector3 value1, int value)
+    public static LongVector3 operator /(LongVector3 value1, long value)
     {
-        IntVector3 vector;
+        LongVector3 vector;
         vector.X = value1.X / value;
         vector.Y = value1.Y / value;
         vector.Z = value1.Z / value;
         return vector;
     }
 
-    public static IntVector3 operator *(IntVector3 value1, int value)
+    public static LongVector3 operator *(LongVector3 value1, long value)
     {
-        IntVector3 vector;
+        LongVector3 vector;
         vector.X = value1.X * value;
         vector.Y = value1.Y * value;
         vector.Z = value1.Z * value;
         return vector;
     }
 
-    public static bool operator <(IntVector3 value1, IntVector3 value2)
+    public static bool operator <(LongVector3 value1, LongVector3 value2)
     {
         return value1.X < value2.X || value1.Y < value2.Y || value1.Z < value2.Z;
     }
 
-    public static bool operator <=(IntVector3 value1, IntVector3 value2)
+    public static bool operator <=(LongVector3 value1, LongVector3 value2)
     {
         return value1.X <= value2.X || value1.Y <= value2.Y || value1.Z <= value2.Z;
     }
 
 
-    public static bool operator >(IntVector3 value1, IntVector3 value2)
+    public static bool operator >(LongVector3 value1, LongVector3 value2)
     {
         return value1.X > value2.X || value1.Y > value2.Y || value1.Z > value2.Z;
     }
 
-    public static bool operator >=(IntVector3 value1, IntVector3 value2)
+    public static bool operator >=(LongVector3 value1, LongVector3 value2)
     {
         return value1.X >= value2.X || value1.Y >= value2.Y || value1.Z >= value2.Z;
     }
 
-    public static bool operator ==(IntVector3 value1, IntVector3 value2)
+    public static bool operator ==(LongVector3 value1, LongVector3 value2)
     {
         return value1.X == value2.X && value1.Y == value2.Y && value1.Z == value2.Z;
     }
 
-    public static bool operator !=(IntVector3 value1, IntVector3 value2)
+    public static bool operator !=(LongVector3 value1, LongVector3 value2)
     {
         return value1.X != value2.X || value1.Y != value2.Y || value1.Z != value2.Z;
     }
 
 
-    public void Min(IntVector3 v)
+    public void Min(LongVector3 v)
     {
         if (v.X < X)
         {
@@ -122,7 +122,7 @@ public struct IntVector3 : IComparable<IntVector3>
 
     }
 
-    public void Max(IntVector3 v)
+    public void Max(LongVector3 v)
     {
         if (v.X > X)
         {
@@ -141,11 +141,11 @@ public struct IntVector3 : IComparable<IntVector3>
     }
 
 
-    public int ManhattanDistance(IntVector3 v)
+    public long ManhattanDistance(LongVector3 v)
     {
-        int distanceX = Math.Abs(X - v.X);
-        int distanceY = Math.Abs(Y - v.Y);
-        int distanceZ = Math.Abs(Z - v.Z);
+        long distanceX = Math.Abs(X - v.X);
+        long distanceY = Math.Abs(Y - v.Y);
+        long distanceZ = Math.Abs(Z - v.Z);
         return distanceX + distanceY + distanceZ;
 
     }
@@ -180,7 +180,7 @@ public struct IntVector3 : IComparable<IntVector3>
         return "(" + X + "," + Y + "," + Z + ")";
     }
 
-    public int CompareTo(IntVector3 other)
+    public int CompareTo(LongVector3 other)
     {
         if (this == other)
         {
@@ -195,27 +195,19 @@ public struct IntVector3 : IComparable<IntVector3>
         return 1;
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public override bool Equals(object other)
-    {
-        if (!(other is IntVector3)) return false;
-
-        return Equals((IntVector3)other);
-    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool Equals(IntVector3 other)
+    public bool Equals(LongVector3 other)
     {
         return X == other.X && Y == other.Y && Z == other.Z;
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode()
     {
-        return X^ (Y << 4) ^ (Y >> 28) ^ (Z >> 4) ^ (Z << 28);
+        return HashCode.Combine(X, Y, Z);
     }
 
-    public int this[int i]
+    public long this[long i]
     {
         get
         {
@@ -245,7 +237,7 @@ public struct IntVector3 : IComparable<IntVector3>
         }
     }
 
-    public int X;
-    public int Y;
-    public int Z;
+    public long X;
+    public long Y;
+    public long Z;
 }

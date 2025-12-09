@@ -1,0 +1,2 @@
+Have a total circuit size of 62186 
+Elapsed = 12948.7472 ms

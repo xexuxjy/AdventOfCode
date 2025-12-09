@@ -11,15 +11,34 @@ public class Test8_2025 : BaseTest
 
     public override void Execute()
     {
-        List<IntVector3> points = new List<IntVector3>();
+        List<LongVector3> points = new List<LongVector3>();
         foreach (string line in m_dataFileContents)
         {
             string[] tokens = line.Split(',');
-            IntVector3 point = new IntVector3(int.Parse(tokens[0]), int.Parse(tokens[1]), int.Parse(tokens[2]));
+            LongVector3 point = new LongVector3(long.Parse(tokens[0]), long.Parse(tokens[1]), long.Parse(tokens[2]));
             points.Add(point);
         }
 
-        var result = BuildCircuits(points);
+        List<(LongVector3, LongVector3,double)> closestPairs = new List<(LongVector3, LongVector3,double)>();
+        for (int i = 0; i < points.Count; i++)
+        {
+            for (int j = i + 1; j < points.Count; j++)
+            {
+                LongVector3 point1 = points[i];
+                LongVector3 point2 = points[j];
+                double mag = (point1-point2).Magnitude;
+                if (double.IsNaN(mag))
+                {
+                    int ibreak = 0;
+                    double mag2 = (point1-point2).Magnitude2;
+                }
+                closestPairs.Add((point1,point2,mag));
+            }
+        }
+        // sort all the closest pairs once for efficiency.
+        closestPairs.Sort((a, b) => a.Item3.CompareTo(b.Item3));
+        
+        var result = BuildCircuits(points, closestPairs);
 
         long total = 1;
         int testSize = 3;
@@ -32,122 +51,82 @@ public class Test8_2025 : BaseTest
         DebugOutput($"Have a total circuit size of {total} ");
     }
 
-    public List<Circuit> BuildCircuits(List<IntVector3> points)
+    public List<Circuit> BuildCircuits(List<LongVector3> points, List<(LongVector3, LongVector3, double)> pairs)
     {
-        List<IntVector3> pointsCopy = new List<IntVector3>();
-        pointsCopy.AddRange(points.OrderBy(x=>x.Magnitude));
-        
-        double minDistance = double.MaxValue;
-        double lastDistance = double.MaxValue;
-
+        List<LongVector3> pointsCopy = new List<LongVector3>();
+        pointsCopy.AddRange(points.OrderBy(x => x.Magnitude));
         List<Circuit> circuits = new List<Circuit>();
-
-        int unallocatedPoints = pointsCopy.Count;
-
-        int numIterations = 12;
-        for(int i=0;i<numIterations;i++)
+        foreach (LongVector3 point in pointsCopy)
         {
-            (IntVector3,IntVector3) bestResult = (new IntVector3(),new IntVector3()); 
-            
-            foreach (IntVector3 point in pointsCopy)
-            {
-                foreach (IntVector3 point2 in pointsCopy)
-                {
-                    if (point != point2)
-                    {
-                        double distance = (point-point2).Magnitude;
-                        if (distance < minDistance)
-                        {
-                            bool alreadyLinked = false;
-                            foreach (Circuit circ in circuits)
-                            {
-                                if(circ.ContainsConnectedPoints(point,point2))
-                                {
-                                    alreadyLinked = true;
-                                    break;
-                                }
-                            }
+            Circuit circuit = new Circuit(point,this);
+            circuits.Add(circuit);
+        }
 
-                            if (!alreadyLinked)
-                            {
-                                minDistance = distance;
-                                bestResult = (point, point2);
-                            }
-                        }
-                    }
-                }
-            }
-            
-            // find circuit for point. if it doesn't exist create a new one.
-            Circuit targetCircuit = null;
+        int numIterations = IsTestInput?10:1000;
+        for (int i = 0; i < numIterations; i++)
+        {
+            var pair = pairs[i];
+            Circuit pointCircuit = null;
             foreach (Circuit circuit in circuits)
             {
-                if (circuit.ContainsPoint(bestResult.Item1) || circuit.ContainsPoint(bestResult.Item2))
+                if(circuit.ContainsPoint(pair.Item1))
                 {
-                    targetCircuit = circuit;
+                    pointCircuit = circuit;
                     break;
                 }
             }
 
-            if (targetCircuit == null)
-            {
-                targetCircuit = new Circuit();
-                circuits.Add(targetCircuit);
-            }
-            
-            targetCircuit.ConnectPoints(bestResult.Item1, bestResult.Item2);
-            minDistance = double.MaxValue;
-
-            int allocatedPoints = 0;
+            Circuit pointCircuit2 = null;
             foreach (Circuit circuit in circuits)
             {
-                allocatedPoints += circuit.PointCount;
+                if(circuit.ContainsPoint(pair.Item2))
+                {
+                    pointCircuit2 = circuit;
+                    break;
+                }
             }
-            unallocatedPoints = pointsCopy.Count-allocatedPoints;;
-        }
+            if (pointCircuit!= pointCircuit2)
+            {
+                pointCircuit.Merge(pointCircuit2);
+            }
+            
+            circuits.RemoveAll(x => x.PointCount == 0);
 
+        }
         circuits.Sort((x,y) => (x.PointCount.CompareTo(y.PointCount)*-1));
         
         return circuits;
     }
+
         
 }
 
 public class Circuit
 {
-    private String Id;
-
-    public void ConnectPoints(IntVector3 point, IntVector3 point2)
+    private BaseTest m_test;
+    public Circuit(LongVector3 point,BaseTest test)
     {
-        if (point < point2)
-        {
-            Points.Add(point);
-            Points.Add(point2);
-            Junctions.Add((point, point2));
-            Distances.Add(point.ManhattanDistance(point2));
-        }
-        else
-        {
-            Points.Add(point);
-            Points.Add(point2);
-            Junctions.Add((point2, point));
-            Distances.Add(point.ManhattanDistance(point2));
-        }
+        m_test = test;
+        Points.Add(point);
     }
 
-    public bool ContainsConnectedPoints(IntVector3 point, IntVector3 point2)
+    public void Merge(Circuit circuit)
     {
-        return Junctions.Contains((point, point2)) || Junctions.Contains((point2, point));
+        //m_test.DebugOutput($"Merging circuit {string.Join(' ', circuit.Points)} to {string.Join(' ', Points)} .");
+        
+        foreach (LongVector3 point in circuit.Points)
+        {
+            Points.Add(point);
+        }
+        circuit.Points.Clear();
     }
-
-    public bool ContainsPoint(IntVector3 point)
+    
+    public bool ContainsPoint(LongVector3 point)
     {
         return Points.Contains(point);        
     }
  
     public int PointCount { get { return Points.Count; } }
-    
-    private HashSet<IntVector3> Points = new HashSet<IntVector3>();
-    private List<(IntVector3,IntVector3)> Junctions = new List<(IntVector3,IntVector3)>();
-    private List<int> Distances =  new List<int>();
+    private HashSet<LongVector3> Points = new HashSet<LongVector3>();
+
 }

@@ -1,0 +1,2 @@
+Have a total circuit size of 40 
+Elapsed = 35.1742 ms
