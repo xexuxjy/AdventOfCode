@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Runtime.CompilerServices;
 
-public struct IntVector3
+public struct IntVector3 : IComparable<IntVector3>
 {
     public static readonly IntVector3 Zero = new IntVector3();
 
@@ -164,6 +164,21 @@ public struct IntVector3
     public override string ToString()
     {
         return "(" + X + "," + Y + "," + Z + ")";
+    }
+
+    public int CompareTo(IntVector3 other)
+    {
+        if (this == other)
+        {
+            return 0;
+        }
+
+        if (this < other)
+        {
+            return -1;
+        }
+
+        return 1;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
