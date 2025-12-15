@@ -49,6 +49,12 @@ public abstract class BaseTest
         get { return InputPath + Year+"\\puzzle-" + TestID + "-" + (IsTestInput ? "test-" : "") + "input.txt"; }
     }
 
+    public String Part2Filename
+    {
+        get { return InputPath + Year+"\\puzzle-" + TestID + "-part2-" + (IsTestInput ? "test-" : "") + "input.txt"; }
+    }
+
+    
     public String DebugFilename
     {
         get { return InputPath + Year+"\\puzzle-" + TestID + "-" + (IsTestInput ? "test-" : "") + "debug.txt"; }
@@ -64,11 +70,18 @@ public abstract class BaseTest
         //     }
         // }
     }
-
+    
     public void ReadDataFile()
     {
         m_dataFileContents.Clear();
-        using (StreamReader sr = new StreamReader(new FileStream(Filename, FileMode.Open)))
+
+        string dataFile = Part2Filename;
+        if (!File.Exists(dataFile))
+        {
+            dataFile = Filename;
+        }
+        
+        using (StreamReader sr = new StreamReader(new FileStream(dataFile, FileMode.Open)))
         {
             while (!sr.EndOfStream)
             {

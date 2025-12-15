@@ -209,7 +209,7 @@ public struct LongVector2
     public static readonly LongVector2 Right = new LongVector2(1, 0);
     public static readonly LongVector2 Up = new LongVector2(0, 1);
     public static readonly LongVector2 Down = new LongVector2(0, -1);
-
+    public static readonly LongVector2 Zero = new LongVector2(0, 0);
 
     public static readonly LongVector2[] Directions = new LongVector2[] { Left, Right, Up, Down };
 }

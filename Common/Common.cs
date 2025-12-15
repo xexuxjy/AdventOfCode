@@ -57,6 +57,34 @@ public static class Helper
         }
         return ret;
     }
+    public static string SubstringBetween(string line, string from, string to, bool inclusive=false)
+    {
+        int index1 = line.IndexOf(from);
+        if (index1 == -1)
+        {
+            return null;
+        }
+        int index2 = line.IndexOf(to);
+        if (index2 == -1)
+        {
+            return null;
+        }
+
+        if (index2 <= index1)
+        {
+            return null;
+        }
+
+        if (inclusive)
+        {
+            return line.Substring(index1 , (index2-index1)+to.Length);
+        }
+        else
+        {
+            return line.Substring(index1 + from.Length, index2 - (index1+from.Length));
+        }
+    }
+
 
 
     // up and down look a bit odd as origin is top left.
@@ -405,6 +433,31 @@ public static class Helper
         return result;
     }
 
+    public static bool IsPointInPolygon(List<LongVector2> polygon, LongVector2 testPoint)
+    {
+        bool result = false;
+        int j = polygon.Count - 1;
+        for (int i = 0; i < polygon.Count; i++)
+        {
+            if (polygon[i].Y < testPoint.Y && polygon[j].Y >= testPoint.Y ||
+                polygon[j].Y < testPoint.Y && polygon[i].Y >= testPoint.Y)
+            {
+                if (polygon[i].X + (testPoint.Y - polygon[i].Y) /
+                    (polygon[j].Y - polygon[i].Y) *
+                    (polygon[j].X - polygon[i].X) < testPoint.X)
+                {
+                    result = !result;
+                }
+            }
+
+            j = i;
+        }
+
+        return result;
+    }
+
+    
+    
     // with help from : https://github.com/Acc3ssViolation/advent-of-code-2023/blob/main/Advent/Advent/Shared/MathExtra.cs
 
     public static long Shoelace(List<IntVector2> vertices)
@@ -1884,4 +1937,6 @@ public class Ranges<T> where T  : INumber<T>
 
         return false;
     }
+
+    
 }

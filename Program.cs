@@ -7,11 +7,18 @@ public class Program
     static void Main()
     {
         //new GenerateYear().Create(2025);
+
+        string day = "9";
+        string year = "2025";
         
-        //new Test8_2025().SetTestInput().RunTest(); 
-        new Test8_2025().RunTest(); 
-        //new Test8_2025().SetTestInput().SetPart2().RunTest(); 
-        //new Test8_2025().SetPart2().RunTest(); 
+        var type = Type.GetType($"Test{day}_{year}");
+        BaseTest test = (BaseTest)Activator.CreateInstance(type);
+        
+        //test.SetTestInput().RunTest();
+        //test.RunTest();
+        test.SetTestInput().SetPart2().RunTest();
+        //test.SetPart2().RunTest();
+        
     }
 
     

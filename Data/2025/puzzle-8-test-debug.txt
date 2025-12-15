@@ -1,2 +1,3 @@
-Have a total circuit size of 40 
-Elapsed = 35.1742 ms
+Formed single circuit at points (216,146,977), (117,168,530)
+Part2 result is : 25272
+Elapsed = 37.527 ms

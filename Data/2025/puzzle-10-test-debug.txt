@@ -1,0 +1,8 @@
+Work queue size 374928 quickest 2147483647
+Found value : 2147483647
+Work queue size 109757 quickest 2147483647
+Found value : 2147483647
+Work queue size 258463 quickest 2147483647
+Found value : 2147483647
+Final result is 2147483645
+Elapsed = 5193807.1189 ms

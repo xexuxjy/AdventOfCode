@@ -9,6 +9,8 @@ public class Test8_2025 : BaseTest
         TestID = 8;
     }
 
+    public long Part2Result = 0;
+    
     public override void Execute()
     {
         List<LongVector3> points = new List<LongVector3>();
@@ -40,15 +42,22 @@ public class Test8_2025 : BaseTest
         
         var result = BuildCircuits(points, closestPairs);
 
-        long total = 1;
-        int testSize = 3;
-        
-        for(int i=0; i<testSize; i++)        
+        if (IsPart1)
         {
-            total *= result[i].PointCount;
+            long total = 1;
+            int testSize = 3;
+
+            for (int i = 0; i < testSize; i++)
+            {
+                total *= result[i].PointCount;
+            }
+
+            DebugOutput($"Have a total circuit size of {total} ");
         }
-        
-        DebugOutput($"Have a total circuit size of {total} ");
+        else
+        {
+            DebugOutput($"Part2 result is : {Part2Result}");
+        }
     }
 
     public List<Circuit> BuildCircuits(List<LongVector3> points, List<(LongVector3, LongVector3, double)> pairs)
@@ -62,6 +71,9 @@ public class Test8_2025 : BaseTest
             circuits.Add(circuit);
         }
 
+        
+        if(IsPart1)
+        {
         int numIterations = IsTestInput?10:1000;
         for (int i = 0; i < numIterations; i++)
         {
@@ -92,6 +104,49 @@ public class Test8_2025 : BaseTest
             
             circuits.RemoveAll(x => x.PointCount == 0);
 
+        }
+        }
+        else
+        {
+            int numCircuits = circuits.Count;
+            int nextIndex = 0;
+            while(numCircuits > 1)
+            {
+                var pair = pairs[nextIndex];
+                nextIndex++;
+                Circuit pointCircuit = null;
+                foreach (Circuit circuit in circuits)
+                {
+                    if(circuit.ContainsPoint(pair.Item1))
+                    {
+                        pointCircuit = circuit;
+                        break;
+                    }
+                }
+
+                Circuit pointCircuit2 = null;
+                foreach (Circuit circuit in circuits)
+                {
+                    if(circuit.ContainsPoint(pair.Item2))
+                    {
+                        pointCircuit2 = circuit;
+                        break;
+                    }
+                }
+                if (pointCircuit!= pointCircuit2)
+                {
+                    pointCircuit.Merge(pointCircuit2);
+                }
+            
+                circuits.RemoveAll(x => x.PointCount == 0);
+                numCircuits = circuits.Count;
+                if (numCircuits == 1)
+                {
+                    DebugOutput($"Formed single circuit at points {pair.Item1}, {pair.Item2}");
+                    Part2Result = pair.Item1.X * pair.Item2.X;
+                }
+            }
+            
         }
         circuits.Sort((x,y) => (x.PointCount.CompareTo(y.PointCount)*-1));
         

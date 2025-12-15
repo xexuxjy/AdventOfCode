@@ -1,2 +1,3 @@
-Have a total circuit size of 62186 
-Elapsed = 12948.7472 ms
+Formed single circuit at points (86005,23974,12506), (97906,28543,4213)
+Part2 result is : 8420405530
+Elapsed = 316.7354 ms
