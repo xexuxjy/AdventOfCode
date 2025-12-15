@@ -55,36 +55,42 @@ public class Test11_2025 : BaseTest
         
         List<string> routes = new List<string>();
 
-        List<string> routesToOut = new List<string>();
-        
-        foreach (Node node in NodeLookup.Values)
-        {
-            AllRoutes.Clear();
-            routes.Clear();
-            if (FindRoute(node, fftNodeLookup, routes, 0,true))
-            {
-                routesToOut.Add(node.Id);
-            }
-                
-        }
         
         
 
         if (IsPart1)
         {
             FindRoute(startNode, outNodeLookup, routes,0);
+            DebugOutput($"There are {AllRoutes.Count} possible routes.");
+
         }
         else
         {
+        
+            TargetCache.Clear();
+            long numStartToFFT = FindRouteCache(startNode, fftNodeLookup, 0);
+            
+            TargetCache.Clear();
+            long numFFTToDAC = FindRouteCache(fftNodeLookup, dacNodeLookup, 0);
+
+            TargetCache.Clear();
+            long numDACToOut = FindRouteCache(dacNodeLookup, outNodeLookup, 0);
+
+            long total = numStartToFFT * numFFTToDAC * numDACToOut;
+            
+            DebugOutput($"There are {total} possible routes.");
+            
             // FindRouteReverse(outNodeLookup,startNode, routes,0);
             // AllRoutes.RemoveAll(x => !(x.Contains("fft") && x.Contains("dac")));
         }
         
-        DebugOutput($"There are {AllRoutes.Count} possible routes.");
         
         int ibreak = 0;
     }
 
+    
+    
+    
     public List<List<string>> AllRoutes = new List<List<string>>();
     public bool FindRoute(Node currentNode, Node targetNode,List<string> route,int depth,bool stopAtFirst=false)
     {
@@ -94,7 +100,7 @@ public class Test11_2025 : BaseTest
             DebugOutput($"Failed depth test");
             return false;
         }
-        
+    
         if (currentNode == targetNode)
         {
             List<string> succesfulRoute = new List<string>();
@@ -126,9 +132,50 @@ public class Test11_2025 : BaseTest
                 found = true;
             }
         }
+        if(found)
+        
         route.Remove(route.Last());
         return found;
     }
+
+    public Dictionary<Node,long> TargetCache = new Dictionary<Node,long>();
+    
+    public long FindRouteCache(Node currentNode, Node targetNode,int depth)
+    {
+        // depth check?
+        if (depth > 100)
+        {
+            DebugOutput($"Failed depth test");
+            return 0L;
+        }
+
+        if (TargetCache.ContainsKey(currentNode))
+        {
+            return TargetCache[currentNode];
+        }
+        
+        if (currentNode == targetNode)
+        {
+            return 1;
+        }
+
+        // look for cyclic routes?
+
+        
+        long targetCount = 0L;
+        foreach (string connection in currentNode.Connections)
+        {
+            targetCount += FindRouteCache(NodeLookup[connection], targetNode, depth + 1);
+        }
+
+        TargetCache[currentNode] = targetCount;
+        
+        return targetCount;
+    }
+
+    
+    
+    
     
 
     public bool FindRouteReverse(Node currentNode, Node targetNode,List<string> route,int depth)

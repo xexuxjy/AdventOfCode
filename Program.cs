@@ -8,7 +8,7 @@ public class Program
     {
         //new GenerateYear().Create(2025);
 
-        string day = "9";
+        string day = "11";
         string year = "2025";
         
         var type = Type.GetType($"Test{day}_{year}");
@@ -16,8 +16,8 @@ public class Program
         
         //test.SetTestInput().RunTest();
         //test.RunTest();
-        test.SetTestInput().SetPart2().RunTest();
-        //test.SetPart2().RunTest();
+        //test.SetTestInput().SetPart2().RunTest();
+        test.SetPart2().RunTest();
         
     }
 

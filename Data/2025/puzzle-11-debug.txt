@@ -1,0 +1,2 @@
+There are 545394698933400 possible routes.
+Elapsed = 42.5523 ms
