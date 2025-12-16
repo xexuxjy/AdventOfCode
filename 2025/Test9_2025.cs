@@ -107,6 +107,7 @@ public class Test9_2025 : BaseTest
                 DoubleVector2 max = point2;
                 max.Max(point1);
                 
+                // shrink the rectangle by 1 in each dimension
                 min += new DoubleVector2(1, 1);
                 max -= new DoubleVector2(1, 1);
                 
@@ -121,7 +122,7 @@ public class Test9_2025 : BaseTest
         
         foreach (var pair in pairs)
         {
-            // check to see if that pair crosses any of the lines defined above.
+            // check to see if the shrunken rectangle crosses any of the lines defined above. If not then it's a valid option
             bool valid = true;
             foreach (var line in lines)
             {
@@ -134,7 +135,7 @@ public class Test9_2025 : BaseTest
 
             if (valid)
             {
-                // regrow area
+                // regrow shrunken rectangle to calculate area.
                 double area = (Math.Abs(pair.Item1.X - pair.Item2.X)+3) * (Math.Abs(pair.Item1.Y - pair.Item2.Y)+3);
                 if (area > largestArea)
                 {
