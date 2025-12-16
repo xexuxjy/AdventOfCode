@@ -1,2 +1,2 @@
-Part2 Elapsed = 4936.9309 ms  set size 0
-Elapsed = 4959.7778 ms
+Largest area is 1429075575
+Elapsed = 3504.3213 ms

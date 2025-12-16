@@ -99,9 +99,19 @@ public class Test9_2025 : BaseTest
             for (int j = i + 1; j < points.Count; j++)
             {
                 DoubleVector2 point1 = new DoubleVector2(points[i].X, points[i].Y);
-                DoubleVector2 point2 = new DoubleVector2(points[j].X,points[j].Y);
+                DoubleVector2 point2 = new DoubleVector2(points[j].X, points[j].Y);
 
-                pairs.Add((point1, point2));
+                DoubleVector2 min = point1;
+                min.Min(point2);
+                
+                DoubleVector2 max = point2;
+                max.Max(point1);
+                
+                min += new DoubleVector2(1, 1);
+                max -= new DoubleVector2(1, 1);
+                
+                //pairs.Add((point1, point2));
+                pairs.Add((min, max));
             }
         }
 
@@ -124,7 +134,8 @@ public class Test9_2025 : BaseTest
 
             if (valid)
             {
-                double area = (Math.Abs(pair.Item1.X - pair.Item2.X)+1) * (Math.Abs(pair.Item1.Y - pair.Item2.Y)+1);
+                // regrow area
+                double area = (Math.Abs(pair.Item1.X - pair.Item2.X)+3) * (Math.Abs(pair.Item1.Y - pair.Item2.Y)+3);
                 if (area > largestArea)
                 {
                     largestArea = area;

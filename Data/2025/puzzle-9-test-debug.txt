@@ -1,2 +1,2 @@
-Largest area is -1.7976931348623157E+308
-Elapsed = 140997.5633 ms
+Largest area is 24
+Elapsed = 25.6873 ms
