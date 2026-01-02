@@ -10,9 +10,12 @@
 
   <ItemGroup>
     <PackageReference Include="CompactPack" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Z3" Version="4.12.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Spectre.Console" Version="0.49.1" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+    <PackageReference Include="Z3.Linq" Version="2.0.1" />
+    <PackageReference Include="Z3.Linq.Examples" Version="2.0.1" />
     <PackageReference Include="ZLogger" Version="2.5.10" />
   </ItemGroup>
 

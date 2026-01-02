@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Microsoft.Z3;
+using Spectre.Console.Cli;
 
 public class Test10_2025 : BaseTest
 {
@@ -132,6 +134,45 @@ public class Test10_2025 : BaseTest
             return CurrentJoltage.SequenceEqual(Joltage);
         }
 
+        public void TestLinear()
+        {
+            Context context = new Context();
+            
+            List<IntExpr> buttons = new List<IntExpr>();
+            for (int i = 0; i < Wiring.Count; i++)
+            {
+                buttons.Add(context.MkIntConst("B"+i));
+            }
+
+            for (int i = 0; i < Joltage.Count; i++)
+            {
+                for (int j = 0; j < Wiring[i].Count; j++)
+                {
+                    if (Wiring[i].Contains(i))
+                    {
+                        //context. Sum(buttons[j]);
+                    }
+                }
+            }
+            
+            Optimize optimiser = context.MkOptimize();
+
+            foreach (var button in buttons)
+            {
+                optimiser.Add(button >= 0);
+            }
+
+            
+            //Sum()
+            //optimiser.MkMinimize(z3.Sum(bs))
+            //Debug.Assert(optimiser.Check() == Status.SATISFIABLE);
+
+            //Model model = optimiser.Model();
+
+        }
+        
+        
+        
         public int FindOptimum()
         {
             int[] possibilities = new int[Wiring.Count];
@@ -337,6 +378,7 @@ public class Test10_2025 : BaseTest
             return machine;
         }
     }
+
 }
 
 

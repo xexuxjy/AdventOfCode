@@ -1,0 +1,2 @@
+The total is 4
+Elapsed = 19.1589 ms
