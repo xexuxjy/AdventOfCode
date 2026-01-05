@@ -1,2 +1,2 @@
 The total is 191
-Elapsed = 22.0764 ms
+Elapsed = 22.2043 ms

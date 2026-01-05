@@ -1,0 +1,2 @@
+The first number written is 295229
+Elapsed = 26.1534 ms

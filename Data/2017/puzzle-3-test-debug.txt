@@ -1,0 +1,2 @@
+The first number written is 133
+Elapsed = 25.7722 ms
