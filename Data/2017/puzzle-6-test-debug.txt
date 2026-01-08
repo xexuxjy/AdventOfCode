@@ -1,0 +1,2 @@
+Found loop length of 4
+Elapsed = 24.7956 ms

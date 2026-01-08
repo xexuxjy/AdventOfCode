@@ -1,0 +1,2 @@
+Found loop length of 1610
+Elapsed = 278.8672 ms

@@ -282,8 +282,3 @@ public class CPU
 }
 
 
-public class Register
-{
-    public string Name;
-    public int Value;
-}
