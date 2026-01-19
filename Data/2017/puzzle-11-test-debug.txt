@@ -1,0 +1,2 @@
+Distance at node (-1,0,0) is 1
+Elapsed = 26.4358 ms

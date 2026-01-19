@@ -1,0 +1,3 @@
+Distance at node (764,-521,-243) is 764
+Maximum distance reached is 1532
+Elapsed = 36.8626 ms

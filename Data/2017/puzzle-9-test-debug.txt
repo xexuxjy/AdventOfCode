@@ -1,0 +1,8 @@
+The garbage count for <> was 0
+The garbage count for <random characters> was 17
+The garbage count for <<<<> was 3
+The garbage count for <{!>}> was 2
+The garbage count for <!!> was 0
+The garbage count for <!!!>> was 0
+The garbage count for <{o"i!a,<{i<a> was 10
+Elapsed = 19.6163 ms
