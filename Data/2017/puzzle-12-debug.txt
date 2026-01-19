@@ -1,0 +1,2 @@
+There are 213 different groups
+Elapsed = 5865.3727 ms
