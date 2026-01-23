@@ -8,7 +8,7 @@ public class Program
     {
         //new GenerateYear().Create(2017);
 
-        string day = "12";
+        string day = "13";
         string year = "2017";
         
         var type = Type.GetType($"Test{day}_{year}");

@@ -1,0 +1,2 @@
+A delay of 10 gets through safely
+Elapsed = 6336.7264 ms
