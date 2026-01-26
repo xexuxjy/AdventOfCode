@@ -14,7 +14,6 @@ using static Test21_2015;
 
 public static class Helper
 {
-    
     public static int[,] RotateMatrixCounterClockwise(int[,] oldMatrix)
     {
         int[,] newMatrix = new int[oldMatrix.GetLength(1), oldMatrix.GetLength(0)];
@@ -27,15 +26,17 @@ public static class Helper
                 newMatrix[newRow, newColumn] = oldMatrix[oldRow, oldColumn];
                 newColumn++;
             }
+
             newRow++;
         }
+
         return newMatrix;
     }
-    
+
     public static List<int> Factor(int number)
     {
         var factors = new List<int>();
-        int max = (int)Math.Sqrt(number);  // Round down
+        int max = (int)Math.Sqrt(number); // Round down
 
         for (int factor = 1; factor <= max; ++factor) // Test from 1 to the square root, or the int below it, inclusive.
         {
@@ -46,6 +47,7 @@ public static class Helper
                     factors.Add(number / factor);
             }
         }
+
         return factors;
     }
 
@@ -59,10 +61,11 @@ public static class Helper
             x *= x;
             pow >>= 1;
         }
+
         return ret;
     }
 
-   
+
     public static long LongPow(long x, ulong pow)
     {
         long ret = 1;
@@ -73,15 +76,18 @@ public static class Helper
             x *= x;
             pow >>= 1;
         }
+
         return ret;
     }
-    public static string SubstringBetween(string line, string from, string to, bool inclusive=false)
+
+    public static string SubstringBetween(string line, string from, string to, bool inclusive = false)
     {
         int index1 = line.IndexOf(from);
         if (index1 == -1)
         {
             return null;
         }
+
         int index2 = line.IndexOf(to);
         if (index2 == -1)
         {
@@ -95,14 +101,13 @@ public static class Helper
 
         if (inclusive)
         {
-            return line.Substring(index1 , (index2-index1)+to.Length);
+            return line.Substring(index1, (index2 - index1) + to.Length);
         }
         else
         {
-            return line.Substring(index1 + from.Length, index2 - (index1+from.Length));
+            return line.Substring(index1 + from.Length, index2 - (index1 + from.Length));
         }
     }
-
 
 
     // up and down look a bit odd as origin is top left.
@@ -125,25 +130,28 @@ public static class Helper
     }
 
 
-
     public static IntVector2 TurnRight(IntVector2 d)
     {
         if (d == IntVector2.Left)
         {
             return IntVector2.Down;
         }
+
         if (d == IntVector2.Down)
         {
             return IntVector2.Right;
         }
+
         if (d == IntVector2.Right)
         {
             return IntVector2.Up;
         }
+
         if (d == IntVector2.Up)
         {
             return IntVector2.Left;
         }
+
         return d;
     }
 
@@ -153,21 +161,24 @@ public static class Helper
         {
             return IntVector2.Up;
         }
+
         if (d == IntVector2.Up)
         {
             return IntVector2.Right;
         }
+
         if (d == IntVector2.Right)
         {
             return IntVector2.Down;
         }
+
         if (d == IntVector2.Down)
         {
             return IntVector2.Left;
         }
+
         return d;
     }
-
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -208,18 +219,22 @@ public static class Helper
         {
             position.X += bounds.X;
         }
+
         if (position.X >= bounds.X)
         {
             position.X -= bounds.X;
         }
+
         if (position.Y < 0)
         {
             position.Y += bounds.Y;
         }
+
         if (position.Y >= bounds.Y)
         {
             position.Y -= bounds.Y;
         }
+
         return position;
     }
 
@@ -259,7 +274,8 @@ public static class Helper
         return sb.ToString();
     }
 
-    public static string DrawGrid(char[] data, int width, int height, Dictionary<char, Spectre.Console.Color> colorMap = null)
+    public static string DrawGrid(char[] data, int width, int height,
+        Dictionary<char, Spectre.Console.Color> colorMap = null)
     {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; ++y)
@@ -278,6 +294,7 @@ public static class Helper
                 {
                     s = "" + c;
                 }
+
                 sb.Append(s);
             }
 
@@ -288,8 +305,8 @@ public static class Helper
     }
 
 
-
-    public static void DrawGridToConsole(char[] data, int width, int height, Dictionary<char, Spectre.Console.Color> colorMap, int delay = 100)
+    public static void DrawGridToConsole(char[] data, int width, int height,
+        Dictionary<char, Spectre.Console.Color> colorMap, int delay = 100)
     {
         AnsiConsole.Clear();
         //AnsiConsole.Cursor.SetPosition(0,0);
@@ -299,7 +316,8 @@ public static class Helper
     }
 
 
-    public static string DrawGrid(char[] data, int width, int height, IntVector2 targetPosition, IntVector2 targetDirection)
+    public static string DrawGrid(char[] data, int width, int height, IntVector2 targetPosition,
+        IntVector2 targetDirection)
     {
         int targetIndex = (targetPosition.Y * width) + targetPosition.X;
         StringBuilder sb = new StringBuilder();
@@ -314,6 +332,7 @@ public static class Helper
                 {
                     c = Helper.PointerFromDirection(targetDirection);
                 }
+
                 sb.Append(c);
             }
 
@@ -322,7 +341,6 @@ public static class Helper
 
         return sb.ToString();
     }
-
 
 
     public static string DrawGrid(char[] data, long width, long height)
@@ -373,7 +391,7 @@ public static class Helper
         return sb.ToString();
     }
 
-    
+
     public static int[] GetNumGrid(List<string> data, ref int width, ref int height)
     {
         width = data[0].Length;
@@ -474,8 +492,69 @@ public static class Helper
         return result;
     }
 
-    
-    
+
+    public static string CalculateKnotHash(string input, int size=256)
+    {
+        List<int> list = new List<int>();
+        for (int i = 0; i < size; i++)
+        {
+            list.Add(i);
+        }
+
+        int currentPosition = 0;
+        int skipSize = 0;
+
+        List<int> lengths = new List<int>();
+
+        foreach (char c in input)
+        {
+            lengths.Add((int)c);
+        }
+
+        lengths.AddRange(new int[] { 17, 31, 73, 47, 23 });
+
+        int numIterations = 64;
+
+        for (int i = 0; i < numIterations; i++)
+        {
+            foreach (int length in lengths)
+            {
+                for (int index = 0; index < (length / 2); index++)
+                {
+                    int position1 = (currentPosition + index) % list.Count;
+                    int position2 = (currentPosition + length - 1 - index) % list.Count;
+
+                    list.Swap(position1, position2);
+                }
+                //DebugOutput(string.Join(',',list));
+
+                currentPosition = (currentPosition + length + skipSize) % list.Count;
+                skipSize++;
+            }
+        }
+
+        List<int> denseHash = new List<int>();
+        for (int i = 0; i < 16; i++)
+        {
+            int hash = list[(i * 16)];
+            for (int j = 1; j < 16; j++)
+            {
+                hash = hash ^ list[(i * 16) + j];
+            }
+
+            denseHash.Add(hash);
+        }
+
+        string result = "";
+        foreach (int i in denseHash)
+        {
+            result += ((byte)i).ToString("X2");
+        }
+
+        return result;
+    }
+
+
     // with help from : https://github.com/Acc3ssViolation/advent-of-code-2023/blob/main/Advent/Advent/Shared/MathExtra.cs
 
     public static long Shoelace(List<IntVector2> vertices)
@@ -588,21 +667,20 @@ public static class Helper
 
         return a * (f * f) + b * f + c;
     }
-    
+
     public static string FormattedHash(string message, MD5 md5)
     {
         byte[] input = Encoding.ASCII.GetBytes(message);
         byte[] hash = md5.ComputeHash(input);
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < hash.Length; i++) 
+        for (int i = 0; i < hash.Length; i++)
         {
             string str = hash[i].ToString("X2");
             sb.Append(str);
         }
-        return  sb.ToString().ToLower();
-    }
 
-    
+        return sb.ToString().ToLower();
+    }
 }
 
 //https://stackoverflow.com/questions/29188686/finding-the-intersect-location-of-two-rays
@@ -754,38 +832,38 @@ public static class IntersectionHelper
     public static double[] Solve(double[] matrix, int rows, int cols)
     {
         for (int i = 0; i < cols - 1; i++)
-            for (int j = i; j < rows; j++)
-                if (matrix[i + j * cols] != 0)
-                {
-                    if (i != j)
-                        for (int k = i; k < cols; k++)
+        for (int j = i; j < rows; j++)
+            if (matrix[i + j * cols] != 0)
+            {
+                if (i != j)
+                    for (int k = i; k < cols; k++)
+                    {
+                        double temp = matrix[k + j * cols];
+                        matrix[k + j * cols] = matrix[k + i * cols];
+                        matrix[k + i * cols] = temp;
+                    }
+
+                j = i;
+
+                for (int v = 0; v < rows; v++)
+                    if (v == j)
+                        continue;
+                    else
+                    {
+                        double factor = matrix[i + v * cols] / matrix[i + j * cols];
+                        matrix[i + v * cols] = 0;
+
+                        for (int u = i + 1; u < cols; u++)
                         {
-                            double temp = matrix[k + j * cols];
-                            matrix[k + j * cols] = matrix[k + i * cols];
-                            matrix[k + i * cols] = temp;
+                            matrix[u + v * cols] -= factor * matrix[u + j * cols];
+                            matrix[u + j * cols] /= matrix[i + j * cols];
                         }
 
-                    j = i;
+                        matrix[i + j * cols] = 1;
+                    }
 
-                    for (int v = 0; v < rows; v++)
-                        if (v == j)
-                            continue;
-                        else
-                        {
-                            double factor = matrix[i + v * cols] / matrix[i + j * cols];
-                            matrix[i + v * cols] = 0;
-
-                            for (int u = i + 1; u < cols; u++)
-                            {
-                                matrix[u + v * cols] -= factor * matrix[u + j * cols];
-                                matrix[u + j * cols] /= matrix[i + j * cols];
-                            }
-
-                            matrix[i + j * cols] = 1;
-                        }
-
-                    break;
-                }
+                break;
+            }
 
         return matrix;
     }
@@ -1196,12 +1274,14 @@ public static class Combinations
         return resultList;
     }
 
-    private static void BuildOptionsRec<T>(int positionIndex, int len, T[] permutation, T[] options, List<T[]> resultList)
+    private static void BuildOptionsRec<T>(int positionIndex, int len, T[] permutation, T[] options,
+        List<T[]> resultList)
     {
         if (positionIndex == len)
         {
             return;
         }
+
         for (int j = 0; j < options.Length; j++)
         {
             T[] newPermutation2 = (T[])permutation.Clone();
@@ -1212,8 +1292,6 @@ public static class Combinations
     }
 
 
-
-    
     public static IEnumerable<IEnumerable<T>> Permute<T>(this IEnumerable<T> sequence)
     {
         if (sequence == null)
@@ -1245,7 +1323,6 @@ public static class Combinations
             }
         }
     }
-
 
 
     // Recursive
@@ -1283,6 +1360,7 @@ public static class Combinations
                     result.Last().Add(list[j]);
             }
         }
+
         return result;
     }
 
@@ -1305,12 +1383,11 @@ public static class Combinations
                         tempList.Add(list[j]);
                     }
                 }
+
                 yield return tempList;
             }
         }
     }
-
-
 
 
     //https://stackoverflow.com/questions/5132758/how-can-i-create-all-possible-combinations-for-a-set-of-words-without-repetition
@@ -1340,6 +1417,7 @@ public static class Combinations
         {
             work[i] = i;
         }
+
         foreach (int[] index in GetIntPermutations(work, 0, work.Length))
         {
             T[] result = new T[index.Length];
@@ -1367,6 +1445,7 @@ public static class Combinations
             {
                 yield return result;
             }
+
             for (int i = 1; i < len; i++)
             {
                 Swap(index, offset, offset + i);
@@ -1374,6 +1453,7 @@ public static class Combinations
                 {
                     yield return result;
                 }
+
                 Swap(index, offset, offset + i);
             }
         }
@@ -1385,7 +1465,6 @@ public static class Combinations
         index[offset1] = index[offset2];
         index[offset2] = temp;
     }
-
 }
 //https://github.com/iisfaq/CyrusBeck/blob/master/CyrusBeck.cs
 
@@ -1571,7 +1650,7 @@ class ConvexHull
         List<IntVector2> H = new List<IntVector2>(new IntVector2[2 * n]);
 
         points.Sort((a, b) =>
-             a.X == b.X ? a.Y.CompareTo(b.Y) : a.X.CompareTo(b.X));
+            a.X == b.X ? a.Y.CompareTo(b.Y) : a.X.CompareTo(b.X));
 
         // Build lower hull
         for (int i = 0; i < n; ++i)
@@ -1600,12 +1679,11 @@ class ConvexHull
         {
             perimeter += points[i].ManhattanDistance(points[i + 1]);
         }
+
         perimeter += points[0].ManhattanDistance(points[n - 1]);
 
         return perimeter;
     }
-
-
 }
 
 // need to reduce the set of possible types.
@@ -1632,6 +1710,7 @@ public class Trie
                 prev.children[index] = new TrieNode();
             prev = prev.children[index];
         }
+
         prev.endOfWord = true;
     }
 
@@ -1850,7 +1929,7 @@ public class Range<T>(T s, T e)
 }
 
 
-public class Ranges<T> where T  : INumber<T> 
+public class Ranges<T> where T : INumber<T>
 {
     public List<Range<T>> ranges = new List<Range<T>>();
     public List<Range<T>> joinedRanges = new List<Range<T>>();
@@ -1955,6 +2034,4 @@ public class Ranges<T> where T  : INumber<T>
 
         return false;
     }
-
-    
 }
