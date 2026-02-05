@@ -1,0 +1,2 @@
+Visited LOHMDQATP  and took 16492 steps
+Elapsed = 10.5037 ms

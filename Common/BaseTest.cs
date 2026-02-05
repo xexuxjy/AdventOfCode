@@ -99,7 +99,7 @@ public abstract class BaseTest
         if (!testOnly || (testOnly && IsTestInput))
         {
             Logger.LogDebug(s);
-            System.Console.WriteLine(s);
+            //System.Console.WriteLine(s);
         }
     }
 

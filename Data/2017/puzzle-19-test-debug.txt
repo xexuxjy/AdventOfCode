@@ -1,0 +1,2 @@
+Visited ABCDEF  and took 38 steps
+Elapsed = 9.6095 ms
