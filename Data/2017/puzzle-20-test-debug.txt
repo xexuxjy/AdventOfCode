@@ -1,0 +1,2 @@
+The closest particle on average is 0
+Elapsed = 22329.0407 ms

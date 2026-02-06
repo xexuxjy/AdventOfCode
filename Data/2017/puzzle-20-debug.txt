@@ -1,0 +1,2 @@
+After 1000 iterations there are 504 particles left
+Elapsed = 105.5819 ms
