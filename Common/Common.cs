@@ -33,7 +33,7 @@ public static class Helper
         return newMatrix;
     }
 
-    public static int[,] MirrorMatrixX(int[,] oldMatrix)
+    public static int[,] MirrorMatrixY(int[,] oldMatrix)
     {
         var result = Helper.Copy2DArrayInt(oldMatrix);
 
@@ -57,7 +57,7 @@ public static class Helper
         return result;
     }
 
-    public static int[,] MirrorMatrixY(int[,] oldMatrix)
+    public static int[,] MirrorMatrixX(int[,] oldMatrix)
     {
         var result = Helper.Copy2DArrayInt(oldMatrix);
         
