@@ -29,7 +29,7 @@ public class Test20_2017 : BaseTest
 
         if (IsPart1)
         {
-            int iterations = 1000;
+            int iterations = 10000;
 
             for (int i = 0; i < iterations; i++)
             {

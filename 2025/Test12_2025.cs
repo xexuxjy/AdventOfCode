@@ -132,6 +132,8 @@ public class Test12_2025 : BaseTest
             int[,] matrix180 = Helper.RotateMatrixCounterClockwise(matrix90);
             int[,] matrix270 = Helper.RotateMatrixCounterClockwise(matrix180);
 
+            
+            
             for (int x = 0; x < PatternDims; x++)
             {
                 for(int y = 0; y < PatternDims; y++)
@@ -145,8 +147,13 @@ public class Test12_2025 : BaseTest
             Variations.Add(("Rotate90",Rotate90));
             Variations.Add(("Rotate180", Rotate180));
             Variations.Add(("Rotate270", Rotate270));
+            
+            // need to add mirrored versions.
+            
+            
         }
 
+        
         public void DrawVariations()
         {
             foreach (var variation in Variations)

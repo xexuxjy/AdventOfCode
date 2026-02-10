@@ -33,6 +33,70 @@ public static class Helper
         return newMatrix;
     }
 
+    public static int[,] MirrorMatrixX(int[,] oldMatrix)
+    {
+        var result = Helper.Copy2DArrayInt(oldMatrix);
+
+        int d1 = result.GetUpperBound(0)+1;
+        int d2 = result.GetUpperBound(1)+1;
+
+        int rangeX = d1;
+        int rangeY = d2;
+
+        
+        for (int y = 0; y < rangeY; y++)
+        {
+            for (int x = 0; x < rangeX/2; x++)
+            {
+                int t = result[y, x];
+                result[y, x] = result[y, rangeX - 1 - x];
+                result[y, rangeX - 1 - x] = t;
+             
+            }
+        }
+        return result;
+    }
+
+    public static int[,] MirrorMatrixY(int[,] oldMatrix)
+    {
+        var result = Helper.Copy2DArrayInt(oldMatrix);
+        
+        int d1 = result.GetUpperBound(0)+1;
+        int d2 = result.GetUpperBound(1)+1;
+
+        int rangeX = d1;
+        int rangeY = d2;
+
+        for (int y = 0; y < rangeY/2; y++)
+        {
+            for (int x = 0; x < rangeX; x++)
+            {
+                int t = result[y, x];
+                result[y, x] = result[rangeY - 1 - y, x];
+                result[rangeY - 1 - y, x] = t;
+            }
+        }
+        return result;
+    }
+
+
+    public static  int[,] Copy2DArrayInt(int[,] src)
+    {
+        int d1 = src.GetUpperBound(0)+1;
+        int d2 = src.GetUpperBound(1)+1;
+        
+        int[,] dst = new int[d1,d2];
+        for (int row = 0; row < d1; row++)
+        {
+            for (int col = 0; col < d2; col++)
+            {
+                dst[row, col] = src[row, col];
+            }
+        }
+
+        return dst;
+    }
+    
     public static List<int> Factor(int number)
     {
         var factors = new List<int>();
