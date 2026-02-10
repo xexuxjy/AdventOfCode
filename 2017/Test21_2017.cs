@@ -300,8 +300,20 @@ public class EnhanceRule
             }
         }
 
-        Variations.Add((originalMatrix.Item1, flattened));
-        Variations.Add((originalMatrix.Item1 + "-X", flattenedX));
-        Variations.Add((originalMatrix.Item1 + "-Y", flattenedY));
+        UniqueAdd((originalMatrix.Item1, flattened));
+        UniqueAdd((originalMatrix.Item1 + "-X", flattenedX));
+        UniqueAdd((originalMatrix.Item1 + "-Y", flattenedY));
+    }
+
+    private void UniqueAdd((string, bool[]) variation)
+    {
+        foreach (var existing in Variations)
+        {
+            if (Enumerable.SequenceEqual(variation.Item2, existing.Item2))
+            {
+                return;
+            }
+        }
+        Variations.Add(variation);
     }
 }
