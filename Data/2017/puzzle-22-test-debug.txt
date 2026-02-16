@@ -1,0 +1,2 @@
+There were 2511944 infections
+Elapsed = 16334.2805 ms
