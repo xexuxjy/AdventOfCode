@@ -1,0 +1,2 @@
+After test, checksum is 3745
+Elapsed = 402.5368 ms
