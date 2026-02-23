@@ -1,0 +1,2 @@
+The longest chain is 35 with strength 1928
+Elapsed = 408.2446 ms

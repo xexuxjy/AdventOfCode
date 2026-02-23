@@ -1,0 +1,2 @@
+The longest chain is 4 with strength 19
+Elapsed = 10.1605 ms

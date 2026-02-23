@@ -1,4 +1,6 @@
-﻿public class Register
+﻿using System.Text;
+
+public class Register
 {
     public string Name;
     
@@ -58,6 +60,18 @@ public class RegisterSet
 {
     public Dictionary<string,Register> Registers = new Dictionary<string, Register>();
 
+
+    public string GetValues()
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (string key in Registers.Keys.Order())
+        {
+            sb.AppendLine($"{key} == {Registers[key].Value}");
+        }
+        
+        return sb.ToString();
+    }
+    
     public Register GetRegister(string name)
     {
         if (!Registers.TryGetValue(name, out var result))
