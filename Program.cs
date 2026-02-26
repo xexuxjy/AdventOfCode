@@ -8,16 +8,16 @@ public class Program
     {
         //new GenerateYear().Create(2017);
 
-        string day = "25";
+        string day = "23";
         string year = "2017";
         
         var type = Type.GetType($"Test{day}_{year}");
         BaseTest test = (BaseTest)Activator.CreateInstance(type);
         
         //test.SetTestInput().RunTest();
-        test.RunTest();
+        //test.RunTest();
         //test.SetTestInput().SetPart2().RunTest();
-        //test.SetPart2().RunTest();
+        test.SetPart2().RunTest();
         
     }
 
