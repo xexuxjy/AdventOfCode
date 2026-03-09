@@ -6,10 +6,10 @@ public class Program
 
     static void Main()
     {
-        //new GenerateYear().Create(2017);
+        //new GenerateYear().Create(2018);
 
-        string day = "23";
-        string year = "2017";
+        string day = "2";
+        string year = "2018";
         
         var type = Type.GetType($"Test{day}_{year}");
         BaseTest test = (BaseTest)Activator.CreateInstance(type);

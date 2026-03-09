@@ -1,0 +1,2 @@
+Result with character removed nvosmkcdtdbfhyxsphzgraljq
+Elapsed = 9.8118 ms

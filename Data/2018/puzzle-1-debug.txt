@@ -1,0 +1,3 @@
+Found duplicate at 66932
+The total is 66932
+Elapsed = 26.6824 ms

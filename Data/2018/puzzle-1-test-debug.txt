@@ -1,0 +1,3 @@
+Found duplicate at 2
+The total is 2
+Elapsed = 9.3878 ms

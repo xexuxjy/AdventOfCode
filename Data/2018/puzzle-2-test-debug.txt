@@ -1,0 +1,2 @@
+Result with character removed fgij
+Elapsed = 8.819 ms
