@@ -1,0 +1,3 @@
+Guard 99  sleepiest at minute 45
+Result : 4455
+Elapsed = 6637.6658 ms

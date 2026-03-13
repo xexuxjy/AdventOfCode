@@ -1,0 +1,3 @@
+Guard 269  sleepiest at minute 39
+Result : 10491
+Elapsed = 212.251 ms
