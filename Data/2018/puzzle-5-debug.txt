@@ -1,0 +1,2 @@
+The final result is 6952 for character d
+Elapsed = 112.4472 ms

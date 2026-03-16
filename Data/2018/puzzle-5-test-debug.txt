@@ -1,0 +1,2 @@
+The final result is 4 for character c
+Elapsed = 10.1979 ms
