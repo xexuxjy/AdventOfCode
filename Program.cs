@@ -15,9 +15,9 @@ public class Program
         BaseTest test = (BaseTest)Activator.CreateInstance(type);
         
         //test.SetTestInput().RunTest();
-        //test.RunTest();
+        test.RunTest();
         //test.SetTestInput().SetPart2().RunTest();
-        test.SetPart2().RunTest();
+        //test.SetPart2().RunTest();
         
     }
 

@@ -15,6 +15,7 @@ public class Test5_2018 : BaseTest
         if (IsPart1)
         {
             ExecutePart1();
+            //FullyReactSlow();
         }
         else
         {
@@ -45,6 +46,46 @@ public class Test5_2018 : BaseTest
         
     }
 
+    public void FullyReactSlow()
+    {
+        List<char> list = new List<char>();
+        foreach (char c in m_dataFileContents[0])
+        {
+            list.Add(c);
+        }
+        int matchDiff = 'a' - 'A';
+
+        bool cleaned = false;
+        while (!cleaned)
+        {
+            cleaned = true;
+            for(int i=0;i<list.Count-1;)
+            {
+                int diff = Math.Abs(list[i]-list[i+1]);
+                // 
+                if (diff == matchDiff)
+                {
+                    list.RemoveAt(i + 1);
+                    list.RemoveAt(i);
+                    cleaned = false;
+                }
+                else
+                {
+                    i += 1;
+                }
+            }
+        }
+
+        string result = "";
+        foreach (char c in list)
+        {
+            result += c;
+        }
+        DebugOutput($"The final result is {result.Length}");
+        DebugOutput($"The final result text is {result}");
+        
+    }
+    
     public void FullyReact(LinkedList<char> list)
     {
         // aA diff = ?
