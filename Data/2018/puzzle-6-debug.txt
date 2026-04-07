@@ -1,0 +1,3 @@
+The largest area is 4754
+Part 2 region size is 42344
+Elapsed = 3241.5621 ms

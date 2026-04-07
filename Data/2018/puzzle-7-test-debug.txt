@@ -1,0 +1,3 @@
+The order is CABFDE
+Complete in 15 steps
+Elapsed = 13869.7043 ms

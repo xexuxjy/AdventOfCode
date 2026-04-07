@@ -1,0 +1,3 @@
+The order is JNOSIKYAQUWBREVXGTZFMDHLPC
+Complete in 1099 steps
+Elapsed = 32.9596 ms
